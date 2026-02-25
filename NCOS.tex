@@ -1,0 +1,146 @@
+%\documentclass[12pt]{article}
+
+
+\documentclass[12pt]{article}
+\usepackage[backend=bibtex,natbib,style=numeric-comp,sorting=none, doi=false, isbn=false,url=false]{biblatex}
+\usepackage{slashed}
+\addbibresource{refs}
+\input epsf.sty
+
+\pdfoutput=1
+
+% Use Chancery Font
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\josh}[1]{\textcolor{blue}{[Joshua: #1]}}
+\newcommand{\cw}[1]{\textcolor{gray}{[Charles: #1]}}
+%\usepackage{chngcntr}
+%\counterwithout{equation}{section}
+
+
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\hmch}{\hat{\mc{H}}}
+\newcommand{\citeme}[1][]{{\color{red}[*#1]}}
+
+\usepackage{stmaryrd}
+
+
+\usepackage{draft}
+\usepackage[weather]{ifsym}
+
+\usepackage{hyperref}
+\usepackage{graphicx,color,subfig}
+\usepackage{skak}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{bbm}
+
+% Use Chancery Font
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{snakes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{bending}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+\usetikzlibrary{shapes.misc}
+\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
+%default radius will be 1pt.
+cross/.default={1pt}}
+
+\usepackage[T1]{fontenc}
+\usepackage{esint}
+\usepackage{lmodern}
+
+\newcommand{\fixme}[1]{{\bf {\color{red}[#1]}}}
+\newcommand{\vv}[1]{\left\langle #1 \right\rangle}
+\newcommand{\un}[1]{\underline{#1}}
+\newcommand{\BL}[1]{{ {\color{blue}[#1]}}}
+
+\newcommand{\bgcom}[1]{\fixme{BG: #1}}
+
+\def\be#1\ee{\begin{align}#1\end{align}}
+\newcommand\nn{\nonumber}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\bz}{\bar{z}}
+
+
+\definecolor{dark green}{rgb}{0.7,1,0.64}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{myStyle}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=none,
+    numbers=none,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{blue},
+    backgroundcolor=\color{gray!10!white},
+    tabsize=2,
+}
+
+
+
+\lstset{style=myStyle}
+\usepackage{array}
+\usepackage{physics}
+
+\begin{document}
+
+\unitlength = .8mm
+
+
+\section{The holographic duality}
+We begin by reviewing the holographic duality, on top of which the MST conjecture is built. Start from the decoupling limit of the extremal black 1-brane solution of type IIB string theory, described in terms of the string frame metric, the dilaton $\Phi$, and the RR 2-form potential $C_2$ as
+\ie\label{dsaiibdoness}
+& ds_{\rm str}^2 = (\wt f_1(r))^{-{1\over 2}} (-dt^2 + dx^2) + (\wt f_1(r))^{1\over 2} (dr^2 + r^2 d\Omega_7^2),
+\\
+& e^\Phi = (\wt f_1(r))^{1\over 2},~~~~ C_2 =  \wt f_1^{-1} dt \wedge dx,
+\\
+& \wt f_1(r) = {c_1 N\over r^6},~~~~ c_1 = 32 \pi^2 g_B \ell_B^6 = 32\pi^2 g_B^{-{1\over 2}}M_{\rm pl}^{-6},
+\fe
+where $\ell_B$ is the type IIB string length, and $g_B$ is the type IIB string coupling (defined as the ratio between the F1 and D1 string tensions in the absence of RR axion and dilaton expectation value).
+The standard holographic dictionary suggests an exact dual description in terms of the 2D ${\cal N}=(8,8)$ $U(N)$ SYM characterized by the gauge field $A_\mu$, adjoint scalar fields $\phi^i$, and adjoint fermions $\lambda_{\A +}$, $\lambda_{\da -}$. Here $i=1,\cdots,8$ is a vector index with respect to the $so(8)_R$ symmetry, and $\A, \da$ are chiral and anti-chiral spinor indices with respect to the $so(8)_R$. The Lorentzian action reads
+\ie
+S & = {1\over g_{\rm YM}^2} \int d^2x\, {\rm tr} \bigg( - {1\over 4} F_{\mu\nu} F^{\mu\nu} - {1\over 2} D_\mu \phi^i D^\mu \phi^i + {1\over 4} [\phi^i, \phi^j]^2
+\\
+&~~~~~~~~~~~~~~~~~~~ -  \lambda_{\A+} D_- \lambda_{\A+} -  \lambda_{\da -} D_+ \lambda_{\da-} - \lambda_{\A+}\C^i_{\A\da} [\phi^i, \lambda_{\da-} ] \bigg),
+\fe
+where the gauge coupling $g_{\rm YM}$ is identified as
+\ie
+g_{\rm YM}^2 = { g_B\over 2\pi \ell_B^2}
+\fe
+and $D_\mu \equiv\partial_\mu - i [A_\mu, \cdot]$ in the adjoint, with the trace taken in the fundamental.
+Applying the S-duality transformation to (\ref{dsaiibdoness}) yields the purely (NS,NS) spacetime background\footnote{Note that the 3-form field strength $H_3 = dB_2 = e^{2\Phi} {6dr\over r}\wedge dt\wedge dx$ obeys $\wt g_B^{-2}\int_{S^7} e^{-2\Phi} * H = (2\pi \sqrt{\A'})^6 N$, which is the electric (NS,NS) flux sourced by $N$ fundamental strings.}
+\ie{}
+& d s_{\rm str}^2 =  (\wt f_1(r))^{-1} (-dt^2 + dx^2) + dr^2 + r^2 d\Omega_7^2,
+\\
+& e^{\Phi} = (\wt f_1(r))^{-{1\over 2}},~~~~ B_2 = \wt f_1^{-1} dt\wedge dx,
+\\
+& \wt f_1(r) = {c_1 N\over r^6},~~~~ c_1 = 32\pi^2 \wt g_B^{1\over 2} M_{\rm pl}^{-6} = 32\pi^2 \wt g_B^2 \wt\ell_B^6,
+\fe
+where $\wt g_B = g_B^{-1}$ and $\wt\ell_B = g_B^{1\over 2} \ell_B$ are the string coupling and length in the dual frame.
+
+
+\printbibliography
+\end{document}
+\bye
