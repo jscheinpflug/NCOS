@@ -1,15 +1,18 @@
-*.pdf
 .vscode
+__pycache__/
+*.pyc
 
-# Root-level LaTeX auxiliary files
-/*.aux
-/*.bbl
-/*.bcf
-/*.blg
-/*.fdb_latexmk
-/*.fls
-/*.log
-/*.out
-/*.run.xml
-/*.synctex.gz
-/*.toc
+# LaTeX build artifacts (recursive)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*-blx.bib
+*.pdf
