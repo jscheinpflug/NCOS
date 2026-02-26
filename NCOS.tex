@@ -283,30 +283,41 @@ Physical states obey the full super-Virasoro constraints. In lightcone variables
 and similarly with $+\leftrightarrow -$ if one solves for $\alpha_n^+,\psi_r^+$. Thus longitudinal oscillator excitations are not independent propagating degrees of freedom; they are fixed by constraints (equivalently BRST-exact/gauge).
 At the first NS level, $|\zeta;k\rangle=\zeta_M\psi_{-1/2}^M|k\rangle$ obeys $k\!\cdot\!\zeta=0$ with gauge identification $\zeta_M\sim \zeta_M+\lambda k_M$, so longitudinal polarizations are pure gauge. This decoupling is key for the match with the spectrum predicted by MST.
 
-The Moyal phases have a nontrivial dynamical effect on this massless sector: for ordered boundary insertions, each disk amplitude is multiplied by
+The Moyal phases have a nontrivial dynamical effect on this massless sector: for a fixed ordering of boundary insertions, the corresponding contribution to the disk amplitude is multiplied by
 \ie
 \exp\!\left({i\over 2}\sum_{a<b}k_a\wedge k_b\,\epsilon(\tau_a-\tau_b)\right),\qquad
 k_a\wedge k_b\equiv k_{a\alpha}\theta^{\alpha\beta}k_{b\beta},
 \fe
-and in 1+1 NCOS ($\theta^{01}\to 2\pi\A'_{\rm eff}$) the sum over orderings produces cancellations that make tree amplitudes with massless external open-string states vanish \cite{herzog2000stablemassivestates11,seiberg2000stringsbackgroundelectricfield}. Hence the decoupling statement has two layers: longitudinal oscillator modes are removed kinematically by super-Virasoro/BRST constraints, and the remaining massless $U(1)$ multiplet decouples dynamically from the interacting massive NCOS tower through Moyal-phase cancellation.
+and in 1+1 NCOS ($\theta^{01}\to 2\pi\A'_{\rm eff}$) the sum over orderings produces cancellations that make tree amplitudes with massless external open-string states vanish \cite{klebanov200011dimensionalncosun,herzog2000stablemassivestates11,seiberg2000stringsbackgroundelectricfield}. Hence the decoupling statement has two layers: longitudinal oscillator modes are removed kinematically by super-Virasoro/BRST constraints, and the remaining massless $U(1)$ multiplet decouples dynamically from the interacting massive NCOS tower through Moyal-phase cancellation.
 
-The key point is that the formula above is for one fixed ordering, while the physical disk amplitude sums all orderings with different $\epsilon$-signs and hence different Moyal phases. If one external state is massless ($k_+k_-=0$), one can integrate that vertex first and choose branch cuts so its integrand is holomorphic on the disk interior; the insertion contour is then deformable off the boundary with no enclosed singularity, so the total ordering sum vanishes. In the four-point language, the ordered pieces have the same Beta-function kernel but phases that cancel after permutation. For purely massive external states this holomorphic contour step is unavailable, so the ordered contributions do not cancel in general and the massive NCOS sector remains interacting.
+The key point is that the phase above is defined for one fixed ordering, while the physical disk amplitude sums all orderings with different $\epsilon$-signs and hence different Moyal phases. If one external state is massless ($k_+k_-=0$), choose that vertex to be the integrated insertion and take (say) $k_-=0$, so the integrated vertex depends only on $X^-$. Then the OPE above shows that its dependence on the integration variable involves only $k_+q_-$, and the $|\tau|$-power and Moyal phase combine into the single discontinuous $\log|\tau|+i{\pi\over2}\epsilon(\tau)=\log(\tau)+{\rm const}$ for a suitable branch, i.e.\ the boundary value of a holomorphic logarithm once the branch cuts are chosen outside the disk. The ordering sum then glues the boundary segments into a closed contour that can be pulled into the disk interior and shrunk, so the total vanishes (Fig.~\ref{fig:massless-decoupling-contour}). For a massive integrated leg ($k_+k_-\neq 0$) the $\tau$-dependence does not admit such a holomorphic packaging, obstructing this contour deformation. Note that the critical electric field limit was crucial for this argument (to get the phase $\frac{\pi}{2}$). This argument clearly works for any tree-level amplitude involving a massless state.
 
-A cleaner toy version is to isolate the common ordered kernel $I$ and only track phases:
-\[
-\mathcal A_{\rm toy}=I\left(\eta_1+\eta_2+\eta_3\right),\qquad
-I\equiv \int_0^1 dt\,\partial_t F(t),
-\]
-where $\eta_r$ are the ordering phases induced by the NCOS Moyal factor. The nontrivial input is why the three ordered pieces share the same $I$: for one integrated massless vertex, the boundary correlator can be written as a holomorphic total derivative in the insertion variable (after choosing branch cuts outside the disk), so the contour is deformable between boundary segments without crossing singularities. This contour-pulling step identifies the three ordered kernels up to their phase multipliers. Choosing the critical toy phases
-\[
-\eta_1=1,\qquad \eta_2=e^{2\pi i/3},\qquad \eta_3=e^{-2\pi i/3},
-\]
-one gets
-\[
-\mathcal A_{\rm toy}=I\left(1+e^{2\pi i/3}+e^{-2\pi i/3}\right)=0.
-\]
-This is the intended mechanism: holomorphy + contour pulling $\Rightarrow$ equal ordered kernels, then Moyal phases sum to zero. For massive legs, the integrand is not holomorphic in this way, contour deformation is obstructed, the kernels differ, and the total is generically nonzero.
+\begin{figure}[t]
+	\centering
+	\begin{tikzpicture}[scale=1.0]
+		% Disk
+		\draw[thick] (0,0) circle (1.6);
 
+		% Fixed insertions on the boundary
+		\fill (-1.23,1.02) circle (1.5pt) node[above left] {$\tau_1$};
+		\fill ( 1.23,1.02) circle (1.5pt) node[above right] {$\tau_2$};
+		\fill ( 0.00,-1.60) circle (1.5pt) node[below] {$\tau_3$};
+
+		% Integrated (massless) insertion position
+		\fill ( 1.55,-0.35) circle (1.5pt) node[right] {$\tau$};
+
+		% Branch cut chosen outside the disk
+		\draw[snake it, thick] ( 1.55,-0.35) -- ( 2.33,-0.53) node[midway, below right] {\small branch cut};
+
+		% Boundary segments corresponding to different orderings
+		\draw[very thick,->] (-1.23,1.02) arc (140:20:1.6);
+		\draw[very thick,->] ( 1.23,1.02) arc ( 20:-90:1.6);
+		\draw[very thick,->] ( 0.00,-1.60) arc (-90:140:1.6);
+
+	\end{tikzpicture}
+	\caption{Branch-cut choice (outside the disk) and boundary segments in the ordering-sum contour argument with one integrated massless insertion.}
+	\label{fig:massless-decoupling-contour}
+\end{figure}
 
 \subsection{Connection to 2D SYM flux sectors}
 We now connect the NCOS/BCFT data above to the dual 2D SYM description. In the holographic map, (\ref{ncoslimit}) is not an independent gauge-theory limit; in SYM variables the relevant scaling is
