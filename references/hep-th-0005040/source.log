@@ -1,0 +1,90 @@
+This is TeX, Version 3.141592653 (TeX Live 2026/dev/Arch Linux) (preloaded format=tex 2026.1.13)  25 FEB 2026 14:15
+**source.tex
+(./source.tex (/usr/share/texmf-dist/tex/plain/harvmac/harvmac.tex
+\leftpage=\box16
+\fullhsize=\dimen16
+\hstitle=\dimen17
+\hsbody=\dimen18
+
+ big or little (b/l)? l
+(This will be reduced.
+\yearltd=\count26
+\secno=\count27
+\meqno=\count28
+\subsecno=\count29
+\footskip=\skip18
+\ftno=\count30
+\ftfile=\write0
+\refno=\count31
+\rfile=\write1
+\ffile=\write2
+\figno=\count32
+\lfile=\write3
+\tfile=\write4
+) [0] (1. Introduction) [1.1] [2.2]
+Overfull \hbox (14.09372pt too wide) detected at line 359
+[] [] 
+
+\hbox(48.62292+43.62292)x343.28249
+.\hbox(0.0+0.0)x0.0
+.\glue 1.66663
+.\vbox(48.62292+43.62292)x354.04295
+..\hbox(14.9051+11.3612)x354.04295
+...\glue(\tabskip) 0.0
+...\hbox(14.9051+11.3612)x0.0 []
+...\glue(\tabskip) 0.0
+...\hbox(14.9051+11.3612)x354.04295 []
+...\glue(\tabskip) 0.0
+..\glue(\lineskip) 4.0
+..\hbox(15.0418+9.50012)x354.04295
+...\glue(\tabskip) 0.0
+...\hbox(15.0418+9.50012)x0.0 []
+...\glue(\tabskip) 0.0
+...\hbox(15.0418+9.50012)x354.04295, glue set 128.16026fil []
+...\glue(\tabskip) 0.0
+..\glue(\lineskip) 4.0
+..\hbox(20.93747+12.50015)x354.04295
+...\glue(\tabskip) 0.0
+...\hbox(20.93747+12.50015)x0.0 []
+...\glue(\tabskip) 0.0
+...\hbox(20.93747+12.50015)x354.04295, glue set 90.5068fil []
+...\glue(\tabskip) 0.0
+.\glue 1.66663
+
+[3.1] (2. Strings In Background Electric Field)
+(2.1. Canonical quantization on the strip) [4.2]
+Overfull \hbox (42.72624pt too wide) detected at line 416
+[] [] 
+
+\hbox(45.65077+40.65077)x343.28249
+.\hbox(0.0+0.0)x0.0
+.\glue 1.66663
+.\vbox(45.65077+40.65077)x382.67548
+..\hbox(14.72734+14.38892)x382.67548
+...\glue(\tabskip) 0.0
+...\hbox(14.72734+14.38892)x35.70833 []
+...\glue(\tabskip) 0.0
+...\hbox(14.72734+14.38892)x346.96715 []
+...\glue(\tabskip) 0.0
+..\glue(\lineskip) 4.0
+..\hbox(13.20952+6.85951)x382.67548
+...\glue(\tabskip) 0.0
+...\hbox(13.20952+6.85951)x35.70833, glue set 35.70833fil []
+...\glue(\tabskip) 0.0
+...\hbox(13.20952+6.85951)x346.96715, glue set 128.12323fil []
+...\glue(\tabskip) 0.0
+..\glue(\lineskip) 4.0
+..\hbox(14.72734+14.38892)x382.67548
+...\glue(\tabskip) 0.0
+...\hbox(14.72734+14.38892)x35.70833, glue set 35.70833fil []
+...\glue(\tabskip) 0.0
+...\hbox(14.72734+14.38892)x346.96715, glue set 74.1317fil []
+...\glue(\tabskip) 0.0
+.\glue 1.66663
+
+[5.1] [6.2] (2.2. String interactions) [7.1]
+(2.3. The critical electric field) [8.2]
+(3. Looking For A Zero Slope Limit With Noncommutative Spacetime) [9.1]
+(4. New Noncritical String Theories) [10.2] [11.1] [12.2] [13.1] [14.2]
+(./refs.tmp [15.1]) [16.2] )
+Output written on source.dvi (9 pages, 50116 bytes).

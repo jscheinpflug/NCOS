@@ -1,0 +1,118 @@
+This is TeX, Version 3.141592653 (TeX Live 2026/dev/Arch Linux) (preloaded format=tex 2026.1.13)  25 FEB 2026 14:18
+**source_wlabels.tex
+(./source_wlabels.tex (/usr/share/texmf-dist/tex/plain/harvmac/harvmac.tex
+\leftpage=\box16
+\fullhsize=\dimen16
+\hstitle=\dimen17
+\hsbody=\dimen18
+
+ big or little (b/l)? b
+(This will come out unreduced.
+\yearltd=\count26
+\secno=\count27
+\meqno=\count28
+\subsecno=\count29
+\footskip=\skip18
+\ftno=\count30
+\ftfile=\write0
+\refno=\count31
+\rfile=\write1
+\ffile=\write2
+\figno=\count32
+\lfile=\write3
+\tfile=\write4
+) [0] (1. Introduction) [1] [2] [3] [4] [5]
+(2. Open Strings In The Presence Of Constant $B$-Field) (2.1. Bosonic Strings)
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+(2.2. Worldsheet Supersymmetry) [20]
+(2.3. Instantons On Noncommutative ${\fam \bffam \tenbf R}^4$) [21] [22]
+[23] [24] [25] [26] [27]
+(3. Noncommutative Gauge Symmetry vs. Ordinary Gauge Symmetry) [28] [29]
+(3.1. \fam \itfam \tenit The Change Of Variables) [30] [31] [32] [33] [34]
+[35]
+(3.2. Background Independence Of Noncommutative Yang-Mills On ${\fam \bffam \te
+nbf R}^n$) [36] [37] [38] [39] [40] (4. Slowly Varying Fields) [41]
+(4.1. Dirac-Born-Infeld Action) [42] [43] [44] [45]
+Underfull \vbox (badness 1067) has occurred while \output is active
+\vbox(536.00175+3.50006)x391.46176, glue set 2.20522
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x391.46176, glue set - 0.24017
+..\tenrm w
+..\tenrm h
+..\tenrm e
+..\tenrm r
+..\tenrm e
+..etc.
+.\penalty 200
+.\glue(\baselineskip) 6.0 plus 2.0 minus 1.0
+.\hbox(7.5+2.5)x391.46176, glue set 73.54fil
+..\tenrm w
+..\kern-0.27779
+..\tenrm e
+..\glue 3.33333 plus 1.66666 minus 1.11111
+..\tenrm u
+..etc.
+.etc.
+
+ [46]
+[47] [48] (4.2. Supersymmetric Configurations) [49] [50] [51] [52] [53]
+Overfull \hbox (38.06921pt too wide) detected at line 3010
+[] [] 
+
+\hbox(104.73846+99.73845)x391.46176
+.\hbox(0.0+0.0)x0.0
+.\glue 1.66663
+.\vbox(104.73846+99.73845)x426.19772
+..\hbox(34.36143+27.50029)x426.19772
+...\glue(\tabskip) 0.0
+...\hbox(34.36143+27.50029)x53.67511 []
+...\glue(\tabskip) 0.0
+...\hbox(34.36143+27.50029)x372.52261, glue set 142.03874fil []
+...\glue(\tabskip) 0.0
+..\glue(\lineskip) 4.0
+..\hbox(32.50029+27.50029)x426.19772
+...\glue(\tabskip) 0.0
+...\hbox(32.50029+27.50029)x53.67511, glue set 53.67511fil []
+...\glue(\tabskip) 0.0
+...\hbox(32.50029+27.50029)x372.52261 []
+...\glue(\tabskip) 0.0
+..\glue(\lineskip) 4.0
+..\hbox(25.5+20.5)x426.19772
+...\glue(\tabskip) 0.0
+...\hbox(25.5+20.5)x53.67511, glue set 53.67511fil []
+...\glue(\tabskip) 0.0
+...\hbox(25.5+20.5)x372.52261, glue set 106.16994fil []
+...\glue(\tabskip) 0.0
+..etc.
+.\glue 1.66663
+
+[54] [55] [56]
+(5. $D$-Branes And Small Instantons In The Presence Of Constant $B$ Field)
+[57] [58] [59] [60] [61] [62] [63] [64] [65]
+(6. Noncommutative Gauge Theory on a Torus) [66] (6.1. $T$-duality) [67]
+[68] [69] [70] (6.2. Modules Over A Noncommutative Torus) [71]
+(6.3. Construction Of Modules) [72] [73] [74] [75] [76] [77] [78] [79] [80]
+(6.4. Theoretical Issues) [81] [82] [83] [84]
+(7. Relation To M-Theory In DLCQ) [85] [86] [87] [88] [89]
+(8. Noncommutative Version Of The Six Dimensional $(2,0)$ Theory) [90] [91]
+[92] [93] [94] (./refs.tmp [95] [96] [97] [98]
+Overfull \hbox (2.15013pt too wide) in paragraph at lines 264--267
+[][] tenrm E. Hawkins, ``Non-com-mu-ta-tive Reg-u-lar-iza-tion for the Prac-ti-
+cal Man,'' hep-th/9908052. 
+
+ hbox(7.5+2.5)x391.46176, glue set - 1.0
+. hbox(0.0+0.0)x20.0
+. hbox(7.5+2.5)x0.0, glue set - 23.88893fil
+.. glue 0.0 plus 1.0fil minus 1.0fil
+.. tenrm [
+.. tenrm 6
+.. tenrm 1
+.. tenrm ]
+..etc.
+. tenrm E
+. tenrm .
+. penalty 10000
+.etc.
+
+) [99] )
+Output written on source_wlabels.dvi (100 pages, 403384 bytes).

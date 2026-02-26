@@ -1,0 +1,338 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=latex 2026.1.13)  25 FEB 2026 14:15
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**source.tex
+(./source.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/share/texmf-dist/tex/latex/base/latex209.def
+File: latex209.def 2020/11/26 v0.55 Standard LaTeX file
+
+
+          Entering LaTeX 2.09 COMPATIBILITY MODE
+ *************************************************************
+    !!WARNING!!    !!WARNING!!    !!WARNING!!    !!WARNING!!   
+ 
+ This mode attempts to provide an emulation of the LaTeX 2.09
+ author environment so that OLD documents can be successfully
+ processed. It should NOT be used for NEW documents!
+ 
+ New documents should use Standard LaTeX conventions and start
+ with the \documentclass command.
+ 
+ Compatibility mode is UNLIKELY TO WORK with LaTeX 2.09 style
+ files that change any internal macros, especially not with
+ those that change the FONT SELECTION or OUTPUT ROUTINES.
+ 
+ Therefore such style files MUST BE UPDATED to use
+          Current Standard LaTeX: LaTeX2e.
+ If you suspect that you may be using such a style file, which
+ is probably very, very old by now, then you should attempt to
+ get it updated by sending a copy of this error message to the
+ author of that file.
+ *************************************************************
+
+\footheight=\dimen141
+\@maxsep=\dimen142
+\@dblmaxsep=\dimen143
+\@cla=\count196
+\@clb=\count197
+\mscount=\count198
+(/usr/share/texmf-dist/tex/latex/base/tracefnt.sty
+Package: tracefnt 2020/12/22 v3.0n Standard LaTeX package (font tracing)
+\tracingfonts=\count199
+LaTeX Info: Redefining \selectfont on input line 107.
+Applying: [2021/06/01] Add hook to \selectfont  on input line 142.
+Already applied: [0000/00/00] Add hook to \selectfont  on input line 145.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 275.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 276.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 277.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 283.
+LaTeX Info: Redefining \em on input line 293.
+
+(/usr/share/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 339.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 341.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 343.
+)
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count266
+\c@section=\count267
+\c@subsection=\count268
+\c@subsubsection=\count269
+\c@paragraph=\count270
+\c@subparagraph=\count271
+\c@figure=\count272
+\c@table=\count273
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+Compatibility mode: definition of \rm ignored.
+Compatibility mode: definition of \sf ignored.
+Compatibility mode: definition of \tt ignored.
+Compatibility mode: definition of \bf ignored.
+Compatibility mode: definition of \it ignored.
+Compatibility mode: definition of \sl ignored.
+Compatibility mode: definition of \sc ignored.
+LaTeX Info: Redefining \cal on input line 497.
+LaTeX Info: Redefining \mit on input line 498.
+\bibindent=\dimen144
+)
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2024-05-08 L3 backend support: dvips
+\l__pdf_internal_box=\box52
+\l__pdf_backend_content_box=\box53
+\l__pdf_backend_model_box=\box54
+\g__pdf_backend_annotation_int=\count274
+\g__pdf_backend_link_int=\count275
+\g__pdf_backend_link_sf_int=\count276
+)
+No file source.aux.
+\openout1 = `source.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+
+[0
+
+]
+
+LaTeX Warning: Citation `Seiberg' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation `Gopak' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation `Witten' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `Gukov' on page 1 undefined on input line 96.
+
+
+LaTeX Warning: Citation `Verlinde' on page 1 undefined on input line 96.
+
+
+LaTeX Warning: Citation `Gopak2' on page 1 undefined on input line 96.
+
+
+LaTeX Warning: Citation `Klebanov' on page 1 undefined on input line 96.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 98.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 98.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 98.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 98
+.
+(/usr/share/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+
+LaTeX Warning: Citation `Klebanov' on page 1 undefined on input line 99.
+
+
+LaTeX Warning: Citation `Klebanov' on page 1 undefined on input line 101.
+
+
+LaTeX Warning: Citation `Klebanov' on page 1 undefined on input line 126.
+
+
+
+[1]
+
+LaTeX Warning: Citation `Bala' on page 2 undefined on input line 157.
+
+
+LaTeX Warning: Citation `FultonHarris' on page 2 undefined on input line 159.
+
+
+LaTeX Warning: Citation `FultonHarris' on page 2 undefined on input line 164.
+
+
+
+[2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 205.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 205.
+
+
+LaTeX Warning: Reference `amcons' on page 3 undefined on input line 247.
+
+
+
+[3]
+
+LaTeX Warning: Citation `RCKing' on page 4 undefined on input line 269.
+
+
+LaTeX Warning: Reference `amcons2' on page 4 undefined on input line 291.
+
+
+LaTeX Warning: Reference `econs' on page 4 undefined on input line 302.
+
+
+LaTeX Warning: Reference `alcons' on page 4 undefined on input line 302.
+
+
+
+[4]
+
+LaTeX Warning: Reference `econs' on page 5 undefined on input line 315.
+
+
+LaTeX Warning: Reference `alcons' on page 5 undefined on input line 315.
+
+
+LaTeX Warning: Reference `scond' on page 5 undefined on input line 339.
+
+
+LaTeX Warning: Citation `FT' on page 5 undefined on input line 350.
+
+
+LaTeX Warning: Citation `Gukov' on page 5 undefined on input line 350.
+
+
+LaTeX Warning: Citation `SeiWit' on page 5 undefined on input line 350.
+
+
+
+[5]
+
+LaTeX Warning: Citation `Seiberg' on page 6 undefined on input line 389.
+
+
+LaTeX Warning: Citation `Gopak' on page 6 undefined on input line 389.
+
+
+LaTeX Warning: Reference `XXGreens' on page 6 undefined on input line 391.
+
+
+LaTeX Warning: Citation `Klebanov' on page 6 undefined on input line 412.
+
+
+
+[6]
+
+LaTeX Warning: Reference `XXGreens' on page 7 undefined on input line 431.
+
+
+
+[7]
+
+LaTeX Warning: Citation `Klebanov' on page 8 undefined on input line 515.
+
+
+Overfull \hbox (5.9973pt too wide) detected at line 525
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^Ys\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ 
+[] [] \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 s \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2)) \OMS/cmsy/m/n/12 ^^@ [] [] ^^Y ^^@
+\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^Y[] :
+ []
+
+
+LaTeX Warning: Citation `Klebanov' on page 8 undefined on input line 537.
+
+
+LaTeX Warning: Citation `Klebanov' on page 8 undefined on input line 545.
+
+
+
+[8]
+Overfull \hbox (0.53134pt too wide) in alignment at lines 604--624
+ [][][] []
+ []
+
+
+LaTeX Warning: Citation `Polchinski' on page 9 undefined on input line 653.
+
+
+
+[9]
+
+LaTeX Warning: Citation `Klebanov' on page 10 undefined on input line 662.
+
+
+LaTeX Warning: Citation `Hashimoto' on page 10 undefined on input line 683.
+
+
+LaTeX Warning: Citation `Hyun' on page 10 undefined on input line 702.
+
+
+
+[10]
+
+LaTeX Warning: Reference `Rtraj' on page 11 undefined on input line 774.
+
+
+
+[11]
+
+LaTeX Warning: Citation `Klebanov' on page 12 undefined on input line 801.
+
+
+LaTeX Warning: Citation `Klebanov' on page 12 undefined on input line 803.
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 842--847
+[]\OT1/cmr/m/n/12 N. Seiberg, L. Susskind, and N. Toum-bas, ``Strings in back-g
+round elec-tric
+ []
+
+
+
+[12]
+
+[13] (./source.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 711 strings out of 475172
+ 12370 string characters out of 5767121
+ 407786 words of memory out of 5000000
+ 23746 multiletter control sequences out of 15000+600000
+ 574406 words of font info for 92 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 43i,9n,50p,441b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on source.dvi (14 pages, 55824 bytes).

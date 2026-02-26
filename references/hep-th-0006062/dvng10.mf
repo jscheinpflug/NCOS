@@ -1,0 +1,32 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% dvng10.mf  Devanagari at 10pt
+%
+% Author: Frans J. Velthuis <velthuis@rc.rug.nl>
+%
+
+mode_setup;
+  ht# := 2mm#; rm# := 0.6mm#; brm# := 0.9mm#; twd# := 1.4mm#;
+  uwidth# := twd#;
+  define_pixels(rm,twd,uwidth,brm);
+  define_whole_pixels(ht);
+  rot = 135;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the following parameters determine the line-thickness.
+% the line-thickness varies between thin# and thick#, depending on the
+% angle between the pen and the direction of writing.
+% for strokes in subscripts it varies between subthick# and thin#.
+  thick# := 1.1pt#; thin# := 0.2pt#;
+  subthick# := .8pt#;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  font_size 10pt#;
+  font_quad 1.5twd#+rm#;
+  font_x_height .7rm#;
+  font_normal_space:=1.2twd#;
+  font_normal_stretch:=.6twd#;
+  font_normal_shrink:=.4twd#;
+  font_identifier:="DVNG10";
+
+\input defs
+\input dnchars

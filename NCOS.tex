@@ -126,12 +126,12 @@ S & = {1\over g_{\rm YM}^2} \int d^2x\, {\rm tr} \bigg( - {1\over 4} F_{\mu\nu} 
 &~~~~~~~~~~~~~~~~~~~ -  \lambda_{\A+} D_- \lambda_{\A+} -  \lambda_{\da -} D_+ \lambda_{\da-} - \lambda_{\A+}\C^i_{\A\da} [\phi^i, \lambda_{\da-} ] \bigg),
 \fe
 where the gauge coupling $g_{\rm YM}$ is identified as
-\ie
+\ie\label{gymdict}
 g_{\rm YM}^2 = { g_B\over 2\pi \ell_B^2}
 \fe
 and $D_\mu \equiv\partial_\mu - i [A_\mu, \cdot]$ in the adjoint, with the trace taken in the fundamental.
 Applying the S-duality transformation to (\ref{dsaiibdoness}) yields the purely (NS,NS) spacetime background\footnote{Note that the 3-form field strength $H_3 = dB_2 = e^{2\Phi} {6dr\over r}\wedge dt\wedge dx$ obeys $\wt g_B^{-2}\int_{S^7} e^{-2\Phi} * H = (2\pi \sqrt{\A'})^6 N$, which is the electric (NS,NS) flux sourced by $N$ fundamental strings.}
-\ie{}
+\ie\label{f1sdualbg}
 & d s_{\rm str}^2 =  (\wt f_1(r))^{-1} (-dt^2 + dx^2) + dr^2 + r^2 d\Omega_7^2,
 \\
 & e^{\Phi} = (\wt f_1(r))^{-{1\over 2}},~~~~ B_2 = \wt f_1^{-1} dt\wedge dx,
@@ -139,8 +139,282 @@ Applying the S-duality transformation to (\ref{dsaiibdoness}) yields the purely 
 & \wt f_1(r) = {c_1 N\over r^6},~~~~ c_1 = 32\pi^2 \wt g_B^{1\over 2} M_{\rm pl}^{-6} = 32\pi^2 \wt g_B^2 \wt\ell_B^6,
 \fe
 where $\wt g_B = g_B^{-1}$ and $\wt\ell_B = g_B^{1\over 2} \ell_B$ are the string coupling and length in the dual frame.
+It is important to keep the order of limits explicit. The geometries (\ref{dsaiibdoness}) and (\ref{f1sdualbg}) are already post-decoupling near-horizon backgrounds. The NCOS/SYM map used below is instead derived from the parent asymptotically flat D1-F1 system (a D1-brane with $N$ units of electric flux), with the decoupling limit taken there; only after that derivation do we embed the result into the holographic channel represented by (\ref{dsaiibdoness}), (\ref{f1sdualbg}) \cite{seiberg2000stringsbackgroundelectricfield,klebanov200011dimensionalncosun,yin2026foundationsofstringtheory}.
+
+\subsection{NCOS in the S-dual frame}
+To derive the NCOS/SYM dictionary, we start from the parent flat-space D1 system carrying $N$ electric-flux quanta (equivalently a D1-F1 bound state), and take its NCOS decoupling limit \cite{seiberg2000stringsbackgroundelectricfield,klebanov200011dimensionalncosun}. We first describe the intrinsic worldsheet BCFT data of this D1-brane in a constant electric background, and only afterwards match to the holographic variables.
+\subsubsection{Definition of NCOS}
+In the S-dual frame, define
+\ie\label{edefsingleflux}
+\widetilde E \equiv 2\pi \wt\ell_B^2 F_{01}.
+\fe
+Denote
+\ie\label{ncosbdef}
+{\cal B}_{\alpha\beta}\equiv B_{\alpha\beta}+2\pi\wt\ell_B^2 F_{\alpha\beta}.
+\fe
+Using the D-brane effective action with $G+B+2\pi\A'F$ \cite{yin2026foundationsofstringtheory} (chapter 14 equations (14.53), (14.79)), the boundary condition is
+\ie\label{ncosbcftbdry}
+\eta_{\alpha\beta}\partial_n X^\beta + {\cal B}_{\alpha\beta}\partial_t X^\beta\Big|_{\partial\Sigma}=0,~~~~\alpha,\beta=0,1.
+\fe
+This is the standard mixed Neumann condition for open strings in constant background field \cite{seiberg1999stringtheorynoncommutativegeometry} (equation (2.2)). The Seiberg-Witten open-string data are
+\ie\label{ncosswdata}
+G^{\alpha\beta}=\left({1\over \eta+{\cal B}}\right)^{\alpha\beta}_{\!S},~~~~
+\theta^{\alpha\beta}=2\pi\wt\ell_B^2\left({1\over \eta+{\cal B}}\right)^{\alpha\beta}_{\!A},
+\fe
+and for a purely electric field ($B_{01}=0$, so ${\cal B}_{01}=\widetilde E$) in 1+1 dimensions, matching equation (2.5) of \cite{seiberg1999stringtheorynoncommutativegeometry},
+\ie\label{ncos1plus1}
+G_{00}=-(1-\widetilde E^2),~~~~G_{11}=1-\widetilde E^2,~~~~
+\theta^{01}={2\pi\wt\ell_B^2 \widetilde E\over 1-\widetilde E^2}.
+\fe
+The open-string coupling (denoted $G_0$ in \cite{klebanov200011dimensionalncosun}, equation (2) for $M=1$ and equation (3) for general $M$) follows from \cite{seiberg1999stringtheorynoncommutativegeometry} (equation (2.44)):
+\ie\label{gzerodef}
+G_o^2=\wt g_B\sqrt{{\det G\over \det(\eta+{\cal B})}}.
+\fe
+Conceptually, this relation is obtained by rewriting the same disk-level D-brane physics in two equivalent parameterizations: the ``closed-string'' variables $(\eta,{\cal B},\wt g_B)$ and the ``open-string'' variables $(G,\theta,G_o)$. Matching the normalization of the DBI action (equivalently the disk partition function) in the two descriptions fixes the Jacobian factor $\sqrt{\det G/\det(\eta+{\cal B})}$, which is why (\ref{gzerodef}) and the equation above are kinematic redefinitions rather than an additional dynamical input.
+For $B_{01}=0$, one gets explicitly
+\ie
+G_o^2=\wt g_B\sqrt{1-\widetilde E^2}.
+\fe
+The effective NCOS string scale is defined by the effective open-string tension (equivalently the open-string mass-shell relation with metric (\ref{ncos1plus1})) as
+\ie\label{alphaeffdef}
+\A'_{\rm eff}\equiv {\wt\ell_B^2\over 1-\widetilde E^2},
+\fe
+so that
+\ie
+{1\over 2\pi\A'_{\rm eff}}={1-\widetilde E^2\over 2\pi\wt\ell_B^2}.
+\fe
+This denominator is the near-critical electric-field suppression of the net string tension along the electric direction: the electric force on the charged endpoints partially cancels the bare tension, leaving the effective tension above \cite{seiberg2000stringsbackgroundelectricfield}. Equivalently, in open-string variables the metric (\ref{ncos1plus1}) rescales the longitudinal mass-shell relation by $1-\widetilde E^2$, and rewriting in canonical units gives the same $\A'_{\rm eff}$. This is the standard NCOS definition (cf.\ equation (2.7) of \cite{seiberg2000stringsbackgroundelectricfield}).
+A useful way to see why the dependence is exactly $1-\widetilde E^2$ (rather than, say, $1-\widetilde E$) is that the same invariant combination controls all electric-field effects in the D1 Born-Infeld system: the action density, electric displacement, and criticality bound all involve $\sqrt{1-\widetilde E^2}$. Therefore the longitudinal open-string tension must vanish quadratically as $\widetilde E\to 1$, giving $T_{\rm eff}=T_{\rm F1}(1-\widetilde E^2)$ with $T_{\rm F1}=1/(2\pi\wt\ell_B^2)$.
+From the worldsheet side, the same factor is encoded in the open-string metric (\ref{ncos1plus1}). Since the open-string Hamiltonian uses $G^{\alpha\beta}p_\alpha p_\beta$, canonical normalization of the longitudinal coordinates absorbs the factor $1-\widetilde E^2$ into the inverse slope, so the spectrum is naturally written with $\A'_{\rm eff}=\wt\ell_B^2/(1-\widetilde E^2)$. This is why the NCOS limit keeps $\A'_{\rm eff}$ fixed while sending $\wt\ell_B^2\to 0$ and $\widetilde E\to 1$: the bare closed-string scale is removed, but the finite effective open-string scale is retained.
+In intrinsic BCFT variables, one often parameterizes the NCOS scaling as
+\ie\label{ncoslimit}
+\widetilde E\to 1,~~~~\A'_{\rm eff}~{\rm fixed},~~~~G_0~{\rm fixed}.
+\fe
+This scaling retains the interacting open-string sector at finite scale while removing the bare closed-string scale.
+\subsubsection{Boundary OPE and Moyal phases}
+\noindent
+At the level of boundary CFT, the symmetric and antisymmetric tensors in (\ref{ncosswdata}) enter differently. The boundary two-point function takes the standard form
+\ie
+\langle X^\alpha(\tau)X^\beta(0)\rangle
+=-2\wt\ell_B^2 G^{\alpha\beta}\ln|\tau|
+ + {i\over 2}\theta^{\alpha\beta}\,\epsilon(\tau),
+\fe
+where $\epsilon(\tau)\equiv \mathrm{sgn}(\tau)$. Plugging (\ref{ncos1plus1}) into this gives
+\ie
+\langle X^0(\tau)X^0(0)\rangle=2\A'_{\rm eff}\ln|\tau|,\qquad
+\langle X^1(\tau)X^1(0)\rangle=-2\A'_{\rm eff}\ln|\tau|,
+\fe
+\ie
+\langle X^0(\tau)X^1(0)\rangle=+{i\over 2}\theta^{01}\epsilon(\tau),\qquad
+\langle X^1(\tau)X^0(0)\rangle=-{i\over 2}\theta^{01}\epsilon(\tau),
+\qquad
+\theta^{01}=2\pi\A'_{\rm eff}\widetilde E.
+\fe
+In lightcone coordinates $X^\pm\equiv X^0\pm X^1$, one has
+\ie
+G^{++}=G^{--}=0,\qquad G^{+-}=G^{-+}=-{2\over 1-\widetilde E^2},\qquad
+\theta^{++}=\theta^{--}=0,\qquad \theta^{+-}=-\theta^{-+}=-2\theta^{01},
+\fe
+and therefore
+\ie
+\langle X^+(\tau)X^-(0)\rangle
+= 4\A'_{\rm eff}\ln|\tau|
+- i\,\theta^{01}\epsilon(\tau),
+\qquad
+\langle X^-(\tau)X^+(0)\rangle
+= 4\A'_{\rm eff}\ln|\tau|
++ i\,\theta^{01}\epsilon(\tau),
+\fe
+with $\langle X^\pm(\tau)X^\pm(0)\rangle=0$ at this level. This makes explicit that the logarithmic part is controlled by the open metric ($G$), while the ordering-dependent phase is controlled by $\theta$.
+For transverse coordinates $X^i$ ($i=2,\dots,9$), the electric background does not induce a noncommutative phase: $\theta^{i\alpha}=\theta^{ij}=0$. Their two-point function keeps the usual logarithmic form set by the transverse open metric ($G_{ij}=\delta_{ij}$ in this setup), so in these conventions
+\ie
+\langle X^i(\tau)X^j(0)\rangle\sim -2\wt\ell_B^2\delta^{ij}\ln|\tau|,
+\fe
+with no $\epsilon(\tau)$ term. A form with $\A'_{\rm eff}$ in the transverse correlator is obtained only after an additional transverse coordinate rescaling.
+Therefore $G^{\alpha\beta}$ controls the logarithmic term and therefore the scaling dimensions and mass shell (equivalently the open-string Hamiltonian) through $G^{\alpha\beta}k_\alpha k_\beta$, while $\theta^{\alpha\beta}$ controls the discontinuous phase. Restricting to no transverse momenta ($k_i=q_i=0$) and using lightcone variables $k_\pm\equiv k_0\pm k_1$, $q_\pm\equiv q_0\pm q_1$, with
+\ie
+V_k(\tau)\equiv \exp\!\left[{i\over 2}\left(k_+X^-+k_-X^+\right)\right],
+\fe
+the boundary OPE can be written as
+\ie
+V_k(\tau)V_q(0)\sim
+|\tau|^{-\A'_{\rm eff}(k_+q_-+k_-q_+)}
+\exp\!\left[-{i\over 4}\theta^{01}(k_-q_+-k_+q_-)\epsilon(\tau)\right]
+V_{k+q}(0).
+\fe
+Thus $\theta$ changes correlation functions and amplitudes by Moyal-type momentum phases, whereas $G$ sets the kinematic spectrum. In the present 1+1 electric case, $\theta^{01}=2\pi\A'_{\rm eff}\widetilde E\to 2\pi\A'_{\rm eff}$ as $\widetilde E\to 1$, yielding finite spacetime noncommutativity at fixed open-string scale \cite{seiberg1999stringtheorynoncommutativegeometry,seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}. Therefore one keeps a finite interacting open-string sector with spacetime noncommutativity; see especially equations (4.1), (4.2), (4.3), (4.6), (4.7) of \cite{seiberg2000stringsbackgroundelectricfield} and equation (3.4) of \cite{gopakumar2000sdualitynoncommutativegaugetheory}.
+\subsubsection{Quantization and Spectrum}
+\noindent
+Since we are on a D1-brane, we can set
+\ie
+k_i=0,\qquad i=2,\dots,9,
+\fe
+so the low-lying spectrum is entirely organized by worldvolume momenta and oscillator number. Quantizing the open-string BCFT with boundary condition (\ref{ncosbcftbdry}) gives the standard open-string oscillator algebra in the open variables, with noncommutative zero modes
+\ie
+[x^\alpha,x^\beta]=i\theta^{\alpha\beta},\qquad
+[\alpha_m^M,\alpha_n^N]=m\,\delta_{m+n,0}\,G^{MN},\qquad
+\{\psi_r^M,\psi_s^N\}=G^{MN}\delta_{r+s,0},
+\fe
+where $M,N=0,\dots,9$ and $\alpha,\beta=0,1$.
+The ground-state structure associated with the zero modes is therefore noncommutative in the longitudinal directions: one cannot diagonalize $x^0$ and $x^1$ simultaneously. A convenient representation is to keep commuting momenta $p_\alpha$ and introduce commuting coordinates
+\ie
+y^\alpha \equiv x^\alpha + {1\over 2}\theta^{\alpha\beta}p_\beta,
+\fe
+for which $[y^\alpha,y^\beta]=0$, $[y^\alpha,p_\beta]=i\delta^\alpha_{\ \beta}$, and all noncommutativity is encoded in the Weyl algebra of exponentials
+\ie
+e^{ik\cdot x}e^{iq\cdot x}=e^{-{i\over2}k_\alpha\theta^{\alpha\beta}q_\beta}\,e^{i(k+q)\cdot x}.
+\fe
+With this representation, the physical Hilbert space is still labeled by momentum and oscillator quantum numbers; there is no extra Landau-level-like tower in non-compact 1+1 NCOS. In particular, $L_0$ depends on $k_\alpha$ and oscillator number (and on $G$, not on $\theta$), so the noncommutative zero-mode algebra does not shift the mass spectrum. Its effect is dynamical: it changes operator ordering and amplitudes through the Moyal phases discussed below.
+In lightcone momenta $k_\pm\equiv k_0\pm k_1$ (so $-k_0^2+k_1^2=-k_+k_-$), we have
+\ie
+L_0^{\rm NS}=-\A'_{\rm eff}k_+k_-+N-{1\over 2}=0,\qquad
+L_0^{\rm R}=-\A'_{\rm eff}k_+k_-+N=0.
+\fe
+Equivalently,
+\ie
+k_+k_-={N-a\over \A'_{\rm eff}},\qquad
+a_{\rm NS}={1\over 2},~a_{\rm R}=0.
+\fe
+Physical states obey the full super-Virasoro constraints. In lightcone variables, for $k_+\neq 0$ these constraints solve longitudinal oscillators recursively in terms of transverse ones ($i=2,\dots,9$), schematically
+\ie
+\alpha_n^- \sim {1\over k_+}\!\left[\sum_m :\alpha_{n-m}^i\alpha_m^i:+\sum_r\!\left(r-{n\over 2}\right):\psi_{n-r}^i\psi_r^i:\right],\qquad
+\psi_r^- \sim {1\over k_+}\sum_m \alpha_m^i\psi_{r-m}^i,
+\fe
+and similarly with $+\leftrightarrow -$ if one solves for $\alpha_n^+,\psi_r^+$. Thus longitudinal oscillator excitations are not independent propagating degrees of freedom; they are fixed by constraints (equivalently BRST-exact/gauge).
+At the first NS level, $|\zeta;k\rangle=\zeta_M\psi_{-1/2}^M|k\rangle$ obeys $k\!\cdot\!\zeta=0$ with gauge identification $\zeta_M\sim \zeta_M+\lambda k_M$, so longitudinal polarizations are pure gauge. This decoupling is key for the match with the spectrum predicted by MST.
+
+The Moyal phases have a nontrivial dynamical effect on this massless sector: for ordered boundary insertions, each disk amplitude is multiplied by
+\ie
+\exp\!\left({i\over 2}\sum_{a<b}k_a\wedge k_b\,\epsilon(\tau_a-\tau_b)\right),\qquad
+k_a\wedge k_b\equiv k_{a\alpha}\theta^{\alpha\beta}k_{b\beta},
+\fe
+and in 1+1 NCOS ($\theta^{01}\to 2\pi\A'_{\rm eff}$) the sum over orderings produces cancellations that make tree amplitudes with massless external open-string states vanish \cite{herzog2000stablemassivestates11,seiberg2000stringsbackgroundelectricfield}. Hence the decoupling statement has two layers: longitudinal oscillator modes are removed kinematically by super-Virasoro/BRST constraints, and the remaining massless $U(1)$ multiplet decouples dynamically from the interacting massive NCOS tower through Moyal-phase cancellation.
+
+The key point is that the formula above is for one fixed ordering, while the physical disk amplitude sums all orderings with different $\epsilon$-signs and hence different Moyal phases. If one external state is massless ($k_+k_-=0$), one can integrate that vertex first and choose branch cuts so its integrand is holomorphic on the disk interior; the insertion contour is then deformable off the boundary with no enclosed singularity, so the total ordering sum vanishes. In the four-point language, the ordered pieces have the same Beta-function kernel but phases that cancel after permutation. For purely massive external states this holomorphic contour step is unavailable, so the ordered contributions do not cancel in general and the massive NCOS sector remains interacting.
+
+A cleaner toy version is to isolate the common ordered kernel $I$ and only track phases:
+\[
+\mathcal A_{\rm toy}=I\left(\eta_1+\eta_2+\eta_3\right),\qquad
+I\equiv \int_0^1 dt\,\partial_t F(t),
+\]
+where $\eta_r$ are the ordering phases induced by the NCOS Moyal factor. The nontrivial input is why the three ordered pieces share the same $I$: for one integrated massless vertex, the boundary correlator can be written as a holomorphic total derivative in the insertion variable (after choosing branch cuts outside the disk), so the contour is deformable between boundary segments without crossing singularities. This contour-pulling step identifies the three ordered kernels up to their phase multipliers. Choosing the critical toy phases
+\[
+\eta_1=1,\qquad \eta_2=e^{2\pi i/3},\qquad \eta_3=e^{-2\pi i/3},
+\]
+one gets
+\[
+\mathcal A_{\rm toy}=I\left(1+e^{2\pi i/3}+e^{-2\pi i/3}\right)=0.
+\]
+This is the intended mechanism: holomorphy + contour pulling $\Rightarrow$ equal ordered kernels, then Moyal phases sum to zero. For massive legs, the integrand is not holomorphic in this way, contour deformation is obstructed, the kernels differ, and the total is generically nonzero.
 
 
+\subsection{Connection to 2D SYM flux sectors}
+We now connect the NCOS/BCFT data above to the dual 2D SYM description. In the holographic map, (\ref{ncoslimit}) is not an independent gauge-theory limit; in SYM variables the relevant scaling is
+\ie\label{symncoslimit}
+E\sim {g_{\rm YM}\over N},~~~~g_{\rm YM}~{\rm fixed},~~~~k=1~{\rm flux~sector},
+\fe
+namely we focus on the flux-sector states at this energy scale (rather than taking a strict $N\to\infty$ limit), and use the corresponding $1/N$ asymptotic expansion. The near-critical behavior then follows from flux quantization below.
+More generally, the SYM superselection sector is labeled by $k\in\mathbb{Z}_N$ electric flux units, with ground-state energy density
+\ie\label{symfluxenergy}
+E_k=\,{k^2 g_{\rm YM}^2\over 2N},
+\fe
+as in \cite{cho2026fluxsectorsmatrixstring} (equation (2.1) there). In the diagonal $U(1)$ description this is equivalently a constant flux density $F_{01}^{\rm diag}=k g_{\rm YM}^2/N$. Under the NCOS/SYM map, $k$ is identified with the number $M$ of D1-branes in the NCOS frame.
+
+
+Having derived the BCFT and scaling data in the parent D1$+$flux system, we now map it into the holographic channel (\ref{dsaiibdoness}), (\ref{f1sdualbg}), which are already near-horizon geometries. The flux-sector interpretation follows directly from the D1/F1 dual pair: in the D1 frame, F1 charge is realized as electric world volume flux on the D1; in the S-dual frame this is described by a D1 probe in the F1 background (\ref{f1sdualbg}), with the original D1 charge of (\ref{dsaiibdoness}) mapped to dissolved F1 charge in the probe D1 world volume field. This is the same $(p,q)$-string bound-state mechanism that underlies the 1+1 NCOS/SYM dictionary \cite{gopakumar2000sdualitynoncommutativegaugetheory,klebanov200011dimensionalncosun,yin2026foundationsofstringtheory}; see in particular equations (2.4), (2.5), (3.4) of \cite{gopakumar2000sdualitynoncommutativegaugetheory} and equations (1), (2), (3) of \cite{klebanov200011dimensionalncosun}. For Xi's derivation, see chapter 18 equations (18.50), (18.53), (18.54), (18.57), (18.58).
+
+For the single-flux sector on the SYM side ($k=1$), equivalently one D1-brane on the NCOS side ($M=1$) carrying $N$ electric-flux units, the normalizations can be derived directly in Xi's conventions \cite{yin2026foundationsofstringtheory} (chapter 18 equations (18.50), (18.53), (18.54)). For constant electric field and vanishing RR axion, the D1 Born-Infeld Lagrangian density is
+\ie\label{d1dbisingleflux}
+{\cal L}_{\rm D1}=-{1\over 2\pi \wt\ell_B^2 \wt g_B}\sqrt{1-\widetilde E^2},
+\fe
+Upon compactifying $x\sim x+2\pi R$, canonical momentum quantization gives
+\ie\label{singlefluxquant}
+\Pi_{A_1}=2\pi R\,{\widetilde E\over \wt g_B\sqrt{1-\widetilde E^2}}=2\pi N R
+~~\Longrightarrow~~
+N={\widetilde E\over \wt g_B\sqrt{1-\widetilde E^2}}.
+\fe
+Equivalently,
+\ie\label{efluxsolve}
+\widetilde E={N\wt g_B\over \sqrt{1+N^2\wt g_B^2}}
+=\left(1+{1\over N^2\wt g_B^2}\right)^{-{1\over 2}} = \left(1+\frac{2\pi g_{\rm YM}^2 \wt{\ell}_B^2}{N^2}\right)^{-{1\over 2}}.
+\fe
+At the energy scale
+\be
+\frac{g_{\rm YM}}{N} \ll \frac{1}{\wt{\ell}_B},
+\ee
+we effectively have $\wt{E} \to 1$.
+This makes the SYM interpretation explicit: the dual $U(N)$ theory is in a discrete electric-flux superselection sector (single-flux case here), and $\widetilde E$ is fixed by that sector and couplings rather than being an independent continuous SYM control parameter \cite{klebanov200011dimensionalncosun,cho2026fluxsectorsmatrixstring}.
+Combining (\ref{singlefluxquant}) with the BCFT coupling and tension formulas above gives
+\ie\label{gzeroderive}
+G_o^2={\widetilde E\over N}
+\to {1\over N},
+\fe
+\ie\label{alphaeffderivea}
+\A'_{\rm eff}={\wt\ell_B^2\wt g_B^2 N^2\over \widetilde E^2}
+\;
+\to \wt\ell_B^2\wt g_B^2N^2 = \frac{N^2}{2\pi g_{\rm YM}^2},
+\fe
+which is the single-flux NCOS/SYM dictionary (equivalent to the one in \cite{klebanov200011dimensionalncosun}, equations (1), (2), (3), after converting conventions). The condition $\wt{E} \to 1$ means a hierarchy of tensions $\frac{1}{\A'_{\rm eff}} \ll \frac{1}{\wt{\alpha}'_B}$.
+Crucially, this is not a truncation of the open-string tower: open-string oscillator states at $m^2\sim 1/\A'_{\rm eff} \sim \frac{g_{\rm YM}^2}{N^2}$ remain in the NCOS spectrum.
+
+\subsection{Decoupling of closed strings}
+
+The decoupling above is from bulk closed strings (and hence gravity), not from high open-string modes. A field-theory sector appears only after an additional IR restriction $E_{\rm phys}\ll 1/\sqrt{\A'_{\rm eff}}$.
+
+For non-compact flat $x$, the closed-channel momentum along $x$ is continuous. At fixed closed-string oscillator level $N_{\rm cl}$ and fixed transverse momentum, define
+\[
+\Delta_{N_{\rm cl}}(\omega)\equiv M_{N_{\rm cl}}^2(\widetilde E,p_\perp)-\omega^2-i0,
+\]
+with
+\[
+M_{N_{\rm cl}}^2(\widetilde E,p_\perp)
+=p_1^2+{p_\perp^2\over 1-\widetilde E^2}
+ +{4(N_{\rm cl}-a_{\rm cl})\over \A'_{\rm eff}(1-\widetilde E^2)}.
+\]
+Then
+\[
+\mathcal A_{N_{\rm cl}}(\omega)\sim
+\int_{-\infty}^{\infty}{dq_x\over q_x^2+\Delta_{N_{\rm cl}}(\omega)}
+=\pi\,\Delta_{N_{\rm cl}}(\omega)^{-1/2},
+\]
+so the singularity is a threshold branch point rather than an isolated pole:
+\[
+{\rm Disc}\,\mathcal A_{N_{\rm cl}}(\omega)\propto
+{\theta\!\left(\omega^2-M_{N_{\rm cl}}^2\right)\over
+\sqrt{\omega^2-M_{N_{\rm cl}}^2}}.
+\]
+The non-planar Moyal factor enters in the open channel as $e^{ib(\theta,p)q_x}$; after Gaussian integration,
+\[
+\int dq_x\,e^{-a q_x^2+ibq_x}=\sqrt{\pi\over a}\,e^{-b^2/(4a)},
+\]
+it modifies only the form factor and does not change this branch-cut analyticity.
+
+The NCOS-specific ingredient is the location of the threshold. Applying (\ref{ncoslimit}), $\widetilde E\to1$ at fixed $\A'_{\rm eff}$, sends $M_{N_{\rm cl}}^2\to\infty$ for any $p_\perp\neq0$ or $N_{\rm cl}>a_{\rm cl}$. Therefore, at fixed finite external energy, the closed-string branch cuts are pushed to infinity and bulk closed strings decouple \cite{seiberg2000stringsbackgroundelectricfield,bassetto2003oneloopunitaritystringtheories}.
+
+The closed-string decoupling lore in this setup is therefore sharp. For non-compact $x$, unwound bulk closed strings require infinite energy in the NCOS limit and decouple from the finite-energy open-string sector on the D1 \cite{seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}; see especially equations (2.7), (4.1) of \cite{seiberg2000stringsbackgroundelectricfield} together with equation (3.4) of \cite{gopakumar2000sdualitynoncommutativegaugetheory}.
+
+
+The one-loop analytic structure in the Seiberg-Witten scaling regime was analyzed in detail in \cite{bassetto2003oneloopunitaritystringtheories} (equations (51), (53), (54), (55)). Here $K^\mu\equiv k_1^\mu+k_2^\mu$ is the total momentum entering one boundary of the cylinder and leaving the other, and
+\ie
+K\circ K\equiv -K_\mu(\theta G\theta)^{\mu\nu}K_\nu
+=-K_\mu\theta^{\mu\rho}G_{\rho\sigma}\theta^{\sigma\nu}K_\nu.
+\fe
+Their closed-channel branch-point condition is
+\ie
+s\ge {4n\over \A'}+{1\over 4\pi^2\A'^2}K\circ K,\qquad n=0,1,\dots,
+\fe
+and in the electric case ($\theta_{01}\equiv \theta_E$ only),
+\ie
+K\circ K=\theta_E^2(s+K_T^2),\qquad
+s_n(1-\widetilde E^2)=\widetilde E^2K_T^2+{4n\over \A'},
+\fe
+where $K_T^2\equiv \sum_{i=2}^{d-1}K_i^2$ is the momentum squared transverse to the electric $(0,1)$ plane (so in our $k_\perp=0$ sector one sets $K_T=0$).
+with $\widetilde E=\theta_E/(2\pi\A')$. In the Seiberg-Witten field-theory limit one sends $\A'\to0$ at fixed $G,\theta$; for electric $\theta_E$ this forces $\widetilde E\to\infty>1$, so the branch-point structure flips into the unstable sheet, yielding the tachyonic cut emphasized in \cite{bassetto2003oneloopunitaritystringtheories}. In the NCOS limit instead, $\widetilde E\to1^-$ while $\A'_{\rm eff}=\A'/(1-\widetilde E^2)$ is fixed, i.e. $1-\widetilde E^2\sim \A'/\A'_{\rm eff}>0$. Substituting this scaling in the same formula gives
+\ie
+s_n\sim{\widetilde E^2K_T^2+4n/\A'\over 1-\widetilde E^2}
+\sim {\A'_{\rm eff}\widetilde E^2K_T^2\over \A'}
+ + {4n\A'_{\rm eff}\over \A'^2}\to +\infty
+\fe
+for fixed finite external kinematics (in particular for any $K_T\neq0$ or $n>0$). Hence the one-loop result supports the NCOS decoupling claim: unlike the electric Seiberg-Witten limit, NCOS does not produce a finite-energy tachyonic closed-string cut; instead the closed-channel thresholds are driven to arbitrarily high energy and drop out of the finite-energy open-string dynamics.
 \printbibliography
 \end{document}
-\bye

@@ -1,0 +1,64 @@
+This is TeX, Version 3.141592653 (TeX Live 2026/dev/Arch Linux) (preloaded format=tex 2026.1.13)  25 FEB 2026 14:17
+**revised.tex
+(./revised.tex (/usr/share/texmf-dist/tex/plain/harvmac/harvmac.tex
+\leftpage=\box16
+\fullhsize=\dimen16
+\hstitle=\dimen17
+\hsbody=\dimen18
+
+ big or little (b/l)? b
+(This will come out unreduced.
+\yearltd=\count26
+\secno=\count27
+\meqno=\count28
+\subsecno=\count29
+\footskip=\skip18
+\ftno=\count30
+\ftfile=\write0
+\refno=\count31
+\rfile=\write1
+\ffile=\write2
+\figno=\count32
+\lfile=\write3
+\tfile=\write4
+)
+(/usr/share/texmf-dist/tex/generic/epsf/epsf.tex
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read0
+\epsfframemargin=\dimen19
+\epsfframethickness=\dimen20
+\epsfrsize=\dimen21
+\epsftmp=\dimen22
+\epsftsize=\dimen23
+\epsfxsize=\dimen24
+\epsfysize=\dimen25
+\pspoints=\dimen26
+)
+\figno=\count33
+ [0] (./toc.tex) (1. Introduction) [1] (2. Inducing S-Duality) [2]
+(2.1. Born-Infeld $S$-Duality) [3] (2.2. The Scaling Limits) [4] [5]
+(3. The Classical NCOS Theory) (3.1. Spacetime Noncommutativity) [6]
+(3.2. The Free Spectrum) [7] (3.3. Worldsheet Correlators)
+(4. The One Loop Diagram) [8] [9]
+(nonplanar.eps
+)
+[10] [11] (5. Higher Loop diagrams) (5.1. Holes) (5.2. Handles) [12]
+(handle.eps
+)
+[13] (6. Supergravity duals) [14] (7. Discussion)
+(7.1. Open String Dipoles and UV/IR) [15] (7.2. Thermodynamics)
+(7.3. Generalizations to other Dimensions) [16] [17] (./refs.tmp
+Overfull \hbox (15.095pt too wide) in paragraph at lines 48--52
+ tenrm Shenker,  tenit Non-com-mu-ta-tive Gauge Dy-nam-ics From The String Worl
+dsheet tenrm ,hep-th/0003215. 
+
+ hbox(7.5+2.5)x371.46176, glue set - 1.0
+. tenrm S
+. tenrm h
+. tenrm e
+. tenrm n
+. tenrm k
+.etc.
+
+[18]) [19] )
+Output written on revised.dvi (20 pages, 69628 bytes).

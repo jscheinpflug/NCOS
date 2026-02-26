@@ -1,0 +1,94 @@
+%
+%    defs.mf v2.0
+%
+%    Header file with Metafont parameters for the Devanagari font
+%    Copyright (C) 1991-1999 University of Groningen, The Netherlands
+%
+%    Author: Frans J. Velthuis <velthuis@rc.rug.nl>
+%
+%    This program is free software; you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but without any warranty; without even the implied warranty of
+%    merchantability or fitness for a particular purpose. See the
+%    GNU General Public License for more details.
+%
+
+  penwd# :=thick# * cosd(rot-90);
+  usthick# := thick#;
+  mb# := .2ht#;
+  define_pixels(penwd,usthick,mb);
+  define_blacker_pixels(thin,thick,subthick);
+  thin := max(thin,1); subthick := max(subthick,1);
+  smoothing := 0;
+  pickup pencircle xscaled thick yscaled thin rotated rot;
+  scpenwd := pen_rt - pen_lft;
+  frame_pen := savepen;
+  pickup pencircle xscaled subthick yscaled thin rotated rot;
+  sub_pen := savepen;
+  picture v[];
+  numeric vbar[];
+  extra_endchar := extra_endchar & "chardp := chardp + mb#;" ;
+
+  def tframe =
+  pickup frame_pen;
+  z1=(w-brm-.7rm,h); z2=(w,h);
+  x3=good.x w-brm; y3=h; z4=(x3,0);
+  draw z1--z2;
+  draw z3--z4;
+  enddef;
+
+  def aframe =
+  pickup frame_pen;
+  z1=(w-rm-brm,h); z2=(w,h);
+  x3=good.x w-brm; y3=h; z4=(x3,0);
+  draw z1--z2;
+  draw z3--z4;
+  enddef;
+
+  def endsav =
+  vbar[charcode]=x3;
+  cullit;
+  v[charcode]=currentpicture;
+  endchar;
+  enddef;
+
+  def cutoff(expr t) =
+  x23 = vbar[t];
+  fill (-penwd,-d-mb-penwd)--(x23-.6scpenwd,-d-mb-penwd)--(x23-.6scpenwd,
+  h+penwd)--(-penwd,h+penwd)--cycle withweight 2;
+  cull currentpicture keeping(2,2);
+  addto currentpicture also v[t];
+  cull currentpicture keeping (2,2);
+  w := floor(x23-.6scpenwd);
+  enddef;
+
+  def addpic(expr t) =
+  addto currentpicture also v[t];
+  enddef;
+
+  def frame =
+  pickup frame_pen;
+  z1 = (0,ht); z2 = (w,ht);
+  x3 = good.x w-brm; y3 = ht; z4 = (x3,0);
+  draw z1--z2; draw z3--z4;
+  enddef;
+
+  def sqdot(expr p)=
+  x25:=floor(xpart p)+.5;
+  y25:=floor(ypart p)+.5;
+  dwd:=ceiling(thick);
+  if not odd dwd: dwd:= dwd+1; fi
+  fill unitsquare shifted -(.5,.5) rotated 45 scaled (.5sqrt2 * dwd)
+  shifted z25;
+  enddef;
+
+  def low_n(expr nw,nh)=
+	y38 := good.y nh; x38 := x3;
+	y39 := y38 - .6penwd; x39 := nw;
+	filldraw fullcircle scaled 1.2penwd shifted(x39,y39);
+	z40 = (x39,y38);
+	draw z38--z40;
+  enddef;
