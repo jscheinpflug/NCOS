@@ -319,6 +319,325 @@ For transverse coordinates $X^i$, the electric field induces no noncommutative p
 This is the key difference from the Seiberg-Witten field-theory limit. There one sends $\wt\ell_B^2\to0$ at fixed $G$ and $\theta$, so the boundary propagator collapses to its discontinuous phase and the zero-slope/topological description becomes appropriate \cite{seiberg1999stringtheorynoncommutativegeometry}. In NCOS one instead keeps $\A'_{\rm eff}$ fixed, and the mixed logarithms (\ref{ncosbulkcritprop}) remain at the open-string scale. The result is not a pure star-product algebra for boundary operators, but a holomorphic bulk-boundary algebra that still knows about the finite NCOS string tension.
 
 At the same time, this worldsheet limit does not resurrect a finite-energy non-compact closed-string spectrum. The scaling dimension of a genuine bulk closed-string vertex is still set by the direct $z-w$ contraction proportional to $\wt\ell_B^2\eta^{\alpha\beta}$, so keeping such a state on shell at fixed non-compact momentum requires energies of order $1/\wt\ell_B\to\infty$. Thus the algebra above only describes how longitudinal interior insertions collapse onto the boundary in the critical limit; the physical statement remains that unwound bulk closed strings decouple from finite-energy NCOS dynamics, in agreement with the threshold analysis below \cite{seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}.
+\subsubsection{RNS matter and the first-order/Poisson-sigma core}
+\noindent
+The regular bulk OPE found above suggests a more intrinsic worldsheet description. Before taking the critical limit, the longitudinal bosonic sigma model can be rewritten exactly in first-order form, following the same algebraic step used in the NCOS/NRCS literature \cite{gomis2000nonrelativisticclosedstringtheory}. In our lightcone conventions this is
+\ie\label{ncosrnsfirstorderpre}
+S_{+-}^{\rm bos}
+=\int_\Sigma {d^2z\over 2\pi}\left[
+\beta\,\bar\partial X^+
++\bar\beta\,\partial X^-
+-{2\wt\ell_B^2\over 1+\widetilde E}\,\beta\bar\beta
++{1-\widetilde E\over 2\wt\ell_B^2}\,\partial X^+\bar\partial X^-
+\right].
+\fe
+Integrating out $\beta,\bar\beta$ reproduces the usual second-order longitudinal action
+\ie
+S_{+-}^{\rm bos}
+=\int_\Sigma {d^2z\over 4\pi\wt\ell_B^2}
+\left[
+(1+\widetilde E)\,\partial X^-\bar\partial X^+
++(1-\widetilde E)\,\partial X^+\bar\partial X^-
+\right],
+\fe
+so this is an exact rewriting rather than an additional approximation. In differential-form language the first three terms of (\ref{ncosrnsfirstorderpre}) are of constant Poisson-sigma-model type, with one-form auxiliaries $\eta_+\equiv \beta\,dz$, $\eta_-\equiv \bar\beta\,d\bar z$ and a constant bivector proportional to $\wt\ell_B^2/(1+\widetilde E)$. The NCOS scaling then removes precisely this quadratic $\eta_+\eta_-$ term while keeping the finite stringy deformation proportional to $1/\A'_{\rm eff}$.
+
+Using $\A'_{\rm eff}=\wt\ell_B^2/(1-\widetilde E^2)$ and taking $\widetilde E\to1$ at fixed $\A'_{\rm eff}$ gives the exact critical-field action
+\ie\label{ncosrnsfirstordercrit}
+S_{+-}^{\rm bos,NCOS}
+=\int_\Sigma {d^2z\over 2\pi}\left[
+\beta\,\bar\partial X^+
++\bar\beta\,\partial X^-
++{1\over 4\A'_{\rm eff}}\,\partial X^+\bar\partial X^-
+\right].
+\fe
+The first-order part is the Poisson/BF core alluded to above, while the last term is the finite NCOS deformation that keeps the open-string scale nonzero. In particular, the strict critical theory is not a pure topological Poisson sigma model: it is an exact $\beta\gamma$-type system with a local $1/\A'_{\rm eff}$ interaction. This is the worldsheet origin of the fact that NCOS keeps finite string oscillators rather than collapsing to a zero-slope field theory. For the local bulk operator algebra, however, this extra term only contributes the contact term in $\beta(z)\bar\beta(\bar w)$. In that sense the interior singularity structure is already governed by the BF/Poisson-sigma core, and a further formal limit $1/\A'_{\rm eff}\to0$ would remove even the contact term and leave the strict topological action $\int_\Sigma (\beta\,\bar\partial X^+ + \bar\beta\,\partial X^-)/(2\pi)$.
+
+The corresponding bulk OPEs are immediate:
+\ie\label{ncosbetagammaope}
+\beta(z)X^+(w)\sim {1\over z-w},\qquad
+\bar\beta(\bar z)X^-(\bar w)\sim {1\over \bar z-\bar w},
+\fe
+\ie
+X^+(z)X^-(w)\sim {\rm regular},\qquad
+\beta(z)\bar\beta(\bar w)\sim -{\pi\over 2\A'_{\rm eff}}\delta^{(2)}(z-w).
+\fe
+Thus there are no direct longitudinal bulk collisions: in the interior, $X^+$ and $X^-$ behave exactly like the $\gamma$-fields of a first-order $\beta\gamma$ system. The nontrivial logarithm reappears only after imposing the boundary condition obtained from varying (\ref{ncosrnsfirstordercrit}),
+\ie\label{ncosbetaboundary}
+\beta=-{1\over 4\A'_{\rm eff}}\,\bar\partial X^-,
+\qquad
+\bar\beta=-{1\over 4\A'_{\rm eff}}\,\partial X^+
+\qquad {\rm on}~\partial\Sigma,
+\fe
+and then using the doubling trick. This reproduces the mixed image logarithms (\ref{ncosbulkcritprop}) and hence the boundary Moyal phases derived above.
+
+At the full RNS matter level the correct starting point is the standard open-string $\cN=1$ sigma model in a constant closed metric $g_{MN}$ and constant background ${\cal B}_{MN}\equiv B_{MN}+2\pi\wt\ell_B^2F_{MN}$. One may write
+\ie\label{ncosrnsmatter}
+S_{\rm RNS}=S^{\rm bos}+S_\psi,
+\\
+S^{\rm bos}
+={1\over 4\pi\wt\ell_B^2}\int_\Sigma d^2z\,(g_{MN}+{\cal B}_{MN})\,
+\partial X^M\bar\partial X^N,
+\\
+S_\psi
+={i\over 4\pi}\int_\Sigma d^2z\,
+\left(
+\psi^M g_{MN}\bar\partial\psi^N
++\bar\psi^M g_{MN}\partial\bar\psi^N
+\right),
+\qquad M,N=0,\dots,9.
+\fe
+Here $g_{MN}$ is the {\it closed-string} sigma-model metric. It is not the Seiberg-Witten open metric $G_{MN}$ introduced in (\ref{ncosswdata}). If one prefers conventions where the closed metric itself is called $G_{MN}$, then the present equation should be read with $g_{MN}\to G^{\rm cl}_{MN}$ to avoid confusion with the open-string data.
+In the flat background used in this section one may take
+\ie
+g_{00}=-1,\qquad g_{11}=1,\qquad g_{ij}=\delta_{ij},\qquad
+{\cal B}_{01}=\widetilde E,
+\qquad i,j=2,\dots,9,
+\fe
+so the electric field appears only in ${\cal B}_{01}$, not in the bulk fermion kinetic tensor.
+Because $g_{MN}$ is constant, one may choose a constant target-space vielbein $e_M{}^A$ with $g_{MN}=e_M{}^A e_N{}^B\eta_{AB}$ and define tangent-frame fermions
+\ie\label{ncosrnstangentfermions}
+\chi^A\equiv e_M{}^A\psi^M,\qquad
+\bar\chi^A\equiv e_M{}^A\bar\psi^M,
+\qquad
+\chi^A(z)\chi^B(w)\sim {\eta^{AB}\over z-w},
+\quad
+\bar\chi^A(\bar z)\bar\chi^B(\bar w)\sim {\eta^{AB}\over \bar z-\bar w}.
+\fe
+In this frame the bulk fermion action is the canonical free one, with no spin-connection term because the background is flat and constant. So the intrinsic free fermion system is the ordinary tangent-frame Majorana system $(\chi^A,\bar\chi^A)$; the electric field enters only through the boundary conditions. In the longitudinal $(0,1)$ plane of the present conventions one may take $e_\alpha{}^a=\delta_\alpha^a$, so $\chi^\pm=\psi^\pm$ there. Here the longitudinal electric background is still encoded by ${\cal B}_{01}=\widetilde E$, while its field strength $H\equiv d{\cal B}$ vanishes because ${\cal B}$ is constant. Therefore the bulk fermion sector stays free; the electric field enters only through the boundary conditions required by the preserved diagonal worldsheet supersymmetry \cite{seiberg1999stringtheorynoncommutativegeometry}
+\ie\label{ncosrnssusy}
+\delta X^M=-i\epsilon\,(\psi^M+\bar\psi^M),\qquad
+\delta\psi^M=\epsilon\,\partial X^M,\qquad
+\delta\bar\psi^M=\epsilon\,\bar\partial X^M.
+\fe
+For a D1-brane along $X^{0,1}$ this gives the mixed longitudinal bosonic condition already written in (\ref{ncosbcftbdry}), the fermion gluing
+\ie\label{ncosrnsfermiongluing}
+(g_{\alpha\beta}+{\cal B}_{\alpha\beta})\psi^\beta
+=(g_{\alpha\beta}-{\cal B}_{\alpha\beta})\bar\psi^\beta,
+\qquad \alpha,\beta=0,1,
+\fe
+and the transverse Dirichlet conditions
+\ie
+\delta X^i=0,\qquad \psi^i=-\bar\psi^i,\qquad i=2,\dots,9.
+\fe
+Specializing to the present flat D1 conventions, where $g_{\alpha\beta}=\eta_{\alpha\beta}$, the longitudinal gluing becomes in lightcone variables
+\ie
+(1-\widetilde E)\psi^+=(1+\widetilde E)\bar\psi^+,\qquad
+(1+\widetilde E)\psi^-=(1-\widetilde E)\bar\psi^-.
+\fe
+It is important not to solve these equations by dividing by $1-\widetilde E^2$ before taking the critical limit. That inversion is legitimate for $\widetilde E<1$, but it produces the familiar Seiberg-Witten boundary field only in the subcritical theory. At $\widetilde E=1$ the matrices $g\pm{\cal B}$ drop rank, so the would-be open-string vector in the fixed closed-string lightcone basis is no longer a good variable.
+
+For bookkeeping one may then rewrite the free bulk tangent-frame pair $(\chi^+,\chi^-)$ as a canonical first-order fermionic system. Using $\eta_{+-}=\eta_{-+}=-1/2$, the longitudinal part of $S_\psi$ may be written as
+\ie
+S_{\psi,+-}
+=-{i\over 8\pi}\int_\Sigma d^2z\,
+\left(
+\chi^+\bar\partial\chi^-+\chi^-\bar\partial\chi^+
++\bar\chi^+\partial\bar\chi^-+\bar\chi^-\partial\bar\chi^+
+\right)
+={1\over 2\pi}\int_\Sigma d^2z\,
+\left(
+b\,\bar\partial c+\bar b\,\partial\bar c
+\right),
+\fe
+where
+\ie\label{ncosoldfermionbookkeeping}
+c\equiv \chi^+,\qquad
+b\equiv -{i\over 2}\chi^-,
+\qquad
+\bar c\equiv \bar\chi^+,\qquad
+\bar b\equiv -{i\over 2}\bar\chi^-,
+\qquad
+b(z)c(w)\sim {1\over z-w},
+\quad
+\bar b(\bar z)\bar c(\bar w)\sim {1\over \bar z-\bar w}.
+\fe
+This is only a longitudinal tangent-frame repackaging of the exact bulk action (\ref{ncosrnsmatter}); it is not a replacement for the full coordinate-basis RNS action itself.
+In these first-order variables the subcritical electric field appears only through the boundary gluing
+\ie
+(1-\widetilde E)c=(1+\widetilde E)\bar c,\qquad
+(1+\widetilde E)b=(1-\widetilde E)\bar b.
+\fe
+Taking $\widetilde E\to1$ in this equation does {\it not} give an ordinary open-string doubling condition. It gives the rank-one projector
+\ie\label{ncoscriticalfermionprojector}
+\bar c\big|_{\partial\Sigma}=0,\qquad
+b\big|_{\partial\Sigma}=0,
+\qquad
+{\rm i.e.}\qquad
+\bar\psi^+\big|_{\partial\Sigma}=0,\qquad
+\psi^-\big|_{\partial\Sigma}=0.
+\fe
+So the strict critical limit leaves $c=\chi^+=\psi^+$ and $\bar b=-{i\over2}\bar\chi^-=-{i\over2}\bar\psi^-$ as the surviving boundary components, rather than a finite doubled open-string fermion. The bulk chiral OPEs (\ref{ncosoldfermionbookkeeping}) still hold away from the boundary, but after imposing (\ref{ncoscriticalfermionprojector}) there is no singular boundary OPE left between the surviving fields: $c(\tau)c(\tau')$, $\bar b(\tau)\bar b(\tau')$, and $c(\tau)\bar b(\tau')$ are all regular in the second-order critical limit. This is the real content of the limit in the second-order RNS variables.
+
+The projector above shows only that the original second-order lightcone fermions are a singular coordinate system at $\widetilde E=1$. The intrinsic critical description is obtained by rewriting the entire longitudinal $\cN=(1,1)$ multiplet in first-order superspace before taking the limit. Introduce Grassmann coordinates $(\vartheta,\bar\vartheta)$ and superderivatives
+\ie
+D\equiv \partial_\vartheta+\vartheta\,\partial,\qquad
+\bar D\equiv \partial_{\bar\vartheta}+\bar\vartheta\,\bar\partial,
+\qquad
+D^2=\partial,\qquad \bar D^2=\bar\partial,
+\qquad \{D,\bar D\}=0.
+\fe
+Write the exact constant-background Seiberg-Witten sigma model in $\cN=(1,1)$ superspace as
+\ie
+S_{\rm SW}^{\rm susy}
+={1\over 2\pi}\int_\Sigma d^2z\,d\vartheta\,d\bar\vartheta\,
+(g_{MN}+{\cal B}_{MN})\,D\mathbf X^M\,\bar D\mathbf X^N,
+\qquad
+\mathbf X^M\equiv X^M+\vartheta\,\psi^M+\bar\vartheta\,\bar\psi^M+\vartheta\bar\vartheta\,F^M.
+\fe
+Eliminating the auxiliary $F^M$ reproduces the component action (\ref{ncosrnsmatter}). In the present electric background, with $g_{+-}=-1/2$ and ${\cal B}_{01}=\widetilde E$, the longitudinal piece is therefore
+\ie\label{ncosrnssecondordersusy}
+S_{{\rm SW},+-}^{\rm susy}
+={1\over 2\pi}\int_\Sigma d^2z\,d\vartheta\,d\bar\vartheta\,
+\left[
+{1+\widetilde E\over 2\wt\ell_B^2}\,D\mathbf X^-\,\bar D\mathbf X^+
++{1-\widetilde E\over 2\wt\ell_B^2}\,D\mathbf X^+\,\bar D\mathbf X^-
+\right].
+\fe
+Equation (\ref{ncosrnsfirstordersusy}) is obtained from this exact second-order Seiberg-Witten action by an algebraic Hubbard-Stratonovich linearization of only the first mixed term, the one whose coefficient stays finite in the NCOS limit. Let $\mathbf X^\pm$ be bosonic longitudinal superfields and let $\mathbf B$, $\bar{\mathbf B}$ be fermionic first-order superfields. The rewritten exact longitudinal action is then
+\ie\label{ncosrnsfirstordersusy}
+S^{\rm long}_{\rm susy}
+={1\over 2\pi}\int_\Sigma d^2z\,d\vartheta\,d\bar\vartheta\,
+\left[
+\mathbf B\,\bar D\mathbf X^+
++\bar{\mathbf B}\,D\mathbf X^-
++{2\wt\ell_B^2\over 1+\widetilde E}\,\mathbf B\,\bar{\mathbf B}
++{1-\widetilde E\over 2\wt\ell_B^2}\,D\mathbf X^+\,\bar D\mathbf X^-
+\right].
+\fe
+To derive this directly, write
+\[
+U\equiv D\mathbf X^-,\qquad
+V\equiv \bar D\mathbf X^+,\qquad
+m\equiv {2\wt\ell_B^2\over 1+\widetilde E},
+\]
+so $U,V,\mathbf B,\bar{\mathbf B}$ are all Grassmann odd. Then
+\[
+{\cal L}_{\rm odd}\equiv
+\mathbf B\,V+\bar{\mathbf B}\,U+m\,\mathbf B\,\bar{\mathbf B}
+\]
+has variation
+\[
+\delta{\cal L}_{\rm odd}
+=\delta\mathbf B\,(V+m\,\bar{\mathbf B})
++\delta\bar{\mathbf B}\,(U+m\,\mathbf B),
+\]
+so the algebraic equations of motion are
+\[
+\bar{\mathbf B}=-m^{-1}V,\qquad
+\mathbf B=-m^{-1}U.
+\]
+Substituting back gives
+\[
+{\cal L}_{\rm odd,\,on\ shell}
+=m^{-1}UV
+={1+\widetilde E\over 2\wt\ell_B^2}\,D\mathbf X^-\,\bar D\mathbf X^+.
+\]
+The sign of the quadratic term is therefore opposite to the bosonic $\beta\bar\beta$ rewrite: for Grassmann-odd auxiliaries the cross terms anticommute rather than add. Substituting this identity into (\ref{ncosrnssecondordersusy}) gives (\ref{ncosrnsfirstordersusy}), and integrating out $\mathbf B$ and $\bar{\mathbf B}$ returns exactly to the second-order Seiberg-Witten form,
+\ie
+S^{\rm long}_{\rm susy}
+={1\over 2\pi}\int_\Sigma d^2z\,d\vartheta\,d\bar\vartheta\,
+\left[
+{1+\widetilde E\over 2\wt\ell_B^2}\,D\mathbf X^-\,\bar D\mathbf X^+
++{1-\widetilde E\over 2\wt\ell_B^2}\,D\mathbf X^+\,\bar D\mathbf X^-
+\right],
+\fe
+so (\ref{ncosrnsfirstordersusy}) is the supersymmetric completion of the bosonic rewrite (\ref{ncosrnsfirstorderpre}), not a new approximation.
+
+Taking the NCOS scaling now gives the exact critical superfield action
+\ie\label{ncosrnsfirstordersusycrit}
+S^{{\rm long,NCOS}}_{\rm susy}
+={1\over 2\pi}\int_\Sigma d^2z\,d\vartheta\,d\bar\vartheta\,
+\left[
+\mathbf B\,\bar D\mathbf X^+
++\bar{\mathbf B}\,D\mathbf X^-
++{1\over 4\A'_{\rm eff}}\,D\mathbf X^+\,\bar D\mathbf X^-
+\right].
+\fe
+Its bulk equations of motion are
+\ie
+\bar D\mathbf X^+=0,\qquad
+D\mathbf X^-=0,\qquad
+\bar D\mathbf B=0,\qquad
+D\bar{\mathbf B}=0.
+\fe
+Thus on shell the regular critical variables are chiral superfields,
+\ie
+\mathbf X^+(z,\vartheta)=\gamma(z)+\vartheta\,c(z),\qquad
+\mathbf B(z,\vartheta)=b(z)+\vartheta\,\beta(z),
+\fe
+\ie
+\mathbf X^-(\bar z,\bar\vartheta)=\bar\gamma(\bar z)+\bar\vartheta\,\bar c(\bar z),\qquad
+\bar{\mathbf B}(\bar z,\bar\vartheta)=\bar b(\bar z)+\bar\vartheta\,\bar\beta(\bar z),
+\fe
+where the bars denote antiholomorphic chirality, not complex conjugation. Substituting back into (\ref{ncosrnsfirstordersusycrit}) gives the intrinsic critical component action
+\ie\label{ncosopenboundaryfermion}
+S^{{\rm long,NCOS}}_{\rm comp}
+={1\over 2\pi}\int_\Sigma d^2z\,
+\left[
+\beta\,\bar\partial\gamma
++b\,\bar\partial c
++\bar\beta\,\partial\bar\gamma
++\bar b\,\partial\bar c
++{1\over 4\A'_{\rm eff}}\,\partial\gamma\,\bar\partial\bar\gamma
+\right],
+\fe
+with bulk OPEs
+\ie
+\beta(z)\gamma(w)\sim {1\over z-w},\qquad
+b(z)c(w)\sim {1\over z-w},
+\fe
+\ie
+\bar\beta(\bar z)\bar\gamma(\bar w)\sim {1\over \bar z-\bar w},\qquad
+\bar b(\bar z)\bar c(\bar w)\sim {1\over \bar z-\bar w}.
+\fe
+This is the exact supersymmetric $\beta\gamma$ analogue of (\ref{ncosrnsfirstordercrit}).
+
+Varying (\ref{ncosrnsfirstordersusycrit}) on the upper half plane and keeping the preserved boundary supersymmetry $\vartheta=\bar\vartheta$ gives the superfield boundary conditions
+\ie\label{ncoscriticalsuperboundary}
+\mathbf B\big|_{\partial\Sigma}
+=-{1\over 4\A'_{\rm eff}}\,D\mathbf X^-\big|_{\partial\Sigma},
+\qquad
+\bar{\mathbf B}\big|_{\partial\Sigma}
+=-{1\over 4\A'_{\rm eff}}\,\bar D\mathbf X^+\big|_{\partial\Sigma}.
+\fe
+In components this becomes
+\ie\label{ncoscriticalfermionbc}
+\beta=-{1\over 4\A'_{\rm eff}}\,\bar\partial\bar\gamma,\qquad
+b=-{1\over 4\A'_{\rm eff}}\,\bar c,
+\qquad
+\bar\beta=-{1\over 4\A'_{\rm eff}}\,\partial\gamma,\qquad
+\bar b=-{1\over 4\A'_{\rm eff}}\,c
+\qquad {\rm on}~\partial\Sigma.
+\fe
+So the critical theory does have a nondegenerate boundary fermion algebra. Using the doubling trick with (\ref{ncoscriticalfermionbc}), one finds
+\ie
+\bar c(\tau)\,c(0)\sim -{4\A'_{\rm eff}\over \tau},
+\qquad
+\gamma(\tau)\,\bar\gamma(0)\sim 4\A'_{\rm eff}\ln\tau,
+\fe
+up to the standard choice of boundary ordering. This is the intrinsic fermionic analogue of the NCOS boundary logarithm. The projector (\ref{ncoscriticalfermionprojector}) therefore records only the singular image of the critical theory in the old second-order variables; it is not the boundary condition in the regular first-order variables.
+
+The longitudinal supercurrent and stress tensor are now exact:
+\ie\label{ncosrnssupercurrent}
+G_{+-}(z)=:\!c\,\beta\!:+:\!b\,\partial\gamma\!:,\qquad
+\bar G_{+-}(\bar z)=:\!\bar c\,\bar\beta\!:+:\!\bar b\,\bar\partial\bar\gamma\!:,
+\fe
+\ie\label{ncosrnsstress}
+T_{+-}(z)=-:\!\beta\,\partial\gamma\!:
+-{1\over 2}:\!b\,\partial c\!:
++{1\over 2}:\!(\partial b)\,c\!:,
+\fe
+\ie
+\bar T_{+-}(\bar z)=-:\!\bar\beta\,\bar\partial\bar\gamma\!:
+-{1\over 2}:\!\bar b\,\bar\partial\bar c\!:
++{1\over 2}:\!(\bar\partial\bar b)\,\bar c\!:.
+\fe
+Thus the intrinsic critical longitudinal matter system is the standard $\cN=1$ super-$\beta\gamma$ multiplet with central charge $c_{+-}=2+1=3$. Adding the eight transverse bosons and fermions gives
+\ie
+c_{\rm matter}=c_{+-}+c_\perp+c_{\psi_\perp}=3+8+4=15,
+\fe
+so the matter sector remains exactly that of the critical type-II RNS superstring. In this sense the critical-field NCOS worldsheet is an exact RNS superstring whose longitudinal multiplet admits a regular supersymmetric first-order reformulation, rather than merely a bosonic Poisson-sigma/BF rewrite. This is structurally similar to recent $\beta\gamma$-based exact string reformulations, for example the bosonic string model of Komatsu and Maity \cite{komatsu2025stringduals2dym}, where a first-order $\beta\gamma$ sector is likewise deformed by a finite stringy term. The dynamical setting is different, however: there the deformation is a chiral Polchinski-Strominger term in a confining string dual, whereas here the finite deformation and boundary gluing arise from the near-critical electric background of NCOS.
 \subsubsection{Quantization and Spectrum}
 \noindent
 Since we are on a D1-brane, we can set
@@ -331,7 +650,8 @@ so the low-lying spectrum is entirely organized by worldvolume momenta and oscil
 [\alpha_m^M,\alpha_n^N]=m\,\delta_{m+n,0}\,G^{MN},\qquad
 \{\psi_r^M,\psi_s^N\}=G^{MN}\delta_{r+s,0},
 \fe
-where $M,N=0,\dots,9$ and $\alpha,\beta=0,1$.
+where $M,N=0,\dots,9$ and $\alpha,\beta=0,1$. Away from the strict critical point this is the standard open-string anticommutator governed by the open metric $G^{MN}$. At $\widetilde E=1$ the two longitudinal fermions are more intrinsically described by the weight-$1/2$ first-order pair in (\ref{ncosopenboundaryfermion}), whose modes obey $\{b_r,c_s\}=\delta_{r+s,0}$.
+Together with the bosonic modes $[\beta_m,\gamma_n]=\delta_{m+n,0}$ and the boundary relations (\ref{ncoscriticalfermionbc}), this is the intrinsic critical longitudinal mode algebra.
 The ground-state structure associated with the zero modes is therefore noncommutative in the longitudinal directions: one cannot diagonalize $x^0$ and $x^1$ simultaneously. A convenient representation is to keep commuting momenta $p_\alpha$ and introduce commuting coordinates
 \ie
 y^\alpha \equiv x^\alpha + {1\over 2}\theta^{\alpha\beta}p_\beta,
@@ -370,30 +690,378 @@ The key point is that the phase above is defined for one fixed ordering, while t
 
 \begin{figure}[t]
 	\centering
-	\begin{tikzpicture}[scale=1.0]
-		% Disk
-		\draw[thick] (0,0) circle (1.6);
+	\begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+		% Top-left
+		\begin{scope}[shift={(0,1.45)}]
+			\node at (0,1.35) {(a) boundary pieces};
+			\draw[thick] (0,0) circle (0.92);
+			\fill (140:0.92) circle (1.2pt) node[above left] {$\tau_1$};
+			\fill (20:0.92) circle (1.2pt) node[above right] {$\tau_2$};
+			\fill (-90:0.92) circle (1.2pt) node[below] {$\tau_3$};
+			\fill (-15:0.92) circle (1.2pt) node[right] {$\tau$};
+			\draw[snake it, thick] (-15:0.92) -- (-15:1.48);
+			\node at (1.10,-0.42) {\scriptsize cut};
+			\draw[very thick,->] (140:0.92) arc[start angle=140,end angle=20,radius=0.92];
+			\draw[very thick,->] (20:0.92) arc[start angle=20,end angle=-90,radius=0.92];
+			\draw[very thick,->] (-90:0.92) arc[start angle=-90,end angle=140,radius=0.92];
+			\node at (80:1.16) {$I_{12}$};
+			\node at (-34:1.18) {$I_{23}$};
+			\node at (210:1.12) {$I_{31}$};
+		\end{scope}
 
-		% Fixed insertions on the boundary
-		\fill (-1.23,1.02) circle (1.5pt) node[above left] {$\tau_1$};
-		\fill ( 1.23,1.02) circle (1.5pt) node[above right] {$\tau_2$};
-		\fill ( 0.00,-1.60) circle (1.5pt) node[below] {$\tau_3$};
+		\draw[->,thick] (1.55,1.45) -- (2.35,1.45);
 
-		% Integrated (massless) insertion position
-		\fill ( 1.55,-0.35) circle (1.5pt) node[right] {$\tau$};
+		% Top-right
+		\begin{scope}[shift={(3.90,1.45)}]
+			\node at (0,1.35) {(b) glued contour};
+			\draw[thick] (0,0) circle (0.92);
+			\fill (140:0.92) circle (1.1pt);
+			\fill (20:0.92) circle (1.1pt);
+			\fill (-90:0.92) circle (1.1pt);
+			\fill (-15:0.92) circle (1.1pt);
+			\draw[snake it, thick] (-15:0.92) -- (-15:1.48);
+			\draw[very thick,postaction={decorate},
+				decoration={markings,
+					mark=at position 0.20 with {\arrow{Latex}},
+					mark=at position 0.70 with {\arrow{Latex}}}]
+				(0,0) circle (0.92);
+			\node at (0,-1.22) {$\oint_{\partial D} J$};
+		\end{scope}
 
-		% Branch cut chosen outside the disk
-		\draw[snake it, thick] ( 1.55,-0.35) -- ( 2.33,-0.53) node[midway, below right] {\small branch cut};
+		\draw[->,thick] (4.82,0.15) -- (4.82,-0.55);
 
-		% Boundary segments corresponding to different orderings
-		\draw[very thick,->] (-1.23,1.02) arc (140:20:1.6);
-		\draw[very thick,->] ( 1.23,1.02) arc ( 20:-90:1.6);
-		\draw[very thick,->] ( 0.00,-1.60) arc (-90:140:1.6);
+		% Bottom-right
+		\begin{scope}[shift={(3.90,-2.05)}]
+			\node at (0,1.35) {(c) in the bulk};
+			\draw[thick,dashed] (0,0) circle (0.92);
+			\draw[very thick,postaction={decorate},
+				decoration={markings,
+					mark=at position 0.25 with {\arrow{Latex}},
+					mark=at position 0.75 with {\arrow{Latex}}}]
+				(0,0) circle (0.48);
+			\foreach \ang in {40,-35,-145}{
+				\draw[dashed,->] (\ang:0.92) -- (\ang:0.48);
+			}
+			\node at (0,-1.22) {$\oint_{\Gamma} J$};
+		\end{scope}
 
+		\draw[->,thick] (2.35,-2.05) -- (1.55,-2.05);
+
+		% Bottom-left
+		\begin{scope}[shift={(0,-2.05)}]
+			\node at (0,1.35) {(d) shrunk away};
+			\draw[thick,dashed] (0,0) circle (0.92);
+			\draw[dashed] (0,0) circle (0.48);
+			\draw[very thick,postaction={decorate},
+				decoration={markings,
+					mark=at position 0.18 with {\arrow{Latex}}}]
+				(0,0) circle (0.14);
+			\foreach \ang in {60,-60,180}{
+				\draw[dashed,->] (\ang:0.48) -- (\ang:0.14);
+			}
+			\node at (0,-1.22) {$0$};
+		\end{scope}
 	\end{tikzpicture}
-	\caption{Branch-cut choice (outside the disk) and boundary segments in the ordering-sum contour argument with one integrated massless insertion.}
-	\label{fig:massless-decoupling-contour}
+		\vspace{0.3em}
+		\caption{Disk-level contour pulling in four steps. The three ordered boundary integrals are first glued into one contour on $\partial D$, then deformed into the bulk as a holomorphic contour $\Gamma$, and finally shrunk away because the interior contains no singularity for a massless integrated open-string insertion in the noncompact NCOS limit.}
+		\label{fig:massless-decoupling-contour}
 \end{figure}
+
+Gomis and Ooguri recast the same decoupling mechanism in the first-order variables as a purely geometric statement on the doubled worldsheet \cite{gomis2000nonrelativisticclosedstringtheory}. Let $\Sigma_{g,h}$ denote an open worldsheet with $g$ handles and $h$ boundary components. Its Schottky double is obtained by taking a second copy with conjugate complex structure and gluing corresponding boundary points,
+\ie\label{ncosschottkydouble}
+\widehat\Sigma=\Sigma_{g,h}\cup_{\partial\Sigma}\overline{\Sigma}_{g,h},
+\qquad
+g(\widehat\Sigma)=2g+h-1.
+\fe
+The antiholomorphic involution exchanging the two copies fixes the glued circles $C_a$, which are precisely the original boundary components now viewed as interior cycles of the closed surface $\widehat\Sigma$. If one regards the original copy $\Sigma_{g,h}$ as a two-chain in $\widehat\Sigma$, then its boundary is literally the sum of those fixed cycles,
+\ie\label{ncosboundarysum}
+\partial[\Sigma_{g,h}]=[C_1]+\cdots+[C_h],
+\qquad
+[C_1+\cdots +C_h]=0\in H_1(\widehat\Sigma,\mathbb Z).
+\fe
+For a massless open-string insertion, the critical-field OPE implies that after choosing one lightcone chirality ($k_-=0$ or $k_+=0$) the integrated boundary vertex is the restriction of a holomorphic current $J(z)$ on $\widehat\Sigma$. Therefore the all-orders contour is not merely homologous to zero in the abstract sense: it is the boundary of the chosen half $\Sigma_{g,h}$, so
+\ie\label{ncosholomorphicboundary}
+\sum_{a=1}^h \oint_{C_a}J(z)
+=\oint_{\partial\Sigma_{g,h}}J(z)
+=0.
+\fe
+This is why the massless integrated vertex must be summed over all boundaries of the open diagram. Figure~\ref{fig:annulus-double} makes the contour pulling explicit for the annulus, Fig.~\ref{fig:schottky-double} shows the boundary-chain argument for general $(g,h)$, and Fig.~\ref{fig:schottky-gluing3d} gives a separate three-dimensional schematic of the gluing $\Sigma_{g,h}\cup_{\partial\Sigma}\overline\Sigma_{g,h}$ itself.
+
+The local geometry of the doubling is simple. Near one boundary component choose a collar coordinate $w=\sigma+i\tau$ on $\Sigma_{g,h}$ with $\tau\ge0$. The conjugate copy carries the reflected collar $\bar w=\sigma-i\tau$, again with $\tau\ge0$ on its own sheet. Gluing corresponding boundary points means identifying the loci with the same $\sigma$ at $\tau=0$, so the two half-collars combine into a full neighborhood $-\epsilon<\tau<\epsilon$. The old boundary circle therefore ceases to be an edge of the surface and becomes an interior fixed cycle of the antiholomorphic involution $\tau\mapsto-\tau$.
+
+To see explicitly how the disconnected cycles become a shrinkable contour, choose a cut graph $K\subset\Sigma_{g,h}$ that connects the boundary components and cuts the handles so that $\Sigma_{g,h}\setminus K$ is a disk. A thin neighborhood of $K\cup\partial\Sigma_{g,h}$ has a single connected boundary $\Gamma$ in the interior of the chosen half, and in homology
+\ie\label{ncoscutgraphcontour}
+[\Gamma]=[C_1]+\cdots+[C_h].
+\fe
+Because the current $J(z)$ is holomorphic and the interior contains no singularity, one may deform the original sum of boundary integrals to $\oint_\Gamma J$; after that, $\Gamma$ can be pushed across the disk $\Sigma_{g,h}\setminus K$ and shrunk away.
+
+\begin{figure}[t]
+	\centering
+		\begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+			% Panel (a): annulus
+			\begin{scope}[shift={(0,0)}]
+				\node at (0,1.55) {(a) open annulus};
+				\draw[thick] (0,0) ellipse (1.45 and 1.00);
+				\draw[thick] (0,0) ellipse (0.55 and 0.36);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.20 with {\arrow{Latex}}}]
+					(0,0) ellipse (1.45 and 1.00);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.70 with {\arrow{Latex}}}]
+					(0,0) ellipse (0.55 and 0.36);
+				\node at (-1.62,0.42) {$C_1$};
+				\node at (0.88,0.00) {$C_2$};
+				\node at (0,-1.38) {$\oint_{C_1}J+\oint_{C_2}J$};
+			\end{scope}
+
+			\draw[->,thick] (2.05,0) -- (2.85,0) node[midway,above] {double};
+
+			% Panel (b): torus double
+			\begin{scope}[shift={(5.05,0)}]
+				\node at (0,1.55) {(b) torus double};
+				\draw[thick] (-1.80,-1.00) rectangle (1.80,1.00);
+				\draw[->,thick] (-1.80,1.18) -- (1.80,1.18);
+				\draw[<-,thick] (-1.80,-1.18) -- (1.80,-1.18);
+				\draw[->,thick] (-2.02,-1.00) -- (-2.02,1.00);
+				\draw[<-,thick] (2.02,-1.00) -- (2.02,1.00);
+				\fill[gray!15] (-1.66,-0.50) rectangle (1.66,0.50);
+				\draw[very thick,->] (-1.56,0.50) -- (1.56,0.50);
+				\draw[very thick,<-] (-1.56,-0.50) -- (1.56,-0.50);
+				\node at (1.95,0.50) {$C_1$};
+				\node at (1.95,-0.50) {$C_2$};
+				\node at (0,0.00) {$S$};
+				\node at (0,-1.38) {$\partial S=C_1+C_2$};
+			\end{scope}
+
+			\draw[->,thick] (7.15,0) -- (7.95,0);
+
+			% Panel (c): pulled through strip
+			\begin{scope}[shift={(10.15,0)}]
+				\node at (0,1.55) {(c) pull through the strip};
+				\draw[thick] (-1.80,-1.00) rectangle (1.80,1.00);
+				\fill[gray!10] (-1.66,-0.50) rectangle (1.66,0.50);
+				\draw[dashed,very thick,->] (-1.56,0.50) -- (1.56,0.50);
+				\draw[dashed,very thick,<-] (-1.56,-0.50) -- (1.56,-0.50);
+				\foreach \x in {-1.0,0.0,1.0}{
+					\draw[dashed,->] (\x,0.50) -- (\x,0.18);
+					\draw[dashed,->] (\x,-0.50) -- (\x,-0.18);
+				}
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.20 with {\arrow{Latex}}}]
+					(0,0) ellipse (0.62 and 0.18);
+				\node at (0,-1.38) {$C_1+C_2 \rightsquigarrow 0$};
+			\end{scope}
+		\end{tikzpicture}
+		\vspace{0.2em}
+		\caption{Contour pulling for the first nontrivial all-orders example. On the annulus the two boundary components carry opposite induced orientations; after doubling, their sum bounds the strip $S$ on the torus, so the paired contour can be pushed through $S$ and removed.}
+		\label{fig:annulus-double}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+		\begin{tikzpicture}[scale=1.12, every node/.style={font=\small}]
+			% Panel (a): open surface
+			\begin{scope}[shift={(0,0)}]
+				\node at (0,1.62) {(a) one copy $\Sigma_{g,h}$};
+				\draw[thick] (0,0) ellipse (1.35 and 0.95);
+				\draw[thick] (-0.40,0) ellipse (0.30 and 0.18);
+				\draw[thick] (0.62,0) ellipse (0.30 and 0.18);
+				\node at (-1.55,0.52) {$C_1$};
+				\node at (-0.40,0.34) {$C_2$};
+				\node at (0.62,0.34) {$C_h$};
+				\node at (0.14,0.34) {$\cdots$};
+				\node at (0,-1.42) {$\partial\Sigma_{g,h}=C_1+C_2+\cdots +C_h$};
+			\end{scope}
+
+			\draw[->,thick] (1.95,0) -- (2.75,0) node[midway,above] {double};
+
+			% Panel (b): Schottky double
+			\begin{scope}[shift={(5.10,0)}]
+				\node at (0,1.62) {(b) Schottky double};
+				\draw[thick, rounded corners=14pt] (-1.85,-1.05) rectangle (1.85,1.05);
+				\fill[gray!12, rounded corners=14pt] (-1.72,0.02) rectangle (1.72,0.92);
+				\draw[dashed] (-1.55,0) -- (1.55,0);
+				\draw[very thick] (-1.00,0) ellipse (0.26 and 0.11);
+				\draw[very thick] (0.00,0) ellipse (0.26 and 0.11);
+				\draw[very thick] (1.00,0) ellipse (0.26 and 0.11);
+				\node at (-1.00,0.28) {$C_1$};
+				\node at (0.00,0.28) {$C_2$};
+				\node at (1.00,0.28) {$C_h$};
+				\node at (0.52,0.28) {$\cdots$};
+				\node at (0,0.58) {$\Sigma_{g,h}$};
+				\node at (0,-0.52) {$\overline{\Sigma}_{g,h}$};
+				\node at (0,-1.42) {$\widehat\Sigma=\Sigma_{g,h}\cup_{\partial\Sigma}\overline{\Sigma}_{g,h}$};
+			\end{scope}
+
+			\draw[->,thick] (7.45,0) -- (8.25,0) node[midway,above] {shrink};
+
+			% Panel (c): contour shrinking
+			\begin{scope}[shift={(10.60,0)}]
+				\node at (0,1.62) {(c) boundary of the chosen half};
+				\draw[thick, rounded corners=14pt] (-1.85,-1.05) rectangle (1.85,1.05);
+				\fill[gray!12, rounded corners=14pt] (-1.72,0.02) rectangle (1.72,0.92);
+				\draw[dashed] (-1.55,0) -- (1.55,0);
+				\draw[very thick] (-1.00,0) ellipse (0.26 and 0.11);
+				\draw[very thick] (0.00,0) ellipse (0.26 and 0.11);
+				\draw[very thick] (1.00,0) ellipse (0.26 and 0.11);
+				\draw[dashed,->] (-1.00,0.14) .. controls (-0.95,0.59) and (-0.45,0.78) .. (-0.12,0.82);
+				\draw[dashed,->] (0.00,0.14) .. controls (0.00,0.51) and (0.00,0.70) .. (0.00,0.82);
+				\draw[dashed,->] (1.00,0.14) .. controls (0.95,0.59) and (0.45,0.78) .. (0.12,0.82);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.18 with {\arrow{Latex}}}]
+					(0,0.82) circle (0.22);
+				\node at (0,0.44) {$\sum_a \oint_{C_a}J$};
+				\node at (0,-0.66) {$\partial\Sigma_{g,h}=C_1+\cdots +C_h$};
+				\node at (0,-1.42) {$\oint_{\partial\Sigma_{g,h}}J=0$};
+			\end{scope}
+		\end{tikzpicture}
+		\vspace{0.2em}
+		\caption{Schottky doubling and the all-orders contour argument. Doubling $\Sigma_{g,h}$ glues it to its mirror and turns the old boundary components into fixed cycles of $\widehat\Sigma$. Their sum is the actual boundary of the chosen half, $\partial\Sigma_{g,h}=C_1+\cdots +C_h$, so the summed massless contour is a genuine boundary contour and can be shrunk away. Extra handles of $\widehat\Sigma$ are suppressed in this schematic.}
+		\label{fig:schottky-double}
+\end{figure}
+
+\clearpage
+\begin{center}
+\begin{minipage}{\linewidth}
+	\centering
+		\begin{tikzpicture}[scale=0.88, every node/.style={font=\small}]
+			% Panel (a): copy and conjugate copy
+			\begin{scope}[shift={(0,0)}]
+				\node at (0,2.30) {(a) matching boundary points};
+
+				\fill[gray!16] (-1.90,0.65) -- (1.05,0.65) -- (1.58,1.55) -- (-1.37,1.55) -- cycle;
+				\draw[thick] (-1.90,0.65) -- (1.05,0.65) -- (1.58,1.55) -- (-1.37,1.55) -- cycle;
+				\draw[very thick] (-0.20,1.08) ellipse (0.42 and 0.14);
+				\fill (-0.50,1.12) circle (1.0pt);
+				\node[above left] at (-0.50,1.12) {$p(\sigma)$};
+				\node at (-0.18,1.42) {$C_a$};
+				\node at (-0.05,1.88) {$\Sigma_{g,h}$};
+
+				\fill[gray!4] (-1.05,-1.55) -- (1.90,-1.55) -- (1.37,-0.65) -- (-1.58,-0.65) -- cycle;
+				\draw[thick] (-1.05,-1.55) -- (1.90,-1.55) -- (1.37,-0.65) -- (-1.58,-0.65) -- cycle;
+				\draw[very thick] (0.20,-1.08) ellipse (0.42 and 0.14);
+				\fill (0.50,-1.12) circle (1.0pt);
+				\node[below right] at (0.50,-1.12) {$\bar p(\sigma)$};
+				\node at (0.05,-1.88) {$\overline{\Sigma}_{g,h}$};
+
+				\draw[dashed,->] (-0.50,1.12) -- (0.50,-1.12);
+				\node at (1.95,0.00) {\small same $\sigma$};
+			\end{scope}
+
+			\draw[->,thick] (3.10,0.00) -- (3.95,0.00) node[midway,above] {zoom};
+
+			% Panel (b): local collar model
+			\begin{scope}[shift={(6.00,0)}]
+				\node at (0,2.30) {(b) local collar};
+				\fill[gray!16] (-1.70,0.10) .. controls (-1.20,0.55) and (-0.50,0.90) .. (0.00,1.02)
+					.. controls (0.50,0.90) and (1.20,0.55) .. (1.70,0.10)
+					-- (1.70,1.10) .. controls (1.20,1.40) and (0.50,1.56) .. (0.00,1.60)
+					.. controls (-0.50,1.56) and (-1.20,1.40) .. (-1.70,1.10) -- cycle;
+				\draw[thick] (-1.70,0.10) .. controls (-1.20,0.55) and (-0.50,0.90) .. (0.00,1.02)
+					.. controls (0.50,0.90) and (1.20,0.55) .. (1.70,0.10);
+				\draw[thick] (-1.70,1.10) .. controls (-1.20,1.40) and (-0.50,1.56) .. (0.00,1.60)
+					.. controls (0.50,1.56) and (1.20,1.40) .. (1.70,1.10);
+				\draw[thick] (-1.70,0.10) -- (-1.70,1.10);
+				\draw[thick] (1.70,0.10) -- (1.70,1.10);
+
+				\fill[gray!4] (-1.70,-0.10) .. controls (-1.20,-0.55) and (-0.50,-0.90) .. (0.00,-1.02)
+					.. controls (0.50,-0.90) and (1.20,-0.55) .. (1.70,-0.10)
+					-- (1.70,-1.10) .. controls (1.20,-1.40) and (0.50,-1.56) .. (0.00,-1.60)
+					.. controls (-0.50,-1.56) and (-1.20,-1.40) .. (-1.70,-1.10) -- cycle;
+				\draw[thick] (-1.70,-0.10) .. controls (-1.20,-0.55) and (-0.50,-0.90) .. (0.00,-1.02)
+					.. controls (0.50,-0.90) and (1.20,-0.55) .. (1.70,-0.10);
+				\draw[thick] (-1.70,-1.10) .. controls (-1.20,-1.40) and (-0.50,-1.56) .. (0.00,-1.60)
+					.. controls (0.50,-1.56) and (1.20,-1.40) .. (1.70,-1.10);
+				\draw[thick] (-1.70,-0.10) -- (-1.70,-1.10);
+				\draw[thick] (1.70,-0.10) -- (1.70,-1.10);
+
+				\draw[very thick] (-1.80,0) -- (1.80,0);
+				\draw[dashed,->] (-1.00,0.70) -- (-1.00,0.08);
+				\draw[dashed,->] (1.00,-0.70) -- (1.00,-0.08);
+				\node at (0,0.26) {$C_a:\tau=0$};
+				\node at (0,1.22) {$\Sigma_{g,h}:\tau\ge0$};
+				\node at (0,-1.22) {$\overline{\Sigma}_{g,h}:\tau\le0$};
+				\node at (0,-1.95) {full collar after gluing};
+			\end{scope}
+
+			\draw[->,thick] (4.55,-2.65) -- (4.55,-3.55) node[pos=0.08,right] {glue};
+
+			% Panel (c): glued surface
+			\begin{scope}[shift={(4.55,-5.75)}]
+				\node at (0,2.30) {(c) after gluing};
+
+				\fill[gray!16] (-1.85,0.65) -- (1.10,0.65) -- (1.63,1.55) -- (-1.32,1.55) -- cycle;
+				\draw[thick] (-1.85,0.65) -- (1.10,0.65) -- (1.63,1.55) -- (-1.32,1.55) -- cycle;
+				\fill[gray!4] (-1.10,-1.55) -- (1.85,-1.55) -- (1.32,-0.65) -- (-1.63,-0.65) -- cycle;
+				\draw[thick] (-1.10,-1.55) -- (1.85,-1.55) -- (1.32,-0.65) -- (-1.63,-0.65) -- cycle;
+
+				\draw[thick] (-0.62,1.08) -- (-0.22,-1.08);
+				\draw[thick] (0.22,1.08) -- (0.62,-1.08);
+				\draw[thick] (-0.20,1.08) -- (0.20,-1.08);
+				\draw[thick] (0.64,1.08) -- (1.04,-1.08);
+
+				\draw[thick] (0.00,1.08) ellipse (0.42 and 0.14);
+				\draw[thick] (0.42,-1.08) ellipse (0.42 and 0.14);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.18 with {\arrow{Latex}}}]
+					(0.21,0.00) ellipse (0.36 and 0.12);
+				\node at (0.21,0.34) {$C_a$};
+				\node at (0.95,0.10) {$\oint_{C_a}J$};
+				\node at (0.18,-1.95) {$\widehat\Sigma$};
+			\end{scope}
+
+			\draw[->,thick] (6.35,-5.58) -- (7.15,-5.58) node[midway,above] {choose $K$};
+
+			% Panel (d): the disconnected cycles join through a cut graph
+			\begin{scope}[shift={(9.05,-5.58)}, every node/.style={font=\small}]
+				\node at (0,2.10) {(d) join to one contour $\Gamma$};
+				\draw[thick,rounded corners=10pt] (-1.75,-1.02) rectangle (2.10,1.02);
+				\fill[gray!10,rounded corners=10pt] (-1.60,-0.87) rectangle (1.95,0.87);
+
+				% seam circles
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.18 with {\arrow{Latex}}}]
+					(-1.05,0.10) ellipse (0.18 and 0.08);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.18 with {\arrow{Latex}}}]
+					(-0.30,0.10) ellipse (0.18 and 0.08);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.18 with {\arrow{Latex}}}]
+					(0.45,0.10) ellipse (0.18 and 0.08);
+				\node at (-1.05,0.34) {$C_1$};
+				\node at (-0.30,0.34) {$C_a$};
+				\node at (0.45,0.34) {$C_h$};
+
+				% cut graph and connected contour around its neighborhood
+				\draw[dashed,thick] (-0.95,0.18) -- (-0.20,-0.08);
+				\draw[dashed,thick] (-0.20,-0.08) -- (0.55,0.18);
+				\draw[dashed,thick] (-0.20,-0.08) -- (0.10,-0.52);
+				\node at (0.18,-0.30) {$K$};
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.12 with {\arrow{Latex}}}]
+					(-1.38,0.42) .. controls (-1.45,0.02) and (-1.20,-0.40) .. (-0.72,-0.62)
+					.. controls (-0.18,-0.86) and (0.52,-0.86) .. (1.00,-0.56)
+					.. controls (1.42,-0.28) and (1.56,0.24) .. (1.22,0.56)
+					.. controls (0.84,0.90) and (0.08,0.98) .. (-0.58,0.86)
+					.. controls (-0.98,0.78) and (-1.28,0.66) .. (-1.38,0.42);
+				\node at (0.22,-0.82) {$\Gamma$};
+
+				\draw[->,thick] (1.30,0.10) -- (1.72,0.10);
+				\draw[very thick,postaction={decorate},
+					decoration={markings,mark=at position 0.18 with {\arrow{Latex}}}]
+					(2.10,0.10) ellipse (0.13 and 0.13);
+				\node at (2.10,-0.52) {$0$};
+				\node[font=\scriptsize] at (0.20,-1.30) {$\sum_b \oint_{C_b}J=\oint_\Gamma J$};
+			\end{scope}
+		\end{tikzpicture}
+		\vspace{0.05em}
+		\captionsetup{hypcap=false}
+		\captionof{figure}{Three-dimensional Schottky double and contour joining. After gluing, choose a cut graph $K\subset\Sigma_{g,h}$ in the chosen half; the contour $\Gamma$ around a thin neighborhood of $K\cup\partial\Sigma_{g,h}$ is connected, homologous to $C_1+\cdots +C_h$, and shrinks to zero.}
+		\label{fig:schottky-gluing3d}
+\end{minipage}
+\end{center}
+
+This also clarifies the limitations of the argument. For a massive integrated open-string leg the boundary operator depends on both chiralities, so it is not the restriction of a holomorphic current on $\widehat\Sigma$ and the contour cannot be deformed away. Likewise, if $x^1$ is compact, wound closed strings exist and the ``no bulk insertion'' step of the noncompact proof fails. The all-orders U$(1)$ decoupling statement is therefore special to the noncompact 1+1 NCOS limit with at least one massless open-string insertion.
 
 \subsection{Connection to 2D SYM flux sectors}
 We now connect the NCOS/BCFT data above to the dual 2D SYM description. In the holographic map, (\ref{ncoslimit}) is not an independent gauge-theory limit; in SYM variables the relevant scaling is
@@ -505,5 +1173,98 @@ s_n\sim{\widetilde E^2K_T^2+4n/\A'\over 1-\widetilde E^2}
  + {4n\A'_{\rm eff}\over \A'^2}\to +\infty
 \fe
 for fixed finite external kinematics (in particular for any $K_T\neq0$ or $n>0$). Hence the one-loop result supports the NCOS decoupling claim: unlike the electric Seiberg-Witten limit, NCOS does not produce a finite-energy tachyonic closed-string cut; instead the closed-channel thresholds are driven to arbitrarily high energy and drop out of the finite-energy open-string dynamics.
+
+\appendix
+\section{Boundary supersymmetry and the intrinsic critical fermion system}
+\label{app:fermionlimit}
+For the constant background used in section 1.1, the component action (\ref{ncosrnsmatter}) contains no bulk torsion couplings because $H=d{\cal B}=0$. The boundary conditions are therefore fixed entirely by the mixed bosonic condition and by the preserved diagonal supersymmetry (\ref{ncosrnssusy}). For every subcritical field $\widetilde E<1$ one may solve the gluing equation (\ref{ncosrnsfermiongluing}) for the standard Seiberg-Witten open-string combination
+\ie
+\Psi^\alpha
+=\left({1\over g-{\cal B}}\,g\right)^{\alpha}{}_{\beta}\psi^\beta
+=\left({1\over g+{\cal B}}\,g\right)^{\alpha}{}_{\beta}\bar\psi^\beta,
+\qquad \alpha,\beta=0,1.
+\fe
+In the flat D1 background of the main text one has $g_{\alpha\beta}=\eta_{\alpha\beta}$, so this becomes in the $(0,1)$ basis
+\ie
+\Psi^0
+={\psi^0-\widetilde E\,\psi^1\over 1-\widetilde E^2}
+={\bar\psi^0+\widetilde E\,\bar\psi^1\over 1-\widetilde E^2},
+\qquad
+\Psi^1
+={-\widetilde E\,\psi^0+\psi^1\over 1-\widetilde E^2}
+={\widetilde E\,\bar\psi^0+\bar\psi^1\over 1-\widetilde E^2},
+\fe
+or equivalently in lightcone variables
+\ie
+\Psi^+
+={1\over 1+\widetilde E}\,\psi^+
+={1\over 1-\widetilde E}\,\bar\psi^+,
+\qquad
+\Psi^-
+={1\over 1-\widetilde E}\,\psi^-
+={1\over 1+\widetilde E}\,\bar\psi^-.
+\fe
+The point of recording these formulas is precisely that they must \emph{not} be used as the critical-field variables. Their derivation requires the inverse of $g\pm{\cal B}$, whose determinant is proportional to $1-\widetilde E^2$. Thus the apparent blow-up at $\widetilde E\to1$ is real: the subcritical open-string vector $\Psi^\alpha$ simply ceases to be defined at the critical field.
+
+What the strict critical limit does give directly is a projector, not a finite doubled boundary fermion. In the same tangent-frame bookkeeping variables used in the main text, with $\chi^A=e_M{}^A\psi^M$ and $\bar\chi^A=e_M{}^A\bar\psi^M$ from (\ref{ncosrnstangentfermions}),
+\ie
+c\equiv \chi^+,\qquad
+b\equiv -{i\over 2}\chi^-,
+\qquad
+\bar c\equiv \bar\chi^+,\qquad
+\bar b\equiv -{i\over 2}\bar\chi^-,
+\fe
+the bulk longitudinal fermion action is
+\ie
+S_{\psi,+-}
+=-{i\over 8\pi}\int_\Sigma d^2z\,
+\left(
+\chi^+\bar\partial\chi^-+\chi^-\bar\partial\chi^+
++\bar\chi^+\partial\bar\chi^-+\bar\chi^-\partial\bar\chi^+
+\right)
+={1\over 2\pi}\int_\Sigma d^2z\,
+\left(
+b\,\bar\partial c+\bar b\,\partial\bar c
+\right),
+\fe
+The bulk OPEs are then the canonical ones of a weight-$1/2$ fermionic first-order system,
+\ie
+b(z)c(w)\sim {1\over z-w},\qquad
+\bar b(\bar z)\bar c(\bar w)\sim {1\over \bar z-\bar w},
+\fe
+with no factor of the open metric and no singular dependence on $\widetilde E$. In this basis the boundary gluing (\ref{ncosrnsfermiongluing}) reads
+\ie
+(1-\widetilde E)c=(1+\widetilde E)\bar c,\qquad
+(1+\widetilde E)b=(1-\widetilde E)\bar b.
+\fe
+At $\widetilde E=1$ this becomes exactly
+\ie
+\bar c\big|_{\partial\Sigma}=0,\qquad
+b\big|_{\partial\Sigma}=0.
+\fe
+This is the point you flagged: the critical limit of the second-order RNS boundary condition really is degenerate. It kills half the boundary components rather than producing a finite open-string doubling relation. The singular bulk OPEs $b(z)c(w)\sim (z-w)^{-1}$ and $\bar b(\bar z)\bar c(\bar w)\sim (\bar z-\bar w)^{-1}$ remain true in the interior, but on the boundary the surviving pair $c|_{\partial\Sigma}$ and $\bar b|_{\partial\Sigma}$ has no singular mutual OPE. Therefore this local bulk rewriting is only a diagnostic of why the old variables fail.
+
+The regular critical variables come from the supersymmetric first-order rewrite of the whole longitudinal multiplet. With the superderivatives and superfields defined in the main text around (\ref{ncosrnsfirstordersusy}), the exact longitudinal action is (\ref{ncosrnsfirstordersusy}), and its NCOS limit is (\ref{ncosrnsfirstordersusycrit}). The corresponding bulk equations of motion make $\mathbf X^+$ and $\mathbf B$ holomorphic, and $\mathbf X^-$ and $\bar{\mathbf B}$ antiholomorphic, so the component fields are precisely the intrinsic super-$\beta\gamma$ multiplet
+\ie
+\mathbf X^+=\gamma+\vartheta c,\qquad
+\mathbf B=b+\vartheta\beta,
+\qquad
+\mathbf X^-=\bar\gamma+\bar\vartheta\bar c,\qquad
+\bar{\mathbf B}=\bar b+\bar\vartheta\bar\beta.
+\fe
+Varying the critical superfield action gives the boundary relations (\ref{ncoscriticalsuperboundary}), namely
+\ie
+\beta=-{1\over 4\A'_{\rm eff}}\,\bar\partial\bar\gamma,\qquad
+b=-{1\over 4\A'_{\rm eff}}\,\bar c,
+\qquad
+\bar\beta=-{1\over 4\A'_{\rm eff}}\,\partial\gamma,\qquad
+\bar b=-{1\over 4\A'_{\rm eff}}\,c
+\qquad {\rm on}~\partial\Sigma.
+\fe
+These replace the degenerate projector once one works in the regular critical variables. Using them in the doubling trick gives a genuine boundary fermion OPE,
+\ie
+\bar c(\tau)\,c(0)\sim -{4\A'_{\rm eff}\over \tau},
+\fe
+which is the fermionic companion of the bosonic NCOS boundary logarithm. So the corrected conclusion is now sharp: the subcritical Seiberg-Witten field $\Psi^\alpha$ blows up, the direct critical limit in the old second-order lightcone components collapses to the projector above, but the intrinsic critical theory itself is the regular super-$\beta\gamma$ system of (\ref{ncosopenboundaryfermion}) with boundary condition (\ref{ncoscriticalfermionbc}).
 \printbibliography
 \end{document}
