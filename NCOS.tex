@@ -243,6 +243,82 @@ V_k(\tau)V_q(0)\sim
 V_{k+q}(0).
 \fe
 Thus $\theta$ changes correlation functions and amplitudes by Moyal-type momentum phases, whereas $G$ sets the kinematic spectrum. In the present 1+1 electric case, $\theta^{01}=2\pi\A'_{\rm eff}\widetilde E\to 2\pi\A'_{\rm eff}$ as $\widetilde E\to 1$, yielding finite spacetime noncommutativity at fixed open-string scale \cite{seiberg1999stringtheorynoncommutativegeometry,seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}. Therefore one keeps a finite interacting open-string sector with spacetime noncommutativity; see especially equations (4.1), (4.2), (4.3), (4.6), (4.7) of \cite{seiberg2000stringsbackgroundelectricfield} and equation (3.4) of \cite{gopakumar2000sdualitynoncommutativegaugetheory}.
+\subsubsection{Bulk operators in the critical-field limit}
+\noindent
+The boundary OPE above is the restriction of the exact upper-half-plane propagator for a D-brane in constant background field \cite{seiberg1999stringtheorynoncommutativegeometry}. For longitudinal indices $\alpha,\beta=0,1$, and suppressing additive constants, it can be written in our conventions as
+\ie\label{ncosbulkuhp}
+\langle X^\alpha(z,\bar z)X^\beta(w,\bar w)\rangle
+=-\wt\ell_B^2\left[
+\eta^{\alpha\beta}\ln|z-w|
+-\eta^{\alpha\beta}\ln|z-\bar w|
++G^{\alpha\beta}\ln|z-\bar w|^2
++{1\over 2\pi\wt\ell_B^2}\theta^{\alpha\beta}
+\ln\!\frac{z-\bar w}{\bar z-w}
+\right],
+\fe
+with the branch of the last logarithm chosen so that its cut lies below the upper half plane. Restricting $z,w$ to the boundary from ${\rm Im}\,z,{\rm Im}\,w>0$ then reproduces the boundary correlator used above. The first term is the direct bulk contraction controlled by the closed metric $\eta$, while the image terms are governed by the open data $(G,\theta)$.
+
+For the present electric D1 system it is convenient to again use $X^\pm=X^0\pm X^1$. Plugging (\ref{ncos1plus1}) into (\ref{ncosbulkuhp}) gives
+\ie\label{ncosbulklightcone}
+\langle X^+(z,\bar z)X^-(w,\bar w)\rangle
+=2\wt\ell_B^2\ln\!\left|{z-w\over z-\bar w}\right|
++2\A'_{\rm eff}\ln|z-\bar w|^2
++{\theta^{01}\over \pi}\ln\!\frac{z-\bar w}{\bar z-w},
+\fe
+\ie
+\langle X^-(z,\bar z)X^+(w,\bar w)\rangle
+=2\wt\ell_B^2\ln\!\left|{z-w\over z-\bar w}\right|
++2\A'_{\rm eff}\ln|z-\bar w|^2
+-{\theta^{01}\over \pi}\ln\!\frac{z-\bar w}{\bar z-w},
+\qquad
+\langle X^\pm(z,\bar z)X^\pm(w,\bar w)\rangle=0.
+\fe
+The critical-field limit reorganizes these terms sharply. The direct interior contraction proportional to $\wt\ell_B^2$ vanishes, while $\theta^{01}\to 2\pi\A'_{\rm eff}$ and the image logarithm proportional to $\A'_{\rm eff}$ survives. Therefore
+\ie\label{ncosbulkcritprop}
+\langle X^+(z,\bar z)X^-(w,\bar w)\rangle_{\rm NCOS}
+=4\A'_{\rm eff}\ln(z-\bar w),\qquad
+\langle X^-(z,\bar z)X^+(w,\bar w)\rangle_{\rm NCOS}
+=4\A'_{\rm eff}\ln(\bar z-w),
+\fe
+again with branch cuts chosen outside the disk (or, equivalently, below the upper half plane). Restricting these expressions back to the boundary reproduces the same holomorphic logarithm that appeared in the massless contour argument. This is the electric-field version of the Gomis-Ooguri/NRCS worldsheet reorganization, now expressed directly in the D1 electric variables of NCOS \cite{gomis2000nonrelativisticclosedstringtheory,seiberg2000stringsbackgroundelectricfield}.
+
+The surviving bulk algebra is therefore entirely image-mediated. Using factorized normal ordering for the holomorphic and antiholomorphic pieces,
+\ie\label{ncosbulkexp}
+{\cal U}_{p,\bar p}(z,\bar z)\equiv
+:\exp\!\left[{i\over 2}p_-X^+(z)\right]:
+:\exp\!\left[{i\over 2}\bar p_+X^-(\bar z)\right]:,
+\fe
+the self-contraction inside one bulk insertion is
+\ie
+:\exp\!\left[{i\over 2}p_-X^+(z)\right]:
+:\exp\!\left[{i\over 2}\bar p_+X^-(\bar z)\right]:
+=(z-\bar z)^{-\A'_{\rm eff}p_-\bar p_+}
+:\exp\!\left[{i\over 2}\left(p_-X^+(z)+\bar p_+X^-(\bar z)\right)\right]:.
+\fe
+For two such bulk insertions, only the crossed image contractions survive, so
+\ie\label{ncosbulkbulk}
+{\cal U}_{p,\bar p}(z,\bar z)\,
+{\cal U}_{q,\bar q}(w,\bar w)
+\sim
+(z-\bar w)^{-\A'_{\rm eff}p_-\bar q_+}
+(\bar z-w)^{-\A'_{\rm eff}\bar p_+q_-}
+{\cal U}_{p+q,\bar p+\bar q}(w,\bar w).
+\fe
+Sending the bulk operator to the boundary, $z=\tau+iy$, $\bar z=\tau-iy$, yields
+\ie\label{ncosbulkboundary}
+{\cal U}_{p,\bar p}(\tau+iy,\tau-iy)
+\sim
+(2iy)^{-\A'_{\rm eff}p_-\bar p_+}
+\exp\!\left[{i\over2}\left(\bar p_+X^-+p_-X^+\right)(\tau)\right],
+\qquad y\to0^+,
+\fe
+namely the corresponding boundary vertex with $k_+=\bar p_+$ and $k_-=p_-$. Thus the critical limit produces a finite bulk-to-boundary algebra rather than a finite propagating unwound closed-string sector.
+
+For transverse coordinates $X^i$, the electric field induces no noncommutative phase and no analogous $\A'_{\rm eff}$ enhancement. Their upper-half-plane propagators remain proportional to the bare closed-string scale $\wt\ell_B^2$, so in the strict NCOS limit no independent finite bulk algebra survives unless one simultaneously rescales transverse data. This is why the formulas above are written in the same $k_i=0$ longitudinal sector used throughout the present BCFT discussion.
+
+This is the key difference from the Seiberg-Witten field-theory limit. There one sends $\wt\ell_B^2\to0$ at fixed $G$ and $\theta$, so the boundary propagator collapses to its discontinuous phase and the zero-slope/topological description becomes appropriate \cite{seiberg1999stringtheorynoncommutativegeometry}. In NCOS one instead keeps $\A'_{\rm eff}$ fixed, and the mixed logarithms (\ref{ncosbulkcritprop}) remain at the open-string scale. The result is not a pure star-product algebra for boundary operators, but a holomorphic bulk-boundary algebra that still knows about the finite NCOS string tension.
+
+At the same time, this worldsheet limit does not resurrect a finite-energy non-compact closed-string spectrum. The scaling dimension of a genuine bulk closed-string vertex is still set by the direct $z-w$ contraction proportional to $\wt\ell_B^2\eta^{\alpha\beta}$, so keeping such a state on shell at fixed non-compact momentum requires energies of order $1/\wt\ell_B\to\infty$. Thus the algebra above only describes how longitudinal interior insertions collapse onto the boundary in the critical limit; the physical statement remains that unwound bulk closed strings decouple from finite-energy NCOS dynamics, in agreement with the threshold analysis below \cite{seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}.
 \subsubsection{Quantization and Spectrum}
 \noindent
 Since we are on a D1-brane, we can set
