@@ -1,0 +1,488 @@
+\documentclass[11pt]{article}
+
+\usepackage[backend=bibtex,natbib,style=numeric-comp,sorting=none,doi=false,isbn=false,url=false]{biblatex}
+\addbibresource{../refs.bib}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\Aeff}{\alpha'_{\mathrm{eff}}}
+
+\title{Joining/Splitting in \texorpdfstring{$\Sym^M(\bR^8)$}{SymM(R8)}:\\
+Large-\texorpdfstring{$M$}{M} Counting with Macroscopic Cycles,\\
+and a Sphere-Target First-Order Worldsheet Analysis}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Aim and scope}
+This note revises the earlier draft to address three points:
+\begin{itemize}
+\item The large-$M$ regime where cycle lengths scale linearly with $M$, in particular $w_1+w_2+w_3=M$.
+\item The anomaly/quantum-completion issue for target $C=S^2$ emphasized in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex}.
+\item A derivation of the worldsheet three-point structure directly from the first-order curved Gomis--Ooguri action, rather than quoting a final formula without derivation.
+\end{itemize}
+
+The notation is:
+\begin{equation}
+\mc C_M:=\Sym^M(\bR^8),\qquad M\in \mathbb{Z}_{>0},
+\end{equation}
+and $w_i$ are cycle lengths of the three external twist operators.
+
+\section{Orbifold three-point data at finite \texorpdfstring{$M$}{M}}
+At the orbifold point, define the normalized single-cycle class operator
+\begin{equation}\label{eq:class-op}
+\widehat{\sigma}_{[w]}
+:=
+\frac{1}{\sqrt{|[w]|_M}}
+\sum_{g\in [w]}\sigma_g,
+\qquad
+|[w]|_M=\frac{M!}{w(M-w)!}.
+\end{equation}
+Here $[w]\subset S_M$ is the conjugacy class of $w$-cycles.
+
+For the connected three-point contribution associated with degree-$d$ covers of genus $g$,
+\begin{equation}\label{eq:C123-def}
+C_{123}^{(g)}(M)
+:=
+\left\langle
+\widehat{\sigma}_{[w_1]}(0)\,
+\widehat{\sigma}_{[w_2]}(1)\,
+\widehat{\sigma}_{[w_3]}(\infty)
+\right\rangle_{g}^{\mathrm{conn}},
+\end{equation}
+the standard covering-space decomposition gives
+\begin{equation}\label{eq:C123-exact}
+C_{123}^{(g)}(M)
+=
+\frac{M!}{(M-d)!}\,
+\frac{
+H_d^{(g)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(g)}(w_1,w_2,w_3)
+}{
+\sqrt{|[w_1]|_M\,|[w_2]|_M\,|[w_3]|_M}
+}.
+\end{equation}
+Definitions:
+\begin{itemize}
+\item $d$ is the number of active copies (equivalently covering degree).
+\item $H_d^{(g)}$ is the Hurwitz count $\sum_f 1/|\mathrm{Aut}(f)|$ over covers with the prescribed ramification.
+\item $\mc C_{\mathrm{seed}}^{(g)}$ is the local seed-theory correlator on the cover.
+\end{itemize}
+
+For three branch points, Riemann--Hurwitz gives
+\begin{equation}\label{eq:RH}
+2-2g
+=
+2d-\sum_{i=1}^3(w_i-1),
+\qquad
+d=\frac{w_1+w_2+w_3-1}{2}-g.
+\end{equation}
+
+\section{Two inequivalent large-\texorpdfstring{$M$}{M} limits}
+\subsection{Dilute-cycle regime: fixed \texorpdfstring{$w_i$}{wi} as \texorpdfstring{$M\to\infty$}{M->infty}}
+If $w_i$ and $d$ are fixed while $M\to\infty$, then
+\begin{equation}
+\frac{M!}{(M-d)!}
+=
+M^d\left[
+1-\frac{d(d-1)}{2M}+O(M^{-2})
+\right],
+\end{equation}
+\begin{equation}
+|[w]|_M
+=
+\frac{M^w}{w}
+\left[
+1-\frac{w(w-1)}{2M}+O(M^{-2})
+\right].
+\end{equation}
+Substituting into \eqref{eq:C123-exact} yields
+\begin{equation}\label{eq:dilute-expansion}
+\begin{aligned}
+C_{123}^{(g)}(M)
+=&
+M^{-g-\frac12}\,
+\sqrt{w_1w_2w_3}\,
+H_d^{(g)}\,
+\mc C_{\mathrm{seed}}^{(g)}
+\\
+&\times
+\left[
+1+\frac{1}{M}
+\left(
+\frac14\sum_{i=1}^3 w_i(w_i-1)-\frac12 d(d-1)
+\right)
++O(M^{-2})
+\right].
+\end{aligned}
+\end{equation}
+This is the usual power-series $1/M$ expansion.
+
+\subsection{Macroscopic-cycle regime: \texorpdfstring{$w_i\sim M$}{wi~M} and \texorpdfstring{$w_1+w_2+w_3=M$}{sum wi=M}}
+Now impose the scaling that you asked for:
+\begin{equation}\label{eq:macro-scaling}
+w_i=x_i M+O(1),
+\qquad
+0<x_i<1,
+\qquad
+x_1+x_2+x_3=1.
+\end{equation}
+For genus $g=0$, \eqref{eq:RH} gives
+\begin{equation}\label{eq:d-macro}
+d=\frac{M-1}{2}.
+\end{equation}
+Define the pure combinatorial prefactor
+\begin{equation}\label{eq:Acomb-def}
+\mc A_{\mathrm{comb}}(M;\{w_i\})
+:=
+\frac{M!}{(M-d)!}\,
+\frac{1}{\sqrt{|[w_1]|_M|[w_2]|_M|[w_3]|_M}},
+\end{equation}
+so
+\begin{equation}\label{eq:C-macro-factorized}
+C_{123}^{(0)}(M)
+=
+\mc A_{\mathrm{comb}}(M;\{w_i\})\,
+H_{(M-1)/2}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3).
+\end{equation}
+
+Using Stirling in this scaling regime gives
+\begin{equation}\label{eq:Acomb-stirling}
+\log \mc A_{\mathrm{comb}}(M;\{x_i\})
+=
+\frac{M}{2}\,\Psi(x_1,x_2,x_3)
++\frac{3}{2}\log M
++O(1),
+\end{equation}
+with
+\begin{equation}\label{eq:Psi-def}
+\Psi(x_1,x_2,x_3)
+:=
+\log 2+\sum_{i=1}^3 (1-x_i)\log(1-x_i).
+\end{equation}
+Therefore
+\begin{equation}\label{eq:Acomb-asymptotic}
+\mc A_{\mathrm{comb}}(M;\{x_i\})
+=
+\mc N(x_1,x_2,x_3)\,
+M^{3/2}\,
+\exp\!\left[\frac{M}{2}\Psi(x_1,x_2,x_3)\right]
+\left[1+O(M^{-1})\right],
+\end{equation}
+where $\mc N(x_1,x_2,x_3)$ is an $M$-independent prefactor from subleading Stirling terms.
+
+This is the key point: in the macroscopic regime, the full correlator is \emph{not} a naive power series in $1/M$. The cycle fractions $x_i$ enter already at exponential order through \eqref{eq:Psi-def}, and also through large-degree Hurwitz data and the large-$w_i$ behavior of $\mc C_{\mathrm{seed}}^{(0)}$.
+
+A useful reduced object is
+\begin{equation}\label{eq:reduced-amplitude}
+\widetilde C_{123}^{(0)}(M)
+:=
+e^{-\frac{M}{2}\Psi(x_1,x_2,x_3)}\,M^{-3/2}\,C_{123}^{(0)}(M),
+\end{equation}
+for which one may then attempt a genuine $1/M$ expansion if
+\begin{equation}
+H_{(M-1)/2}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3)
+\end{equation}
+admits such an expansion in the same scaling limit.
+
+\section{DVV deformation versus large-\texorpdfstring{$M$}{M} counting}
+The matrix-string deformation is
+\begin{equation}\label{eq:dvv}
+S=S_{\mathrm{orb}}+\lambda_{\mathrm{DVV}}\int d^2z\,\mc O_{(2)}(z,\bar z),
+\qquad
+h(\mc O_{(2)})=\bar h(\mc O_{(2)})=\frac{3}{2},
+\end{equation}
+and first order gives
+\begin{equation}\label{eq:dvv-first}
+\delta C_{123}
+=
+-\lambda_{\mathrm{DVV}}
+\int d^2z\,
+\left\langle
+\widehat{\sigma}_{[w_1]}\widehat{\sigma}_{[w_2]}\widehat{\sigma}_{[w_3]}
+\mc O_{(2)}(z,\bar z)
+\right\rangle_{\mathrm{orb}}.
+\end{equation}
+
+The power of $M$ in a normalized correlator is controlled by the combinatorics in \eqref{eq:C123-exact}, not by \eqref{eq:dvv} alone. So:
+\begin{itemize}
+\item ``order in $\lambda_{\mathrm{DVV}}$'' and ``order in $1/M$'' are logically distinct,
+\item and in the macroscopic regime \eqref{eq:macro-scaling}, even the undeformed correlator is not a pure $1/M$ series before extracting the entropic factor.
+\end{itemize}
+
+\section{Worldsheet three-point from the curved first-order action on \texorpdfstring{$S^2$}{S2}}
+\subsection{Action and localization equations}
+Use the same curved first-order matter system as in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex}, specialized to
+\begin{equation}
+ds^2_{S^2}=e^{2\omega(u,\bar u)}\,du\,d\bar u,
+\qquad
+e^{2\omega(u,\bar u)}=\frac{4}{(1+|u|^2)^2},
+\end{equation}
+with superderivatives
+\begin{equation}
+D=\partial_\vartheta+\vartheta\partial,\qquad
+\bar D=\partial_{\bar\vartheta}+\bar\vartheta\bar\partial,
+\end{equation}
+and action
+\begin{equation}\label{eq:worldsheet-action}
+\begin{aligned}
+S_{\mathrm{ws}}
+=
+\frac{1}{2\pi}\int d^2z\,d\vartheta\,d\bar\vartheta
+\Big[
+\mathbf B\,\bar D\mathbf X^+
++\bar{\mathbf B}\,D\mathbf X^-
++\frac{e^{2\omega(\mathbf X^+,\mathbf X^-)}}{4\Aeff}\,
+D\mathbf X^+\,\bar D\mathbf X^-
+\Big]
++S_\perp.
+\end{aligned}
+\end{equation}
+
+Consider the three-point function
+\begin{equation}\label{eq:A3-pathintegral}
+\mc A_3
+=
+\int [D\Phi]\,
+e^{-S_{\mathrm{ws}}[\Phi]}\,
+\prod_{i=1}^3 \mc V_{w_i}(z_i,\bar z_i),
+\end{equation}
+where $\Phi$ denotes all worldsheet fields and
+\begin{equation}
+\mc V_{w_i}=\sigma_{w_i}^{\mathrm{long}}\cdot \mc V_i^\perp
+\end{equation}
+is a longitudinal twist insertion times a transverse operator.
+
+\paragraph{Step 1: integrating out first-order multiplets.}
+The longitudinal part of \eqref{eq:worldsheet-action} is first order:
+\begin{equation}
+S_{\mathrm{long}}
+=
+\frac{1}{2\pi}\int_\Sigma
+\Big(
+\mathbf B\,\bar D\mathbf X^+
+\bar{\mathbf B}\,D\mathbf X^-
+\cdots
+\Big).
+\end{equation}
+The omitted terms are fermionic/background couplings from \eqref{eq:worldsheet-action} that do not contain $\mathbf B$ or $\bar{\mathbf B}$, so they do not modify the $\delta$-functional constraints derived below.
+At fixed $\mathbf X^\pm$, the $\mathbf B$ integral factorizes mode-by-mode. For a mode coefficient $b_n$ one gets
+\begin{equation}
+\int db_n\,e^{-b_n\,(\bar D\mathbf X^+)_n}
+\propto
+\delta\!\big((\bar D\mathbf X^+)_n\big),
+\end{equation}
+so the full functional integral gives
+\begin{equation}\label{eq:delta-functional}
+\int [D\mathbf B]\,
+\exp\!\left[
+-\frac{1}{2\pi}\int \mathbf B\,\bar D\mathbf X^+
+\right]
+\propto
+\delta[\bar D\mathbf X^+]\,
+\big(\det{}'\bar D\big)^{-1},
+\end{equation}
+and similarly for $\bar{\mathbf B}$. The prime on $\det{}'$ reminds us that zero-mode conventions are separated from nonzero-mode determinants.
+
+Hence the support of the path integral is
+\begin{equation}\label{eq:chiral-constraints}
+\bar D\mathbf X^+=0,\qquad D\mathbf X^-=0.
+\end{equation}
+On the Euclidean contour $\mathbf X^-=\overline{\mathbf X^+}$ this gives
+\begin{equation}
+X^+=f(z),\qquad X^-=\overline{f(\bar z)},
+\end{equation}
+with $f$ holomorphic on $\Sigma$ away from operator insertions.
+
+\paragraph{Step 2: monodromy from twist insertions.}
+The longitudinal twist field of length $w_i$ cyclically permutes $w_i$ copies, so going once around $z_i$ moves one to the next sheet and returns only after $w_i$ turns. In local uniformizing coordinate $t_i$,
+\begin{equation}
+z-z_i=t_i^{\,w_i},
+\end{equation}
+and $f$ is single-valued in $t_i$. Equivalently, near $z_i$,
+\begin{equation}\label{eq:branch-local}
+f(z)=u_i+a_i(z-z_i)^{w_i}+O((z-z_i)^{w_i+1}),
+\end{equation}
+so
+\begin{equation}
+f'(z)\sim (z-z_i)^{w_i-1},
+\end{equation}
+and the ramification index is $r_i=w_i-1$.
+
+\paragraph{Step 3: global classification.}
+Global solutions of \eqref{eq:chiral-constraints} compatible with \eqref{eq:branch-local} are exactly branched holomorphic covers
+\begin{equation}
+f:\Sigma\to S^2
+\end{equation}
+with branch indices $r_i=w_i-1$ and degree $d$ constrained by \eqref{eq:RH}. For $\Sigma=S^2$, every holomorphic map to $S^2$ is rational, and once $z_i$ are fixed to $(0,1,\infty)$ there is no residual continuous modulus for three marked points. Therefore localization means: the functional integral over longitudinal fields collapses to a discrete sum over the corresponding Hurwitz class, with fluctuation determinants and Jacobians supplying the weight of each cover.
+
+\subsection{Localized form of the amplitude}
+The localized expression from \eqref{eq:A3-pathintegral} is
+\begin{equation}\label{eq:A3-localized}
+\mc A_3
+=
+\sum_{f\in \mathrm{Hurwitz}_0(d;w_1,w_2,w_3)}
+\frac{1}{|\mathrm{Aut}(f)|}\,
+\exp[-S_{\mathrm{cl}}[f]]\,
+\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]\,
+\mc C_\perp[f].
+\end{equation}
+Here:
+\begin{itemize}
+\item $S_{\mathrm{cl}}[f]$ is the classical action of \eqref{eq:worldsheet-action} evaluated on $f$.
+\item $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ is the renormalized determinant/Jacobian from longitudinal fluctuations and ghosts.
+\item $\mc C_\perp[f]$ is the transverse correlator on the same cover.
+\end{itemize}
+
+Equation \eqref{eq:A3-localized} is derived directly from the first-order action and does not assume the final Hurwitz-only form.
+
+\section{Sphere-target anomaly and why it matters here}
+For target $C=S^2$, the curved-$\beta\gamma$ anomaly issue is nontrivial, exactly as emphasized in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex} and in curved-$\beta\gamma$ analyses \cite{nekrasov2005curvedbetagammasystems}. The topological datum is
+\begin{equation}\label{eq:c1-s2}
+\int_{S^2} c_1(TS^2)=\chi(S^2)=2.
+\end{equation}
+
+To make the comparison explicit, write the anomaly correction as
+\begin{equation}\label{eq:DeltaSanom-def}
+\Delta S_{\mathrm{anom}}[f]
+:=
+\kappa_{\mathrm{anom}}
+\int_\Sigma f^*c_1(TS^2)
+=
+2\kappa_{\mathrm{anom}}\,d,
+\end{equation}
+where $d=\deg f$ and $\kappa_{\mathrm{anom}}$ is convention-dependent unless fixed by a full renormalization prescription.
+The second equality uses the degree theorem
+\begin{equation}
+\int_\Sigma f^*c_1(TS^2)
+=
+\deg(f)\int_{S^2}c_1(TS^2)
+=
+2d.
+\end{equation}
+For sphere three-point covers ($g=0$), \eqref{eq:RH} gives
+\begin{equation}
+2d=w_1+w_2+w_3-1,
+\end{equation}
+so
+\begin{equation}
+\Delta S_{\mathrm{anom}}[f]
+=
+\kappa_{\mathrm{anom}}(w_1+w_2+w_3-1).
+\end{equation}
+In the macroscopic scaling $w_1+w_2+w_3=M$, this becomes
+\begin{equation}
+\Delta S_{\mathrm{anom}}[f]
+=
+\kappa_{\mathrm{anom}}(M-1).
+\end{equation}
+
+For the dilaton-like term,
+\begin{equation}\label{eq:dilaton-term}
+S_\Phi[f]
+=
+\frac{1}{4\pi}\int_\Sigma \sqrt{g_{\mathrm{ws}}}\,R^{(2)}_{\mathrm{ws}}\,\Phi(f).
+\end{equation}
+Decompose
+\begin{equation}
+\Phi(f)=\Phi_0+\delta\Phi(f),
+\end{equation}
+then for $\Sigma=S^2$ (so $\int_\Sigma \sqrt{g_{\mathrm{ws}}}R^{(2)}_{\mathrm{ws}}=8\pi$),
+\begin{equation}\label{eq:Sphi-sphere}
+S_\Phi[f]
+=
+2\Phi_0
++\frac{1}{4\pi}\int_\Sigma \sqrt{g_{\mathrm{ws}}}\,R^{(2)}_{\mathrm{ws}}\,\delta\Phi(f).
+\end{equation}
+If $\Phi$ is constant on the target, the second term vanishes and $S_\Phi[f]=2\Phi_0$ exactly.
+If $\Phi$ is nonconstant, that second term is map-dependent through $f$ and therefore changes relative weights among covers.
+
+Hence the corrected saddle weight is
+\begin{equation}\label{eq:anomaly-corrected-weight}
+\mc W_f
+=
+\exp\!\Big[-S_{\mathrm{cl}}[f]-2\kappa_{\mathrm{anom}}d-2\Phi_0\Big]\,
+\exp\!\left[
+-\frac{1}{4\pi}\int_\Sigma \sqrt{g_{\mathrm{ws}}}\,R^{(2)}_{\mathrm{ws}}\,\delta\Phi(f)
+\right]\,
+\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f],
+\end{equation}
+and \eqref{eq:A3-localized} is
+\begin{equation}\label{eq:A3-corrected}
+\mc A_3
+=
+\sum_{f}\frac{1}{|\mathrm{Aut}(f)|}\,\mc W_f\,\mc C_\perp[f].
+\end{equation}
+This is the explicit form requested: for fixed branch data (fixed $d$), the universal factor $e^{-2\kappa_{\mathrm{anom}}d-2\Phi_0}$ is explicit, while the genuinely unresolved part is the map-dependent piece from $\delta\Phi(f)$ and from the renormalized determinant $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$.
+
+\section{Comparison with orbifold side}
+The orbifold formula \eqref{eq:C123-exact} is exact at the free point.
+The worldsheet formula derived from the action is \eqref{eq:A3-corrected}.
+They match structurally if the following conditions hold:
+\begin{itemize}
+\item The map-dependent part in \eqref{eq:anomaly-corrected-weight} is absent or can be re-expressed in orbifold data. Concretely, this means the factor from $\delta\Phi(f)$ and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ should be independent of $f$ inside a fixed Hurwitz class.
+\item The transverse factor $\mc C_\perp[f]$ matches the seed correlator data entering $\mc C_{\mathrm{seed}}^{(g)}$.
+\item External-state normalization is matched between BRST vertex operators and class-normalized orbifold operators \eqref{eq:class-op}.
+\end{itemize}
+
+Under those conditions one recovers the expected Hurwitz organization. Without those conditions, the $S^2$ three-point comparison is an honest \emph{conditional} statement:
+\begin{equation}
+\mc A_3
+\propto
+e^{-2\kappa_{\mathrm{anom}}d-2\Phi_0}\,
+\sum_f\frac{1}{|\mathrm{Aut}(f)|}\,
+\big[\text{map-dependent correction}\big]\,
+\mc C_\perp[f].
+\end{equation}
+So coefficient-level equality with the orbifold answer is not yet proved unless the bracketed correction is controlled.
+
+Equivalently:
+\begin{itemize}
+\item If $\delta\Phi=0$ and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ is cover-independent within fixed branching data, then the worldsheet result differs from the orbifold one only by an overall normalization that can be absorbed into coupling/operator conventions.
+\item If either $\delta\Phi(f)$ or $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ is genuinely cover-dependent, then worldsheet weights are no longer pure Hurwitz weights, and exact coefficient-by-coefficient equality with \eqref{eq:C123-exact} fails unless one adds the corresponding correction on the orbifold side.
+\end{itemize}
+
+\section{What is currently solid for your specific scaling question}
+For $w_i\sim M$ with $w_1+w_2+w_3=M$:
+\begin{itemize}
+\item The exact orbifold expression is \eqref{eq:C-macro-factorized}.
+\item The combinatorial prefactor has explicit asymptotics \eqref{eq:Acomb-stirling}--\eqref{eq:Acomb-asymptotic}, so the $x_i=w_i/M$ fractions enter nontrivially already at leading order.
+\item Therefore the full correlator is not a naive power series in $1/M$ before extracting the entropic factor \eqref{eq:reduced-amplitude}.
+\item On the worldsheet side, the first-order action gives localization to branched covers \eqref{eq:A3-corrected}, and \eqref{eq:anomaly-corrected-weight} makes the unresolved quantum input explicit.
+\end{itemize}
+
+\section{Do we need grand-canonical variables here?}
+For the torus free-energy problem, grand-canonical variables are essential because one sums over all cycle multiplicities (including disconnected sectors) and then extracts fixed-$M$ data via plethystic operations.
+
+For the present sphere three-point observable, we insert three \emph{fixed} operators of prescribed cycle lengths $(w_1,w_2,w_3)$ and fixed rank $M$. This is already a canonical correlator:
+\begin{equation}
+\left\langle
+\widehat{\sigma}_{[w_1]}\widehat{\sigma}_{[w_2]}\widehat{\sigma}_{[w_3]}
+\right\rangle_{\Sym^M}^{\mathrm{conn}},
+\end{equation}
+so no grand-canonical fugacity is required to define or compute that single quantity.
+
+Grand-canonical generating functions can still be useful if one wants to organize an infinite family of three-point coefficients over varying $(w_1,w_2,w_3)$, but that is optional bookkeeping, not a structural necessity for a single fixed 3-point function.
+
+\section{Key references used}
+\begin{itemize}
+\item Matrix-string interaction logic and contact terms: \cite{dijkgraaf1997matrixstring,dijkgraaf2003matrixstringcontactterms}.
+\item Symmetric-orbifold covering-map correlators and large-$M$ combinatorics: \cite{arutyunov1998orbifoldscattering,lunin2001correlationorbifolds,lunin2002threepointorbifolds,pakman2009diagramssymmetricorbifold,pakman2009extremalhurwitz}.
+\item First-order NCOS/GO worldsheet system: \cite{gomis2000nonrelativisticclosedstringtheory}.
+\item Curved-$\beta\gamma$ anomaly framework: \cite{nekrasov2005curvedbetagammasystems}.
+\end{itemize}
+
+\printbibliography
+
+\end{document}
