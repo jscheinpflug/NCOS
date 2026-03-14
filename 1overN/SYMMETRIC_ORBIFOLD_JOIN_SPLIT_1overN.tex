@@ -225,6 +225,38 @@ a_{n,m}\!\left(\rho;\,x_i,\ldots\right)\,
 \end{equation}
 with explicit $\rho$-dependence kept in the coefficients. Only after fixing $\rho$ does this collapse to a single $1/\kappa$ expansion.
 
+\subsection{Large-\texorpdfstring{$\rho$}{rho} regime and the noncompact-limit puzzle}
+Now consider
+\begin{equation}\label{eq:rho-large}
+\rho=\frac{R}{\sqrt{\Aeff}}\gg 1.
+\end{equation}
+At fixed $N$, this gives $\kappa=N\rho\gg 1$, hence
+\begin{equation}
+\widehat\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{\kappa}\ll 1,
+\end{equation}
+so the DVV deformation is strongly suppressed and one is parametrically close to the symmetric-product orbifold CFT.
+
+The subtlety is that ``large $R$'' and ``strictly noncompact'' are not the same limit for the physical Hilbert space:
+\begin{itemize}
+\item For \emph{large but compact} $x^1\sim x^1+2\pi R$, NRCS has winding sectors with $w>0$ and spectrum \eqref{eq:nrcs-spectrum-cylinder}. In this compact theory, physical asymptotic states are winding sectors, while the $w=0$ sector has no physical states \cite{gomis2000nonrelativisticclosedstringtheory}.
+\item For \emph{strictly noncompact} $x^1\in \bR$, winding is not a quantum number, and the compact NRCS asymptotic spectrum disappears. This is the same mechanism behind the absence of closed-string poles in noncompact NCOS kinematics, while compactification restores finite-energy wound closed-string states \cite{klebanov200011dimensionalncosun,seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}.
+\end{itemize}
+
+So how can large-$\rho$ NRCS capture the orbifold CFT? The answer is: the orbifold CFT describes the IR of the \emph{compact} flux/winding sector (matrix-string setup) \cite{dijkgraaf1997matrixstring}, not the strictly noncompact vacuum sector. At large compact $R$, energies scale as
+\begin{equation}
+E\sim \frac{1}{R},
+\end{equation}
+so with fixed dimensionless energies $ER$ one is automatically probing $E/g_{\mathrm{YM}}\to 0$ and hence the IR orbifold point.
+In this sense, large $\rho$ suppresses DVV and leaves orbifold CFT data (local OPE data) intact, while the decompactified noncompact spectrum can still be trivial in terms of finite-energy scattering states.
+
+Equivalently, the limits do not commute:
+\begin{equation}
+\lim_{R\to\infty}\!\left(\text{compact winding-sector IR data}\right)
+\neq
+\left(\text{strict noncompact finite-energy S-matrix sector}\right).
+\end{equation}
+This is also consistent with the NRCS--DLCQ relation, where compact NRCS at radius $R$ is T-dual to DLCQ string theory with null radius $\Aeff/R$ \cite{gomis2000nonrelativisticclosedstringtheory}: changing $R$ changes the sector kinematics, not just an overall energy unit.
+
 
 
 \section{Orbifold three-point data at finite \texorpdfstring{$N$}{N}}
