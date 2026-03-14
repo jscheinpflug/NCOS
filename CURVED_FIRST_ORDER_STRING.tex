@@ -29,10 +29,9 @@ This note records a concrete conjectural starting point for a string dual of the
 \begin{equation}\label{eq:proposed-dual-cft}
 \Sym^N(\bR^8)
 \end{equation}
-living on a two-dimensional spacetime $C$. More explicitly, this means the $S_N$ orbifold of $N$ copies of the free $(8,8)$ SCFT of eight noncompact bosons and fermions. Here $C$ is itself the target of the longitudinal first-order string variables. The intended picture is close in spirit to matrix string theory
-\cite{dijkgraaf1997matrixstring,arutyunov1998orbifoldscattering,dijkgraaf2003matrixstringcontactterms}. It is also close to the recent first-order-string approach to two-dimensional Yang-Mills \cite{komatsu2025stringduals2dym}, but with the two-dimensional maximally supersymmetric gauge theory as the field-theory side.
+living on a two-dimensional spacetime $C$. More explicitly, this means the $S_N$ orbifold of $N$ copies of the free $(8,8)$ SCFT of eight noncompact bosons and fermions. Here $C$ is itself the target of the longitudinal first-order string variables. The scope of the note is deliberately narrow: it concerns the exact symmetric-orbifold CFT itself, not a deformation of the orbifold action and not the full two-dimensional $(8,8)$ gauge theory away from that point.
 
-The status is mixed. The local worldsheet system is explicit and is just the supersymmetric first-order string already present in the Gomis--Ooguri description of the NCOS/NRCS limit \cite{gomis2000nonrelativisticclosedstringtheory}. The extension from flat target $C=\bC$ to a general Riemann surface $C$ is also explicit at the level of local patching data. What is \emph{not} yet proved is the full global BRST construction on arbitrary $C$, the precise joining/splitting interaction, and the quantum statement that physical observables depend only on the conformal structure of $C$ rather than on a chosen metric representative. Those points are part of the program, not finished results.
+The status is mixed. The local worldsheet system is explicit and is just the supersymmetric first-order string already present in the Gomis--Ooguri description of the NCOS/NRCS limit \cite{gomis2000nonrelativisticclosedstringtheory}. Its Poisson/BF core already has the structural feature one wants for a dual of a two-dimensional CFT on $C$: the target metric representative drops out, so only the complex/Weyl structure of $C$ matters. The extension from flat target $C=\bC$ to a general Riemann surface $C$ is also explicit at the level of local patching data. What is \emph{not} yet proved is the full global BRST construction on arbitrary $C$, the precise string-side observables reproducing intrinsic twist-sector correlators of the exact orbifold, and the full quantum completion of the curved theory. Any attempt to connect this exact proposal to matrix string theory would require deforming the Poisson-sigma model away from this core, and that is not part of the present note.
 
 Throughout, $\Sigma$ denotes the worldsheet Riemann surface, $C$ denotes the two-dimensional target/spacetime, and $\Aeff$ denotes the effective string scale inherited from the non-relativistic string limit. Because the transverse theory is noncompact, any partition function involving the $\bR^8$ seed theory is understood either per unit transverse volume or, equivalently for the free formulas used below, after factoring out the center-of-mass zero modes. Whenever a formula is imported from \cite{gomis2000nonrelativisticclosedstringtheory} or from the curved-$\beta\gamma$ literature \cite{nekrasov2005curvedbetagammasystems}, I will say so explicitly.
 
@@ -76,7 +75,7 @@ X^-=\overline{X^+},
 \end{equation}
 even though the first-order path integral is most conveniently written in terms of independent fields $\mathbf X^\pm$ before one chooses that contour.
 
-Varying $\mathbf B$ and $\bar{\mathbf B}$ in \eqref{eq:flat-action} gives the first-order bulk constraints
+The equations of motion of the flat first-order system give the bulk constraints
 \begin{equation}\label{eq:bulk-chiral-constraints}
 \bar D\mathbf X^+=0,
 \qquad
@@ -126,7 +125,7 @@ c_{\mathrm{matter}}=15.
 \end{equation}
 Thus the matter system is exactly that of a critical type-II RNS string, written in first-order variables. The first two terms in \eqref{eq:flat-action} are the Poisson/BF core, while the $1/\Aeff$ term keeps a finite string scale rather than collapsing the theory to a purely topological model.
 
-It is useful to say explicitly what the finite $\Aeff$ deformation does and does not do. Because the equations of motion \eqref{eq:bulk-chiral-constraints} come from varying $\mathbf B$ and $\bar{\mathbf B}$, the last term in \eqref{eq:flat-action} does not change the classical chirality constraints. Nevertheless it is not physically trivial: it fixes the normalization of global energies and chemical potentials, and the same $\Aeff$ reappears later in the genus-one energy formula \eqref{eq:go-energy}. So the deformation is on-shell trivial only at the level of the local bulk equations, not at the level of observables. Its coefficient is also not a free choice: the relative normalization of the BF term and the $1/\Aeff$ deformation is fixed by the original Gomis--Ooguri scaling limit.
+It is useful to say explicitly what the finite $\Aeff$ deformation does and does not do. Because the last term in \eqref{eq:flat-action} does not involve $\mathbf B$ or $\bar{\mathbf B}$, varying those fields still gives the chirality constraints $\bar D\mathbf X^+=0$ and $D\mathbf X^-=0$; the complementary equations $\bar D\mathbf B=0$ and $D\bar{\mathbf B}=0$ come from varying $\mathbf X^\pm$. So the deformation does not change the classical holomorphicity constraints, even though it is not physically trivial: it fixes the normalization of global energies and chemical potentials, and the same $\Aeff$ reappears later in the genus-one energy formula \eqref{eq:go-energy}. Its coefficient is also not a free choice: the relative normalization of the BF term and the $1/\Aeff$ deformation is fixed by the original Gomis--Ooguri scaling limit. In the present note, however, I treat that finite-$\Aeff$ term only as a benchmark deformation inherited from \cite{gomis2000nonrelativisticclosedstringtheory}, not as part of the exact $\Sym^N(\bR^8)$ duality claim itself.
 
 \section{Patchwise Definition on a Riemann Surface}
 Let $C$ be a target Riemann surface. Choose holomorphic charts $U_a\subset C$ with local coordinate $u_a$ and local metric representative
@@ -215,8 +214,8 @@ One can also check that the curved deformation does not spoil the on-shell chira
 =
 \frac{1}{4\Aeff}
 \left[
-\partial_{+}\!\big(e^{2\omega_a}\big)\,D\mathbf X^+_a\,\bar D\mathbf X^-_a
--D\!\left(e^{2\omega_a}\bar D\mathbf X^-_a\right)
+D\!\left(e^{2\omega_a}\bar D\mathbf X^-_a\right)
+-\partial_{+}\!\big(e^{2\omega_a}\big)\,D\mathbf X^+_a\,\bar D\mathbf X^-_a
 \right],
 \end{equation}
 where $\partial_+$ denotes differentiation with respect to the holomorphic target coordinate $u_a$. Using the first-order constraints $\bar D\mathbf X^+_a=0$ and $D\mathbf X^-_a=0$, together with $D\bar D\mathbf X^-_a=-\bar DD\mathbf X^-_a=0$, the right-hand side of \eqref{eq:curved-b-eom} vanishes on shell. Hence $\bar D\mathbf B_a=0$, and similarly $D\bar{\mathbf B}_a=0$, also hold in the curved theory.
@@ -241,7 +240,7 @@ enters is the finite string-tension deformation
 \frac{1}{8\pi \Aeff}\int d^2z\,d\vartheta\,d\bar\vartheta\,
 e^{2\omega(\mathbf X^+,\mathbf X^-)}D\mathbf X^+\,\bar D\mathbf X^-.
 \end{equation}
-So classically the dependence on a Weyl representative is controlled: it affects only the term \eqref{eq:metric-deformation} and does not alter the holomorphic patching of the first-order algebra. Quantum mechanically, however, this is not enough to conclude target-space Weyl invariance.
+In that strict Poisson-sigma model, the target Weyl representative drops out exactly. This is the precise sense in which the worldsheet already knows that the candidate dual should depend only on the conformal structure of the two-dimensional spacetime $C$, as one expects for a CFT. The finite-$\Aeff$ deformation is therefore a separate issue: it reintroduces a chosen representative \eqref{eq:target-weyl-representative}, but only through the term \eqref{eq:metric-deformation}. In the present note I use that deformed system below only as a flat-space genus-one benchmark.
 
 There are two distinct issues. First, the composite operator $e^{2\omega(\mathbf X^+,\mathbf X^-)}$ in \eqref{eq:metric-deformation} requires a regularization and normal-ordering prescription. Because the bulk $X^+X^-$ OPE is regular in the first-order variables, the short-distance singularities are milder than in an ordinary second-order sigma model, but finite local counterterms can still renormalize the curved deformation.
 
@@ -251,7 +250,7 @@ Second, one expects, at minimum, the usual curved-$\beta\gamma$ measure anomaly 
 \begin{equation}\label{eq:target-euler}
 \int_C c_1(TC)=\chi(C)=2-2g_C.
 \end{equation}
-Here $g_C$ is the genus of the target Riemann surface $C$. So for $C=S^2$ the topological obstruction is certainly nontrivial, for $C=T^2$ it vanishes, and for $g_C>1$ it is again nonzero. This does not by itself determine the full local counterterm problem, but it does show that target-space Weyl independence is not automatic. In a full string construction this may require a local counterterm or dilaton-like worldsheet curvature coupling of the form
+Here $g_C$ is the genus of the target Riemann surface $C$. So for $C=S^2$ the topological obstruction is certainly nontrivial, for $C=T^2$ it vanishes, and for $g_C>1$ it is again nonzero. This does not by itself determine the full local counterterm problem, but it does show that the quantum completion of the curved first-order system is not automatic. In a full string construction this may require a local counterterm or dilaton-like worldsheet curvature coupling of the form
 \begin{equation}\label{eq:dilaton-like-coupling}
 S_\Phi=\frac{1}{4\pi}\int_\Sigma \sqrt{g_{\rm ws}}\,R^{(2)}_{\rm ws}\,\Phi(X^+,X^-).
 \end{equation}
@@ -259,25 +258,24 @@ Here $g_{\rm ws}$ is a chosen metric on the worldsheet $\Sigma$, $R^{(2)}_{\rm w
 
 A full quantum construction would also require a renormalized worldsheet stress tensor and supercurrent on curved $C$. In flat space they are those of the standard first-order RNS system and give the critical matter central charge \eqref{eq:total-central-charge}. On curved $C$, however, the deformation \eqref{eq:metric-deformation} generates $\omega$-dependent composite corrections to both operators. Showing that these corrected operators still obey the appropriate OPEs, preserve $c_{\rm matter}=15$, and define the BRST operator globally is part of the open quantum completion problem.
 
-This is the right place to distinguish two different notions:
+This is the right place to distinguish three different notions:
 \begin{itemize}
 \item Worldsheet conformal invariance is the statement that the local matter system has the critical central charge \eqref{eq:total-central-charge}.
-\item Target-space Weyl invariance is the much stronger statement that changing
+\item Exact Weyl-structure independence of the Poisson/BF core is the algebraic statement that the representative $e^{2\omega}$ does not appear in \eqref{eq:bf-core} at all.
+\item Target-space Weyl invariance of the deformed finite-$\Aeff$ system is the stronger statement that changing
 \begin{equation}\label{eq:target-weyl-rescaling}
 \omega\longmapsto \omega+\sigma
 \end{equation}
 does not change the physical BRST data after all required counterterms are included.
 \end{itemize}
-The current note only establishes the first statement. The second is a conjectural quantum completion problem. The honest claim is therefore narrower than in the earlier draft: curved $\beta\gamma$ patching under holomorphic coordinate changes is explicit and essential, whereas target-space Weyl independence remains to be proved after the anomaly problem and the normal ordering of \eqref{eq:metric-deformation} are understood.
+The current note establishes the first two statements, but not the third. The honest claim is therefore narrower than in the earlier draft: curved $\beta\gamma$ patching under holomorphic coordinate changes is explicit and essential, and the pure Poisson/BF core manifestly forgets the target Weyl representative, whereas the full quantum completion of the deformed finite-$\Aeff$ system remains to be proved after the anomaly problem and the normal ordering of \eqref{eq:metric-deformation} are understood.
 
 \section[Conjectural Duality to SymN(R8)]{Conjectural Duality to $\Sym^N(\bR^8)$}
 The proposed dual field theory is the symmetric-orbifold SCFT
 \begin{equation}\label{eq:dual-orbifold}
 \Sym^N(\bR^8)
 \end{equation}
-placed on the same two-dimensional spacetime $C$. Concretely, this is the $S_N$ orbifold of $N$ copies of the free $(8,8)$ $\bR^8$ sigma model. The duality claim itself is conjectural. Equivalently, one is proposing that the same theory is the infrared limit of two-dimensional $(8,8)$ $U(N)$ SYM in the standard matrix-string regime
-\cite{dijkgraaf1997matrixstring,cho2026fluxsectorsmatrixstring}.
-For $C=S^1\times \bR$ and for $C=T^2$, this statement is directly motivated by the usual matrix-string logic. For a general Riemann surface $C$, it should presently be regarded as an extrapolation of that logic rather than a derived theorem about the infrared flow of $(8,8)$ SYM on arbitrary curved backgrounds.
+placed on the same two-dimensional spacetime $C$. Concretely, this is the $S_N$ orbifold of $N$ copies of the free $(8,8)$ $\bR^8$ sigma model. The duality claim itself is conjectural. In the present note I restrict attention to the exact orbifold CFT \eqref{eq:dual-orbifold} and to observables intrinsic to that theory.
 
 The simplest dictionary is:
 \begin{itemize}
@@ -287,13 +285,13 @@ The simplest dictionary is:
 \begin{equation}\label{eq:string-coupling-scaling}
 g_s\sim \frac{1}{N},
 \end{equation}
-in the standard matrix-string normalization, so the genus expansion reproduces the $1/N$ expansion of the large-$N$ CFT.
-\item The free-orbifold point should correspond to the free first-order string, while string interactions should come from the same twist-field/joining-splitting data that appear in matrix string theory.
+if a perturbative closed-string genus expansion exists, so that the genus expansion reproduces the $1/N$ expansion of the large-$N$ CFT.
+\item The exact orbifold should be compared to the Poisson/BF first-order string with eight free transverse multiplets. Beyond the genus-one free-energy benchmark, the relevant orbifold-side data are the intrinsic twist-sector correlators and OPE coefficients of the exact symmetric product, not a deformation of the orbifold action.
 \end{itemize}
 
-This is meant to be a close two-dimensional analogue of the logic emphasized recently by Komatsu and Maity \cite{komatsu2025stringduals2dym}: the string is written directly in first-order variables adapted to the field-theory spacetime, and its perturbative coupling is identified with the large-$N$ expansion parameter of a two-dimensional gauge theory. The present proposal differs in two important ways. First, the target-space theory is maximally supersymmetric and carries the full $\bR^8$ transverse matter system. Second, the local longitudinal worldsheet theory is not merely topological; it is the finite-$\Aeff$ Gomis--Ooguri string, so the theory keeps a genuine string scale.
+The proposal is therefore simply this: the Poisson/BF first-order worldsheet system, together with the eight free transverse multiplets, should reproduce exact orbifold data of $\Sym^N(\bR^8)$ when both are formulated on the same two-dimensional spacetime $C$. The finite-$\Aeff$ Gomis--Ooguri deformation will still appear below as a useful flat-torus benchmark, but I do not interpret it here as the defining structure of the exact $\Sym^N(\bR^8)$ duality itself.
 
-There is, however, a useful formal limit in which the longitudinal sector simplifies further. If one sends $\Aeff\to\infty$, then the deformation \eqref{eq:metric-deformation} drops out and the longitudinal theory reduces to the pure BF/Poisson-sigma core. Within the thermal genus-one dictionary derived below, this corresponds to $\mu=R/(2\Aeff)\to 0$, hence $p\to 1$ in the grand-canonical ensemble. This suggests a topological corner with unsuppressed long cycles. It is not the regime used in the thermal comparison below, and beyond that comparison I do not claim to have established a full dual interpretation of this limit.
+In particular, I do \emph{not} study in this note any further deformation of the Poisson-sigma model toward matrix string theory or toward the full two-dimensional $(8,8)$ SYM. That would be a separate problem.
 
 \section[First Check: Genus One and Large-N Orbifold Free Energy]{First Check: Genus One and the Large-$N$ Orbifold Free Energy}
 Take the target spacetime to be a Euclidean thermal torus with temporal period $\beta=T^{-1}$ and spatial circle of circumference $2\pi R$,
@@ -327,7 +325,7 @@ For the actual comparison to the Gomis--Ooguri thermal free energy, the physical
 \begin{equation}\label{eq:physical-spatial-spin}
 \nu_x=0,
 \end{equation}
-because this is the supersymmetric boundary condition inherited from the 2d $(8,8)$ $U(N)$ SYM on a circle. In this case the $w$-cycle twisted sector has the standard matrix-string long-string description \cite{dijkgraaf1997matrixstring,arutyunov1998orbifoldscattering}. Let $c_{\rm seed}=12$ be the chiral central charge of one copy of the $\bR^8$ SCFT, and let $(\Delta,\bar\Delta)$ denote the plane conformal weights of a seed operator. Under the $w$-fold covering map
+because this is the natural supersymmetric choice on the spacetime circle. In this case the $w$-cycle twisted sector has the standard symmetric-orbifold long-string covering-space description \cite{dijkgraaf1997matrixstring,arutyunov1998orbifoldscattering}. Let $c_{\rm seed}=12$ be the chiral central charge of one copy of the $\bR^8$ SCFT, and let $(\Delta,\bar\Delta)$ denote the plane conformal weights of a seed operator. Under the $w$-fold covering map
 \begin{equation}\label{eq:covering-map}
 z=t^w,
 \end{equation}
@@ -479,6 +477,7 @@ D_w^{[\nu_t,\nu_x]}(h,\bar h)\,
 \right).
 \end{equation}
 Equation \eqref{eq:orbifold-free-energy-log} is the derived orbifold answer in the present note. The universal $\log(1-x)$ is the standard symmetric-orbifold plethystic logarithm for cycle sectors. The spacetime fermion boundary conditions change the sector-dependent multiplicities $D_w^{[\nu_t,\nu_x]}(h,\bar h)$, not the combinatorial cycle factor itself.
+There is therefore no separate $\log(1+x)$ for fermionic seed states. The symmetric product always symmetrizes copies of the full seed theory, while any fermion signs are already encoded inside the one-cycle trace itself.
 
 In the physical thermal spin structure, \eqref{eq:one-cycle-trace-thermal} gives the more explicit character-level formula
 \begin{equation}\label{eq:orbifold-free-energy-character}
@@ -589,19 +588,19 @@ At the same time, this genus-one/$N^0$ test is not yet decisive. Both sides use 
 
 There is still an additional subtlety for \emph{other} target-torus spin structures: if one wants a uniform formula for arbitrary $[\nu_t,\nu_x]$, then one must track carefully how the covering map acts on fermions in NS sectors and how $(-1)^F$ insertions are represented in the orbifold trace. That more general bookkeeping remains worthwhile, but it is no longer needed for the concrete thermal test carried out here.
 
-There is one conceptual caveat. The exact formula above is naturally grand canonical in cycle length, because the linear piece $wR/(2\Aeff)$ is represented by the fugacity $p^w$. If one insists on the strictly canonical fixed-$N$ partition function, one should extract the coefficient of $p^N$ at the end. The large-$N$ order-$N^0$ data are nevertheless controlled by the same single-cycle building blocks written above, while finite-$N$ corrections and genuine string interactions should begin to deform this free result.
+There is one conceptual caveat. The exact formula above is naturally grand canonical in cycle length, because the linear piece $wR/(2\Aeff)$ is represented by the fugacity $p^w$. If one insists on the strictly canonical fixed-$N$ partition function, one should extract the coefficient of $p^N$ at the end. The large-$N$ order-$N^0$ data are nevertheless controlled by the same single-cycle building blocks written above, while genuinely new tests beyond genus one should come from other exact orbifold observables, such as intrinsic twist-sector correlators, rather than from the free partition function alone.
 
 \section{Immediate Checks}
 The next steps seem concrete.
 \begin{itemize}
 \item Formulate the BRST complex and GSO projection globally on curved $C$, using the curved super-$\beta\gamma$ patching above rather than the old second-order variables.
 \item Extend the genus-one check above from the thermal torus to more general background Riemann surfaces and identify what replaces the long-cycle projector.
-\item Show explicitly whether changing the target metric representative $e^{2\omega}$ is BRST trivial or at worst changes the theory by local counterterms with no effect on physical observables.
-\item Identify the precise twist interaction that reconstructs genus expansion and joining/splitting vertices from the symmetric-orbifold side, in the same way matrix string theory reconstructs ordinary type-II string interactions.
+\item Clarify how the exact Weyl-structure independence of the Poisson/BF core survives the full quantum completion on curved $C$, keeping separate the distinct problem of the finite-$\Aeff$ benchmark deformation.
+\item Identify the precise intrinsic orbifold observables beyond the free partition function, most naturally twist-sector three-point functions and OPE coefficients, that should match string-side joining/splitting amplitudes.
 \item Compare the first nontrivial observables on both sides, for example protected partition functions or low-point correlators on $C=\bC$, $C=S^2$, and $C=T^2$.
 \end{itemize}
 
-In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined. What is derived here is the classical patching structure, the classical holomorphic-map solution locus, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, and the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$ within the standard DVV long-string convention and the operator-channel conventions stated in the genus-one section above. That genus-one check is genuinely nontrivial in how it reconstructs the stringy longitudinal organization of the free orbifold, but it still remains a free-field consistency test rather than an interaction-level derivation of the duality. What remains conjectural or incomplete is the quantum completion: normal ordering of the curved deformation \eqref{eq:metric-deformation}, the anomaly problem summarized around \eqref{eq:target-euler}, the global BRST/GSO implementation on curved $C$, and the extension of the genus-one comparison to general target curves and to other target-torus spin structures.
+In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined. The Poisson/BF core already forgets the target Weyl representative exactly, which is the basic structural reason it is compatible with a dual CFT living on $C$. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, and the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$ within the standard DVV long-string convention and the operator-channel conventions stated in the genus-one section above. That genus-one check is genuinely nontrivial in how it reconstructs the stringy longitudinal organization of the free orbifold, but it still remains a free-field consistency test rather than a comparison to the exact twist-sector correlators of the orbifold. What remains conjectural or incomplete is the quantum completion on curved $C$, the string-side realization of the intrinsic twist-sector correlators/OPE data of $\Sym^N(\bR^8)$, and the extension of the genus-one comparison to general target curves and to other target-torus spin structures. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
 
 \printbibliography
 
