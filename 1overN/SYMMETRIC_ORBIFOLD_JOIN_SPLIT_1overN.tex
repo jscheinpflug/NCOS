@@ -38,6 +38,128 @@ The notation is:
 \end{equation}
 and $w_i$ are cycle lengths of the three external twist operators.
 
+\section{NRCS cylinder scaling, large-\texorpdfstring{$N$}{N}, and the IR orbifold regime}
+\label{sec:nrcs-cylinder-ir}
+Consider NRCS with longitudinal target coordinates $(x^0,x^1)$, where $x^0$ is noncompact time and
+\begin{equation}
+x^1\sim x^1+2\pi R.
+\end{equation}
+The cylinder radius is $R$, and we define the dimensionless radius
+\begin{equation}
+\rho:=\frac{R}{\sqrt{\Aeff}}.
+\end{equation}
+
+In this section $N$ denotes the rank of the dual $U(N)$ gauge theory. We use the NCOS/NRCS convention
+\begin{equation}\label{eq:alphaeff-gym-n}
+\Aeff=\frac{N^2}{g_{\mathrm{YM}}^2},
+\end{equation}
+so $g_{\mathrm{YM}}$ has mass dimension one in $1+1$ dimensions. (Some references use a $2\pi$-shifted normalization; this only changes fixed numerical factors and not the large-$N$ scaling logic \cite{klebanov200011dimensionalncosun}.)
+
+Define
+\begin{equation}\label{eq:kappa-def}
+\kappa:=g_{\mathrm{YM}}R.
+\end{equation}
+Using \eqref{eq:alphaeff-gym-n},
+\begin{equation}\label{eq:kappa-rho}
+\kappa=N\rho=N\frac{R}{\sqrt{\Aeff}}.
+\end{equation}
+So there are two inequivalent large-$N$ scalings:
+\begin{equation}\label{eq:largeN-two-scalings}
+\text{(A) fixed }\rho:\ \kappa=N\rho\to\infty,
+\qquad
+\text{(B) fixed }\kappa:\ \rho=\kappa/N\to 0.
+\end{equation}
+In this section we use (A): fix $R/\sqrt{\Aeff}$ and scale only $N$.
+
+By ``finite-$N$ NRCS'' we mean a hypothetical exact (nonperturbative) definition that captures the full finite-$N$ gauge theory. That exact formulation is not currently available. By contrast, perturbative NRCS is organized as a large-$N$ expansion (equivalently in the NCOS language, an expansion around weak effective string coupling), so it automatically probes the large-$N$ regime \cite{gomis2000nonrelativisticclosedstringtheory,klebanov200011dimensionalncosun}.
+
+Equation \eqref{eq:alphaeff-gym-n} gives
+\begin{equation}
+\frac{1}{\sqrt{\Aeff}}=\frac{g_{\mathrm{YM}}}{N}.
+\end{equation}
+For any excitation with finite dimensionless cylinder energy $\varepsilon:=ER$,
+\begin{equation}
+\frac{E}{g_{\mathrm{YM}}}
+=
+\frac{ER}{g_{\mathrm{YM}}R}
+=
+\frac{\varepsilon}{\kappa}.
+\end{equation}
+Therefore in scaling (A), perturbative states with $\varepsilon=O(1)$ satisfy
+\begin{equation}
+\frac{E}{g_{\mathrm{YM}}}=O(N^{-1})\ll 1,
+\end{equation}
+which is an IR scale of the gauge theory. This is the regime where the matrix-string description flows to the symmetric-product orbifold CFT \cite{dijkgraaf1997matrixstring}.
+
+To avoid notation clash with the rest of the note: below we continue to use $M$ for orbifold copy number in $\Sym^M(\bR^8)$, and the comparison with this section uses $M=N$.
+
+Once the IR description is a CFT on a cylinder of radius $R$, changing $R$ rescales the Hamiltonian but not local OPE data:
+\begin{equation}
+H(R)=\frac{1}{R}\left(L_0+\bar L_0-\frac{c}{12}\right),
+\qquad
+P(R)=\frac{1}{R}\left(L_0-\bar L_0\right).
+\end{equation}
+So local CFT data (for example OPE coefficients and normalized local correlators) are independent of the overall scale $R$, while energies in physical units scale as $1/R$.
+
+The same pattern appears directly on the NRCS side. Importing the continuum lightcone NRCS spectrum (rather than deriving it in this note) \cite{gomis2000nonrelativisticclosedstringtheory}, for winding $w>0$ one has
+\begin{equation}\label{eq:nrcs-spectrum-cylinder}
+p_0=
+\frac{wR}{2\Aeff}
+ +\frac{\Aeff\,k_\perp^2}{2wR}
+ +\frac{N_L+N_R}{wR},
+\qquad
+N_L-N_R=wn.
+\end{equation}
+Here $k_\perp$ is transverse momentum, $N_L,N_R$ are left/right oscillator levels, and $n$ is the integer momentum mode along $x^1$.
+Subtracting the nonrelativistic rest energy,
+\begin{equation}
+\Delta E:=p_0-\frac{wR}{2\Aeff}
+=
+\frac{1}{R}
+\left[
+\frac{(k_\perp\sqrt{\Aeff})^2}{2w}
+ +\frac{N_L+N_R}{w}
+\right].
+\end{equation}
+Thus $R$ appears only as an overall $1/R$ factor in excitation energies.
+Equivalently,
+\begin{equation}\label{eq:deltaE-over-gYM}
+\frac{\Delta E}{g_{\mathrm{YM}}}
+=
+\frac{1}{\kappa}
+\left[
+\frac{(k_\perp\sqrt{\Aeff})^2}{2w}
+ +\frac{N_L+N_R}{w}
+\right].
+\end{equation}
+
+In the macroscopic winding sector $w=xN$ with fixed $0<x\le 1$ and fixed $\kappa=g_{\mathrm{YM}}R$, \eqref{eq:kappa-def} gives
+\begin{equation}
+\Delta E
+=
+\frac{g_{\mathrm{YM}}}{\kappa N}
+\left[
+\frac{(k_\perp\sqrt{\Aeff})^2}{2x}
+ +\frac{N_L+N_R}{x}
+\right].
+\end{equation}
+Using $\kappa=N\rho$, this is equivalently
+\begin{equation}\label{eq:deltaE-macro-rho}
+\Delta E
+=
+\frac{g_{\mathrm{YM}}}{N^2\rho}
+\left[
+\frac{(k_\perp\sqrt{\Aeff})^2}{2x}
++\frac{N_L+N_R}{x}
+\right].
+\end{equation}
+Hence in fixed-$\rho$ large-$N$:
+\begin{itemize}
+\item generic winding sectors with $w=O(1)$ have $\Delta E/g_{\mathrm{YM}}=O(1/N)$ from \eqref{eq:deltaE-over-gYM},
+\item macroscopic sectors with $w\sim N$ have $\Delta E/g_{\mathrm{YM}}=O(1/N^2)$ from \eqref{eq:deltaE-macro-rho}.
+\end{itemize}
+Both are IR in gauge-theory units, consistent with landing on the symmetric-product orbifold regime. The overall radius $R$ enters only through the dimensionless ratio $\rho=R/\sqrt{\Aeff}$.
+
 \section{Orbifold three-point data at finite \texorpdfstring{$M$}{M}}
 At the orbifold point, define the normalized single-cycle class operator
 \begin{equation}\label{eq:class-op}
@@ -479,6 +601,7 @@ Grand-canonical generating functions can still be useful if one wants to organiz
 \section{Key references used}
 \begin{itemize}
 \item Matrix-string interaction logic and contact terms: \cite{dijkgraaf1997matrixstring,dijkgraaf2003matrixstringcontactterms}.
+\item 1+1 NCOS/SYM parameter dictionary and large-$N$ scaling: \cite{klebanov200011dimensionalncosun}.
 \item Symmetric-orbifold covering-map correlators and large-$M$ combinatorics: \cite{arutyunov1998orbifoldscattering,lunin2001correlationorbifolds,lunin2002threepointorbifolds,pakman2009diagramssymmetricorbifold,pakman2009extremalhurwitz}.
 \item First-order NCOS/GO worldsheet system: \cite{gomis2000nonrelativisticclosedstringtheory}.
 \item Curved-$(\beta,\gamma)$ anomaly framework and chiral-de-Rham cancellation structure: \cite{nekrasov2005curvedbetagammasystems,msv1999chiralderham,benzvi2008supersymmetrycdr}.
