@@ -24,11 +24,12 @@ and a Sphere-Target First-Order Worldsheet Analysis}
 \maketitle
 
 \section{Aim and scope}
-This note revises the earlier draft to address three points:
+This note presents a self-contained comparison between symmetric-product-orbifold three-point data and the curved first-order worldsheet description of joining/splitting processes. The main goals are:
 \begin{itemize}
-\item The large-$M$ regime where cycle lengths scale linearly with $M$, in particular $w_1+w_2+w_3=M$.
-\item The anomaly/quantum-completion issue for target $C=S^2$ emphasized in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex}.
-\item A derivation of the worldsheet three-point structure directly from the first-order curved Gomis--Ooguri action, rather than quoting a final formula without derivation.
+\item State the exact finite-$M$ orbifold three-point formula and separate two inequivalent large-$M$ regimes.
+\item Work out the macroscopic-cycle limit $w_i\sim M$ with $w_1+w_2+w_3=M$, including explicit combinatorial asymptotics and the reduced object used for controlled $1/M$ organization.
+\item Derive sphere three-point localization directly from the curved first-order Gomis--Ooguri path integral, showing in detail why branched covers appear.
+\item Incorporate the global BRST analysis of the curved target and explain how it changes the sphere three-point comparison and the interpretation of the $1/M$ story.
 \end{itemize}
 
 The notation is:
@@ -347,46 +348,46 @@ Here:
 
 Equation \eqref{eq:A3-localized} is derived directly from the first-order action and does not assume the final Hurwitz-only form.
 
-\section{Sphere-target anomaly and why it matters here}
-For target $C=S^2$, the curved-$\beta\gamma$ anomaly issue is nontrivial, exactly as emphasized in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex} and in curved-$\beta\gamma$ analyses \cite{nekrasov2005curvedbetagammasystems}. The topological datum is
+\section{Sphere target after the global BRST analysis}
+The note \texttt{BRST-curved.tex} shows that the relevant distinction is between:
+\begin{itemize}
+\item the \emph{bosonic} curved $(\beta,\gamma)$ subsystem, where the usual obstruction is controlled by $c_1(TC)$ \cite{nekrasov2005curvedbetagammasystems}, and
+\item the \emph{full super} longitudinal multiplet $(\gamma,\beta,\psi^+,\rho)$, where that obstruction is cancelled.
+\end{itemize}
+For a target curve $C$, the bosonic topological class is
 \begin{equation}\label{eq:c1-s2}
-\int_{S^2} c_1(TS^2)=\chi(S^2)=2.
+\int_C c_1(TC)=\chi(C)=2-2g_C,
 \end{equation}
+and for $C=S^2$ this gives $\int_{S^2}c_1(TS^2)=2$.
 
-To make the comparison explicit, write the anomaly correction as
-\begin{equation}\label{eq:DeltaSanom-def}
-\Delta S_{\mathrm{anom}}[f]
-:=
-\kappa_{\mathrm{anom}}
-\int_\Sigma f^*c_1(TS^2)
-=
-2\kappa_{\mathrm{anom}}\,d,
+The local patching formulas summarized in \texttt{BRST-curved.tex} are
+\begin{equation}\label{eq:super-patching-summary}
+\gamma_b=f_{ba}(\gamma_a),\quad
+\psi_b^+=f'_{ba}(\gamma_a)\psi_a^+,\quad
+\rho_b=\bigl(f'_{ba}(\gamma_a)\bigr)^{-1}\rho_a,\quad
+\beta_b=\bigl(f'_{ba}(\gamma_a)\bigr)^{-1}\beta_a-\frac{f''_{ba}(\gamma_a)}{\bigl(f'_{ba}(\gamma_a)\bigr)^2}\psi_a^+\rho_a.
 \end{equation}
-where $d=\deg f$ and $\kappa_{\mathrm{anom}}$ is convention-dependent unless fixed by a full renormalization prescription.
-The second equality uses the degree theorem
+With $\Gamma_a:=2\partial_{u_a}\omega_a$ and
 \begin{equation}
-\int_\Sigma f^*c_1(TS^2)
-=
-\deg(f)\int_{S^2}c_1(TS^2)
-=
-2d.
+\Pi_a:=\beta_a-\Gamma_a\rho_a\psi_a^+,
 \end{equation}
-For sphere three-point covers ($g=0$), \eqref{eq:RH} gives
-\begin{equation}
-2d=w_1+w_2+w_3-1,
+one gets tensorial overlap behavior
+\begin{equation}\label{eq:covariant-momentum-summary}
+\Pi_b=\bigl(f'_{ba}\bigr)^{-1}\Pi_a.
 \end{equation}
-so
-\begin{equation}
-\Delta S_{\mathrm{anom}}[f]
+Now define $J_a:=:\rho_a\psi_a^+:$. In one target complex dimension, $J_a^2=0$, so
+\begin{equation}\label{eq:supercurrent-global-summary}
+:\psi_a^+\Pi_a: = :\psi_a^+\beta_a:,
+\end{equation}
+and the stress tensor reduces to
+\begin{equation}\label{eq:stress-global-summary}
+T_{+-}^{(a)}
 =
-\kappa_{\mathrm{anom}}(w_1+w_2+w_3-1).
+-:\beta_a\partial\gamma_a:
+-\frac12:\rho_a\partial\psi_a^+:
++\frac12:(\partial\rho_a)\psi_a^+:.
 \end{equation}
-In the macroscopic scaling $w_1+w_2+w_3=M$, this becomes
-\begin{equation}
-\Delta S_{\mathrm{anom}}[f]
-=
-\kappa_{\mathrm{anom}}(M-1).
-\end{equation}
+These are the flat-form local operators, now shown to patch globally on a curve. Quantum mechanically, \texttt{BRST-curved.tex} further argues that the bosonic determinant line is cancelled by the fermionic partner determinant line, consistent with the chiral-de-Rham perspective \cite{msv1999chiralderham,benzvi2008supersymmetrycdr}. Therefore, for the \emph{full} super longitudinal multiplet, there is no residual curved-$(\beta,\gamma)$ anomaly factor to insert in the amplitude.
 
 For the dilaton-like term,
 \begin{equation}\label{eq:dilaton-term}
@@ -408,14 +409,11 @@ S_\Phi[f]
 If $\Phi$ is constant on the target, the second term vanishes and $S_\Phi[f]=2\Phi_0$ exactly.
 If $\Phi$ is nonconstant, that second term is map-dependent through $f$ and therefore changes relative weights among covers.
 
-Hence the corrected saddle weight is
+Hence the saddle weight used in the localized sum is
 \begin{equation}\label{eq:anomaly-corrected-weight}
 \mc W_f
 =
-\exp\!\Big[-S_{\mathrm{cl}}[f]-2\kappa_{\mathrm{anom}}d-2\Phi_0\Big]\,
-\exp\!\left[
--\frac{1}{4\pi}\int_\Sigma \sqrt{g_{\mathrm{ws}}}\,R^{(2)}_{\mathrm{ws}}\,\delta\Phi(f)
-\right]\,
+\exp\!\Big[-S_{\mathrm{cl}}[f]-S_\Phi[f]\Big]\,
 \mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f],
 \end{equation}
 and \eqref{eq:A3-localized} is
@@ -424,23 +422,25 @@ and \eqref{eq:A3-localized} is
 =
 \sum_{f}\frac{1}{|\mathrm{Aut}(f)|}\,\mc W_f\,\mc C_\perp[f].
 \end{equation}
-This is the explicit form requested: for fixed branch data (fixed $d$), the universal factor $e^{-2\kappa_{\mathrm{anom}}d-2\Phi_0}$ is explicit, while the genuinely unresolved part is the map-dependent piece from $\delta\Phi(f)$ and from the renormalized determinant $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$.
+So after incorporating the global BRST result, the unresolved input is no longer a topological anomaly coefficient. The unresolved input is the dynamical map dependence in $S_{\mathrm{cl}}[f]$, possible map dependence in $S_\Phi[f]$, and the renormalized determinant $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$.
+The same BRST analysis also implies that the finite-$\Aeff$ interaction changes nonchiral dynamics but does not change the chiral BRST complex. In this localized three-point problem, that means the remaining uncertainty enters through dynamical weights in \eqref{eq:anomaly-corrected-weight}, not through a failure of global BRST definition.
 
 \section{Comparison with orbifold side}
 The orbifold formula \eqref{eq:C123-exact} is exact at the free point.
 The worldsheet formula derived from the action is \eqref{eq:A3-corrected}.
-They match structurally if the following conditions hold:
+Relative to the previous version, one important term is removed: there is no extra factor $e^{-2\kappa_{\mathrm{anom}}d}$ (with $\kappa_{\mathrm{anom}}$ the would-be bosonic anomaly coefficient) from a residual sphere anomaly of the longitudinal supermultiplet.
+
+The two descriptions match structurally if the following conditions hold:
 \begin{itemize}
-\item The map-dependent part in \eqref{eq:anomaly-corrected-weight} is absent or can be re-expressed in orbifold data. Concretely, this means the factor from $\delta\Phi(f)$ and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ should be independent of $f$ inside a fixed Hurwitz class.
+\item The map-dependent part in \eqref{eq:anomaly-corrected-weight} is absent or can be re-expressed in orbifold data. Concretely, this means the factor from $S_{\mathrm{cl}}[f]$, $S_\Phi[f]$, and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ should be independent of $f$ inside a fixed Hurwitz class.
 \item The transverse factor $\mc C_\perp[f]$ matches the seed correlator data entering $\mc C_{\mathrm{seed}}^{(g)}$.
 \item External-state normalization is matched between BRST vertex operators and class-normalized orbifold operators \eqref{eq:class-op}.
 \end{itemize}
 
-Under those conditions one recovers the expected Hurwitz organization. Without those conditions, the $S^2$ three-point comparison is an honest \emph{conditional} statement:
+Under those conditions one recovers the expected Hurwitz organization. Without those conditions, the $S^2$ three-point comparison remains an honest \emph{conditional} statement:
 \begin{equation}
 \mc A_3
 \propto
-e^{-2\kappa_{\mathrm{anom}}d-2\Phi_0}\,
 \sum_f\frac{1}{|\mathrm{Aut}(f)|}\,
 \big[\text{map-dependent correction}\big]\,
 \mc C_\perp[f].
@@ -449,17 +449,18 @@ So coefficient-level equality with the orbifold answer is not yet proved unless 
 
 Equivalently:
 \begin{itemize}
-\item If $\delta\Phi=0$ and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ is cover-independent within fixed branching data, then the worldsheet result differs from the orbifold one only by an overall normalization that can be absorbed into coupling/operator conventions.
-\item If either $\delta\Phi(f)$ or $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ is genuinely cover-dependent, then worldsheet weights are no longer pure Hurwitz weights, and exact coefficient-by-coefficient equality with \eqref{eq:C123-exact} fails unless one adds the corresponding correction on the orbifold side.
+\item If $S_{\mathrm{cl}}[f]$, $S_\Phi[f]$, and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$ are cover-independent within fixed branching data, then the worldsheet result differs from the orbifold one only by an overall normalization that can be absorbed into coupling/operator conventions.
+\item If any of those factors is genuinely cover-dependent, worldsheet weights are no longer pure Hurwitz weights, and exact coefficient-by-coefficient equality with \eqref{eq:C123-exact} fails unless one adds the corresponding correction on the orbifold side.
 \end{itemize}
 
-\section{What is currently solid for your specific scaling question}
+\section{What is currently solid for macroscopic scaling}
 For $w_i\sim M$ with $w_1+w_2+w_3=M$:
 \begin{itemize}
 \item The exact orbifold expression is \eqref{eq:C-macro-factorized}.
 \item The combinatorial prefactor has explicit asymptotics \eqref{eq:Acomb-stirling}--\eqref{eq:Acomb-asymptotic}, so the $x_i=w_i/M$ fractions enter nontrivially already at leading order.
 \item Therefore the full correlator is not a naive power series in $1/M$ before extracting the entropic factor \eqref{eq:reduced-amplitude}.
-\item On the worldsheet side, the first-order action gives localization to branched covers \eqref{eq:A3-corrected}, and \eqref{eq:anomaly-corrected-weight} makes the unresolved quantum input explicit.
+\item On the worldsheet side, the first-order action gives localization to branched covers \eqref{eq:A3-corrected}, and there is no additional unknown anomaly factor of the form $e^{-\kappa M}$ from the longitudinal supermultiplet.
+\item The remaining uncertainty for coefficient-level matching is dynamical map dependence in $S_{\mathrm{cl}}[f]$, $S_\Phi[f]$, and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$, not a residual curved-$(\beta,\gamma)$ topological obstruction.
 \end{itemize}
 
 \section{Do we need grand-canonical variables here?}
@@ -480,7 +481,8 @@ Grand-canonical generating functions can still be useful if one wants to organiz
 \item Matrix-string interaction logic and contact terms: \cite{dijkgraaf1997matrixstring,dijkgraaf2003matrixstringcontactterms}.
 \item Symmetric-orbifold covering-map correlators and large-$M$ combinatorics: \cite{arutyunov1998orbifoldscattering,lunin2001correlationorbifolds,lunin2002threepointorbifolds,pakman2009diagramssymmetricorbifold,pakman2009extremalhurwitz}.
 \item First-order NCOS/GO worldsheet system: \cite{gomis2000nonrelativisticclosedstringtheory}.
-\item Curved-$\beta\gamma$ anomaly framework: \cite{nekrasov2005curvedbetagammasystems}.
+\item Curved-$(\beta,\gamma)$ anomaly framework and chiral-de-Rham cancellation structure: \cite{nekrasov2005curvedbetagammasystems,msv1999chiralderham,benzvi2008supersymmetrycdr}.
+\item Global BRST and curved-target patching formulas used in this note are implemented in \texttt{BRST-curved.tex}.
 \end{itemize}
 
 \printbibliography
