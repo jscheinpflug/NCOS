@@ -70,6 +70,13 @@ So there are two inequivalent large-$N$ scalings:
 \text{(B) fixed }\kappa:\ \rho=\kappa/N\to 0.
 \end{equation}
 In this section we use (A): fix $R/\sqrt{\Aeff}$ and scale only $N$.
+Then
+\begin{equation}\label{eq:oneoverN-oneoverkappa}
+\frac{1}{N}=\frac{\rho}{\kappa},
+\qquad
+\frac{1}{\kappa}=\frac{1}{g_{\mathrm{YM}}R}.
+\end{equation}
+So at fixed $\rho$, a $1/N$ expansion is exactly a $1/(g_{\mathrm{YM}}R)$ expansion up to the fixed factor $\rho$.
 
 By ``finite-$N$ NRCS'' we mean a hypothetical exact (nonperturbative) definition that captures the full finite-$N$ gauge theory. That exact formulation is not currently available. By contrast, perturbative NRCS is organized as a large-$N$ expansion (equivalently in the NCOS language, an expansion around weak effective string coupling), so it automatically probes the large-$N$ regime \cite{gomis2000nonrelativisticclosedstringtheory,klebanov200011dimensionalncosun}.
 
@@ -159,6 +166,27 @@ Hence in fixed-$\rho$ large-$N$:
 \item macroscopic sectors with $w\sim N$ have $\Delta E/g_{\mathrm{YM}}=O(1/N^2)$ from \eqref{eq:deltaE-macro-rho}.
 \end{itemize}
 Both are IR in gauge-theory units, consistent with landing on the symmetric-product orbifold regime. The overall radius $R$ enters only through the dimensionless ratio $\rho=R/\sqrt{\Aeff}$.
+
+This also matches the DVV organization of matrix string theory. The deformation
+\begin{equation}
+S_{\mathrm{int}}=\lambda_{\mathrm{DVV}}\int d^2z\,\mc O_{(2)}
+\end{equation}
+has $h(\mc O_{(2)})=\bar h(\mc O_{(2)})=3/2$, so $\lambda_{\mathrm{DVV}}$ has length dimension. On a cylinder of radius $R$, the dimensionless coupling is
+\begin{equation}\label{eq:dvv-dimensionless}
+\widehat\lambda_{\mathrm{DVV}}:=\frac{\lambda_{\mathrm{DVV}}}{R}.
+\end{equation}
+In the standard MST dictionary one has
+\begin{equation}
+\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{g_{\mathrm{YM}}},
+\end{equation}
+with convention-dependent $c_{\mathrm{DVV}}=O(1)$ determined by operator normalization. Therefore
+\begin{equation}\label{eq:dvv-kappa-relation}
+\widehat\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{g_{\mathrm{YM}}R}
+=\frac{c_{\mathrm{DVV}}}{\kappa},
+\qquad
+\frac{1}{N}=\frac{\rho}{c_{\mathrm{DVV}}}\,\widehat\lambda_{\mathrm{DVV}}.
+\end{equation}
+So in perturbative NRCS scaling (fixed $\rho$), the NRCS $1/N$ expansion and the DVV/MST expansion are the same parametric expansion.
 
 \section{Orbifold three-point data at finite \texorpdfstring{$M$}{M}}
 At the orbifold point, define the normalized single-cycle class operator
@@ -338,11 +366,44 @@ and first order gives
 \right\rangle_{\mathrm{orb}}.
 \end{equation}
 
-The power of $M$ in a normalized correlator is controlled by the combinatorics in \eqref{eq:C123-exact}, not by \eqref{eq:dvv} alone. So:
+The power of $M$ in a normalized correlator is controlled by the combinatorics in \eqref{eq:C123-exact}, not by \eqref{eq:dvv} alone. In general:
 \begin{itemize}
 \item ``order in $\lambda_{\mathrm{DVV}}$'' and ``order in $1/M$'' are logically distinct,
 \item and in the macroscopic regime \eqref{eq:macro-scaling}, even the undeformed correlator is not a pure $1/M$ series before extracting the entropic factor.
 \end{itemize}
+To connect this with perturbative NRCS scaling, use the dimensionless DVV coupling
+\begin{equation}
+\widehat\lambda_{\mathrm{DVV}}:=\frac{\lambda_{\mathrm{DVV}}}{R},
+\end{equation}
+and the relation \eqref{eq:dvv-kappa-relation}
+\begin{equation}
+\widehat\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{\kappa},
+\qquad
+c_{\mathrm{DVV}}=O(1)\ \text{(convention-dependent)}.
+\end{equation}
+Then in the perturbative NRCS scaling of Section \ref{sec:nrcs-cylinder-ir} with $M=N$ and fixed $\rho=R/\sqrt{\Aeff}$,
+\begin{equation}
+\frac{1}{M}=\frac{1}{N}=\frac{\rho}{\kappa}
+=
+\frac{\rho}{c_{\mathrm{DVV}}}\,\widehat\lambda_{\mathrm{DVV}}.
+\end{equation}
+So the NRCS $1/N$ expansion and the DVV/MST expansion are the same \emph{parametric} expansion in $1/\kappa=1/(g_{\mathrm{YM}}R)$.
+
+The practical distinction is controlled by $\rho$:
+\begin{itemize}
+\item if $\rho=O(1)$, $1/M$ and $\widehat\lambda_{\mathrm{DVV}}$ are comparable at fixed $\kappa$,
+\item if $\rho\ll 1$, $1/M$ effects are suppressed relative to DVV insertions,
+\item if $\rho\gg 1$, $1/M$ effects are enhanced relative to DVV insertions.
+\end{itemize}
+Therefore a safe organization is a double expansion
+\begin{equation}
+C_{123}
+=
+\sum_{n,m\ge 0}
+a_{n,m}\!\left(\rho;\,x_i,\ldots\right)\,
+\widehat\lambda_{\mathrm{DVV}}^{\,n}\,M^{-m},
+\end{equation}
+with explicit $\rho$-dependence kept in the coefficients. Only after fixing $\rho$ does this collapse to a single $1/\kappa$ expansion.
 
 \section{Worldsheet three-point from the curved first-order action on \texorpdfstring{$S^2$}{S2}}
 \subsection{Action and localization equations}
