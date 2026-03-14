@@ -1,0 +1,483 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\Aeff}{\alpha'_{\mathrm{eff}}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\gh}{\mathrm{gh}}
+
+\title{BRST Quantization of the Curved First-Order String}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Aim}
+This note isolates the BRST and GSO data for the curved first-order string built from a longitudinal super-$\beta\gamma$ matter system together with eight transverse free superfields. The local matter action is the critical type-II Gomis--Ooguri system \cite{gomis2000nonrelativisticclosedstringtheory}, while the curved-target patching is the superfield version of a curved $\beta\gamma$ system in the sense reviewed by Nekrasov \cite{nekrasov2005curvedbetagammasystems}. What is standard and imported here is the worldsheet RNS ghost completion and the local type-IIB GSO projection. The main claim proved in this note is that, for the \emph{full} super first-order longitudinal multiplet, the putative curved-$\beta\gamma$ quantum obstruction is cancelled by the fermionic partner system, so the BRST current and BRST charge are globally defined on any smooth target Riemann surface $C$.
+
+Throughout, $\Sigma$ denotes the worldsheet Riemann surface, $C$ denotes the two-dimensional target Riemann surface, and $\Aeff$ denotes the effective string scale. I use bars to denote the antiholomorphic worldsheet sector, not complex conjugation, unless I explicitly discuss a Euclidean reality condition. I also separate three different kinds of fields from the beginning:
+\begin{itemize}
+\item $(\gamma,\beta)$ and their fermionic partners are the \emph{longitudinal matter} fields,
+\item $(b_{\gh},c_{\gh})$ are the reparametrization ghosts,
+\item $(\beta_{\gh},\gamma_{\gh})$ are the superconformal ghosts.
+\end{itemize}
+This separation is essential because the older notation $(b,c)$ for the longitudinal matter fermions would otherwise collide with the BRST ghost system.
+
+\section{Local Matter System}
+On a Euclidean worldsheet with local superspace coordinates $(z,\bar z,\vartheta,\bar\vartheta)$, define
+\begin{equation}\label{eq:superderivatives}
+D=\partial_\vartheta+\vartheta\,\partial,
+\qquad
+\bar D=\partial_{\bar\vartheta}+\bar\vartheta\,\bar\partial,
+\qquad
+D^2=\partial,
+\qquad
+\bar D^2=\bar\partial.
+\end{equation}
+The flat-space matter action is
+\begin{equation}\label{eq:flat-action}
+\begin{aligned}
+S_{\mathrm{flat}}
+&=
+\frac{1}{2\pi}\int d^2z\,d\vartheta\,d\bar\vartheta\,
+\left[
+\mathbf B\,\bar D\mathbf X^+
++\bar{\mathbf B}\,D\mathbf X^-
++\frac{1}{4\Aeff}\,D\mathbf X^+\,\bar D\mathbf X^-
+\right]
++S_\perp,
+\\
+S_\perp
+&=
+\frac{1}{2\pi \Aeff}\int d^2z\,d\vartheta\,d\bar\vartheta\,
+\delta_{ij}\,D\mathbf Y^i\,\bar D\mathbf Y^j,
+\qquad i=1,\dots,8.
+\end{aligned}
+\end{equation}
+Here $\mathbf X^\pm$ are bosonic longitudinal superfields, $\mathbf B$ and $\bar{\mathbf B}$ are fermionic first-order superfields, and $\mathbf Y^i$ are the transverse free superfields.
+
+Varying $\mathbf B$ and $\bar{\mathbf B}$ gives the chirality constraints
+\begin{equation}\label{eq:chirality-constraints}
+\bar D\mathbf X^+=0,
+\qquad
+D\mathbf X^-=0,
+\qquad
+\bar D\mathbf B=0,
+\qquad
+D\bar{\mathbf B}=0.
+\end{equation}
+So on shell the holomorphic fields have the component expansions
+\begin{equation}\label{eq:holomorphic-components}
+\mathbf X^+(z,\vartheta)=\gamma(z)+\vartheta\,\psi^+(z),
+\qquad
+\mathbf B(z,\vartheta)=\rho(z)+\vartheta\,\beta(z),
+\end{equation}
+and similarly the antiholomorphic fields have
+\begin{equation}\label{eq:antiholomorphic-components}
+\mathbf X^-(\bar z,\bar\vartheta)=\bar\gamma(\bar z)+\bar\vartheta\,\bar\psi^-(\bar z),
+\qquad
+\bar{\mathbf B}(\bar z,\bar\vartheta)=\bar\rho(\bar z)+\bar\vartheta\,\bar\beta(\bar z).
+\end{equation}
+The nontrivial operator products are
+\begin{equation}\label{eq:matter-opes}
+\beta(z)\gamma(w)\sim \frac{1}{z-w},
+\qquad
+\rho(z)\psi^+(w)\sim \frac{1}{z-w},
+\end{equation}
+\begin{equation}\label{eq:antimatter-opes}
+\bar\beta(\bar z)\bar\gamma(\bar w)\sim \frac{1}{\bar z-\bar w},
+\qquad
+\bar\rho(\bar z)\bar\psi^-(\bar w)\sim \frac{1}{\bar z-\bar w}.
+\end{equation}
+Thus the longitudinal bosonic pair $(\beta,\gamma)$ has weights $(1,0)$, the longitudinal fermionic pair $(\rho,\psi^+)$ has weights $(\tfrac12,\tfrac12)$, and the same weights hold antiholomorphically. The longitudinal matter central charge is therefore
+\begin{equation}\label{eq:longitudinal-central-charge}
+c_{+-}=2+1=3,
+\end{equation}
+while the eight transverse bosons and fermions contribute $12$, so the total matter central charge is
+\begin{equation}\label{eq:matter-central-charge}
+c_m=15.
+\end{equation}
+
+The exact holomorphic longitudinal supercurrent and stress tensor are
+\begin{equation}\label{eq:longitudinal-supercurrent}
+G_{+-}(z)=:\!\psi^+\,\beta\!:+:\!\rho\,\partial\gamma\!:,
+\end{equation}
+\begin{equation}\label{eq:longitudinal-stress}
+T_{+-}(z)=-:\!\beta\,\partial\gamma\!:
+-\frac12:\!\rho\,\partial\psi^+\!:
++\frac12:\!(\partial\rho)\,\psi^+\!:,
+\end{equation}
+with the obvious antiholomorphic partners $\bar G_{+-}(\bar z)$ and $\bar T_{+-}(\bar z)$. These formulas are not new derivations here; they are the standard first-order $\mc N=1$ matter operators already implicit in the exact NCOS first-order rewrite. Let $T_\perp$ and $G_\perp$ denote the standard free operators of the eight transverse bosons and fermions. Then the full matter operators are
+\begin{equation}\label{eq:full-matter-operators}
+T_m=T_{+-}+T_\perp,
+\qquad
+G_m=G_{+-}+G_\perp,
+\end{equation}
+and similarly antiholomorphically. Locally they generate the critical $\mc N=1$ superconformal algebra with matter central charge \eqref{eq:matter-central-charge}.
+
+\section{Ghost Completion and BRST Charge}
+The reparametrization ghosts $(b_{\gh},c_{\gh})$ are the standard fermionic system of weights $(2,-1)$ with
+\begin{equation}\label{eq:bc-ope}
+b_{\gh}(z)c_{\gh}(w)\sim \frac{1}{z-w},
+\qquad
+T_{bc}(z)=-2:\!b_{\gh}\partial c_{\gh}\!:-:\!(\partial b_{\gh})c_{\gh}\!:,
+\end{equation}
+and central charge $c_{bc}=-26$.
+
+The superconformal ghost system $(\beta_{\gh},\gamma_{\gh})$ is the standard bosonic system of weights $(\tfrac32,-\tfrac12)$. I use its bosonized form
+\begin{equation}\label{eq:superghost-bosonization}
+\beta_{\gh}=\partial\xi_{\gh}\,e^{-\phi_{\gh}},
+\qquad
+\gamma_{\gh}=\eta_{\gh}\,e^{\phi_{\gh}},
+\end{equation}
+with
+\begin{equation}\label{eq:bosonized-opes}
+\eta_{\gh}(z)\xi_{\gh}(w)\sim \frac{1}{z-w},
+\qquad
+\phi_{\gh}(z)\phi_{\gh}(w)\sim -\log(z-w).
+\end{equation}
+The corresponding stress tensors are
+\begin{equation}\label{eq:eta-xi-stress}
+T_{\eta\xi}(z)=-:\!\eta_{\gh}\partial\xi_{\gh}\!:,
+\qquad
+T_{\phi}(z)=-\frac12:\!(\partial\phi_{\gh})^2\!:-\partial^2\phi_{\gh},
+\end{equation}
+with central charges $c_{\eta\xi}=-2$ and $c_{\phi}=13$, hence
+\begin{equation}\label{eq:superghost-central-charge}
+c_{\beta_{\gh}\gamma_{\gh}}=c_{\eta\xi}+c_{\phi}=11.
+\end{equation}
+Therefore the total holomorphic central charge is
+\begin{equation}\label{eq:total-central-charge}
+c_m+c_{bc}+c_{\beta_{\gh}\gamma_{\gh}}=15-26+11=0,
+\end{equation}
+and the same cancellation occurs in the antiholomorphic sector.
+
+At this point I import the standard RNS BRST current in bosonized form and simply substitute the first-order matter operators \eqref{eq:full-matter-operators}. The holomorphic BRST current is
+\begin{equation}\label{eq:brst-current}
+j_B
+=
+c_{\gh}\bigl(T_m+T_{\eta\xi}+T_\phi\bigr)
++c_{\gh}\partial c_{\gh}\,b_{\gh}
++\eta_{\gh}e^{\phi_{\gh}}G_m
+-\eta_{\gh}\partial\eta_{\gh}\,e^{2\phi_{\gh}}b_{\gh},
+\end{equation}
+and the holomorphic BRST charge is
+\begin{equation}\label{eq:holomorphic-brst}
+Q=\oint \frac{dz}{2\pi i}\,j_B(z).
+\end{equation}
+The antiholomorphic current $\bar j_B$ and charge $\bar Q$ are defined by the same formula with bars on every field. Because the matter sector is critical by \eqref{eq:total-central-charge}, the standard nilpotency statement applies locally:
+\begin{equation}\label{eq:nilpotency}
+Q^2=\bar Q^2=\{Q,\bar Q\}=0.
+\end{equation}
+The full BRST operator is
+\begin{equation}\label{eq:full-brst}
+Q_{\mathrm{BRST}}=Q+\bar Q.
+\end{equation}
+
+There is also a useful flat-space consistency check. On a target circle or torus, one may decompose $Q_{\mathrm{BRST}}$ in a fixed winding sector exactly as in \cite{gomis2000nonrelativisticclosedstringtheory}. With winding number $w$ and circle radius $R$, the leading piece is
+\begin{equation}\label{eq:qminusone}
+Q_{-1}=wR\sum_{n}\beta_{-n}\,c_{\gh,n}.
+\end{equation}
+The usual Kato--Ogawa argument then shows that the BRST cohomology reduces to the transverse unitary sector. I record this only as a flat-space check. On a general curved target $C$, winding is not a globally defined quantum number, so \eqref{eq:qminusone} is not the right starting point for the curved problem.
+
+\section{Physical States, Pictures, and GSO Projection}
+I work in the small Hilbert space. Concretely, a physical closed-string state $|\Psi\rangle$ must obey
+\begin{equation}\label{eq:small-hilbert}
+\eta_{\gh,0}|\Psi\rangle=0,
+\qquad
+\bar\eta_{\gh,0}|\Psi\rangle=0.
+\end{equation}
+In that space the canonical local representatives are taken in picture $-1$ for NS states and picture $-\tfrac12$ for Ramond states. I do not attempt to build a full catalog of integrated and unintegrated vertex operators in this note; the point here is only to fix the BRST complex and the sector bookkeeping.
+
+The closed-string physical-state conditions are
+\begin{equation}\label{eq:physical-state-conditions}
+Q_{\mathrm{BRST}}|\Psi\rangle=0,
+\qquad
+|\Psi\rangle \sim |\Psi\rangle + Q_{\mathrm{BRST}}|\Lambda\rangle,
+\end{equation}
+together with the usual closed-string constraints
+\begin{equation}\label{eq:level-matching-conditions}
+b_{\gh,0}^-|\Psi\rangle=0,
+\qquad
+L_0^-|\Psi\rangle=0,
+\qquad
+b_{\gh,0}^-:=b_{\gh,0}-\bar b_{\gh,0},
+\qquad
+L_0^-:=L_0-\bar L_0.
+\end{equation}
+
+Locally, the first-order longitudinal fermionic pair $(\rho,\psi^+)$ contributes the same $c=1$ fermionic system as the ordinary two longitudinal RNS fermions. After combining it with the eight transverse fermions, the local Ramond ground states furnish the standard ten-dimensional type-II spin representation. I therefore import the standard type-II NS/R and GSO bookkeeping at the local level.
+
+For the NS sector, I denote by $\mc H_{\mathrm{NS}}^+$ the tachyon-free subsector obtained by the usual GSO projection. In operator language this means that the projection keeps the states with odd matter-fermion excitation number above the NS vacuum. For the Ramond sector, I denote by $\mc H_{\mathrm{R}}^+$ the positive-chirality subsector of the local Ramond zero-mode representation. With this notation, the local type-IIB closed-string Hilbert space is
+\begin{equation}\label{eq:iib-hilbert-space}
+\mc H_{\mathrm{IIB}}
+=
+\bigl(\mc H_{\mathrm{NS}}^+\otimes \bar{\mc H}_{\mathrm{NS}}^+\bigr)
+\oplus
+\bigl(\mc H_{\mathrm{R}}^+\otimes \bar{\mc H}_{\mathrm{R}}^+\bigr)
+\oplus
+\bigl(\mc H_{\mathrm{NS}}^+\otimes \bar{\mc H}_{\mathrm{R}}^+\bigr)
+\oplus
+\bigl(\mc H_{\mathrm{R}}^+\otimes \bar{\mc H}_{\mathrm{NS}}^+\bigr).
+\end{equation}
+Here the bar on $\bar{\mc H}$ indicates the right-moving sector. It is not complex conjugation. Equation \eqref{eq:iib-hilbert-space} is the precise sense in which this note fixes type-IIB rather than type-IIA conventions: the left- and right-moving Ramond sectors are chosen with the same chirality.
+
+If later one specializes the target to a spacetime torus $C=T^2$, one may also impose target-space fermion boundary conditions around the temporal and spatial target cycles. I denote those target-space data by $[\nu_t,\nu_x]\in\{0,1\}^2$, where $\nu=0$ means periodic and $\nu=1$ means antiperiodic. These labels are \emph{not} the worldsheet GSO projection. They are additional background data on the target torus. The local BRST current \eqref{eq:brst-current} and the local Hilbert-space decomposition \eqref{eq:iib-hilbert-space} remain the same.
+
+\section{Curved Target and the Global Quantum BRST Operator}
+Let $C$ be a target Riemann surface covered by holomorphic charts $U_a$ with local coordinate $u_a$. In chart $U_a$ I introduce superfields $\mathbf X_a^\pm$, $\mathbf B_a$, and $\bar{\mathbf B}_a$ and write the local longitudinal action as
+\begin{equation}\label{eq:curved-local-action}
+\begin{aligned}
+S_{\mathrm{long}}^{(a)}
+=
+\frac{1}{2\pi}\int d^2z\,d\vartheta\,d\bar\vartheta\,
+\left[
+\mathbf B_a\,\bar D\mathbf X_a^+
++\bar{\mathbf B}_a\,D\mathbf X_a^-
++\frac{e^{2\omega_a(\mathbf X_a^+,\mathbf X_a^-)}}{4\Aeff}\,
+D\mathbf X_a^+\,\bar D\mathbf X_a^-
+\right].
+\end{aligned}
+\end{equation}
+On an overlap $U_a\cap U_b$, let $u_b=f_{ba}(u_a)$ with $f_{ba}$ holomorphic. The superfield patching is
+\begin{equation}\label{eq:superfield-patching}
+\mathbf X_b^+=f_{ba}(\mathbf X_a^+),
+\qquad
+\mathbf X_b^-=\bar f_{ba}(\mathbf X_a^-),
+\qquad
+\mathbf B_b=\bigl(f_{ba}'(\mathbf X_a^+)\bigr)^{-1}\mathbf B_a,
+\qquad
+\bar{\mathbf B}_b=\bigl(\bar f'_{ba}(\mathbf X_a^-)\bigr)^{-1}\bar{\mathbf B}_a.
+\end{equation}
+Expanding \eqref{eq:superfield-patching} in components gives the exact classical patching rules
+\begin{equation}\label{eq:component-patching-holo}
+\gamma_b=f_{ba}(\gamma_a),
+\qquad
+\psi_b^+=f'_{ba}(\gamma_a)\,\psi_a^+,
+\qquad
+\rho_b=\bigl(f'_{ba}(\gamma_a)\bigr)^{-1}\rho_a,
+\end{equation}
+\begin{equation}\label{eq:component-patching-beta}
+\beta_b
+=
+\bigl(f'_{ba}(\gamma_a)\bigr)^{-1}\beta_a
+-\frac{f''_{ba}(\gamma_a)}{\bigl(f'_{ba}(\gamma_a)\bigr)^2}\,
+\psi_a^+\rho_a,
+\end{equation}
+and similarly for the antiholomorphic fields with bars everywhere. The affine term in \eqref{eq:component-patching-beta} is not optional. It follows directly from the superfield patching law and it is precisely the reason the component stress tensor is more subtle globally than the superfield action.
+
+Equations \eqref{eq:component-patching-holo} and \eqref{eq:component-patching-beta} have a clear geometric meaning. If $\gamma:\Sigma\to C$ is the bosonic map defined by the lowest component of $\mathbf X^+$, then $\psi^+$ is a section of $\gamma^*(TC)$, $\rho$ is a section of $\gamma^*(T^*C)$, and $\beta$ is the weight-one partner that patches with the induced connection term. None of these fields is a target-space spinor. The target-space spin structure issue enters only when $C$ itself is later interpreted as a spacetime torus with chosen boundary conditions for spacetime fermions.
+
+\paragraph{Auxiliary connection.}
+To organize the overlap computation, define in chart $U_a$ the Chern connection coefficient of $TC$ by
+\begin{equation}\label{eq:connection-coefficient}
+\Gamma_a:=\partial_{u_a}\log\!\bigl(e^{2\omega_a}\bigr)=2\partial_{u_a}\omega_a,
+\end{equation}
+and similarly $\bar\Gamma_a:=2\partial_{\bar u_a}\omega_a$ in the antiholomorphic sector. Using the metric transformation law
+\begin{equation}\label{eq:metric-transform}
+e^{2\omega_b(u_b,\bar u_b)}
+=
+e^{2\omega_a(u_a,\bar u_a)}
+\left|\frac{du_a}{du_b}\right|^2,
+\end{equation}
+one finds
+\begin{equation}\label{eq:connection-transform}
+\Gamma_b
+=
+\bigl(f'_{ba}\bigr)^{-1}\Gamma_a
+-\frac{f''_{ba}}{(f'_{ba})^2},
+\qquad
+\bar\Gamma_b
+=
+\bigl(\bar f'_{ba}\bigr)^{-1}\bar\Gamma_a
+-\frac{\bar f''_{ba}}{(\bar f'_{ba})^2}.
+\end{equation}
+Now define the covariant momenta
+\begin{equation}\label{eq:covariant-momenta}
+\Pi_a:=\beta_a-\Gamma_a\,\rho_a\psi_a^+,
+\qquad
+\bar\Pi_a:=\bar\beta_a-\bar\Gamma_a\,\bar\rho_a\bar\psi_a^-.
+\end{equation}
+Substituting \eqref{eq:component-patching-holo}, \eqref{eq:component-patching-beta}, and \eqref{eq:connection-transform} gives
+\begin{equation}\label{eq:covariant-momenta-patch}
+\Pi_b=\bigl(f'_{ba}\bigr)^{-1}\Pi_a,
+\qquad
+\bar\Pi_b=\bigl(\bar f'_{ba}\bigr)^{-1}\bar\Pi_a.
+\end{equation}
+So $\Pi$ and $\bar\Pi$ patch tensorially as sections of $\gamma^*(T^*C)$ and $\gamma^*(\overline{T^*C})$.
+
+\paragraph{Global matter supercurrent and stress tensor.}
+Define the covariant worldsheet derivatives
+\begin{equation}\label{eq:covariant-derivatives}
+\nabla\psi_a^+:=\partial\psi_a^+ + \Gamma_a (\partial\gamma_a)\psi_a^+,
+\qquad
+\nabla\rho_a:=\partial\rho_a - \Gamma_a (\partial\gamma_a)\rho_a,
+\end{equation}
+and similarly $\bar\nabla\bar\psi_a^-$ and $\bar\nabla\bar\rho_a$ antiholomorphically. The natural local longitudinal generators are then
+\begin{equation}\label{eq:covariant-supercurrent}
+G_{+-}^{(a)}:=:\!\psi_a^+\Pi_a\!:+:\!\rho_a\partial\gamma_a\!:,
+\end{equation}
+\begin{equation}\label{eq:covariant-stress}
+T_{+-}^{(a)}
+:=
+-:\!\Pi_a\partial\gamma_a\!:
+-\frac12:\!\rho_a\nabla\psi_a^+\!:
++\frac12:\!(\nabla\rho_a)\psi_a^+\!:.
+\end{equation}
+Because every factor in \eqref{eq:covariant-supercurrent}--\eqref{eq:covariant-stress} patches tensorially, $G_{+-}^{(a)}$ and $T_{+-}^{(a)}$ agree on overlaps.
+
+For a curve, the auxiliary connection actually drops out of the final operators. Define the bosonic current
+\begin{equation}\label{eq:nilpotent-current}
+J_a:=:\!\rho_a\psi_a^+\!:.
+\end{equation}
+Since $\rho_a$ and $\psi_a^+$ are odd fields of a single target complex direction, one has $J_a^2=0$. Therefore
+\begin{equation}\label{eq:supercurrent-cancel}
+:\!\psi_a^+\Pi_a\!:
+=
+:\!\psi_a^+\beta_a\!:,
+\end{equation}
+and the connection terms in \eqref{eq:covariant-stress} cancel pairwise:
+\begin{equation}\label{eq:stress-cancel}
+T_{+-}^{(a)}
+=
+-:\!\beta_a\partial\gamma_a\!:
+-\frac12:\!\rho_a\partial\psi_a^+\!:
++\frac12:\!(\partial\rho_a)\psi_a^+\!:.
+\end{equation}
+Thus the flat-space formulas already patch globally on a target curve. The connection was only an auxiliary device that made the cancellation transparent. In particular, changing the Hermitian metric on $C$ changes $\Gamma_a$ but leaves the operators \eqref{eq:supercurrent-cancel} and \eqref{eq:stress-cancel} exactly unchanged.
+
+Adding the unchanged transverse system gives the global matter generators
+\begin{equation}\label{eq:global-matter-operators}
+T_m:=T_{+-}+T_\perp,
+\qquad
+G_m:=G_{+-}+G_\perp,
+\end{equation}
+and the same formulas define $\bar T_m$ and $\bar G_m$ antiholomorphically.
+
+\paragraph{Quantum anomaly cancellation.}
+The remaining issue is quantum, not classical: normal ordering could in principle introduce an overlap cocycle even when the classical formulas match. For the \emph{bosonic} curved $\beta\gamma$ system by itself, that is the usual anomaly emphasized in \cite{nekrasov2005curvedbetagammasystems}. The present longitudinal multiplet is different. The odd pair $(\rho,\psi^+)$ transforms in the same bundle data as the bosonic pair $(\beta,\gamma)$, but with opposite statistics. Consequently the determinant line of the bosonic Jacobian is cancelled by the inverse determinant line of the fermionic Jacobian.
+
+Equivalently, the local generators $(\gamma,\beta,\psi^+,\rho)$ are exactly the local $bc\beta\gamma$ fields of the chiral de Rham complex. The theorem of Malikov, Schechtman, and Vaintrob \cite{msv1999chiralderham} states that this combined system defines a sheaf of vertex superalgebras on any smooth manifold, and the theorem of Ben-Zvi, Heluani, and Szczesny \cite{benzvi2008supersymmetrycdr} states that a Riemannian metric induces a global $\mc N=1$ superconformal structure on that sheaf. In the present one-complex-dimensional setting, equations \eqref{eq:covariant-momenta-patch}--\eqref{eq:stress-cancel} are the direct coordinate realization of that general fact. Therefore the full super first-order longitudinal system has no residual curved-$\beta\gamma$ anomaly on a target curve.
+
+This resolves the topological issue that would have obstructed the bosonic subsystem. The quantity
+\begin{equation}\label{eq:target-euler}
+\int_C c_1(TC)=\chi(C)=2-2g_C
+\end{equation}
+still controls the anomaly of the bosonic curved $\beta\gamma$ theory in isolation, but it does \emph{not} obstruct the full super multiplet used here.
+
+It is important to say explicitly what this anomaly is an anomaly \emph{of}. In each target chart $U_a$, quantization of the bosonic curved $\beta\gamma$ system gives a local chiral operator algebra $\mc A_a$ generated by the chart fields $(\gamma_a,\beta_a)$ and their descendants. On an overlap $U_a\cap U_b$, the target coordinate change $u_b=f_{ba}(u_a)$ should induce an isomorphism
+\begin{equation}\label{eq:overlap-isomorphism}
+\Phi_{ba}:\mc A_a\longrightarrow \mc A_b
+\end{equation}
+that preserves operator products. To define a global quantum theory on $C$, these overlap maps must also satisfy the cocycle condition
+\begin{equation}\label{eq:cocycle-operator}
+\Phi_{ca}=\Phi_{cb}\circ \Phi_{ba}
+\qquad\text{on }U_a\cap U_b\cap U_c.
+\end{equation}
+For the bosonic curved $\beta\gamma$ system by itself, normal ordering and the path-integral measure can spoil \eqref{eq:overlap-isomorphism} or \eqref{eq:cocycle-operator}. That failure is the curved-$\beta\gamma$ anomaly. Equation \eqref{eq:target-euler} records the topological class of that obstruction on a target curve. The point of the super first-order system is that the fermionic partner algebra generated by $(\psi^+,\rho)$ contributes the opposite determinant line, so the combined local operator algebras do admit overlap isomorphisms preserving OPEs and satisfying the cocycle condition.
+
+\paragraph{Global BRST current.}
+Because the matter operators \eqref{eq:global-matter-operators} are now globally defined quantum fields, one may define the global BRST currents by the same formulas as in flat space,
+\begin{equation}\label{eq:local-brst-current}
+j_B
+=
+c_{\gh}\bigl(T_m+T_{\eta\xi}+T_\phi\bigr)
++c_{\gh}\partial c_{\gh}\,b_{\gh}
++\eta_{\gh}e^{\phi_{\gh}}G_m
+-\eta_{\gh}\partial\eta_{\gh}\,e^{2\phi_{\gh}}b_{\gh},
+\end{equation}
+\begin{equation}\label{eq:global-antiholo-brst}
+\bar j_B
+=
+\bar c_{\gh}\bigl(\bar T_m+\bar T_{\eta\xi}+\bar T_\phi\bigr)
++\bar c_{\gh}\bar\partial \bar c_{\gh}\,\bar b_{\gh}
++\bar\eta_{\gh}e^{\bar\phi_{\gh}}\bar G_m
+-\bar\eta_{\gh}\bar\partial\bar\eta_{\gh}\,e^{2\bar\phi_{\gh}}\bar b_{\gh}.
+\end{equation}
+There is no chart index because the overlap problem has been solved. The corresponding global BRST charges are
+\begin{equation}\label{eq:global-brst-charge}
+Q=\oint\frac{dz}{2\pi i}\,j_B(z),
+\qquad
+\bar Q=\oint\frac{d\bar z}{2\pi i}\,\bar j_B(\bar z),
+\qquad
+Q_{\mathrm{BRST}}=Q+\bar Q.
+\end{equation}
+The local operator products are the same as in flat space, since the overlap corrections have cancelled rather than changed the singular part of the chiral algebra. Hence the standard nilpotency argument applies globally:
+\begin{equation}\label{eq:global-nilpotency}
+Q^2=\bar Q^2=\{Q,\bar Q\}=0.
+\end{equation}
+So the BRST operator is globally defined on any smooth target Riemann surface $C$.
+
+\paragraph{Finite $\Aeff$ deformation.}
+It remains to check that the finite string-tension deformation does not spoil the global BRST construction. After integrating over $(\vartheta,\bar\vartheta)$, the curved interaction term in \eqref{eq:curved-local-action} is
+\begin{equation}\label{eq:finite-deformation-component}
+S_{\omega}
+=
+\frac{1}{8\pi\Aeff}\int_\Sigma d^2z\,
+e^{2\omega_a(\gamma_a,\bar\gamma_a)}\,\partial\gamma_a\,\bar\partial\bar\gamma_a,
+\end{equation}
+written in chart $U_a$. Because
+\begin{equation}\label{eq:interaction-patching}
+e^{2\omega_b(\gamma_b,\bar\gamma_b)}\,
+\partial\gamma_b\,\bar\partial\bar\gamma_b
+=
+e^{2\omega_a(\gamma_a,\bar\gamma_a)}\,
+\partial\gamma_a\,\bar\partial\bar\gamma_a,
+\end{equation}
+this interaction is globally defined. Moreover, $\gamma$ and $\bar\gamma$ have regular mutual operator product, so the local composite $e^{2\omega_a(\gamma_a,\bar\gamma_a)}$ requires no subtraction. There are therefore no new short-distance singularities coming from the metric factor itself.
+
+The chiral vertex algebra is also unchanged by \eqref{eq:finite-deformation-component}. The reason is structural: the interaction contains only $\gamma$, $\bar\gamma$, and their worldsheet derivatives. It contains no $\beta$, $\rho$, $\bar\beta$, or $\bar\rho$, and the mixed OPE between $\gamma$ and $\bar\gamma$ is regular. Consequently perturbation by \eqref{eq:finite-deformation-component} does not change the singular parts of the holomorphic OPEs
+\begin{equation}\label{eq:chiral-opes-unchanged}
+\beta(z)\gamma(w)\sim \frac{1}{z-w},
+\qquad
+\rho(z)\psi^+(w)\sim \frac{1}{z-w},
+\end{equation}
+or their antiholomorphic counterparts. Therefore the global chiral fields $T_m$, $G_m$, $j_B$, and $Q_{\mathrm{BRST}}$ are the same operators for the finite-$\Aeff$ theory as for the strict first-order core. The finite-$\Aeff$ term changes the nonchiral dynamics and the energy formulas, but it does not alter the global BRST complex.
+
+The same argument shows that the BRST data are independent of the choice of target metric representative within a fixed complex structure. Changing $\omega_a$ changes the globally defined interaction \eqref{eq:finite-deformation-component}, but the global chiral BRST current \eqref{eq:local-brst-current} and the global BRST charge \eqref{eq:global-brst-charge} are unchanged.
+
+\section{Status}
+The precise status of the construction is now:
+\begin{itemize}
+\item The local matter system \eqref{eq:flat-action}--\eqref{eq:full-matter-operators} is explicit.
+\item The local ghost completion \eqref{eq:bc-ope}--\eqref{eq:full-brst} is the standard RNS BRST system, rewritten in the first-order matter variables.
+\item The type-IIB GSO projection is fixed locally by \eqref{eq:iib-hilbert-space}.
+\item The curved-target superfield patching \eqref{eq:superfield-patching} induces the component transition laws \eqref{eq:component-patching-holo}--\eqref{eq:component-patching-beta}, and those laws imply the global matter generators \eqref{eq:global-matter-operators}.
+\item Quantum mechanically, the longitudinal super first-order system is anomaly-free on any smooth target curve because the fermionic $(\rho,\psi)$ determinant cancels the bosonic curved-$\beta\gamma$ determinant.
+\item Therefore the BRST currents \eqref{eq:local-brst-current} and \eqref{eq:global-antiholo-brst} and the BRST charge \eqref{eq:global-brst-charge} are globally defined for the full finite-$\Aeff$ theory on any smooth target Riemann surface $C$.
+\end{itemize}
+What remains open is no longer the existence of the global BRST operator. The remaining open problems are instead interaction-level questions: joining and splitting vertices, amplitudes on curved targets, and the comparison with symmetric-orbifold observables beyond the free genus-one test.
+
+\begin{thebibliography}{9}
+
+\bibitem{gomis2000nonrelativisticclosedstringtheory}
+J.~Gomis and H.~Ooguri,
+\newblock ``Non-Relativistic Closed String Theory,''
+\newblock {\it Journal of Mathematical Physics} {\bf 42} (2001) 3127--3151,
+\newblock arXiv:hep-th/0009181.
+
+\bibitem{nekrasov2005curvedbetagammasystems}
+N.~Nekrasov,
+\newblock ``Lectures on Curved Beta-Gamma Systems, Pure Spinors, and Anomalies,''
+\newblock arXiv:hep-th/0511008.
+
+\bibitem{msv1999chiralderham}
+F.~Malikov, V.~Schechtman, and A.~Vaintrob,
+\newblock ``Chiral de Rham Complex,''
+\newblock {\it Communications in Mathematical Physics} {\bf 204} (1999) 439--473.
+
+\bibitem{benzvi2008supersymmetrycdr}
+D.~Ben-Zvi, R.~Heluani, and M.~Szczesny,
+\newblock ``Supersymmetry of the Chiral de Rham Complex,''
+\newblock {\it Compositio Mathematica} {\bf 144} (2008) 503--521.
+
+\end{thebibliography}
+
+\end{document}
