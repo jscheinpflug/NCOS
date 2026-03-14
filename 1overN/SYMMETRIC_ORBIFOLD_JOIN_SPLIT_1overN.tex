@@ -14,8 +14,8 @@
 \newcommand{\bR}{\mathbb{R}}
 \newcommand{\Aeff}{\alpha'_{\mathrm{eff}}}
 
-\title{Joining/Splitting in \texorpdfstring{$\Sym^M(\bR^8)$}{SymM(R8)}:\\
-Large-\texorpdfstring{$M$}{M} Counting with Macroscopic Cycles,\\
+\title{Joining/Splitting in \texorpdfstring{$\Sym^N(\bR^8)$}{SymN(R8)}:\\
+Large-\texorpdfstring{$N$}{N} Counting with Macroscopic Cycles,\\
 and a Sphere-Target First-Order Worldsheet Analysis}
 \author{}
 \date{}
@@ -26,15 +26,15 @@ and a Sphere-Target First-Order Worldsheet Analysis}
 \section{Aim and scope}
 This note presents a self-contained comparison between symmetric-product-orbifold three-point data and the curved first-order worldsheet description of joining/splitting processes. The main goals are:
 \begin{itemize}
-\item State the exact finite-$M$ orbifold three-point formula and separate two inequivalent large-$M$ regimes.
-\item Work out the macroscopic-cycle limit $w_i\sim M$ with $w_1+w_2+w_3=M$, including explicit combinatorial asymptotics and the reduced object used for controlled $1/M$ organization.
+\item State the exact finite-$N$ orbifold three-point formula and separate two inequivalent large-$N$ regimes.
+\item Work out the macroscopic-cycle limit $w_i\sim N$ with $w_1+w_2+w_3=N$, including explicit combinatorial asymptotics and the reduced object used for controlled $1/N$ organization.
 \item Derive sphere three-point localization directly from the curved first-order Gomis--Ooguri path integral, showing in detail why branched covers appear.
-\item Incorporate the global BRST analysis of the curved target and explain how it changes the sphere three-point comparison and the interpretation of the $1/M$ story.
+\item Incorporate the global BRST analysis of the curved target and explain how it changes the sphere three-point comparison and the interpretation of the $1/N$ story.
 \end{itemize}
 
 The notation is:
 \begin{equation}
-\mc C_M:=\Sym^M(\bR^8),\qquad M\in \mathbb{Z}_{>0},
+\mc C_N:=\Sym^N(\bR^8),\qquad N\in \mathbb{Z}_{>0},
 \end{equation}
 and $w_i$ are cycle lengths of the three external twist operators.
 
@@ -98,7 +98,7 @@ Therefore in scaling (A), perturbative states with $\varepsilon=O(1)$ satisfy
 \end{equation}
 which is an IR scale of the gauge theory. This is the regime where the matrix-string description flows to the symmetric-product orbifold CFT \cite{dijkgraaf1997matrixstring}.
 
-To avoid notation clash with the rest of the note: below we continue to use $M$ for orbifold copy number in $\Sym^M(\bR^8)$, and the comparison with this section uses $M=N$.
+From this point onward, $N$ is the single rank/copy-number label used throughout the note.
 
 Once the IR description is a CFT on a cylinder of radius $R$, changing $R$ rescales the Hamiltonian but not local OPE data:
 \begin{equation}
@@ -167,187 +167,7 @@ Hence in fixed-$\rho$ large-$N$:
 \end{itemize}
 Both are IR in gauge-theory units, consistent with landing on the symmetric-product orbifold regime. The overall radius $R$ enters only through the dimensionless ratio $\rho=R/\sqrt{\Aeff}$.
 
-This also matches the DVV organization of matrix string theory. The deformation
-\begin{equation}
-S_{\mathrm{int}}=\lambda_{\mathrm{DVV}}\int d^2z\,\mc O_{(2)}
-\end{equation}
-has $h(\mc O_{(2)})=\bar h(\mc O_{(2)})=3/2$, so $\lambda_{\mathrm{DVV}}$ has length dimension. On a cylinder of radius $R$, the dimensionless coupling is
-\begin{equation}\label{eq:dvv-dimensionless}
-\widehat\lambda_{\mathrm{DVV}}:=\frac{\lambda_{\mathrm{DVV}}}{R}.
-\end{equation}
-In the standard MST dictionary one has
-\begin{equation}
-\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{g_{\mathrm{YM}}},
-\end{equation}
-with convention-dependent $c_{\mathrm{DVV}}=O(1)$ determined by operator normalization. Therefore
-\begin{equation}\label{eq:dvv-kappa-relation}
-\widehat\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{g_{\mathrm{YM}}R}
-=\frac{c_{\mathrm{DVV}}}{\kappa},
-\qquad
-\frac{1}{N}=\frac{\rho}{c_{\mathrm{DVV}}}\,\widehat\lambda_{\mathrm{DVV}}.
-\end{equation}
-So in perturbative NRCS scaling (fixed $\rho$), the NRCS $1/N$ expansion and the DVV/MST expansion are the same parametric expansion.
-
-\section{Orbifold three-point data at finite \texorpdfstring{$M$}{M}}
-At the orbifold point, define the normalized single-cycle class operator
-\begin{equation}\label{eq:class-op}
-\widehat{\sigma}_{[w]}
-:=
-\frac{1}{\sqrt{|[w]|_M}}
-\sum_{g\in [w]}\sigma_g,
-\qquad
-|[w]|_M=\frac{M!}{w(M-w)!}.
-\end{equation}
-Here $[w]\subset S_M$ is the conjugacy class of $w$-cycles.
-
-For the connected three-point contribution associated with degree-$d$ covers of genus $g$,
-\begin{equation}\label{eq:C123-def}
-C_{123}^{(g)}(M)
-:=
-\left\langle
-\widehat{\sigma}_{[w_1]}(0)\,
-\widehat{\sigma}_{[w_2]}(1)\,
-\widehat{\sigma}_{[w_3]}(\infty)
-\right\rangle_{g}^{\mathrm{conn}},
-\end{equation}
-the standard covering-space decomposition gives
-\begin{equation}\label{eq:C123-exact}
-C_{123}^{(g)}(M)
-=
-\frac{M!}{(M-d)!}\,
-\frac{
-H_d^{(g)}(w_1,w_2,w_3)\,
-\mc C_{\mathrm{seed}}^{(g)}(w_1,w_2,w_3)
-}{
-\sqrt{|[w_1]|_M\,|[w_2]|_M\,|[w_3]|_M}
-}.
-\end{equation}
-Definitions:
-\begin{itemize}
-\item $d$ is the number of active copies (equivalently covering degree).
-\item $H_d^{(g)}$ is the Hurwitz count $\sum_f 1/|\mathrm{Aut}(f)|$ over covers with the prescribed ramification.
-\item $\mc C_{\mathrm{seed}}^{(g)}$ is the local seed-theory correlator on the cover.
-\end{itemize}
-
-For three branch points, Riemann--Hurwitz gives
-\begin{equation}\label{eq:RH}
-2-2g
-=
-2d-\sum_{i=1}^3(w_i-1),
-\qquad
-d=\frac{w_1+w_2+w_3-1}{2}-g.
-\end{equation}
-
-\section{Two inequivalent large-\texorpdfstring{$M$}{M} limits}
-\subsection{Dilute-cycle regime: fixed \texorpdfstring{$w_i$}{wi} as \texorpdfstring{$M\to\infty$}{M->infty}}
-If $w_i$ and $d$ are fixed while $M\to\infty$, then
-\begin{equation}
-\frac{M!}{(M-d)!}
-=
-M^d\left[
-1-\frac{d(d-1)}{2M}+O(M^{-2})
-\right],
-\end{equation}
-\begin{equation}
-|[w]|_M
-=
-\frac{M^w}{w}
-\left[
-1-\frac{w(w-1)}{2M}+O(M^{-2})
-\right].
-\end{equation}
-Substituting into \eqref{eq:C123-exact} yields
-\begin{equation}\label{eq:dilute-expansion}
-\begin{aligned}
-C_{123}^{(g)}(M)
-=&
-M^{-g-\frac12}\,
-\sqrt{w_1w_2w_3}\,
-H_d^{(g)}\,
-\mc C_{\mathrm{seed}}^{(g)}
-\\
-&\times
-\left[
-1+\frac{1}{M}
-\left(
-\frac14\sum_{i=1}^3 w_i(w_i-1)-\frac12 d(d-1)
-\right)
-+O(M^{-2})
-\right].
-\end{aligned}
-\end{equation}
-This is the usual power-series $1/M$ expansion.
-
-\subsection{Macroscopic-cycle regime: \texorpdfstring{$w_i\sim M$}{wi~M} and \texorpdfstring{$w_1+w_2+w_3=M$}{sum wi=M}}
-Now impose the scaling that you asked for:
-\begin{equation}\label{eq:macro-scaling}
-w_i=x_i M+O(1),
-\qquad
-0<x_i<1,
-\qquad
-x_1+x_2+x_3=1.
-\end{equation}
-For genus $g=0$, \eqref{eq:RH} gives
-\begin{equation}\label{eq:d-macro}
-d=\frac{M-1}{2}.
-\end{equation}
-Define the pure combinatorial prefactor
-\begin{equation}\label{eq:Acomb-def}
-\mc A_{\mathrm{comb}}(M;\{w_i\})
-:=
-\frac{M!}{(M-d)!}\,
-\frac{1}{\sqrt{|[w_1]|_M|[w_2]|_M|[w_3]|_M}},
-\end{equation}
-so
-\begin{equation}\label{eq:C-macro-factorized}
-C_{123}^{(0)}(M)
-=
-\mc A_{\mathrm{comb}}(M;\{w_i\})\,
-H_{(M-1)/2}^{(0)}(w_1,w_2,w_3)\,
-\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3).
-\end{equation}
-
-Using Stirling in this scaling regime gives
-\begin{equation}\label{eq:Acomb-stirling}
-\log \mc A_{\mathrm{comb}}(M;\{x_i\})
-=
-\frac{M}{2}\,\Psi(x_1,x_2,x_3)
-+\frac{3}{2}\log M
-+O(1),
-\end{equation}
-with
-\begin{equation}\label{eq:Psi-def}
-\Psi(x_1,x_2,x_3)
-:=
-\log 2+\sum_{i=1}^3 (1-x_i)\log(1-x_i).
-\end{equation}
-Therefore
-\begin{equation}\label{eq:Acomb-asymptotic}
-\mc A_{\mathrm{comb}}(M;\{x_i\})
-=
-\mc N(x_1,x_2,x_3)\,
-M^{3/2}\,
-\exp\!\left[\frac{M}{2}\Psi(x_1,x_2,x_3)\right]
-\left[1+O(M^{-1})\right],
-\end{equation}
-where $\mc N(x_1,x_2,x_3)$ is an $M$-independent prefactor from subleading Stirling terms.
-
-This is the key point: in the macroscopic regime, the full correlator is \emph{not} a naive power series in $1/M$. The cycle fractions $x_i$ enter already at exponential order through \eqref{eq:Psi-def}, and also through large-degree Hurwitz data and the large-$w_i$ behavior of $\mc C_{\mathrm{seed}}^{(0)}$.
-
-A useful reduced object is
-\begin{equation}\label{eq:reduced-amplitude}
-\widetilde C_{123}^{(0)}(M)
-:=
-e^{-\frac{M}{2}\Psi(x_1,x_2,x_3)}\,M^{-3/2}\,C_{123}^{(0)}(M),
-\end{equation}
-for which one may then attempt a genuine $1/M$ expansion if
-\begin{equation}
-H_{(M-1)/2}^{(0)}(w_1,w_2,w_3)\,
-\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3)
-\end{equation}
-admits such an expansion in the same scaling limit.
-
-\section{DVV deformation versus large-\texorpdfstring{$M$}{M} counting}
+\subsection{DVV deformation versus large-\texorpdfstring{$N$}{N} counting}
 The matrix-string deformation is
 \begin{equation}\label{eq:dvv}
 S=S_{\mathrm{orb}}+\lambda_{\mathrm{DVV}}\int d^2z\,\mc O_{(2)}(z,\bar z),
@@ -366,24 +186,24 @@ and first order gives
 \right\rangle_{\mathrm{orb}}.
 \end{equation}
 
-The power of $M$ in a normalized correlator is controlled by the combinatorics in \eqref{eq:C123-exact}, not by \eqref{eq:dvv} alone. In general:
+The power of $N$ in a normalized correlator is controlled by the combinatorics in \eqref{eq:C123-exact}, not by \eqref{eq:dvv} alone. In general:
 \begin{itemize}
-\item ``order in $\lambda_{\mathrm{DVV}}$'' and ``order in $1/M$'' are logically distinct,
-\item and in the macroscopic regime \eqref{eq:macro-scaling}, even the undeformed correlator is not a pure $1/M$ series before extracting the entropic factor.
+\item ``order in $\lambda_{\mathrm{DVV}}$'' and ``order in $1/N$'' are logically distinct,
+\item and in the macroscopic regime \eqref{eq:macro-scaling}, even the undeformed correlator is not a pure $1/N$ series before extracting the entropic factor.
 \end{itemize}
 To connect this with perturbative NRCS scaling, use the dimensionless DVV coupling
 \begin{equation}
 \widehat\lambda_{\mathrm{DVV}}:=\frac{\lambda_{\mathrm{DVV}}}{R},
 \end{equation}
-and the relation \eqref{eq:dvv-kappa-relation}
-\begin{equation}
+and the relation
+\begin{equation}\label{eq:dvv-kappa-relation}
 \widehat\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{\kappa},
 \qquad
 c_{\mathrm{DVV}}=O(1)\ \text{(convention-dependent)}.
 \end{equation}
-Then in the perturbative NRCS scaling of Section \ref{sec:nrcs-cylinder-ir} with $M=N$ and fixed $\rho=R/\sqrt{\Aeff}$,
+Then in the perturbative NRCS scaling of Section \ref{sec:nrcs-cylinder-ir} with fixed $\rho=R/\sqrt{\Aeff}$,
 \begin{equation}
-\frac{1}{M}=\frac{1}{N}=\frac{\rho}{\kappa}
+\frac{1}{N}=\frac{\rho}{\kappa}
 =
 \frac{\rho}{c_{\mathrm{DVV}}}\,\widehat\lambda_{\mathrm{DVV}}.
 \end{equation}
@@ -391,9 +211,9 @@ So the NRCS $1/N$ expansion and the DVV/MST expansion are the same \emph{paramet
 
 The practical distinction is controlled by $\rho$:
 \begin{itemize}
-\item if $\rho=O(1)$, $1/M$ and $\widehat\lambda_{\mathrm{DVV}}$ are comparable at fixed $\kappa$,
-\item if $\rho\ll 1$, $1/M$ effects are suppressed relative to DVV insertions,
-\item if $\rho\gg 1$, $1/M$ effects are enhanced relative to DVV insertions.
+\item if $\rho=O(1)$, $1/N$ and $\widehat\lambda_{\mathrm{DVV}}$ are comparable at fixed $\kappa$,
+\item if $\rho\ll 1$, $1/N$ effects are suppressed relative to DVV insertions,
+\item if $\rho\gg 1$, $1/N$ effects are enhanced relative to DVV insertions.
 \end{itemize}
 Therefore a safe organization is a double expansion
 \begin{equation}
@@ -401,9 +221,170 @@ C_{123}
 =
 \sum_{n,m\ge 0}
 a_{n,m}\!\left(\rho;\,x_i,\ldots\right)\,
-\widehat\lambda_{\mathrm{DVV}}^{\,n}\,M^{-m},
+\widehat\lambda_{\mathrm{DVV}}^{\,n}\,N^{-m},
 \end{equation}
 with explicit $\rho$-dependence kept in the coefficients. Only after fixing $\rho$ does this collapse to a single $1/\kappa$ expansion.
+
+
+
+\section{Orbifold three-point data at finite \texorpdfstring{$N$}{N}}
+At the orbifold point, define the normalized single-cycle class operator
+\begin{equation}\label{eq:class-op}
+\widehat{\sigma}_{[w]}
+:=
+\frac{1}{\sqrt{|[w]|_N}}
+\sum_{g\in [w]}\sigma_g,
+\qquad
+|[w]|_N=\frac{N!}{w(N-w)!}.
+\end{equation}
+Here $[w]\subset S_N$ is the conjugacy class of $w$-cycles.
+
+For the connected three-point contribution associated with degree-$d$ covers of genus $g$,
+\begin{equation}\label{eq:C123-def}
+C_{123}^{(g)}(N)
+:=
+\left\langle
+\widehat{\sigma}_{[w_1]}(0)\,
+\widehat{\sigma}_{[w_2]}(1)\,
+\widehat{\sigma}_{[w_3]}(\infty)
+\right\rangle_{g}^{\mathrm{conn}},
+\end{equation}
+the standard covering-space decomposition gives
+\begin{equation}\label{eq:C123-exact}
+C_{123}^{(g)}(N)
+=
+\frac{N!}{(N-d)!}\,
+\frac{
+H_d^{(g)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(g)}(w_1,w_2,w_3)
+}{
+\sqrt{|[w_1]|_N\,|[w_2]|_N\,|[w_3]|_N}
+}.
+\end{equation}
+Definitions:
+\begin{itemize}
+\item $d$ is the number of active copies (equivalently covering degree).
+\item $H_d^{(g)}$ is the Hurwitz count $\sum_f 1/|\mathrm{Aut}(f)|$ over covers with the prescribed ramification.
+\item $\mc C_{\mathrm{seed}}^{(g)}$ is the local seed-theory correlator on the cover.
+\end{itemize}
+
+For three branch points, Riemann--Hurwitz gives
+\begin{equation}\label{eq:RH}
+2-2g
+=
+2d-\sum_{i=1}^3(w_i-1),
+\qquad
+d=\frac{w_1+w_2+w_3-1}{2}-g.
+\end{equation}
+
+\section{Two inequivalent large-\texorpdfstring{$N$}{N} limits}
+\subsection{Dilute-cycle regime: fixed \texorpdfstring{$w_i$}{wi} as \texorpdfstring{$N\to\infty$}{N->infty}}
+If $w_i$ and $d$ are fixed while $N\to\infty$, then
+\begin{equation}
+\frac{N!}{(N-d)!}
+=
+N^d\left[
+1-\frac{d(d-1)}{2N}+O(N^{-2})
+\right],
+\end{equation}
+\begin{equation}
+|[w]|_N
+=
+\frac{N^w}{w}
+\left[
+1-\frac{w(w-1)}{2N}+O(N^{-2})
+\right].
+\end{equation}
+Substituting into \eqref{eq:C123-exact} yields
+\begin{equation}\label{eq:dilute-expansion}
+\begin{aligned}
+C_{123}^{(g)}(N)
+=&
+N^{-g-\frac12}\,
+\sqrt{w_1w_2w_3}\,
+H_d^{(g)}\,
+\mc C_{\mathrm{seed}}^{(g)}
+\\
+&\times
+\left[
+1+\frac{1}{N}
+\left(
+\frac14\sum_{i=1}^3 w_i(w_i-1)-\frac12 d(d-1)
+\right)
++O(N^{-2})
+\right].
+\end{aligned}
+\end{equation}
+This is the usual power-series $1/N$ expansion.
+
+\subsection{Macroscopic-cycle regime: \texorpdfstring{$w_i\sim N$}{wi~N} and \texorpdfstring{$w_1+w_2+w_3=N$}{sum wi=N}}
+Now impose the scaling that you asked for:
+\begin{equation}\label{eq:macro-scaling}
+w_i=x_i N+O(1),
+\qquad
+0<x_i<1,
+\qquad
+x_1+x_2+x_3=1.
+\end{equation}
+For genus $g=0$, \eqref{eq:RH} gives
+\begin{equation}\label{eq:d-macro}
+d=\frac{N-1}{2}.
+\end{equation}
+Define the pure combinatorial prefactor
+\begin{equation}\label{eq:Acomb-def}
+\mc A_{\mathrm{comb}}(N;\{w_i\})
+:=
+\frac{N!}{(N-d)!}\,
+\frac{1}{\sqrt{|[w_1]|_N|[w_2]|_N|[w_3]|_N}},
+\end{equation}
+so
+\begin{equation}\label{eq:C-macro-factorized}
+C_{123}^{(0)}(N)
+=
+\mc A_{\mathrm{comb}}(N;\{w_i\})\,
+H_{(N-1)/2}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3).
+\end{equation}
+
+Using Stirling in this scaling regime gives
+\begin{equation}\label{eq:Acomb-stirling}
+\log \mc A_{\mathrm{comb}}(N;\{x_i\})
+=
+\frac{N}{2}\,\Psi(x_1,x_2,x_3)
++\frac{3}{2}\log N
++O(1),
+\end{equation}
+with
+\begin{equation}\label{eq:Psi-def}
+\Psi(x_1,x_2,x_3)
+:=
+\log 2+\sum_{i=1}^3 (1-x_i)\log(1-x_i).
+\end{equation}
+Therefore
+\begin{equation}\label{eq:Acomb-asymptotic}
+\mc A_{\mathrm{comb}}(N;\{x_i\})
+=
+\mc N(x_1,x_2,x_3)\,
+N^{3/2}\,
+\exp\!\left[\frac{N}{2}\Psi(x_1,x_2,x_3)\right]
+\left[1+O(N^{-1})\right],
+\end{equation}
+where $\mc N(x_1,x_2,x_3)$ is an $N$-independent prefactor from subleading Stirling terms.
+
+This is the key point: in the macroscopic regime, the full correlator is \emph{not} a naive power series in $1/N$. The cycle fractions $x_i$ enter already at exponential order through \eqref{eq:Psi-def}, and also through large-degree Hurwitz data and the large-$w_i$ behavior of $\mc C_{\mathrm{seed}}^{(0)}$.
+
+A useful reduced object is
+\begin{equation}\label{eq:reduced-amplitude}
+\widetilde C_{123}^{(0)}(N)
+:=
+e^{-\frac{N}{2}\Psi(x_1,x_2,x_3)}\,N^{-3/2}\,C_{123}^{(0)}(N),
+\end{equation}
+for which one may then attempt a genuine $1/N$ expansion if
+\begin{equation}
+H_{(N-1)/2}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3)
+\end{equation}
+admits such an expansion in the same scaling limit.
 
 \section{Worldsheet three-point from the curved first-order action on \texorpdfstring{$S^2$}{S2}}
 \subsection{Action and localization equations}
@@ -637,23 +618,23 @@ Equivalently:
 \end{itemize}
 
 \section{What is currently solid for macroscopic scaling}
-For $w_i\sim M$ with $w_1+w_2+w_3=M$:
+For $w_i\sim N$ with $w_1+w_2+w_3=N$:
 \begin{itemize}
 \item The exact orbifold expression is \eqref{eq:C-macro-factorized}.
-\item The combinatorial prefactor has explicit asymptotics \eqref{eq:Acomb-stirling}--\eqref{eq:Acomb-asymptotic}, so the $x_i=w_i/M$ fractions enter nontrivially already at leading order.
-\item Therefore the full correlator is not a naive power series in $1/M$ before extracting the entropic factor \eqref{eq:reduced-amplitude}.
-\item On the worldsheet side, the first-order action gives localization to branched covers \eqref{eq:A3-corrected}, and there is no additional unknown anomaly factor of the form $e^{-\kappa M}$ from the longitudinal supermultiplet.
+\item The combinatorial prefactor has explicit asymptotics \eqref{eq:Acomb-stirling}--\eqref{eq:Acomb-asymptotic}, so the $x_i=w_i/N$ fractions enter nontrivially already at leading order.
+\item Therefore the full correlator is not a naive power series in $1/N$ before extracting the entropic factor \eqref{eq:reduced-amplitude}.
+\item On the worldsheet side, the first-order action gives localization to branched covers \eqref{eq:A3-corrected}, and there is no additional unknown anomaly factor of the form $e^{-\kappa N}$ from the longitudinal supermultiplet.
 \item The remaining uncertainty for coefficient-level matching is dynamical map dependence in $S_{\mathrm{cl}}[f]$, $S_\Phi[f]$, and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$, not a residual curved-$(\beta,\gamma)$ topological obstruction.
 \end{itemize}
 
 \section{Do we need grand-canonical variables here?}
-For the torus free-energy problem, grand-canonical variables are essential because one sums over all cycle multiplicities (including disconnected sectors) and then extracts fixed-$M$ data via plethystic operations.
+For the torus free-energy problem, grand-canonical variables are essential because one sums over all cycle multiplicities (including disconnected sectors) and then extracts fixed-$N$ data via plethystic operations.
 
-For the present sphere three-point observable, we insert three \emph{fixed} operators of prescribed cycle lengths $(w_1,w_2,w_3)$ and fixed rank $M$. This is already a canonical correlator:
+For the present sphere three-point observable, we insert three \emph{fixed} operators of prescribed cycle lengths $(w_1,w_2,w_3)$ and fixed rank $N$. This is already a canonical correlator:
 \begin{equation}
 \left\langle
 \widehat{\sigma}_{[w_1]}\widehat{\sigma}_{[w_2]}\widehat{\sigma}_{[w_3]}
-\right\rangle_{\Sym^M}^{\mathrm{conn}},
+\right\rangle_{\Sym^N}^{\mathrm{conn}},
 \end{equation}
 so no grand-canonical fugacity is required to define or compute that single quantity.
 
@@ -663,7 +644,7 @@ Grand-canonical generating functions can still be useful if one wants to organiz
 \begin{itemize}
 \item Matrix-string interaction logic and contact terms: \cite{dijkgraaf1997matrixstring,dijkgraaf2003matrixstringcontactterms}.
 \item 1+1 NCOS/SYM parameter dictionary and large-$N$ scaling: \cite{klebanov200011dimensionalncosun}.
-\item Symmetric-orbifold covering-map correlators and large-$M$ combinatorics: \cite{arutyunov1998orbifoldscattering,lunin2001correlationorbifolds,lunin2002threepointorbifolds,pakman2009diagramssymmetricorbifold,pakman2009extremalhurwitz}.
+\item Symmetric-orbifold covering-map correlators and large-$N$ combinatorics: \cite{arutyunov1998orbifoldscattering,lunin2001correlationorbifolds,lunin2002threepointorbifolds,pakman2009diagramssymmetricorbifold,pakman2009extremalhurwitz}.
 \item First-order NCOS/GO worldsheet system: \cite{gomis2000nonrelativisticclosedstringtheory}.
 \item Curved-$(\beta,\gamma)$ anomaly framework and chiral-de-Rham cancellation structure: \cite{nekrasov2005curvedbetagammasystems,msv1999chiralderham,benzvi2008supersymmetrycdr}.
 \item Global BRST and curved-target patching formulas used in this note are implemented in \texttt{BRST-curved.tex}.
@@ -672,3 +653,4 @@ Grand-canonical generating functions can still be useful if one wants to organiz
 \printbibliography
 
 \end{document}
+
