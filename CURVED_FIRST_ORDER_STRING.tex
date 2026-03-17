@@ -6,6 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb}
+\usepackage{tikz}
 \usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
 
@@ -600,9 +601,74 @@ There is one conceptual caveat. The exact formula above is naturally grand canon
 \section{Beyond Genus One: Canonical Three-Point Data on \texorpdfstring{$S^2$}{S2}}
 The genus-one thermal free energy is naturally organized grand canonically in cycle length. The first genuinely new observables of the exact orbifold, however, are local correlators at fixed rank $N$ and fixed cycle data. In particular, if one specializes the spacetime to
 \begin{equation}\label{eq:sphere-spacetime}
-C=S^2,
+C_{0,3}:=S^2\setminus\{0,1,\infty\},
 \end{equation}
-then the natural next test is a canonical three-point function of single-cycle twist operators, not a deformation of the orbifold action.
+then the natural next test is a canonical pair-of-pants amplitude, not a deformation of the orbifold action. Because the strict Poisson/BF core forgets the target Weyl representative, one may equally well think of \eqref{eq:sphere-spacetime} as a sphere with three marked points or choose a representative metric with three semi-infinite cylindrical ends. In that cylindrical picture one inserts a state on each asymptotic tube.
+Figure~\ref{fig:pair-of-pants-target} summarizes these two equivalent target-space pictures. Here each $\Psi_i$ denotes a general asymptotic state on the $i$-th target tube, not necessarily a single long string.
+
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.92, line cap=round, line join=round]
+\draw[line width=19pt, black]
+  (0.05,0.05) .. controls (-0.55,-0.45) and (-1.00,-1.00) .. (-1.55,-1.75);
+\draw[line width=15pt, gray!15]
+  (0.05,0.05) .. controls (-0.55,-0.45) and (-1.00,-1.00) .. (-1.55,-1.75);
+
+\draw[line width=19pt, black]
+  (0.05,0.10) .. controls (0.02,0.80) and (0.08,1.35) .. (0.22,2.20);
+\draw[line width=15pt, gray!15]
+  (0.05,0.10) .. controls (0.02,0.80) and (0.08,1.35) .. (0.22,2.20);
+
+\draw[line width=19pt, black]
+  (0.18,-0.02) .. controls (0.90,-0.05) and (1.55,-0.45) .. (2.38,-1.05);
+\draw[line width=15pt, gray!15]
+  (0.18,-0.02) .. controls (0.90,-0.05) and (1.55,-0.45) .. (2.38,-1.05);
+
+\fill[white] (-1.70,-1.93) ellipse [x radius=0.34, y radius=0.16, rotate=-38];
+\draw[thick] (-1.70,-1.93) ellipse [x radius=0.34, y radius=0.16, rotate=-38];
+\fill[white] (0.24,2.48) ellipse [x radius=0.30, y radius=0.14];
+\draw[thick] (0.24,2.48) ellipse [x radius=0.30, y radius=0.14];
+\fill[white] (2.62,-1.20) ellipse [x radius=0.33, y radius=0.15, rotate=-8];
+\draw[thick] (2.62,-1.20) ellipse [x radius=0.33, y radius=0.15, rotate=-8];
+
+\draw[->, thick] (-2.55,-2.55) -- (-1.95,-2.08);
+\draw[->, thick] (0.24,3.05) -- (0.24,2.64);
+\draw[->, thick] (3.35,-1.45) -- (2.92,-1.28);
+\node at (-2.78,-2.78) {$\Psi_1$};
+\node at (0.24,3.30) {$\Psi_2$};
+\node at (3.62,-1.50) {$\Psi_3$};
+\node[align=center, text width=2.6cm] at (0.35,-2.85) {$C_{0,3}$ with three semi-infinite tubes};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.0, line cap=round, line join=round]
+\shade[ball color=gray!12, opacity=0.45] (0,0) circle (1.55);
+\draw[thick] (0,0) circle (1.55);
+\fill (0,1.2) circle (0.06);
+\fill (-1.05,-0.55) circle (0.06);
+\fill (1.15,-0.45) circle (0.06);
+\node[above] at (0,1.2) {$\infty,\lambda_3$};
+\node[left] at (-1.05,-0.55) {$0,\lambda_1$};
+\node[right] at (1.15,-0.45) {$1,\lambda_2$};
+\node at (0,-2.1) {$S^2$ with three marked points};
+\node at (0,1.85) {$C_{0,3}=S^2\setminus\{0,1,\infty\}$};
+\end{tikzpicture}
+\end{minipage}
+\caption{Two equivalent target-space pictures for the next exact-orbifold observable. Because the Poisson/BF core forgets the target Weyl representative, the three-punctured sphere $C_{0,3}$ may be viewed either as a pair of pants with three semi-infinite cylinders carrying general asymptotic states $\Psi_i$, or as the compact sphere with three marked points labeled by ramification profiles $\lambda_i$. Each $\Psi_i$ may represent a multi-string state with profile $\lambda_i$; the single-cycle case is the special choice $\lambda_i=(w_i)$.}
+\label{fig:pair-of-pants-target}
+\end{figure}
+
+A general exact-orbifold state on one tube need not be a single long string; it can carry an arbitrary cycle decomposition
+\begin{equation}\label{eq:ramification-profile}
+\lambda_i=(w_{i,1},\dots,w_{i,\ell_i}),
+\qquad
+\sum_{a=1}^{\ell_i} w_{i,a}\le N,
+\end{equation}
+so the most general tree-level observable is a three-point amplitude between states of prescribed ramification profile on the three tubes. In the present note I restrict attention to the simplest nontrivial case in which each external state is a single-cycle twisted-sector state, so each profile is a one-part partition $\lambda_i=(w_i)$. After compactifying the cylindrical ends back to the marked points $(0,1,\infty)$ on $S^2$, this is equivalently the canonical three-point function of single-cycle twist operators.
 
 At the orbifold point, define the normalized single-cycle class operator by
 \begin{equation}\label{eq:class-operator}
@@ -639,18 +705,229 @@ Here $d$ is the number of active copies, $H_d^{(g)}$ is the corresponding Hurwit
 \qquad
 d=\frac{w_1+w_2+w_3-1}{2}-g.
 \end{equation}
+In particular, for fixed cycle lengths $(w_1,w_2,w_3)$ and large $N$, the leading contribution comes from $g=0$. Writing
+\begin{equation}\label{eq:tree-level-degree}
+d_0:=\frac{w_1+w_2+w_3-1}{2},
+\end{equation}
+one finds directly from \eqref{eq:orbifold-three-point} that
+\begin{equation}\label{eq:orbifold-three-point-leading}
+\mc C_{123}^{(0)}(N)
+=
+N^{-1/2}
+\Big[
+\sqrt{w_1w_2w_3}\,
+H_{d_0}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3)
++O(N^{-1})
+\Big].
+\end{equation}
+Thus the first nontrivial large-$N$ comparison is indeed a genuine tree-level worldsheet problem: the leading orbifold coefficient comes from genus-zero covers and scales as $N^{-1/2}$.
 
 This is the right exact-orbifold observable to compare to the first-order string beyond genus one. It is already a canonical fixed-$N$ quantity, so unlike the torus free energy it does not structurally require a grand-canonical fugacity. One may still study its large-$N$ asymptotic expansion, but that expansion is part of the exact $\Sym^N(\bR^8)$ CFT itself. Grand-canonical generating functions may be useful for organizing an infinite family of such correlators, but they are optional bookkeeping rather than part of the definition of one fixed three-point function.
 
-On the worldsheet side, the Poisson/BF equations require $X^+$ to be holomorphic away from insertions. If the three vertex operators impose local monodromies of cycle lengths $(w_1,w_2,w_3)$, then in a local uniformizing coordinate $t_i$ near the insertion point one expects
-\begin{equation}\label{eq:local-branching}
-z-z_i=t_i^{\,w_i},
+On the worldsheet side, the tree-level problem should likewise be formulated on the punctured target $C_{0,3}$ with specified asymptotic states on its three cylindrical ends. Denote by $\mc H^{\rm orb}_{\lambda_i}$ the exact-orbifold Hilbert space on the $i$-th target tube with ramification profile $\lambda_i$, and let $\Psi_i\in \mc H^{\rm orb}_{\lambda_i}$ be the chosen external state. The corresponding string observable should be a trilinear pairing
+\begin{equation}\label{eq:pair-of-pants-amplitude}
+\mc A^{\rm str}_{C_{0,3}}(\Psi_1,\Psi_2,\Psi_3),
 \end{equation}
-so that the lifted longitudinal field is single-valued in $t_i$. The classical saddles are therefore naturally organized by holomorphic branched covers
+defined by the first-order worldsheet path integral over maps to $C_{0,3}$ whose asymptotics on the preimages of the three target tubes encode the states $\Psi_i$.
+Expressed in the language of the worldsheet CFT, the tree-level object one wants is a sphere correlator of three BRST vertex operators in the fixed target background $C_{0,3}$. Formally, after choosing superghost pictures $(q_i,\bar q_i)$ with
+\begin{equation}\label{eq:picture-balance}
+q_1+q_2+q_3=-2,
+\qquad
+\bar q_1+\bar q_2+\bar q_3=-2,
+\end{equation}
+and fixing the worldsheet punctures $\zeta_i$ by the $\mathrm{PSL}(2,\bC)$ automorphism of $\Sigma\simeq S^2$, one would write
+\begin{equation}\label{eq:pair-of-pants-cft-correlator}
+\mc A^{\rm str}_{C_{0,3}}(\Psi_1,\Psi_2,\Psi_3)
+=
+\sum_{\mathfrak s}
+\left\langle
+c_{\rm gh}\tilde c_{\rm gh}\,\mc V_{\Psi_1,\mathfrak s}^{(q_1,\bar q_1)}(\zeta_1,\bar\zeta_1)\,
+c_{\rm gh}\tilde c_{\rm gh}\,\mc V_{\Psi_2,\mathfrak s}^{(q_2,\bar q_2)}(\zeta_2,\bar\zeta_2)\,
+c_{\rm gh}\tilde c_{\rm gh}\,\mc V_{\Psi_3,\mathfrak s}^{(q_3,\bar q_3)}(\zeta_3,\bar\zeta_3)
+\right\rangle_{\Sigma=S^2,\mathfrak s}.
+\end{equation}
+Here $\mathfrak s$ labels the map sector of the worldsheet CFT in the fixed target background $C_{0,3}$, $c_{\rm gh},\tilde c_{\rm gh}$ are the usual reparametrization ghosts, and $\mc V_{\Psi_i,\mathfrak s}^{(q_i,\bar q_i)}$ denotes the BRST vertex operator corresponding to the asymptotic target-tube state $\Psi_i$. For the three-point sphere amplitude there is no residual worldsheet moduli integral after fixing $(\zeta_1,\zeta_2,\zeta_3)$, so the only remaining sum is over the allowed map sectors $\mathfrak s$. What is not yet known in the present note is the explicit construction of these longitudinal vertex operators in the curved first-order system and the proof that the relevant sectors $\mathfrak s$ are precisely the branched-cover sectors described below.
+
+To make the asymptotic state more concrete, choose near the $i$-th target puncture the standard cylindrical coordinate
+\begin{equation}\label{eq:target-tube-coordinate}
+\xi_i=s_i+i\phi_i:=-\log(z-z_i),
+\qquad
+\phi_i\sim \phi_i+2\pi.
+\end{equation}
+The angular variable $\phi_i$ is the circle coordinate of the semi-infinite target tube. The simplest nontrivial asymptotic state on that tube is then a \emph{single-string winding state} $\Psi_{w_i}$ with profile $\lambda_i=(w_i)$: in the corresponding classical sector, one local worldsheet coordinate $t_i$ obeys
+\begin{equation}\label{eq:single-string-tube-winding}
+z-z_i=t_i^{\,w_i}
+\qquad\Longleftrightarrow\qquad
+\xi_i=-\,w_i\log t_i.
+\end{equation}
+Thus going once around the worldsheet preimage $t_i\mapsto e^{2\pi i}t_i$ shifts the target-tube angle by $\phi_i\mapsto \phi_i+2\pi w_i$. In this precise sense the state $\Psi_{w_i}$ is a winding-$w_i$ string state with respect to the circle of the $i$-th target tube. This should not be confused with the flat-torus benchmark of Section~6, where the relevant circle is an actual global target-space circle of $C=T^2$; here the tube circle is only a local representative of the puncture on $C_{0,3}$. The canonical three-point coefficient \eqref{eq:orbifold-three-point} corresponds to choosing the lowest such single-string states, which compactify to the class-normalized single-cycle twist operators $\widehat{\sigma}_{[w_i]}$.
+
+If a BRST-complete worldsheet construction exists, the corresponding unintegrated closed-string state should be represented by a BRST class
+\begin{equation}\label{eq:single-string-brst-class}
+\big[c_{\rm gh}\tilde c_{\rm gh}\,\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}\big]
+\in
+H^2_{\rm BRST}(C_{0,3}),
+\end{equation}
+where $\chi_i$ denotes the chosen transverse seed state and $(q_i,\bar q_i)$ obey the picture constraint \eqref{eq:picture-balance}. The longitudinal content of $\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}$ should then be characterized locally by the tube-winding OPE
+\begin{equation}\label{eq:tube-winding-ope}
+\partial \xi_i\!\big(X^+(t)\big)\,
+\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}(0)
+\sim
+-\,\frac{w_i}{t}\,
+\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}(0)
+\qquad
+\text{and}
+\qquad
+\bar\partial \bar\xi_i\!\big(X^-(\bar t)\big)\,
+\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}(0)
+\sim
+-\,\frac{w_i}{\bar t}\,
+\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}(0),
+\end{equation}
+equivalently by the contour-charge condition
+\begin{equation}\label{eq:tube-winding-charge}
+W_i\,\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}
+:=
+-\,\frac{1}{2\pi i}\oint \partial \xi_i\!\big(X^+\big)\,
+\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i}
+=
+w_i\,\mc V^{(q_i,\bar q_i)}_{w_i,\chi_i},
+\end{equation}
+and likewise antiholomorphically. Equation \eqref{eq:tube-winding-ope} is simply the operator-language version of \eqref{eq:single-string-tube-winding}. What remains open is the explicit realization of such operators in the curved first-order CFT and their normalization.
+
+After compactifying the target tubes back to the marked points $(0,1,\infty)$, the asymptotic data become ramification data. For a general multi-string state, the puncture at $z_i$ carries the profile $\lambda_i=(w_{i,1},\dots,w_{i,\ell_i})$, so the compactified map has local behavior
+\begin{equation}\label{eq:local-branching-profile}
+z-z_i=t_{i,a}^{\,w_{i,a}},
+\qquad
+a=1,\dots,\ell_i.
+\end{equation}
+Thus there are $\ell_i$ preimages above the $i$-th puncture, one for each constituent long string in the target-tube state. In the single-cycle case $\lambda_i=(w_i)$ studied here, there is only one preimage above each puncture and \eqref{eq:local-branching-profile} reduces to
+\begin{equation}\label{eq:local-branching}
+z-z_i=t_i^{\,w_i}.
+\end{equation}
+The lifted longitudinal field is then single-valued in $t_i$. The classical saddles are therefore naturally organized by holomorphic branched covers
 \begin{equation}\label{eq:branched-cover-worldsheet}
 f:\Sigma\to S^2
 \end{equation}
-with ramification data fixed by $(w_1,w_2,w_3)$ and degree constrained by \eqref{eq:riemann-hurwitz-three-point}. For three marked points on $\Sigma=S^2$, there is no continuous modulus after fixing the insertion points to $(0,1,\infty)$, so the classical localization problem is a discrete sum over Hurwitz classes rather than a higher-dimensional moduli integral.
+with ramification data fixed by the three profiles $\lambda_i$. In the single-cycle case this specializes to $(w_1,w_2,w_3)$ with degree constrained by \eqref{eq:riemann-hurwitz-three-point}. For three marked points on $\Sigma=S^2$, there is no continuous modulus after fixing the insertion points to $(0,1,\infty)$, so the classical localization problem is a discrete sum over Hurwitz classes rather than a higher-dimensional moduli integral. Thus the branched-cover language should be understood as the compactified version of a pair-of-pants amplitude with asymptotic string states on the three target tubes.
+Figure~\ref{fig:branched-cover-data} illustrates the passage from target ramification profiles to preimages on the covering worldsheet.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=1.0, line cap=round, line join=round]
+\shade[ball color=gray!10, opacity=0.5] (-4.3,0) circle (1.55);
+\draw[thick] (-4.3,0) circle (1.55);
+\fill (-4.3,1.18) circle (0.06);
+\fill (-5.35,-0.55) circle (0.06);
+\fill (-3.18,-0.45) circle (0.06);
+\node[above] at (-4.3,1.18) {$z_3=\infty,\ \lambda_3$};
+\node[left] at (-5.35,-0.55) {$z_1=0,\ \lambda_1$};
+\node[right] at (-3.18,-0.45) {$z_2=1,\ \lambda_2$};
+\node at (-4.3,-2.05) {target $S^2$};
+
+\shade[ball color=gray!10, opacity=0.5] (3.2,0) circle (1.95);
+\draw[thick] (3.2,0) circle (1.95);
+\fill (2.4,1.0) circle (0.06);
+\fill (3.7,0.95) circle (0.06);
+\fill (1.75,-0.55) circle (0.06);
+\fill (2.95,-0.35) circle (0.06);
+\fill (4.35,-0.45) circle (0.06);
+\node[above] at (2.4,1.0) {$t_{3,1}$};
+\node[above] at (3.7,0.95) {$t_{3,2}$};
+\node[left] at (1.75,-0.55) {$t_{1,1}$};
+\node[below] at (2.95,-0.35) {$t_{1,2}$};
+\node[right] at (4.35,-0.45) {$t_{2,1}$};
+\node at (3.2,-2.35) {worldsheet $\Sigma$};
+\draw[->, thick] (1.1,0.2) -- (-2.25,0.2) node[midway, above] {$f$};
+
+\draw[dashed] (2.1,1.55) -- (2.65,0.95);
+\draw[dashed] (4.0,1.55) -- (3.55,0.98);
+\draw[dashed] (1.3,-1.05) -- (1.8,-0.62);
+\draw[dashed] (2.6,-1.35) -- (2.98,-0.42);
+\draw[dashed] (4.8,-1.1) -- (4.3,-0.52);
+\node at (3.2,1.85) {\small preimages of the punctures};
+\node at (3.2,-2.8) {\small $z-z_i=t_{i,a}^{\,w_{i,a}}$ near each $t_{i,a}$};
+\end{tikzpicture}
+\caption{Compactified branched-cover picture for the pair-of-pants amplitude. A target puncture with profile $\lambda_i=(w_{i,1},\dots,w_{i,\ell_i})$ has $\ell_i$ preimages on the worldsheet, one for each constituent long string in the asymptotic state on the $i$-th tube. In the single-cycle case used for \eqref{eq:orbifold-three-point} and \eqref{eq:orbifold-three-point-leading}, each $\lambda_i=(w_i)$ and there is only one preimage above each puncture.}
+\label{fig:branched-cover-data}
+\end{figure}
+
+Schematically, the desired string calculation should take the form
+\begin{equation}\label{eq:pair-of-pants-localized}
+\mc A^{\rm str}_{C_{0,3}}(\Psi_1,\Psi_2,\Psi_3)
+=
+\sum_{[f]\in \mathrm{Hurwitz}(\lambda_1,\lambda_2,\lambda_3)}
+\mc W_f(\Psi_1,\Psi_2,\Psi_3),
+\end{equation}
+where the sum runs over compactified branched-cover classes compatible with the three asymptotic tube states and $\mc W_f$ is the full BRST-complete weight of the cover, including vertex-operator normalization, ghost insertions, nonzero-mode determinants, and the transverse seed correlator on the covering surface. In the single-cycle case, after choosing the external states corresponding to the class-normalized twist operators of \eqref{eq:class-operator}, the target quantity to reproduce is precisely \eqref{eq:orbifold-three-point}.
+
+At this stage it is important to separate what is already established from what is still conjectural. Established in the present note are the target-space kinematics: the relevant target for the tree-level observable is the punctured sphere $C_{0,3}$; the asymptotic data on its three tubes are labeled by profiles $\lambda_i$ and, after compactification, become the local branching data \eqref{eq:local-branching-profile}; the simplest nontrivial single-string asymptotic state is characterized by the tube-winding condition \eqref{eq:single-string-tube-winding}, equivalently by the formal operator conditions \eqref{eq:tube-winding-ope}--\eqref{eq:tube-winding-charge}; the worldsheet-CFT amplitude should take the standard three-point form \eqref{eq:pair-of-pants-cft-correlator} with picture balance \eqref{eq:picture-balance}; and the classical saddles are holomorphic branched covers \eqref{eq:branched-cover-worldsheet}, with no continuous modulus once the three marked points are fixed. Not established here are the dynamical ingredients needed to turn \eqref{eq:pair-of-pants-cft-correlator} or \eqref{eq:pair-of-pants-localized} into a theorem-level equality: the explicit longitudinal BRST vertex operator realizing a chosen asymptotic state $\Psi_i$, the exact identification of the sectors $\mathfrak s$ with branched-cover classes, the full BRST-complete definition of the pair-of-pants amplitude \eqref{eq:pair-of-pants-amplitude}, the exact form of the weight $\mc W_f$, and the proof that these weights reduce to the Hurwitz/seed-theory structure of \eqref{eq:orbifold-three-point}.
+
+To make this more explicit, decompose the cover weight as
+\begin{equation}\label{eq:cover-weight-factorization}
+\mc W_f(\Psi_1,\Psi_2,\Psi_3)
+=
+\frac{1}{|\mathrm{Aut}(f)|}\,
+\mc N_{\mathrm{ext}}[f;\Psi_1,\Psi_2,\Psi_3]\,
+e^{-S_{\mathrm{cl}}[f]-S_\Phi[f]}\,
+\mc Z^{\mathrm{long}}_{\mathrm{fluc}}[f]\,
+\mc C_\perp[f;\Psi_1^\perp,\Psi_2^\perp,\Psi_3^\perp].
+\end{equation}
+Here $\mc N_{\mathrm{ext}}$ denotes the normalization and ghost-insertion factor associated with the three asymptotic states, $S_{\mathrm{cl}}[f]$ is the classical action on the cover, $S_\Phi[f]$ stands for any dilaton-like curvature coupling if present, $\mc Z^{\mathrm{long}}_{\mathrm{fluc}}[f]$ is the renormalized longitudinal fluctuation determinant, and $\mc C_\perp[f;\Psi_i^\perp]$ is the transverse correlator on the same covering surface.
+
+For the leading large-$N$ single-cycle comparison one should therefore study the genus-zero string amplitude
+\begin{equation}\label{eq:tree-level-string-three-point}
+\mc A^{\rm str,(0)}_{123}
+:=
+\mc A^{\rm str}_{C_{0,3}}(\Psi_{w_1},\Psi_{w_2},\Psi_{w_3})
+=
+\sum_{[f]\in \mathrm{Hurwitz}_0(d_0;w_1,w_2,w_3)}
+\mc W_f(\Psi_{w_1},\Psi_{w_2},\Psi_{w_3}),
+\end{equation}
+where $\Psi_{w_i}$ is the single-string state on the $i$-th target tube corresponding, after compactification, to the class-normalized single-cycle twist operator $\widehat{\sigma}_{[w_i]}$.
+
+The exact coefficient-level match at leading order would follow if the following three conditions hold for fixed branching data $(w_1,w_2,w_3)$:
+\begin{equation}\label{eq:tree-level-cover-independence}
+\mc N_{\mathrm{ext}}[f]\,
+e^{-S_{\mathrm{cl}}[f]-S_\Phi[f]}\,
+\mc Z^{\mathrm{long}}_{\mathrm{fluc}}[f]
+=
+\mc N^{\rm str}_{123}(N;w_1,w_2,w_3),
+\end{equation}
+\begin{equation}\label{eq:tree-level-transverse-match}
+\mc C_\perp[f;\Psi_{w_1}^\perp,\Psi_{w_2}^\perp,\Psi_{w_3}^\perp]
+=
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3),
+\end{equation}
+and
+\begin{equation}\label{eq:tree-level-normalization-match}
+\mc N^{\rm str}_{123}(N;w_1,w_2,w_3)
+=
+\frac{N!}{(N-d_0)!}\,
+\frac{1}{\sqrt{|[w_1]|_N\,|[w_2]|_N\,|[w_3]|_N}}.
+\end{equation}
+Under \eqref{eq:tree-level-cover-independence}--\eqref{eq:tree-level-normalization-match}, the localized worldsheet sum reduces to
+\begin{equation}\label{eq:tree-level-hurwitz-reduction}
+\mc A^{\rm str,(0)}_{123}
+=
+\mc N^{\rm str}_{123}(N;w_1,w_2,w_3)\,
+H_{d_0}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3),
+\end{equation}
+which is exactly the $g=0$ orbifold answer \eqref{eq:orbifold-three-point}. Equivalently, in the dilute large-$N$ regime, these conditions imply
+\begin{equation}\label{eq:tree-level-large-n-match}
+\mc A^{\rm str,(0)}_{123}
+=
+N^{-1/2}
+\Big[
+\sqrt{w_1w_2w_3}\,
+H_{d_0}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(0)}(w_1,w_2,w_3)
++O(N^{-1})
+\Big].
+\end{equation}
+So the first genuine large-$N$ test beyond the torus free energy is now stated sharply: compute the genus-zero pair-of-pants amplitude \eqref{eq:tree-level-string-three-point} and determine whether its cover weights obey \eqref{eq:tree-level-cover-independence}--\eqref{eq:tree-level-normalization-match}.
 
 This branched-cover picture is the main conceptual lesson to import from the companion three-point analysis, but it must be stated with care. What is clear from the first-order equations and the curved patching is the \emph{classical} localization locus. What is \emph{not} yet determined in the present note is the full BRST-complete measure on that locus: the normalization of the relevant vertex operators, the ghost insertions, the nonzero-mode determinants, and any residual map-dependent quantum weight. Companion BRST work also suggests that, in the full super longitudinal multiplet, the bosonic curved-$\beta\gamma$ obstruction may cancel so that the remaining problem is primarily one of these dynamical weights rather than of classical overlap anomalies. I record that only as useful guidance, not as an imported theorem here.
 
@@ -662,11 +939,11 @@ The next steps seem concrete.
 \item Formulate the BRST complex and GSO projection globally on curved $C$, using the curved super-$\beta\gamma$ patching above rather than the old second-order variables.
 \item Extend the genus-one check above from the thermal torus to more general background Riemann surfaces and identify what replaces the long-cycle projector.
 \item Clarify how the exact Weyl-structure independence of the Poisson/BF core survives the full quantum completion on curved $C$, keeping separate the distinct problem of the finite-$\Aeff$ benchmark deformation.
-\item On $C=S^2$, compare the canonical twist-sector three-point coefficient \eqref{eq:orbifold-three-point} to the corresponding branched-cover worldsheet problem, paying particular attention to the still-open BRST-complete measure on the Hurwitz locus.
+\item On $C=S^2$, compute the genus-zero pair-of-pants amplitude \eqref{eq:tree-level-string-three-point} and determine whether the cover weights satisfy \eqref{eq:tree-level-cover-independence}--\eqref{eq:tree-level-normalization-match}, which is the sharp condition for reproducing the leading large-$N$ orbifold coefficient \eqref{eq:orbifold-three-point-leading}.
 \item Compare the first nontrivial observables on both sides, for example protected partition functions or low-point correlators on $C=\bC$, $C=S^2$, and $C=T^2$.
 \end{itemize}
 
-In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined. The Poisson/BF core already forgets the target Weyl representative exactly, which is the basic structural reason it is compatible with a dual CFT living on $C$. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, and the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$ within the standard DVV long-string convention and the operator-channel conventions stated in the genus-one section above. That genus-one check is genuinely nontrivial in how it reconstructs the stringy longitudinal organization of the free orbifold, but it still remains a free-field consistency test rather than a comparison to the exact twist-sector correlators of the orbifold. The next exact observable is instead the canonical three-point data \eqref{eq:orbifold-three-point} on $S^2$, whose worldsheet interpretation should be a branched-cover sum with still-open quantum weights. What remains conjectural or incomplete is the quantum completion on curved $C$, the string-side realization of the intrinsic twist-sector correlators/OPE data of $\Sym^N(\bR^8)$, and the extension of the genus-one comparison to general target curves and to other target-torus spin structures. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
+In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined. The Poisson/BF core already forgets the target Weyl representative exactly, which is the basic structural reason it is compatible with a dual CFT living on $C$. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, and the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$ within the standard DVV long-string convention and the operator-channel conventions stated in the genus-one section above. That genus-one check is genuinely nontrivial in how it reconstructs the stringy longitudinal organization of the free orbifold, but it still remains a free-field consistency test rather than a comparison to the exact twist-sector correlators of the orbifold. The next exact observable is instead the canonical three-point data \eqref{eq:orbifold-three-point} on $S^2$, whose leading large-$N$ term should come from the genus-zero pair-of-pants amplitude \eqref{eq:tree-level-string-three-point} if the cover weights reduce as in \eqref{eq:tree-level-cover-independence}--\eqref{eq:tree-level-normalization-match}. What remains conjectural or incomplete is the quantum completion on curved $C$, the string-side realization of the intrinsic twist-sector correlators/OPE data of $\Sym^N(\bR^8)$, and the extension of the genus-one comparison to general target curves and to other target-torus spin structures. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
 
 \printbibliography
 
