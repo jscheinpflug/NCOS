@@ -281,15 +281,11 @@ The simplest dictionary is:
 \begin{itemize}
 \item The target Riemann surface $C$ of the first-order string is the physical spacetime on which the two-dimensional CFT is defined.
 \item The eight free transverse bosons and fermions of the string are the same noncompact $\bR^8$ seed degrees of freedom that appear in each copy of the orbifold SCFT.
-\item The closed-string coupling should scale as
-\begin{equation}\label{eq:string-coupling-scaling}
-g_s\sim \frac{1}{N},
-\end{equation}
-if a perturbative closed-string genus expansion exists, so that the genus expansion reproduces the $1/N$ expansion of the large-$N$ CFT.
+\item If a perturbative closed-string genus expansion exists, then it should reproduce the large-$N$ expansion of connected exact-orbifold observables. The relative suppression by extra handles is therefore part of the desired dictionary, but the precise identification of $g_s$ with a definite power of $N$ depends on the normalization of the observable under study and will not be fixed a priori in this note.
 \item The exact orbifold should be compared to the Poisson/BF first-order string with eight free transverse multiplets. Beyond the genus-one free-energy benchmark, the relevant orbifold-side data are the intrinsic twist-sector correlators and OPE coefficients of the exact symmetric product, not a deformation of the orbifold action.
 \end{itemize}
 
-The proposal is therefore simply this: the Poisson/BF first-order worldsheet system, together with the eight free transverse multiplets, should reproduce exact orbifold data of $\Sym^N(\bR^8)$ when both are formulated on the same two-dimensional spacetime $C$. The finite-$\Aeff$ Gomis--Ooguri deformation will still appear below as a useful flat-torus benchmark, but I do not interpret it here as the defining structure of the exact $\Sym^N(\bR^8)$ duality itself.
+The proposal is therefore simply this: the Poisson/BF first-order worldsheet system, together with the eight free transverse multiplets, should reproduce exact orbifold data of $\Sym^N(\bR^8)$ when both are formulated on the same two-dimensional spacetime $C$. The finite-$\Aeff$ Gomis--Ooguri deformation will still appear below as a useful flat-torus benchmark, but I do not interpret it here as the defining structure of the exact $\Sym^N(\bR^8)$ duality itself. Likewise, the $1/N$ expansion discussed in this note belongs to the exact symmetric-orbifold observables themselves; it should not be conflated with matrix string theory, which would require a further deformation problem not studied here.
 
 In particular, I do \emph{not} study in this note any further deformation of the Poisson-sigma model toward matrix string theory or toward the full two-dimensional $(8,8)$ SYM. That would be a separate problem.
 
@@ -439,7 +435,7 @@ The sum over $n$ imposes
 \begin{equation}\label{eq:orbifold-level-matching}
 h-\bar h\equiv 0 \pmod w,
 \end{equation}
-which is the usual long-string level-matching condition.
+which is the usual long-string level-matching condition. Equivalently, it is simply the cyclic-orbifold projection onto states invariant under the generator $g$ of the length-$w$ twisted sector.
 In the physical thermal spin structure, \eqref{eq:w-independent-degeneracy} and \eqref{eq:seed-rr-trace} turn \eqref{eq:one-cycle-trace} into the compact character formula
 \begin{equation}\label{eq:one-cycle-trace-thermal}
 Z^{\mathrm{1\mbox{-}cycle}}_w(\beta,p)\Big|_{[1,0]}
@@ -558,7 +554,18 @@ p=e^{-\beta\mu},
 \qquad
 \mu=\frac{R}{2\Aeff}.
 \end{equation}
-Here $\mu$ is the chemical potential conjugate to cycle length, equivalently to target winding in the first-order-string interpretation. In the physical thermal spin structure $[\nu_t,\nu_x]=[1,0]$, and with the standard DVV lift adopted above, the covering-map argument gives
+Here $\mu$ is the chemical potential conjugate to cycle length, equivalently to target winding in the first-order-string interpretation. The point of the quoted Gomis--Ooguri derivation is that, for this flat-torus benchmark, the finite-$\Aeff$ deformation is unusually simple: after the $\beta_0$ integral localizes the torus modulus, the longitudinal $(\beta,\gamma)$ non-zero modes cancel against their fermionic $(b,c)$ partner system, so the deformation contributes only the instanton factor $e^{-m\beta wR/(2\Aeff)}$ associated with the holomorphic map. On the exact-orbifold side, a multi-cycle state with cycle lengths $\{w_a\}$ then acquires the weight
+\begin{equation}\label{eq:cosmological-constant-weight}
+\prod_a p^{w_a}
+=
+e^{-\beta\mu \sum_a w_a}
+=
+e^{-\beta\mu N}.
+\end{equation}
+Thus, in the grand-canonical packaging natural for the genus-one free energy, the benchmark finite-$\Aeff$ deformation is equivalent simply to adding a cosmological constant, or chemical potential, conjugate to the total copy number $N$. At fixed $N$ it does not change the intrinsic local dynamics of the exact $\Sym^N(\bR^8)$ CFT; it only changes the ensemble used to organize the free energy. In the physical thermal spin structure $[\nu_t,\nu_x]=[1,0]$, and with the standard DVV lift adopted above, the covering-map argument gives
+\par
+Equivalently, for this quoted flat-torus one-loop benchmark, the finite $\partial X^+\bar\partial X^-$ deformation acts only through the grand-canonical weight $e^{-\beta\mu N}$. It does not modify the intrinsic one-cycle seed spectrum or the orbifold projection data entering \eqref{eq:one-cycle-trace-thermal}--\eqref{eq:orbifold-free-energy-thermal}; those are still the exact symmetric-orbifold building blocks. This simplification is special to the genus-one free-energy computation of \cite{gomis2000nonrelativisticclosedstringtheory}, where the longitudinal non-zero modes cancel after localization, and I do not promote it here to a statement about arbitrary observables on general target curves.
+\par
 \begin{equation}\label{eq:degeneracy-match}
 D_w^{[1,0]}(h,\bar h)=D^{\mathrm{GO}}_w(h,\bar h),
 \end{equation}
@@ -588,7 +595,66 @@ At the same time, this genus-one/$N^0$ test is not yet decisive. Both sides use 
 
 There is still an additional subtlety for \emph{other} target-torus spin structures: if one wants a uniform formula for arbitrary $[\nu_t,\nu_x]$, then one must track carefully how the covering map acts on fermions in NS sectors and how $(-1)^F$ insertions are represented in the orbifold trace. That more general bookkeeping remains worthwhile, but it is no longer needed for the concrete thermal test carried out here.
 
-There is one conceptual caveat. The exact formula above is naturally grand canonical in cycle length, because the linear piece $wR/(2\Aeff)$ is represented by the fugacity $p^w$. If one insists on the strictly canonical fixed-$N$ partition function, one should extract the coefficient of $p^N$ at the end. The large-$N$ order-$N^0$ data are nevertheless controlled by the same single-cycle building blocks written above, while genuinely new tests beyond genus one should come from other exact orbifold observables, such as intrinsic twist-sector correlators, rather than from the free partition function alone.
+There is one conceptual caveat. The exact formula above is naturally grand canonical in cycle length, because the linear piece $wR/(2\Aeff)$ is represented by the fugacity $p^w$. If one insists on the strictly canonical fixed-$N$ partition function, one should extract the coefficient of $p^N$ at the end. The resulting large-$N$ asymptotic expansion is still an expansion of exact symmetric-orbifold data, not a matrix-string deformation. Its order-$N^0$ part is controlled by the same single-cycle building blocks written above, while genuinely new tests beyond genus one should come from other exact orbifold observables, such as intrinsic twist-sector correlators, rather than from the free partition function alone.
+
+\section{Beyond Genus One: Canonical Three-Point Data on \texorpdfstring{$S^2$}{S2}}
+The genus-one thermal free energy is naturally organized grand canonically in cycle length. The first genuinely new observables of the exact orbifold, however, are local correlators at fixed rank $N$ and fixed cycle data. In particular, if one specializes the spacetime to
+\begin{equation}\label{eq:sphere-spacetime}
+C=S^2,
+\end{equation}
+then the natural next test is a canonical three-point function of single-cycle twist operators, not a deformation of the orbifold action.
+
+At the orbifold point, define the normalized single-cycle class operator by
+\begin{equation}\label{eq:class-operator}
+\widehat{\sigma}_{[w]}
+:=
+\frac{1}{\sqrt{|[w]|_N}}
+\sum_{g\in [w]}\sigma_g,
+\qquad
+|[w]|_N=\frac{N!}{w(N-w)!},
+\end{equation}
+where $[w]\subset S_N$ is the conjugacy class of $w$-cycles. For the connected three-point function associated with degree-$d$ covers of genus $g$, the standard covering-space description of symmetric-product orbifolds takes the form \cite{arutyunov1998orbifoldscattering,lunin2001correlationorbifolds,lunin2002threepointorbifolds,pakman2009diagramssymmetricorbifold,pakman2009extremalhurwitz}
+\begin{equation}\label{eq:orbifold-three-point}
+\mc C_{123}^{(g)}(N)
+:=
+\left\langle
+\widehat{\sigma}_{[w_1]}(0)\,
+\widehat{\sigma}_{[w_2]}(1)\,
+\widehat{\sigma}_{[w_3]}(\infty)
+\right\rangle_{g}^{\mathrm{conn}}
+=
+\frac{N!}{(N-d)!}\,
+\frac{
+H_d^{(g)}(w_1,w_2,w_3)\,
+\mc C_{\mathrm{seed}}^{(g)}(w_1,w_2,w_3)
+}{
+\sqrt{|[w_1]|_N\,|[w_2]|_N\,|[w_3]|_N}
+}.
+\end{equation}
+Here $d$ is the number of active copies, $H_d^{(g)}$ is the corresponding Hurwitz count, and $\mc C_{\mathrm{seed}}^{(g)}$ is the seed-theory correlator on the covering surface. For three branch points, the degree is constrained by Riemann--Hurwitz:
+\begin{equation}\label{eq:riemann-hurwitz-three-point}
+2-2g
+=
+2d-\sum_{i=1}^3 (w_i-1),
+\qquad
+d=\frac{w_1+w_2+w_3-1}{2}-g.
+\end{equation}
+
+This is the right exact-orbifold observable to compare to the first-order string beyond genus one. It is already a canonical fixed-$N$ quantity, so unlike the torus free energy it does not structurally require a grand-canonical fugacity. One may still study its large-$N$ asymptotic expansion, but that expansion is part of the exact $\Sym^N(\bR^8)$ CFT itself. Grand-canonical generating functions may be useful for organizing an infinite family of such correlators, but they are optional bookkeeping rather than part of the definition of one fixed three-point function.
+
+On the worldsheet side, the Poisson/BF equations require $X^+$ to be holomorphic away from insertions. If the three vertex operators impose local monodromies of cycle lengths $(w_1,w_2,w_3)$, then in a local uniformizing coordinate $t_i$ near the insertion point one expects
+\begin{equation}\label{eq:local-branching}
+z-z_i=t_i^{\,w_i},
+\end{equation}
+so that the lifted longitudinal field is single-valued in $t_i$. The classical saddles are therefore naturally organized by holomorphic branched covers
+\begin{equation}\label{eq:branched-cover-worldsheet}
+f:\Sigma\to S^2
+\end{equation}
+with ramification data fixed by $(w_1,w_2,w_3)$ and degree constrained by \eqref{eq:riemann-hurwitz-three-point}. For three marked points on $\Sigma=S^2$, there is no continuous modulus after fixing the insertion points to $(0,1,\infty)$, so the classical localization problem is a discrete sum over Hurwitz classes rather than a higher-dimensional moduli integral.
+
+This branched-cover picture is the main conceptual lesson to import from the companion three-point analysis, but it must be stated with care. What is clear from the first-order equations and the curved patching is the \emph{classical} localization locus. What is \emph{not} yet determined in the present note is the full BRST-complete measure on that locus: the normalization of the relevant vertex operators, the ghost insertions, the nonzero-mode determinants, and any residual map-dependent quantum weight. Companion BRST work also suggests that, in the full super longitudinal multiplet, the bosonic curved-$\beta\gamma$ obstruction may cancel so that the remaining problem is primarily one of these dynamical weights rather than of classical overlap anomalies. I record that only as useful guidance, not as an imported theorem here.
+
+So the next exact test suggested by the present note is not a matrix-string deformation, but the following direct comparison on $S^2$: the orbifold coefficient \eqref{eq:orbifold-three-point} should be matched by a first-order worldsheet branched-cover sum with the same ramification data. Showing that the worldsheet weights reduce precisely to the Hurwitz/seed-theory structure of \eqref{eq:orbifold-three-point} is the first genuine intrinsic correlator test beyond the free torus partition function.
 
 \section{Immediate Checks}
 The next steps seem concrete.
@@ -596,11 +662,11 @@ The next steps seem concrete.
 \item Formulate the BRST complex and GSO projection globally on curved $C$, using the curved super-$\beta\gamma$ patching above rather than the old second-order variables.
 \item Extend the genus-one check above from the thermal torus to more general background Riemann surfaces and identify what replaces the long-cycle projector.
 \item Clarify how the exact Weyl-structure independence of the Poisson/BF core survives the full quantum completion on curved $C$, keeping separate the distinct problem of the finite-$\Aeff$ benchmark deformation.
-\item Identify the precise intrinsic orbifold observables beyond the free partition function, most naturally twist-sector three-point functions and OPE coefficients, that should match string-side joining/splitting amplitudes.
+\item On $C=S^2$, compare the canonical twist-sector three-point coefficient \eqref{eq:orbifold-three-point} to the corresponding branched-cover worldsheet problem, paying particular attention to the still-open BRST-complete measure on the Hurwitz locus.
 \item Compare the first nontrivial observables on both sides, for example protected partition functions or low-point correlators on $C=\bC$, $C=S^2$, and $C=T^2$.
 \end{itemize}
 
-In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined. The Poisson/BF core already forgets the target Weyl representative exactly, which is the basic structural reason it is compatible with a dual CFT living on $C$. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, and the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$ within the standard DVV long-string convention and the operator-channel conventions stated in the genus-one section above. That genus-one check is genuinely nontrivial in how it reconstructs the stringy longitudinal organization of the free orbifold, but it still remains a free-field consistency test rather than a comparison to the exact twist-sector correlators of the orbifold. What remains conjectural or incomplete is the quantum completion on curved $C$, the string-side realization of the intrinsic twist-sector correlators/OPE data of $\Sym^N(\bR^8)$, and the extension of the genus-one comparison to general target curves and to other target-torus spin structures. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
+In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined. The Poisson/BF core already forgets the target Weyl representative exactly, which is the basic structural reason it is compatible with a dual CFT living on $C$. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, and the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$ within the standard DVV long-string convention and the operator-channel conventions stated in the genus-one section above. That genus-one check is genuinely nontrivial in how it reconstructs the stringy longitudinal organization of the free orbifold, but it still remains a free-field consistency test rather than a comparison to the exact twist-sector correlators of the orbifold. The next exact observable is instead the canonical three-point data \eqref{eq:orbifold-three-point} on $S^2$, whose worldsheet interpretation should be a branched-cover sum with still-open quantum weights. What remains conjectural or incomplete is the quantum completion on curved $C$, the string-side realization of the intrinsic twist-sector correlators/OPE data of $\Sym^N(\bR^8)$, and the extension of the genus-one comparison to general target curves and to other target-torus spin structures. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
 
 \printbibliography
 
