@@ -251,17 +251,30 @@ a_{n,m}\!\left(\rho;\,x_i,\ldots\right)\,
 with explicit $\rho$-dependence kept in the coefficients. Fixing $\rho$ lets one
 translate between the numerical sizes of $1/N$ and $1/\kappa$, but it does not
 erase the distinction between large-$N$ counting and DVV perturbation theory.
+Plausibly, the symmetric-product orbifold corresponds to the further
+$\kappa=\infty$ limit taken at fixed order in $1/N$. In the present variables,
+that suggests the following practical prescription: first compute the
+fixed-$\rho$ large-$N$ expansion, and then extract the leading large-$\rho$
+term of the coefficient functions $a_{n,m}(\rho;\ldots)$. Since
+$\kappa=N\rho$, this leading large-$\rho$ term is the candidate orbifold piece
+at each fixed $1/N$ order, while subleading powers in $1/\rho$ encode the
+irrelevant deformation away from the orbifold point.
 
 \subsection{Large-\texorpdfstring{$\rho$}{rho} regime and the noncompact-limit puzzle}
 Now consider
 \begin{equation}\label{eq:rho-large}
 \rho=\frac{R}{\sqrt{\Aeff}}\gg 1.
 \end{equation}
-At fixed $N$, this gives $\kappa=N\rho\gg 1$, hence
+After organizing the answer as a fixed-$\rho$ large-$N$ expansion, one can then
+ask for the large-$\rho$ asymptotics of the coefficient functions. Since
+$\kappa=N\rho$, this large-$\rho$ step corresponds formally to
+$\kappa\to\infty$ at each fixed $1/N$ order, hence
 \begin{equation}
 \widehat\lambda_{\mathrm{DVV}}=\frac{c_{\mathrm{DVV}}}{\kappa}\ll 1,
 \end{equation}
-so the DVV deformation is strongly suppressed and one is parametrically close to the symmetric-product orbifold CFT.
+so the DVV deformation is strongly suppressed. This is the sense in which the
+leading large-$\rho$ term is expected to reproduce the symmetric-product
+orbifold CFT.
 
 The subtlety is that ``large $R$'' and ``strictly noncompact'' are not the same limit for the physical Hilbert space:
 \begin{itemize}
@@ -273,7 +286,10 @@ So how can large-$\rho$ NRCS capture the orbifold CFT? The answer is: the orbifo
 \begin{equation}
 E\sim \frac{1}{R},
 \end{equation}
-so with fixed dimensionless energies $ER$ one is automatically probing $E/g_{\mathrm{YM}}\to 0$ and hence the IR orbifold point.
+so with fixed dimensionless energies $ER$ one is automatically probing
+$E/g_{\mathrm{YM}}\to 0$. Combined with the same large-$\rho$ limit sending
+$\kappa\to\infty$, this is the compact-sector limit that plausibly isolates the
+orbifold point.
 In this sense, large $\rho$ suppresses DVV and leaves orbifold CFT data (local OPE data) intact, while the decompactified noncompact spectrum can still be trivial in terms of finite-energy scattering states.
 
 Equivalently, the limits do not commute:
