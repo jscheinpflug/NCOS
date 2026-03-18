@@ -69,14 +69,22 @@ So there are two inequivalent large-$N$ scalings:
 \qquad
 \text{(B) fixed }\kappa:\ \rho=\kappa/N\to 0.
 \end{equation}
-In this section we use (A): fix $R/\sqrt{\Aeff}$ and scale only $N$.
+In this section we use (A): fix $\rho=R/\sqrt{\Aeff}$ and take $N\to\infty$.
 Then
 \begin{equation}\label{eq:oneoverN-oneoverkappa}
 \frac{1}{N}=\frac{\rho}{\kappa},
 \qquad
 \frac{1}{\kappa}=\frac{1}{g_{\mathrm{YM}}R}.
 \end{equation}
-So at fixed $\rho$, a $1/N$ expansion is exactly a $1/(g_{\mathrm{YM}}R)$ expansion up to the fixed factor $\rho$.
+This is a correlated large-$N$ limit: fixing $\rho$ while taking $N\to\infty$
+forces $\kappa=g_{\mathrm{YM}}R=N\rho\to\infty$. The identity
+$1/N=\rho/\kappa$ is only a bookkeeping relation inside this scaling. We will
+still refer to the perturbative organization as a fixed-$\rho$ large-$N$
+expansion, not as an independent $1/(g_{\mathrm{YM}}R)$ expansion. This is the
+same logic as in the ordinary 't Hooft limit, where one does not reinterpret
+the $1/N$ expansion as an expansion in the gauge coupling just because
+$g^2=\lambda_{\mathrm{tH}}/N$ at fixed 't Hooft coupling
+$\lambda_{\mathrm{tH}}:=g^2N$.
 
 By ``finite-$N$ NRCS'' we mean a hypothetical exact (nonperturbative) definition that captures the full finite-$N$ gauge theory. That exact formulation is not currently available. By contrast, perturbative NRCS is organized as a large-$N$ expansion (equivalently in the NCOS language, an expansion around weak effective string coupling), so it automatically probes the large-$N$ regime \cite{gomis2000nonrelativisticclosedstringtheory,klebanov200011dimensionalncosun}.
 
@@ -96,11 +104,19 @@ Therefore in scaling (A), perturbative states with $\varepsilon=O(1)$ satisfy
 \begin{equation}
 \frac{E}{g_{\mathrm{YM}}}=O(N^{-1})\ll 1,
 \end{equation}
-which is an IR scale of the gauge theory. This is the regime where the matrix-string description flows to the symmetric-product orbifold CFT \cite{dijkgraaf1997matrixstring}.
+which is an IR scale of the gauge theory. By itself, however, the inequality
+$E/g_{\mathrm{YM}}\ll 1$ does not prove that the exact dynamics are already
+those of the symmetric-product orbifold CFT: in matrix-string theory, states at
+such energies can still be affected by the irrelevant deformation. What matters
+in scaling (A) is the additional fact that the same limit also sends
+$\kappa=g_{\mathrm{YM}}R=N\rho\to\infty$. The large-$\kappa$ suppression of the
+irrelevant deformation is what drives the approach to the symmetric-product
+orbifold CFT \cite{dijkgraaf1997matrixstring}.
 
 From this point onward, $N$ is the single rank/copy-number label used throughout the note.
 
-Once the IR description is a CFT on a cylinder of radius $R$, changing $R$ rescales the Hamiltonian but not local OPE data:
+Once this large-$\kappa$ limit reduces the IR description to a CFT on a cylinder
+of radius $R$, changing $R$ rescales the Hamiltonian but not local OPE data:
 \begin{equation}
 H(R)=\frac{1}{R}\left(L_0+\bar L_0-\frac{c}{12}\right),
 \qquad
@@ -165,7 +181,12 @@ Hence in fixed-$\rho$ large-$N$:
 \item generic winding sectors with $w=O(1)$ have $\Delta E/g_{\mathrm{YM}}=O(1/N)$ from \eqref{eq:deltaE-over-gYM},
 \item macroscopic sectors with $w\sim N$ have $\Delta E/g_{\mathrm{YM}}=O(1/N^2)$ from \eqref{eq:deltaE-macro-rho}.
 \end{itemize}
-Both are IR in gauge-theory units, consistent with landing on the symmetric-product orbifold regime. The overall radius $R$ enters only through the dimensionless ratio $\rho=R/\sqrt{\Aeff}$.
+Both are IR in gauge-theory units. That observation alone does not imply
+orbifold dynamics, because at finite $\kappa$ the irrelevant matrix-string
+deformation can still affect such states. In scaling (A), the further fact that
+$\kappa=N\rho=g_{\mathrm{YM}}R\to\infty$ is what suppresses that deformation and
+drives the approach to the symmetric-product orbifold regime. The overall
+radius $R$ enters only through the dimensionless ratio $\rho=R/\sqrt{\Aeff}$.
 
 \subsection{DVV deformation versus large-\texorpdfstring{$N$}{N} counting}
 The matrix-string deformation is
@@ -207,11 +228,15 @@ Then in the perturbative NRCS scaling of Section \ref{sec:nrcs-cylinder-ir} with
 =
 \frac{\rho}{c_{\mathrm{DVV}}}\,\widehat\lambda_{\mathrm{DVV}}.
 \end{equation}
-So the NRCS $1/N$ expansion and the DVV/MST expansion are the same \emph{parametric} expansion in $1/\kappa=1/(g_{\mathrm{YM}}R)$.
+So in the fixed-$\rho$ scaling the NRCS $1/N$ counting and the DVV/MST coupling are proportional.
+That proportionality is again only a bookkeeping relation inside the fixed-$\rho$
+limit. It does not mean that the large-$N$ expansion and the DVV expansion
+should be identified as the same expansion; they remain logically distinct even
+though their sizes are tied by $\kappa=N\rho$ in this scaling.
 
-The practical distinction is controlled by $\rho$:
+The practical distinction is controlled by the proportionality factor $\rho$:
 \begin{itemize}
-\item if $\rho=O(1)$, $1/N$ and $\widehat\lambda_{\mathrm{DVV}}$ are comparable at fixed $\kappa$,
+\item if $\rho=O(1)$, $1/N$ and $\widehat\lambda_{\mathrm{DVV}}$ are comparable,
 \item if $\rho\ll 1$, $1/N$ effects are suppressed relative to DVV insertions,
 \item if $\rho\gg 1$, $1/N$ effects are enhanced relative to DVV insertions.
 \end{itemize}
@@ -223,7 +248,9 @@ C_{123}
 a_{n,m}\!\left(\rho;\,x_i,\ldots\right)\,
 \widehat\lambda_{\mathrm{DVV}}^{\,n}\,N^{-m},
 \end{equation}
-with explicit $\rho$-dependence kept in the coefficients. Only after fixing $\rho$ does this collapse to a single $1/\kappa$ expansion.
+with explicit $\rho$-dependence kept in the coefficients. Fixing $\rho$ lets one
+translate between the numerical sizes of $1/N$ and $1/\kappa$, but it does not
+erase the distinction between large-$N$ counting and DVV perturbation theory.
 
 \subsection{Large-\texorpdfstring{$\rho$}{rho} regime and the noncompact-limit puzzle}
 Now consider
@@ -685,4 +712,3 @@ Grand-canonical generating functions can still be useful if one wants to organiz
 \printbibliography
 
 \end{document}
-
