@@ -702,18 +702,74 @@ For $w_i\sim N$ with $w_1+w_2+w_3=N$:
 \item The remaining uncertainty for coefficient-level matching is dynamical map dependence in $S_{\mathrm{cl}}[f]$, $S_\Phi[f]$, and $\mc Z^{\mathrm{long}}_{1\text{-}\mathrm{loop}}[f]$, not a residual curved-$(\beta,\gamma)$ topological obstruction.
 \end{itemize}
 
-\section{Do we need grand-canonical variables here?}
-For the torus free-energy problem, grand-canonical variables are essential because one sums over all cycle multiplicities (including disconnected sectors) and then extracts fixed-$N$ data via plethystic operations.
+\section{Spectrum comparison: NRCS vs orbifold, and the role of chemical potential}
+The potential mismatch comes from comparing two different objects:
+\begin{itemize}
+\item a \emph{fixed-winding} spectrum at fixed $w$ (canonical in winding), and
+\item a \emph{grand-canonical} thermal sum over all $w$ and all cycle decompositions.
+\end{itemize}
+These are not the same comparison problem.
 
-For the present sphere three-point observable, we insert three \emph{fixed} operators of prescribed cycle lengths $(w_1,w_2,w_3)$ and fixed rank $N$. This is already a canonical correlator:
+The NRCS energy formula used in this note is imported from continuum lightcone NRCS \cite{gomis2000nonrelativisticclosedstringtheory}:
+\begin{equation}
+E_{\mathrm{NRCS}}(w;h,\bar h)
+=
+\frac{wR}{2\Aeff}+\frac{h+\bar h}{wR},
+\qquad
+h-\bar h\in w\mathbb Z,
+\end{equation}
+where $w\in \mathbb Z_{>0}$ is winding, $R$ is the target spatial radius, $\Aeff=\alpha'_{\mathrm{eff}}$, and $(h,\bar h)$ are the transverse left/right weights (including zero modes and oscillators in the conventions of \cite{gomis2000nonrelativisticclosedstringtheory}).
+The linear term $wR/(2\Aeff)$ is the nonrelativistic rest energy of a winding-$w$ string.
+
+For fixed $w$, define the excitation energy above that rest term:
+\begin{equation}\label{eq:fixed-w-excitation-energy}
+\Delta E_w(h,\bar h)
+:=
+E_{\mathrm{NRCS}}(w;h,\bar h)-\frac{wR}{2\Aeff}
+=
+\frac{h+\bar h}{wR}.
+\end{equation}
+The symmetric-orbifold long-string Hamiltonian in the length-$w$ twisted sector is
+\begin{equation}\label{eq:orbifold-length-w-hamiltonian}
+H^{\mathrm{orb}}_w(h,\bar h)=\frac{h+\bar h}{wR},
+\qquad
+h-\bar h\in w\mathbb Z.
+\end{equation}
+So the fixed-sector match is
+\begin{equation}
+\Delta E_w(h,\bar h)=H^{\mathrm{orb}}_w(h,\bar h).
+\end{equation}
+In other words, the part that is compared between the two theories at fixed winding is the $1/(wR)$ excitation spectrum; the linear $wR$ term is a sector-dependent rest energy, not an internal level splitting. Therefore one should \emph{not} demand a single winding-independent additive shift that simultaneously aligns all $w$ sectors.
+
+Now consider the genus-one thermal free energy, where one sums over all $w$. With inverse temperature $\beta=T^{-1}$, define
+\begin{equation}
+\mu:=\frac{R}{2\Aeff},
+\qquad
+p:=e^{-\beta\mu}.
+\end{equation}
+Then each NRCS Boltzmann factor becomes
+\begin{equation}
+e^{-\beta E_{\mathrm{NRCS}}(w;h,\bar h)}
+=
+e^{-\beta\mu w}\,e^{-\beta(h+\bar h)/(wR)}
+=
+p^w e^{-\beta(h+\bar h)/(wR)}.
+\end{equation}
+So in the grand-canonical packaging, the linear term is exactly the cycle-length fugacity weight. For a multi-cycle state with lengths $\{w_a\}$ and total copy number $N=\sum_a w_a$, this gives
+\begin{equation}
+\prod_a e^{-\beta\mu w_a}=e^{-\beta\mu N}.
+\end{equation}
+Hence at fixed $N$ it is an overall factor (equivalently a free-energy shift by $\mu N$), not a change of relative excitation energies or degeneracies within that fixed-$N$ theory.
+
+For the present sphere three-point observable we are in the canonical setting: fixed $N$ and fixed external cycle data $(w_1,w_2,w_3)$. The target quantity is
 \begin{equation}
 \left\langle
 \widehat{\sigma}_{[w_1]}\widehat{\sigma}_{[w_2]}\widehat{\sigma}_{[w_3]}
 \right\rangle_{\Sym^N}^{\mathrm{conn}},
 \end{equation}
-so no grand-canonical fugacity is required to define or compute that single quantity.
+so no grand-canonical fugacity is required to define that single coefficient. Grand-canonical variables remain useful only for organizing infinite families of observables over varying cycle data.
 
-Grand-canonical generating functions can still be useful if one wants to organize an infinite family of three-point coefficients over varying $(w_1,w_2,w_3)$, but that is optional bookkeeping, not a structural necessity for a single fixed 3-point function.
+The caveat is scope: in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex}, the statement that the finite-$\Aeff$ deformation acts purely as this chemical-potential weight is established for the \emph{quoted flat-torus genus-one benchmark}, where longitudinal non-zero modes cancel after localization. This note does not assume that same simplification for arbitrary observables on arbitrary targets.
 
 \section{Key references used}
 \begin{itemize}
