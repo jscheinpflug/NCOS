@@ -88,30 +88,13 @@ $\lambda_{\mathrm{tH}}:=g^2N$.
 
 By ``finite-$N$ NRCS'' we mean a hypothetical exact (nonperturbative) definition that captures the full finite-$N$ gauge theory. That exact formulation is not currently available. By contrast, perturbative NRCS is organized as a large-$N$ expansion (equivalently in the NCOS language, an expansion around weak effective string coupling), so it automatically probes the large-$N$ regime \cite{gomis2000nonrelativisticclosedstringtheory,klebanov200011dimensionalncosun}.
 
-Equation \eqref{eq:alphaeff-gym-n} gives
-\begin{equation}
-\frac{1}{\sqrt{\Aeff}}=\frac{g_{\mathrm{YM}}}{N}.
-\end{equation}
-For any excitation with finite dimensionless cylinder energy $\varepsilon:=ER$,
-\begin{equation}
-\frac{E}{g_{\mathrm{YM}}}
-=
-\frac{ER}{g_{\mathrm{YM}}R}
-=
-\frac{\varepsilon}{\kappa}.
-\end{equation}
-Therefore in scaling (A), perturbative states with $\varepsilon=O(1)$ satisfy
-\begin{equation}
-\frac{E}{g_{\mathrm{YM}}}=O(N^{-1})\ll 1,
-\end{equation}
-which is an IR scale of the gauge theory. By itself, however, the inequality
-$E/g_{\mathrm{YM}}\ll 1$ does not prove that the exact dynamics are already
-those of the symmetric-product orbifold CFT: in matrix-string theory, states at
-such energies can still be affected by the irrelevant deformation. What matters
-in scaling (A) is the additional fact that the same limit also sends
+The logically important point for the orbifold limit is not merely that some
+states are low-energy in gauge-theory units, but that scaling (A) also sends
 $\kappa=g_{\mathrm{YM}}R=N\rho\to\infty$. The large-$\kappa$ suppression of the
 irrelevant deformation is what drives the approach to the symmetric-product
-orbifold CFT \cite{dijkgraaf1997matrixstring}.
+orbifold CFT \cite{dijkgraaf1997matrixstring}. The conversion between fixed
+cylinder energy $ER$ and gauge-theory units $E/g_{\mathrm{YM}}$ will be used
+later in the large-$\rho$ discussion.
 
 From this point onward, $N$ is the single rank/copy-number label used throughout the note.
 
@@ -285,6 +268,20 @@ The subtlety is that ``large $R$'' and ``strictly noncompact'' are not the same 
 So how can large-$\rho$ NRCS capture the orbifold CFT? The answer is: the orbifold CFT describes the IR of the \emph{compact} flux/winding sector (matrix-string setup) \cite{dijkgraaf1997matrixstring}, not the strictly noncompact vacuum sector. At large compact $R$, energies scale as
 \begin{equation}
 E\sim \frac{1}{R},
+\end{equation}
+and for any excitation with finite dimensionless cylinder energy
+$\varepsilon:=ER$ one has
+\begin{equation}
+\frac{E}{g_{\mathrm{YM}}}
+=
+\frac{ER}{g_{\mathrm{YM}}R}
+=
+\frac{\varepsilon}{\kappa}.
+\end{equation}
+In scaling (A), where $\kappa=N\rho$, perturbative states with
+$\varepsilon=O(1)$ therefore satisfy
+\begin{equation}
+\frac{E}{g_{\mathrm{YM}}}=O(N^{-1})\ll 1.
 \end{equation}
 so with fixed dimensionless energies $ER$ one is automatically probing
 $E/g_{\mathrm{YM}}\to 0$. Combined with the same large-$\rho$ limit sending
