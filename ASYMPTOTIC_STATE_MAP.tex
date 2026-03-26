@@ -1,0 +1,275 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Inj}{\mathrm{Inj}}
+
+\title{Finite-\texorpdfstring{$N$}{N} External-State Normalization for the Curved First-Order String}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Aim}
+This note isolates one specific piece of the genus-zero comparison between the curved first-order string and the exact symmetric-orbifold CFT
+\begin{equation}\label{eq:aim-orbifold}
+\Sym^N(\bR^8).
+\end{equation}
+The local sphere analysis in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex} already gives the explicit longitudinal vertex operator, its BRST cohomology class, the local cylinder factor $\sqrt{w}$, and the rigid fixed-cover weight on a canonically labeled active-sheet configuration. What remained there was the exact finite-$N$ external-state normalization that converts that canonically labeled string amplitude into the physical finite-$N$ amplitude with no distinguished copy labels. The purpose of the present note is to derive that factor directly from the asymptotic tube Hilbert space, not by fitting the final answer to the orbifold three-point coefficient.
+
+The scope is narrow. I work only with the lowest NS--NS single-cycle external states on the three-punctured sphere
+\[
+C_{0,3}=S^2\setminus\{0,1,\infty\},
+\]
+with cycle lengths $(w_1,w_2,w_3)$ and genus-zero degree
+\begin{equation}\label{eq:degree-d0}
+d_0:=\frac{w_1+w_2+w_3-1}{2}.
+\end{equation}
+Everything here is external-state combinatorics. The local factor $\sqrt{w_i}$ and the fixed-cover dynamical weight are imported input from \texttt{CURVED\_FIRST\_ORDER\_STRING.tex}.
+
+\section{Marked Tube States}
+For any positive integer $n$, write
+\[
+[n]:=\{1,\dots,n\}.
+\]
+On the string side, the local puncture operator on the $i$-th target tube is written in a chosen tube coordinate $\xi_i$ and a chosen local uniformizer $t_i$ satisfying
+\begin{equation}\label{eq:local-uniformizer}
+u-z_i=t_i^{\,w_i}.
+\end{equation}
+This choice marks one sheet of the $w_i$-fold local cover. Rotating $t_i$ by a $w_i$-th root of unity moves that mark cyclically around the same closed long string. The cylinder computation in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex} already accounts for that local cyclic redundancy and produces the factor $\sqrt{w_i}$. Before that local factor is inserted, the natural finite-$N$ bookkeeping is therefore over \emph{ordered} injections of the marked local sheet set into the $N$ physical copy labels.
+
+Define
+\begin{equation}\label{eq:ordered-injections}
+\Inj([w],[N])
+:=
+\{\iota:[w]\hookrightarrow [N]\},
+\qquad
+|\Inj([w],[N])|=(N)_w:=\frac{N!}{(N-w)!}.
+\end{equation}
+For fixed transverse seed label $\chi$ and fixed tube $z_i$, let
+\begin{equation}\label{eq:marked-labeled-state}
+\bigl|\Psi^{\rm mark}_{\iota;w,\chi}\bigr\rangle_i
+\end{equation}
+denote the asymptotic single-string state in which the marked ordered local sheet set $[w]$ is embedded into the $N$ physical labels by the injection $\iota$, while all spectator labels not in $\iota([w])$ are in the vacuum. Different injections differ on at least one elementary strand label, so the cylinder pairing gives
+\begin{equation}\label{eq:marked-state-orthogonality}
+\left\langle
+\Psi_{\iota;w,\chi}^{\rm mark,\,out}
+\middle|
+\Psi_{\iota';w',\chi'}^{\rm mark,\,in}
+\right\rangle_{\rm cyl}
+=
+\delta_{w,w'}\,\delta_{\chi,\chi'}\,\delta_{\iota,\iota'}.
+\end{equation}
+The normalized finite-$N$ external state obtained by averaging over the $N$ available labels is therefore
+\begin{equation}\label{eq:external-averaged-state}
+\bigl|\Psi_{w,\chi}^{\rm ext}(N)\bigr\rangle_i
+:=
+\frac{1}{\sqrt{(N)_w}}
+\sum_{\iota\in \Inj([w],[N])}
+\bigl|\Psi^{\rm mark}_{\iota;w,\chi}\bigr\rangle_i.
+\end{equation}
+Equation \eqref{eq:marked-state-orthogonality} implies
+\begin{equation}\label{eq:external-state-unit-norm}
+\left\langle
+\Psi_{w,\chi}^{\rm ext,\,out}(N)
+\middle|
+\Psi_{w',\chi'}^{\rm ext,\,in}(N)
+\right\rangle_{\rm cyl}
+=
+\delta_{w,w'}\,\delta_{\chi,\chi'}.
+\end{equation}
+
+\section{Connected Three-Point Data}
+The genus-zero connected three-point amplitude between the normalized external states \eqref{eq:external-averaged-state} is
+\begin{equation}\label{eq:external-averaged-amplitude}
+\mc A_{123}^{\rm ext,(0)}(N)
+:=
+\left\langle
+\Psi^{\rm ext,\,out}_{w_3,\chi_3}(N)
+\middle|
+\mc P_{0,3}
+\middle|
+\Psi^{\rm ext,\,in}_{w_1,\chi_1}(N)\otimes
+\Psi^{\rm ext,\,in}_{w_2,\chi_2}(N)
+\right\rangle,
+\end{equation}
+where $\mc P_{0,3}$ denotes the genus-zero pair-of-pants interaction in the strict Poisson/BF sector together with the transverse seed theory. Expanding the three external averages gives
+\begin{equation}\label{eq:external-averaged-amplitude-expanded}
+\mc A_{123}^{\rm ext,(0)}(N)
+=
+\frac{1}{\sqrt{(N)_{w_1}(N)_{w_2}(N)_{w_3}}}
+\sum_{\iota_1,\iota_2,\iota_3}
+\mc A_{123}^{\rm mark,(0)}(\iota_1,\iota_2,\iota_3).
+\end{equation}
+
+The marked amplitude $\mc A_{123}^{\rm mark,(0)}(\iota_1,\iota_2,\iota_3)$ vanishes unless the three marked long strings fit together into one connected degree-$d_0$ branched cover of the target sphere. Equivalently, if one labels the active sheets by $[d_0]$, then the local monodromies around $(0,1,\infty)$ define a triple
+\begin{equation}\label{eq:connected-monodromy-triple}
+(h_1,h_2,h_3)\in S_{d_0}^3
+\end{equation}
+with the following properties:
+\begin{itemize}
+\item $h_i$ has cycle type $(w_i,1^{d_0-w_i})$,
+\item $h_1h_2h_3=1$,
+\item the subgroup $\langle h_1,h_2,h_3\rangle$ acts transitively on $[d_0]$.
+\end{itemize}
+The transitivity condition is the connectedness condition. Two such triples define the same cover class precisely when they differ by simultaneous conjugation in $S_{d_0}$. For one cover class, the stabilizer of a representative triple under simultaneous conjugation is its automorphism group
+\begin{equation}\label{eq:cover-automorphism-group}
+\Aut(h_1,h_2,h_3)
+:=
+\{\sigma\in S_{d_0}\mid \sigma h_i\sigma^{-1}=h_i\ \text{for }i=1,2,3\}.
+\end{equation}
+This is exactly the deck-automorphism group of the corresponding branched cover, so I also write it as $\Aut(f)$.
+
+The weighted Hurwitz count for the three-point problem is therefore
+\begin{equation}\label{eq:hurwitz-weighted}
+H_{d_0}^{(0)}(w_1,w_2,w_3)
+:=
+\sum_{[f]}
+\frac{1}{|\Aut(f)|},
+\end{equation}
+where the sum runs over connected genus-zero degree-$d_0$ cover classes with the prescribed three branch profiles.
+
+\section{Counting Finite-\texorpdfstring{$N$}{N} Embeddings}
+Fix one cover class $[f]$ of degree $d_0$. A representative monodromy triple on the canonical active set $[d_0]$ has orbit size
+\begin{equation}\label{eq:orbit-size}
+|\mathrm{Orb}(h_1,h_2,h_3)|
+=
+\frac{d_0!}{|\Aut(f)|}
+\end{equation}
+by the orbit-stabilizer theorem applied to simultaneous conjugation by $S_{d_0}$.
+
+To realize that active-sheet cover inside the finite-$N$ physical label set $[N]$, one chooses an ordered injection
+\[
+\jmath\in \Inj([d_0],[N]).
+\]
+The resulting concrete triple on $[N]$ acts by $\jmath h_i\jmath^{-1}$ on $\jmath([d_0])$ and trivially on the complement. The relevant finite-$N$ data are therefore pairs
+\[
+(\jmath,(h_1,h_2,h_3))
+\in
+\Inj([d_0],[N])\times \mathrm{Orb}(h_1,h_2,h_3).
+\]
+There is a diagonal relabeling action of $S_{d_0}$ on these pairs:
+\[
+\sigma\cdot
+(\jmath,(h_1,h_2,h_3))
+:=
+(\jmath\circ \sigma^{-1},(\sigma h_1\sigma^{-1},\sigma h_2\sigma^{-1},\sigma h_3\sigma^{-1})).
+\]
+This action is free because an injection $\jmath$ has trivial stabilizer. Therefore the number of concrete finite-$N$ connected triples associated with the cover class $[f]$ is
+\begin{equation}\label{eq:concrete-triple-count}
+\frac{
+|\Inj([d_0],[N])|\,
+|\mathrm{Orb}(h_1,h_2,h_3)|
+}{
+d_0!
+}
+=
+\frac{(N)_{d_0}}{|\Aut(f)|}.
+\end{equation}
+Equation \eqref{eq:concrete-triple-count} is the finite-$N$ multiplicity missing from the fixed-cover worldsheet calculation: the active degree-$d_0$ cover may be embedded into the $N$ physical labels in $(N)_{d_0}$ ways, with the usual $1/|\Aut(f)|$ weight of the cover class left intact.
+
+\section{The Exact External Factor}
+The only dynamical input from \texttt{CURVED\_FIRST\_ORDER\_STRING.tex} is that, for the lowest NS--NS single-cycle states on the sphere, the fixed-cover amplitude on one canonically labeled active-sheet configuration is
+\begin{equation}\label{eq:fixed-cover-input}
+\mc A_{f}^{\rm can,(0)}
+=
+\sqrt{w_1w_2w_3}\,
+\mc C_{\rm seed}^{(0)}(w_1,w_2,w_3),
+\end{equation}
+independent of the individual cover class $[f]$. The factor $\sqrt{w_1w_2w_3}$ is the product of the local cylinder normalizations of the three marked punctures. Substituting \eqref{eq:concrete-triple-count} and \eqref{eq:fixed-cover-input} into \eqref{eq:external-averaged-amplitude-expanded} gives
+\begin{equation}\label{eq:exact-external-amplitude}
+\mc A_{123}^{\rm ext,(0)}(N)
+=
+\frac{(N)_{d_0}}{\sqrt{(N)_{w_1}(N)_{w_2}(N)_{w_3}}}
+\,
+\sqrt{w_1w_2w_3}\,
+H_{d_0}^{(0)}(w_1,w_2,w_3)\,
+\mc C_{\rm seed}^{(0)}(w_1,w_2,w_3).
+\end{equation}
+This is exactly the factorized form used in the companion sphere note. The finite-$N$ external-state factor is therefore
+\begin{equation}\label{eq:derived-external-factor}
+\mc G_N^{\rm ext}(w_1,w_2,w_3)
+:=
+\frac{(N)_{d_0}}{\sqrt{(N)_{w_1}(N)_{w_2}(N)_{w_3}}}
+=
+\frac{N!}{(N-d_0)!}\,
+\sqrt{
+\frac{(N-w_1)!\,(N-w_2)!\,(N-w_3)!}{(N!)^3}
+}.
+\end{equation}
+No comparison with the orbifold three-point coefficient has been used. Equation \eqref{eq:derived-external-factor} follows entirely from:
+\begin{itemize}
+\item the marked tube-state normalization \eqref{eq:external-state-unit-norm},
+\item the connected-cover embedding count \eqref{eq:concrete-triple-count},
+\item the local puncture factor $\sqrt{w_i}$ already derived on the cylinder.
+\end{itemize}
+
+\section{Relation to Class Normalization}
+On the orbifold side, the size of the conjugacy class of one $w$-cycle is
+\begin{equation}\label{eq:class-size}
+|[w]|_N
+=
+\frac{N!}{w(N-w)!}
+=
+\frac{(N)_w}{w}.
+\end{equation}
+Combining \eqref{eq:derived-external-factor} with the local puncture factor gives the identity
+\begin{equation}\label{eq:external-factor-times-local}
+\mc G_N^{\rm ext}(w_1,w_2,w_3)\,
+\sqrt{w_1w_2w_3}
+=
+\frac{N!}{(N-d_0)!}\,
+\frac{1}{\sqrt{|[w_1]|_N\,|[w_2]|_N\,|[w_3]|_N}}.
+\end{equation}
+Equation \eqref{eq:external-factor-times-local} is not a fit to the orbifold three-point function. It is an algebraic identity between two ways of normalizing the same finite-$N$ external data:
+\begin{itemize}
+\item the string-side normalization in which the local tube operator keeps a marked uniformizer and the local cyclic quotient appears as $\sqrt{w_i}$,
+\item the class normalization in which one sums over unmarked $w_i$-cycles and the same cyclic quotient is absorbed into $|[w_i]|_N=(N)_{w_i}/w_i$.
+\end{itemize}
+
+\section{Checks}
+The first checks are immediate.
+
+For $(w_1,w_2,w_3)=(1,1,1)$ one has $d_0=1$, so
+\[
+\mc G_N^{\rm ext}(1,1,1)=\frac{N}{N^{3/2}}=N^{-1/2}.
+\]
+There is no nontrivial local cyclic quotient, since $\sqrt{w_1w_2w_3}=1$.
+
+For $(w_1,w_2,w_3)=(2,1,2)$ one has $d_0=2$, so
+\[
+\mc G_N^{\rm ext}(2,1,2)
+=
+\frac{N(N-1)}{\sqrt{N(N-1)\,N\,N(N-1)}}
+=
+N^{-1/2}.
+\]
+Multiplying by the local puncture factor $\sqrt{2\cdot1\cdot2}=2$ gives the total exact finite-$N$ coefficient $2N^{-1/2}$ before the Hurwitz and seed factors.
+
+Finally, with fixed $(w_1,w_2,w_3)$ and $N\to\infty$, equation \eqref{eq:derived-external-factor} expands as
+\begin{equation}\label{eq:large-n-expansion}
+\mc G_N^{\rm ext}(w_1,w_2,w_3)
+=
+N^{-1/2}
+\left[
+1+\frac{1}{N}
+\left(
+\frac14\sum_{i=1}^3 w_i(w_i-1)-\frac12 d_0(d_0-1)
+\right)
++O(N^{-2})
+\right],
+\end{equation}
+which is exactly the dilute large-$N$ factor used in \texttt{CURVED\_FIRST\_ORDER\_STRING.tex}.
+
+In short: the exact finite-$N$ normalization factor does not require a fit to the orbifold three-point coefficient. It is the external-state multiplicity of a connected degree-$d_0$ active-sheet cover inside $N$ physical labels, together with the marked-tube normalization already fixed by the local cylinder calculation.
+
+\end{document}
