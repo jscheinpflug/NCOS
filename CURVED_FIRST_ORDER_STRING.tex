@@ -918,21 +918,155 @@ At the level of asymptotic Hilbert spaces, the corresponding single-string state
 \end{equation}
 where $\left|w_i\right\rangle_i^{\rm long}$ is created by the lowest longitudinal operator \eqref{eq:lowest-longitudinal-state} and $\left|\chi_i\right\rangle_i^\perp$ is a chosen one-copy seed state of the transverse $\bR^8$ SCFT. When the transverse seed state is fixed once and for all, I abbreviate $\Psi_{w_i,\chi_i}$ to $\Psi_{w_i}$.
 
-For the supersymmetric single-cycle chiral operators, let $\mc O_{\chi_i}^\perp$ be the standard one-copy transverse seed operator of weights $(\tfrac12,\tfrac12)$, and define the usual $(-1,-1)$ representative
+\subsection{BRST Closure of the Lowest NS--NS Vertex}
+
+The global existence of the curved-target BRST current is imported from the companion note \texttt{BRST-curved.tex}. What is still required locally is the actual cohomology calculation for the specific sphere vertex used here. Throughout this subsection I work in the standard small Hilbert space and in the usual relative closed-string complex, so the state obeys
+\[
+\eta_{\gh,0}=\bar\eta_{\gh,0}=0,
+\qquad
+b_{{\rm gh},0}^-:=b_{{\rm gh},0}-\bar b_{{\rm gh},0}=0,
+\qquad
+L_0^-:=L_0-\bar L_0=0.
+\]
+
+Besides the covariant momentum components \eqref{eq:tube-covariant-components}, the fermionic partner also has tube components
+\begin{equation}\label{eq:tube-fermion-components}
+\psi_{\xi_i}^+:=\frac{\partial \xi_i}{\partial u}\,\psi_u^+,
+\qquad
+\rho_{\xi_i}:=\frac{\partial u}{\partial \xi_i}\,\rho_u,
+\end{equation}
+and similarly $\bar\psi_{\bar\xi_i}^-$ and $\bar\rho_{\bar\xi_i}$ antiholomorphically. In the local Hermitian representative $ds_C^2=d\xi_i\,d\bar\xi_i$, where $\Gamma_{\xi_i}=0$, the longitudinal matter generators are therefore
+\[
+\begin{aligned}
+G_{+-}(t)
+&=
+:\!\psi_{\xi_i}^+\Pi_{\xi_i}\!:(t)+:\!\rho_{\xi_i}\partial\xi_i\!:(t),
+\\
+T_{+-}(t)
+&=
+-:\!\Pi_{\xi_i}\partial\xi_i\!:(t)-\frac12:\!\rho_{\xi_i}\partial\psi_{\xi_i}^+\!:(t)+\frac12:\!(\partial\rho_{\xi_i})\psi_{\xi_i}^+\!:(t).
+\end{aligned}
+\]
+For the lowest state \eqref{eq:lowest-longitudinal-state}, $\Pi_{\xi_i}(t)\Sigma^{\rm long}_{w_i}(x_i,\bar x_i)$ is regular and \eqref{eq:tube-winding-ope} gives $\partial\xi_i(t)\Sigma^{\rm long}_{w_i}(x_i,\bar x_i)\sim -w_i(t-x_i)^{-1}\Sigma^{\rm long}_{w_i}(x_i,\bar x_i)$. Hence
+\begin{equation}\label{eq:longitudinal-primary-ope}
+\begin{aligned}
+T_{+-}(t)\,\Sigma^{\rm long}_{w_i}(x_i,\bar x_i)
+&\sim
+\frac{1}{t-x_i}\,
+\partial_{x_i}\Sigma^{\rm long}_{w_i}(x_i,\bar x_i),
+\\
+G_{+-}(t)\,\Sigma^{\rm long}_{w_i}(x_i,\bar x_i)
+&\sim
+\frac{\Theta^{\rm long}_{w_i}(x_i,\bar x_i)}{t-x_i},
+\end{aligned}
+\end{equation}
+with the longitudinal superpartner
+\begin{equation}\label{eq:longitudinal-superpartner}
+\Theta^{\rm long}_{w_i}(x_i,\bar x_i)
+:=
+-\,w_i\,\rho_{\xi_i}(x_i)\,\Sigma^{\rm long}_{w_i}(x_i,\bar x_i),
+\end{equation}
+and likewise antiholomorphically
+\[
+\bar\Theta^{\rm long}_{w_i}(x_i,\bar x_i)
+:=
+-\,w_i\,\bar\rho_{\bar\xi_i}(\bar x_i)\,\Sigma^{\rm long}_{w_i}(x_i,\bar x_i).
+\]
+So $\Sigma^{\rm long}_{w_i}$ is a longitudinal matter primary of weight $(0,0)$; it is the bottom component of a nontrivial NS matter supermultiplet rather than an operator with trivial supercurrent OPE.
+
+For the supersymmetric single-cycle chiral operators, let $\mc O_{\chi_i}^\perp$ be the standard one-copy transverse seed matter operator of weights $(\tfrac12,\tfrac12)$, chosen so that it is an NS superprimary:
+\begin{equation}\label{eq:transverse-superprimary-ope}
+\begin{aligned}
+T_\perp(t)\,\mc O_{\chi_i}^\perp(x_i,\bar x_i)
+&\sim
+\frac{\tfrac12\,\mc O_{\chi_i}^\perp(x_i,\bar x_i)}{(t-x_i)^2}
+\,+\,
+\frac{\partial_{x_i}\mc O_{\chi_i}^\perp(x_i,\bar x_i)}{t-x_i},
+\\
+G_\perp(t)\,\mc O_{\chi_i}^\perp(x_i,\bar x_i)
+&\sim
+\frac{\mc O_{\chi_i}^{\perp,\downarrow}(x_i,\bar x_i)}{t-x_i},
+\end{aligned}
+\end{equation}
+with analogous barred formulas. Define the full matter operator
+\begin{equation}\label{eq:full-matter-superprimary}
+\mc U_{w_i,\chi_i}
+:=
+\Sigma^{\rm long}_{w_i}\,\mc O_{\chi_i}^\perp.
+\end{equation}
+Combining \eqref{eq:longitudinal-primary-ope} and \eqref{eq:transverse-superprimary-ope} gives
+\begin{equation}\label{eq:full-matter-superprimary-ope}
+\begin{aligned}
+T_m(t)\,\mc U_{w_i,\chi_i}(x_i,\bar x_i)
+&\sim
+\frac{\tfrac12\,\mc U_{w_i,\chi_i}(x_i,\bar x_i)}{(t-x_i)^2}
+\,+\,
+\frac{\partial_{x_i}\mc U_{w_i,\chi_i}(x_i,\bar x_i)}{t-x_i},
+\\
+G_m(t)\,\mc U_{w_i,\chi_i}(x_i,\bar x_i)
+&\sim
+\frac{\mc U_{w_i,\chi_i}^{\downarrow}(x_i,\bar x_i)}{t-x_i},
+\end{aligned}
+\end{equation}
+where
+\begin{equation}\label{eq:full-matter-superdescendant}
+\mc U_{w_i,\chi_i}^{\downarrow}
+:=
+\Theta^{\rm long}_{w_i}\,\mc O_{\chi_i}^\perp
+\,+\,
+\Sigma^{\rm long}_{w_i}\,\mc O_{\chi_i}^{\perp,\downarrow},
+\end{equation}
+and similarly in the antiholomorphic sector. Equation \eqref{eq:full-matter-superprimary-ope} is the concrete local statement that the matter part of the sphere vertex is a weight-$(\tfrac12,\tfrac12)$ NS superprimary.
+
+Define the usual $(-1,-1)$ representative
 \begin{equation}\label{eq:longitudinal-ns-vertex}
 \mc V^{(-1,-1)}_{w_i,\chi_i}
 :=
+\mc U_{w_i,\chi_i}\,
+e^{-\phi_{\gh}-\bar\phi_{\gh}}
+\;=\;
 \Sigma^{\rm long}_{w_i}\,
 e^{-\phi_{\gh}-\bar\phi_{\gh}}\,
 \mc O_{\chi_i}^\perp.
 \end{equation}
-Here $\phi_{\gh}$ is the bosonized superghost field. The corresponding unintegrated closed-string state is the BRST class
-\begin{equation}\label{eq:single-string-brst-class}
-\big[c_{\rm gh}\tilde c_{\rm gh}\,\mc V^{(-1,-1)}_{w_i,\chi_i}\big]
-\in
-H^2_{\rm BRST}(C_{0,3}).
+To check BRST closure explicitly, use the standard bosonized RNS current
+\begin{equation}\label{eq:local-brst-current-sphere}
+j_B
+=
+c_{\rm gh}\bigl(T_m+T_{\eta\xi}+T_\phi\bigr)
++c_{\rm gh}\partial c_{\rm gh}\,b_{\rm gh}
++\eta_{\gh}e^{\phi_{\gh}}G_m
+-\eta_{\gh}\partial\eta_{\gh}\,e^{2\phi_{\gh}}b_{\rm gh},
 \end{equation}
-The $(0,0)$ representative is obtained by picture changing,
+where $T_{\eta\xi}$ and $T_\phi$ are the standard stress tensors of the bosonized superghost system $(\eta_{\gh},\xi_{\gh},\phi_{\gh})$, and the same barred formula defines $\bar j_B$. The relevant ghost OPEs are
+\[
+b_{\rm gh}(t)c_{\rm gh}(x_i)\sim \frac{1}{t-x_i},
+\qquad
+T_\phi(t)e^{-\phi_{\gh}}(x_i)\sim
+\frac{\tfrac12\,e^{-\phi_{\gh}}(x_i)}{(t-x_i)^2}
+\,+\,
+\frac{\partial e^{-\phi_{\gh}}(x_i)}{t-x_i},
+\]
+together with $e^{\phi_{\gh}}(t)e^{-\phi_{\gh}}(x_i)\sim (t-x_i)$ and $e^{2\phi_{\gh}}(t)e^{-\phi_{\gh}}(x_i)\sim (t-x_i)^2 e^{\phi_{\gh}}(x_i)$. Because $G_m(t)\mc U_{w_i,\chi_i}(x_i,\bar x_i)$ has only the simple pole displayed in \eqref{eq:full-matter-superprimary-ope}, the last two terms of \eqref{eq:local-brst-current-sphere} are regular on $c_{\rm gh}e^{-\phi_{\gh}}\mc U_{w_i,\chi_i}$. The double poles from $c_{\rm gh}(T_m+T_\phi)$ and from $c_{\rm gh}\partial c_{\rm gh}b_{\rm gh}$ then give
+\begin{equation}\label{eq:single-string-brst-class}
+j_B(t)\,c_{\rm gh}e^{-\phi_{\gh}}\mc U_{w_i,\chi_i}(x_i,\bar x_i)
+\sim
+\frac{\bigl(h(\mc U_{w_i,\chi_i})-\tfrac12\bigr)\,
+c_{\rm gh}\partial c_{\rm gh}e^{-\phi_{\gh}}\mc U_{w_i,\chi_i}(x_i,\bar x_i)}
+{t-x_i}
+=0,
+\end{equation}
+because \eqref{eq:full-matter-superprimary-ope} gives $h(\mc U_{w_i,\chi_i})=\tfrac12$. The same argument holds antiholomorphically, so
+\[
+Q_{\mathrm{BRST}}
+\Bigl[
+c_{\rm gh}\tilde c_{\rm gh}\,\mc V^{(-1,-1)}_{w_i,\chi_i}
+\Bigr]
+=0.
+\]
+Thus the explicit $(-1,-1)$ sphere operator is BRST closed in the relative small-Hilbert-space complex.
+
+The $(0,0)$ representative is then obtained by picture changing,
 \begin{equation}\label{eq:longitudinal-zero-picture}
 \mc V^{(0,0)}_{w_i,\chi_i}
 :=
@@ -944,7 +1078,9 @@ The $(0,0)$ representative is obtained by picture changing,
 \bar{\mc X}_{\rm PCO}:=\{\bar Q,\bar\xi_{\gh}\}.
 \end{equation}
 Here $Q$ and $\bar Q$ are the left- and right-moving BRST charges.
-For the lowest longitudinal state considered here, picture changing does not introduce a new ramification operator: the only change is the standard RNS change of picture in the ghost/transverse factor. With the choice \eqref{eq:sphere-picture-choice}, the fixed-target sphere amplitude therefore becomes
+Because $Q\mc X_{\rm PCO}=\bar Q\bar{\mc X}_{\rm PCO}=0$ by nilpotency, \eqref{eq:single-string-brst-class} immediately implies that $\mc V^{(0,0)}_{w_i,\chi_i}$ is BRST closed as well. Its matter part is the superdescendant \eqref{eq:full-matter-superdescendant} and its barred partner, so picture changing \emph{does} introduce a longitudinal descendant term proportional to $\Theta^{\rm long}_{w_i}\,\mc O_{\chi_i}^\perp$. I keep the full coincident-PCO ghost completion implicit below, because the amplitude formula only needs the BRST-closed $0$-picture representative itself, not the expansion of those standard ghost terms.
+
+With the choice \eqref{eq:sphere-picture-choice}, the fixed-target sphere amplitude therefore becomes
 \begin{equation}\label{eq:fixed-cover-correlator}
 \begin{aligned}
 \mc A^{\rm str}_{C_{0,3}}(\Psi_{w_1,\chi_1},\Psi_{w_2,\chi_2},\Psi_{w_3,\chi_3})
@@ -1148,6 +1284,38 @@ This is the same local Jacobian that underlies the $\sqrt{w}$ normalization of t
 \qquad
 Z_w:=|\mc N_w|^2=w.
 \end{equation}
+The same cylinder pairing gives the missing non-exactness statement for the BRST-closed state constructed in \eqref{eq:single-string-brst-class}. Choose the out-state in the same picture and normalize the transverse seed two-point function by
+\[
+\bigl\langle \mc O_{\chi}^{\perp,\,\mathrm{out}}(\infty)\,
+\mc O_{\chi'}^{\perp,\,\mathrm{in}}(0)\bigr\rangle_{\mathrm{cyl}}
+=
+\delta_{\chi,\chi'},
+\]
+while the standard ghost factor
+\[
+\bigl\langle
+c_{\rm gh}\tilde c_{\rm gh}e^{-\phi_{\gh}-\bar\phi_{\gh}}(\infty)\,
+c_{\rm gh}\tilde c_{\rm gh}e^{-\phi_{\gh}-\bar\phi_{\gh}}(0)
+\bigr\rangle_{\mathrm{cyl}}
+\]
+is nonzero. Then \eqref{eq:longitudinal-cylinder-pairing} implies
+\begin{equation}\label{eq:nonexact-cylinder-pairing}
+\Bigl\langle
+\Psi_{w,\chi}^{\mathrm{out}}
+\Bigm|
+c_{\rm gh}\tilde c_{\rm gh}\,\mc V^{(-1,-1)}_{w',\chi'}(0)
+\Bigr\rangle_{\mathrm{cyl}}
+=
+\delta_{w,w'}\,\delta_{\chi,\chi'}.
+\end{equation}
+If the BRST-closed state were exact,
+\[
+c_{\rm gh}\tilde c_{\rm gh}\,\mc V^{(-1,-1)}_{w',\chi'}(0)
+=
+Q_{\mathrm{BRST}}\Lambda(0),
+\]
+then its pairing with the BRST-closed out-state would vanish by contour deformation of $Q_{\mathrm{BRST}}$. Equation \eqref{eq:nonexact-cylinder-pairing} is nonzero, so the lowest $(-1,-1)$ state is not BRST exact. Therefore it defines a nonzero element of the relative BRST cohomology.
+
 Substituting into \eqref{eq:tree-level-cover-independence}, the reduced longitudinal correlator becomes
 \begin{equation}\label{eq:psm-rigid-cover-reduction}
 \mc C_f^{\rm PSM}(\Psi_{w_1}^{\rm long},\Psi_{w_2}^{\rm long},\Psi_{w_3}^{\rm long})
@@ -1238,7 +1406,7 @@ H_{d_0}^{(0)}(w_1,w_2,w_3)\,
 \end{equation}
 which is exactly the large-$N$ orbifold form \eqref{eq:orbifold-three-point-leading}. So the first genuine large-$N$ test beyond the torus free energy is passed in the strict Poisson/BF sphere computation: the longitudinal worldsheet dynamics supplies the puncture-local factor $\sqrt{w_1w_2w_3}$ and the branched-cover sum supplies the Hurwitz factor, while the standard transverse seed correlator reproduces the remaining one-copy data.
 
-The status is therefore now sharper than in the earlier draft. Established here are the explicit local longitudinal ramification operator \eqref{eq:fixed-cover-vertex-factorization}, the BRST representatives \eqref{eq:longitudinal-ns-vertex} and \eqref{eq:longitudinal-zero-picture} for the lowest supersymmetric single-cycle states on $C_{0,3}$, the localization of the strict Poisson/BF path integral onto branched covers, the vanishing of the localized classical BF action, the cancellation of the longitudinal nonzero-mode superdeterminant imported from the companion BRST analysis, the local normalization $\mc N_w=\sqrt w$, and the resulting sphere amplitude \eqref{eq:tree-level-hurwitz-reduction}. What remains open is no longer the existence of the sphere vertex operator for these lowest NS--NS states. The open problems are instead the extension to Ramond external states and general profiles $\lambda_i$, the exact derivation of the asymptotic-state map \eqref{eq:tube-state-dictionary} at finite $N$, higher-genus and higher-point amplitudes, and the full nonchiral quantum completion of the finite-$\Aeff$ deformation on general curved targets.
+The status is therefore now sharper than in the earlier draft. Established here are the explicit local longitudinal ramification operator \eqref{eq:fixed-cover-vertex-factorization}, the local superconformal OPEs \eqref{eq:longitudinal-primary-ope}--\eqref{eq:full-matter-superprimary-ope}, the BRST-closure calculation \eqref{eq:single-string-brst-class} for the lowest $(-1,-1)$ NS--NS sphere representative, the induced BRST-closed $0$-picture representative \eqref{eq:longitudinal-zero-picture}, the non-exactness argument from the cylinder pairing \eqref{eq:nonexact-cylinder-pairing}, the localization of the strict Poisson/BF path integral onto branched covers, the vanishing of the localized classical BF action, the cancellation of the longitudinal nonzero-mode superdeterminant imported from the companion BRST analysis, the local normalization $\mc N_w=\sqrt w$, and the resulting sphere amplitude \eqref{eq:tree-level-hurwitz-reduction}. What remains open is no longer the existence of the lowest NS--NS sphere class itself. The open problems are instead the extension to Ramond external states and general profiles $\lambda_i$, the exact derivation of the asymptotic-state map \eqref{eq:tube-state-dictionary} at finite $N$, higher-genus and higher-point amplitudes, and the full nonchiral quantum completion of the finite-$\Aeff$ deformation on general curved targets.
 
 \section{Immediate Checks}
 The next steps seem concrete.
@@ -1250,7 +1418,7 @@ The next steps seem concrete.
 \item Clarify how the exact Weyl-structure independence of the Poisson/BF core survives the full nonchiral quantum completion on curved $C$, keeping separate the distinct problem of the finite-$\Aeff$ benchmark deformation.
 \end{itemize}
 
-In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined, while the companion BRST analysis shows that the full super longitudinal multiplet has a global BRST current on a target curve. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$, and now also an explicit sphere construction for the lowest supersymmetric single-cycle states on $C_{0,3}$. The longitudinal ramification operator \eqref{eq:fixed-cover-vertex-factorization} produces the local winding OPE \eqref{eq:tube-winding-ope}; the strict Poisson/BF path integral localizes onto branched covers with vanishing classical BF action \eqref{eq:psm-classical-action-zero}; the longitudinal nonzero-mode determinant cancels as in \eqref{eq:psm-superdet-cancellation}; and cylinder normalization fixes the local factor $\sqrt{w}$ in \eqref{eq:local-normalization-sqrtw}. As a result, the genus-zero worldsheet amplitude \eqref{eq:tree-level-hurwitz-reduction} reproduces the exact orbifold three-point coefficient once the purely combinatorial class-normalization factor \eqref{eq:external-class-factor} is included. What remains conjectural or incomplete is the direct canonical derivation of that finite-$N$ asymptotic-state map, the extension to more general external states and higher-point or higher-genus observables, and the full nonchiral quantum completion on curved $C$. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
+In short, the point of departure is simple. Start from the exact first-order string of \cite{gomis2000nonrelativisticclosedstringtheory}, keep the eight free transverse multiplets, and regard the longitudinal pair $(X^+,X^-)$ as coordinates on a genuine target Riemann surface. Nekrasov's curved $\beta\gamma$ framework \cite{nekrasov2005curvedbetagammasystems} is the essential tool for making this coordinate transformation problem globally well defined, while the companion BRST analysis shows that the full super longitudinal multiplet has a global BRST current on a target curve. What is derived here is the classical patching structure, the orbifold bookkeeping formula \eqref{eq:orbifold-free-energy-log}, the thermal-spin-structure reformulation of the quoted Gomis--Ooguri genus-one result that yields the matching \eqref{eq:degeneracy-match}--\eqref{eq:free-energy-match} for $[\nu_t,\nu_x]=[1,0]$, and now also an explicit sphere construction for the lowest supersymmetric single-cycle states on $C_{0,3}$. The longitudinal ramification operator \eqref{eq:fixed-cover-vertex-factorization} produces the local winding OPE \eqref{eq:tube-winding-ope}; its OPEs with the local matter stress tensor and supercurrent show that the full matter insertion is a weight-$(\tfrac12,\tfrac12)$ NS superprimary, and the bosonized BRST-current calculation \eqref{eq:single-string-brst-class} then proves that the $(-1,-1)$ representative is BRST closed. The cylinder pairing \eqref{eq:nonexact-cylinder-pairing} shows that this class is not BRST exact, while picture changing gives the BRST-closed $0$-picture representative \eqref{eq:longitudinal-zero-picture}. The strict Poisson/BF path integral localizes onto branched covers with vanishing classical BF action \eqref{eq:psm-classical-action-zero}; the longitudinal nonzero-mode determinant cancels as in \eqref{eq:psm-superdet-cancellation}; and cylinder normalization fixes the local factor $\sqrt{w}$ in \eqref{eq:local-normalization-sqrtw}. As a result, the genus-zero worldsheet amplitude \eqref{eq:tree-level-hurwitz-reduction} reproduces the exact orbifold three-point coefficient once the purely combinatorial class-normalization factor \eqref{eq:external-class-factor} is included. What remains conjectural or incomplete is the direct canonical derivation of that finite-$N$ asymptotic-state map, the extension to more general external states and higher-point or higher-genus observables, and the full nonchiral quantum completion on curved $C$. Any deformation toward matrix string theory or full two-dimensional $(8,8)$ SYM would be a separate problem and is not part of the present note.
 
 \printbibliography
 
