@@ -1,0 +1,397 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Inj}{\mathrm{Inj}}
+
+\title{Finite-\texorpdfstring{$N$}{N} Asymptotic-State Normalization for General NS--NS Profiles}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Aim}
+This note extends the companion single-cycle derivation \texttt{ASYMPTOTIC\_STATE\_MAP.tex} from one active long string on each tube to arbitrary NS--NS multi-string profiles on the three-punctured sphere
+\[
+C_{0,3}=S^2\setminus\{0,1,\infty\}.
+\]
+The goal is still purely kinematic: determine the exact finite-$N$ factor that converts a canonically labeled marked worldsheet amplitude into the physical amplitude of the symmetric-product orbifold
+\begin{equation}\label{eq:aim-orbifold-general}
+\Sym^N(\bR^8).
+\end{equation}
+I do \emph{not} derive a new BRST-complete local vertex operator for general profiles here. The only dynamical input is that the strict Poisson/BF worldsheet computation produces an $N$-independent marked fixed-cover weight, together with the already-derived local cylinder factor $\sqrt{w}$ for one constituent string of winding $w$.
+
+The basic convention is that a profile
+\begin{equation}\label{eq:active-profile}
+\lambda=(w_1,\dots,w_{\ell(\lambda)}),
+\qquad
+w_a\in \mathbb{Z}_{>0},
+\qquad
+|\lambda|:=\sum_{a=1}^{\ell(\lambda)} w_a\le N,
+\end{equation}
+records only the \emph{active} constituent strings in the external state. The omitted $N-|\lambda|$ copies of the orbifold stay in the identity sector and play no dynamical role in the connected worldsheet diagram. Active winding-one strings may still appear explicitly inside $\lambda$ when they carry nontrivial internal state data.
+
+\section{Decorated Profiles and Marked Tube States}
+Fix one tube $z_i$ and one active profile $\lambda=(w_1,\dots,w_{\ell(\lambda)})$. To each constituent string attach a transverse NS--NS seed label $\chi_a$, and write
+\begin{equation}\label{eq:decorated-profile-data}
+\vec\chi:=(\chi_1,\dots,\chi_{\ell(\lambda)}).
+\end{equation}
+Two constituent strings are treated as genuinely identical only when both their winding numbers and their seed labels agree. The corresponding permutation group is
+\begin{equation}\label{eq:identical-constituent-group}
+G_{\lambda,\vec\chi}
+:=
+\left\{
+\pi\in S_{\ell(\lambda)}
+\ \middle|\
+(w_{\pi(a)},\chi_{\pi(a)})=(w_a,\chi_a)\ \text{for all }a
+\right\}.
+\end{equation}
+If all repeated windings carry the same seed data, then $|G_{\lambda,\vec\chi}|=\prod_n m_n(\lambda)!$, where $m_n(\lambda)$ is the multiplicity of the part $n$ in $\lambda$. If repeated windings carry distinct seed labels, then the corresponding factor in $G_{\lambda,\vec\chi}$ is absent.
+
+For each constituent string, keep the marked local sheet set
+\[
+[w_a]_{(a)}:=\{1,\dots,w_a\}_{(a)}.
+\]
+The full ordered marked sheet set is the disjoint union
+\begin{equation}\label{eq:marked-sheet-set}
+B_\lambda
+:=
+\bigsqcup_{a=1}^{\ell(\lambda)} [w_a]_{(a)},
+\qquad
+|B_\lambda|=|\lambda|.
+\end{equation}
+An ordered embedding of this marked active data into the $N$ physical copy labels is an injection
+\begin{equation}\label{eq:general-ordered-injection}
+\iota\in \Inj(B_\lambda,[N]).
+\end{equation}
+As bookkeeping, let
+\begin{equation}\label{eq:ordered-bookkeeping-state}
+\bigl|\Psi^{\rm ord}_{\iota;\lambda,\vec\chi}\bigr\rangle_i
+\end{equation}
+denote the ordered asymptotic tube state associated with the injection $\iota$. Labels not in $\iota(B_\lambda)$ remain in the identity sector.
+
+The group $G_{\lambda,\vec\chi}$ acts on ordered injections by permuting genuinely identical constituent strings:
+\begin{equation}\label{eq:group-action-on-injections}
+(\pi\cdot \iota)(x):=\iota(\pi^{-1}x),
+\qquad
+\pi\in G_{\lambda,\vec\chi},
+\quad
+x\in B_\lambda.
+\end{equation}
+Because the constituent blocks in \eqref{eq:marked-sheet-set} are disjoint and $\iota$ is injective, this action is free. The physically marked state therefore depends only on the orbit
+\begin{equation}\label{eq:orbit-of-injection}
+[\iota]\in \Inj(B_\lambda,[N]) / G_{\lambda,\vec\chi},
+\end{equation}
+which I denote by
+\begin{equation}\label{eq:marked-physical-state}
+\bigl|\Psi^{\rm mark}_{[\iota];\lambda,\vec\chi}\bigr\rangle_i.
+\end{equation}
+The number of such orbits is
+\begin{equation}\label{eq:number-of-marked-orbits}
+\left|
+\Inj(B_\lambda,[N]) / G_{\lambda,\vec\chi}
+\right|
+=
+\frac{(N)_{|\lambda|}}{|G_{\lambda,\vec\chi}|},
+\qquad
+(N)_m:=\frac{N!}{(N-m)!}.
+\end{equation}
+
+Different orbit labels differ on at least one active strand assignment, so the cylinder pairing is
+\begin{equation}\label{eq:general-marked-orthogonality}
+\left\langle
+\Psi^{\rm mark,\,out}_{[\iota];\lambda,\vec\chi}
+\middle|
+\Psi^{\rm mark,\,in}_{[\iota'];\lambda',\vec\chi'}
+\right\rangle_{\rm cyl}
+=
+\delta_{\lambda,\lambda'}\,
+\delta_{\vec\chi,\vec\chi'}\,
+\delta_{[\iota],[\iota']}.
+\end{equation}
+The normalized finite-$N$ external state on the $i$-th tube is therefore
+\begin{equation}\label{eq:general-external-state}
+\bigl|\Psi^{\rm ext}_{\lambda,\vec\chi}(N)\bigr\rangle_i
+:=
+\sqrt{
+\frac{|G_{\lambda,\vec\chi}|}{(N)_{|\lambda|}}
+}
+\sum_{[\iota]\in \Inj(B_\lambda,[N]) / G_{\lambda,\vec\chi}}
+\bigl|\Psi^{\rm mark}_{[\iota];\lambda,\vec\chi}\bigr\rangle_i,
+\end{equation}
+and \eqref{eq:general-marked-orthogonality} implies
+\begin{equation}\label{eq:general-external-state-unit-norm}
+\left\langle
+\Psi^{\rm ext,\,out}_{\lambda,\vec\chi}(N)
+\middle|
+\Psi^{\rm ext,\,in}_{\lambda',\vec\chi'}(N)
+\right\rangle_{\rm cyl}
+=
+\delta_{\lambda,\lambda'}\,
+\delta_{\vec\chi,\vec\chi'}.
+\end{equation}
+
+\section{Connected Three-Point Data}
+For the three tubes of $C_{0,3}$, let the active external data be
+\[
+(\lambda_i,\vec\chi_i),
+\qquad
+\lambda_i=(w_{i,1},\dots,w_{i,\ell_i}),
+\qquad
+\ell_i:=\ell(\lambda_i),
+\qquad
+i=1,2,3.
+\]
+The genus-zero connected degree determined by these three active profiles is fixed by Riemann--Hurwitz:
+\begin{equation}\label{eq:general-degree-d0}
+d_0(\lambda_1,\lambda_2,\lambda_3)
+:=
+1+\frac12\sum_{i=1}^3\bigl(|\lambda_i|-\ell_i\bigr).
+\end{equation}
+If \eqref{eq:general-degree-d0} is not a nonnegative integer, or if no transitive monodromy triple with the required cycle data exists, then the connected genus-zero amplitude is defined to vanish.
+
+The normalized connected three-point amplitude is
+\begin{equation}\label{eq:general-external-amplitude}
+\mc A_{123}^{\rm ext,(0)}(N)
+:=
+\left\langle
+\Psi^{\rm ext,\,out}_{\lambda_3,\vec\chi_3}(N)
+\middle|
+\mc P_{0,3}
+\middle|
+\Psi^{\rm ext,\,in}_{\lambda_1,\vec\chi_1}(N)\otimes
+\Psi^{\rm ext,\,in}_{\lambda_2,\vec\chi_2}(N)
+\right\rangle.
+\end{equation}
+Expanding the three external averages \eqref{eq:general-external-state} gives
+\begin{equation}\label{eq:general-external-amplitude-expanded}
+\mc A_{123}^{\rm ext,(0)}(N)
+=
+\sqrt{
+\frac{
+|G_{\lambda_1,\vec\chi_1}|\,
+|G_{\lambda_2,\vec\chi_2}|\,
+|G_{\lambda_3,\vec\chi_3}|
+}{
+(N)_{|\lambda_1|}\,
+(N)_{|\lambda_2|}\,
+(N)_{|\lambda_3|}
+}
+}
+\sum_{[\iota_1],[\iota_2],[\iota_3]}
+\mc A_{123}^{\rm mark,(0)}([\iota_1],[\iota_2],[\iota_3]).
+\end{equation}
+
+The marked amplitude vanishes unless the three external profiles fit together into one connected degree-$d_0$ branched cover of the target sphere. Equivalently, on the canonical active sheet set $[d_0]$ one needs a monodromy triple
+\begin{equation}\label{eq:general-connected-monodromy}
+(h_1,h_2,h_3)\in S_{d_0}^3
+\end{equation}
+such that
+\begin{itemize}
+\item $h_i$ has cycle type $\lambda_i\,1^{d_0-|\lambda_i|}$,
+\item $h_1h_2h_3=1$,
+\item the subgroup $\langle h_1,h_2,h_3\rangle$ acts transitively on $[d_0]$.
+\end{itemize}
+Here the notation $\lambda_i\,1^{d_0-|\lambda_i|}$ means that the nontrivial cycles specified by $\lambda_i$ are present, while the remaining active sheets are fixed at the $i$-th puncture. Thus the external active profile does \emph{not} need to sum to $d_0$; the missing sheets are exactly the active copies that appear trivially at that puncture.
+
+The weighted Hurwitz count is
+\begin{equation}\label{eq:general-hurwitz-weighted}
+H_{d_0}^{(0)}(\lambda_1,\lambda_2,\lambda_3)
+:=
+\sum_{[f]}
+\frac{1}{|\Aut(f)|},
+\end{equation}
+where the sum runs over connected genus-zero degree-$d_0$ cover classes with the monodromy data described above.
+
+\section{Counting Finite-\texorpdfstring{$N$}{N} Embeddings}
+Fix one connected cover class $[f]$ of degree $d_0=d_0(\lambda_1,\lambda_2,\lambda_3)$, represented by a monodromy triple \eqref{eq:general-connected-monodromy} on the canonical active set $[d_0]$. As in the single-cycle derivation, simultaneous conjugation by $S_{d_0}$ gives an orbit of size
+\begin{equation}\label{eq:general-orbit-size}
+\frac{d_0!}{|\Aut(f)|}.
+\end{equation}
+To realize this active-sheet cover inside the finite-$N$ physical labels, choose an ordered injection
+\begin{equation}\label{eq:general-cover-injection}
+\jmath\in \Inj([d_0],[N]).
+\end{equation}
+The resulting concrete triple on $[N]$ acts by $\jmath h_i\jmath^{-1}$ on $\jmath([d_0])$ and trivially on the complement.
+
+The local marked puncture data and the quotient by $G_{\lambda_i,\vec\chi_i}$ are already encoded in the external states \eqref{eq:general-external-state}. They do \emph{not} modify the global active-sheet multiplicity \eqref{eq:general-orbit-size}. Therefore the number of concrete finite-$N$ connected realizations associated with the cover class $[f]$ is still
+\begin{equation}\label{eq:general-concrete-triple-count}
+\frac{(N)_{d_0}}{|\Aut(f)|}.
+\end{equation}
+
+Let
+\begin{equation}\label{eq:general-marked-cover-weight}
+\mc W_f^{\rm mark}(\lambda_1,\vec\chi_1;\lambda_2,\vec\chi_2;\lambda_3,\vec\chi_3)
+\end{equation}
+denote the marked fixed-cover weight of one canonically labeled active-sheet realization. By construction this quantity is independent of $N$. Combining \eqref{eq:general-external-amplitude-expanded} with \eqref{eq:general-concrete-triple-count} gives
+\begin{equation}\label{eq:general-external-amplitude-factorized}
+\mc A_{123}^{\rm ext,(0)}(N)
+=
+\mc G_N^{\rm ext}(\lambda_1,\vec\chi_1;\lambda_2,\vec\chi_2;\lambda_3,\vec\chi_3)
+\sum_{[f]}
+\mc W_f^{\rm mark}(\lambda_1,\vec\chi_1;\lambda_2,\vec\chi_2;\lambda_3,\vec\chi_3),
+\end{equation}
+with the exact external-state factor
+\begin{equation}\label{eq:general-derived-external-factor}
+\mc G_N^{\rm ext}(\lambda_1,\vec\chi_1;\lambda_2,\vec\chi_2;\lambda_3,\vec\chi_3)
+:=
+\frac{(N)_{d_0}\,
+\sqrt{
+|G_{\lambda_1,\vec\chi_1}|\,
+|G_{\lambda_2,\vec\chi_2}|\,
+|G_{\lambda_3,\vec\chi_3}|
+}
+}{
+\sqrt{
+(N)_{|\lambda_1|}\,
+(N)_{|\lambda_2|}\,
+(N)_{|\lambda_3|}
+}
+}.
+\end{equation}
+
+The already-derived single-string cylinder analysis suggests that the marked fixed-cover weight factorizes as a product of local constituent-string normalizations,
+\begin{equation}\label{eq:general-local-factorization-input}
+\mc W_f^{\rm mark}
+=
+\left(
+\prod_{i=1}^3
+\prod_{a=1}^{\ell_i}
+\sqrt{w_{i,a}}
+\right)
+\widetilde{\mc W}_f,
+\end{equation}
+where $\widetilde{\mc W}_f$ is the remaining reduced fixed-cover weight. Equation \eqref{eq:general-local-factorization-input} is imported input here, not a new derivation. Substituting it into \eqref{eq:general-external-amplitude-factorized} gives
+\begin{equation}\label{eq:general-external-amplitude-local-factor}
+\mc A_{123}^{\rm ext,(0)}(N)
+=
+\mc G_N^{\rm ext}
+\left(
+\prod_{i=1}^3
+\prod_{a=1}^{\ell_i}
+\sqrt{w_{i,a}}
+\right)
+\sum_{[f]}
+\widetilde{\mc W}_f.
+\end{equation}
+
+\section{Relation to Decorated Class Normalization}
+The orbifold operator that matches the active profile $\lambda=(w_1,\dots,w_{\ell(\lambda)})$ with seed labels $\vec\chi$ is normalized over \emph{unmarked} constituent cycles. Starting from ordered injections of the marked sheet set $B_\lambda$, there are two quotients:
+\begin{itemize}
+\item each constituent $w_a$-cycle has a local cyclic redundancy of order $w_a$,
+\item the subgroup $G_{\lambda,\vec\chi}$ permutes genuinely identical decorated constituent strings.
+\end{itemize}
+Therefore the size of the decorated finite-$N$ class is
+\begin{equation}\label{eq:general-decorated-class-size}
+|[\lambda,\vec\chi]|_N
+=
+\frac{(N)_{|\lambda|}}{
+\left(\prod_{a=1}^{\ell(\lambda)} w_a\right)\,
+|G_{\lambda,\vec\chi}|
+}
+=
+\frac{N!}{
+(N-|\lambda|)!\,
+\left(\prod_{a=1}^{\ell(\lambda)} w_a\right)\,
+|G_{\lambda,\vec\chi}|
+}.
+\end{equation}
+If the seed labels are suppressed and identical constituent strings are identified only by their winding numbers, then \eqref{eq:general-decorated-class-size} reduces to
+\begin{equation}\label{eq:general-undecorated-class-size}
+|[\lambda]|_N
+=
+\frac{N!}{
+(N-|\lambda|)!\,
+\prod_n n^{m_n(\lambda)}\,m_n(\lambda)!
+}.
+\end{equation}
+
+Combining \eqref{eq:general-derived-external-factor} with the local product in \eqref{eq:general-local-factorization-input} yields the exact identity
+\begin{equation}\label{eq:general-class-normalization-identity}
+\mc G_N^{\rm ext}(\lambda_1,\vec\chi_1;\lambda_2,\vec\chi_2;\lambda_3,\vec\chi_3)
+\left(
+\prod_{i=1}^3
+\prod_{a=1}^{\ell_i}
+\sqrt{w_{i,a}}
+\right)
+=
+\frac{N!}{(N-d_0)!}
+\prod_{i=1}^3
+\frac{1}{\sqrt{|[\lambda_i,\vec\chi_i]|_N}}.
+\end{equation}
+Equation \eqref{eq:general-class-normalization-identity} is the general NS--NS version of the single-cycle identity in \texttt{ASYMPTOTIC\_STATE\_MAP.tex}. It is purely a normalization statement: no orbifold three-point coefficient has been fitted anywhere in the derivation.
+
+\section{Checks}
+The reduction to the previous note is immediate. If each profile is single-cycle,
+\[
+\lambda_i=(w_i),
+\qquad
+|G_{\lambda_i,\vec\chi_i}|=1,
+\qquad
+|\lambda_i|=w_i,
+\qquad
+\ell_i=1,
+\]
+then \eqref{eq:general-degree-d0} gives
+\[
+d_0=\frac{w_1+w_2+w_3-1}{2},
+\]
+and \eqref{eq:general-derived-external-factor} reproduces the exact factor in \texttt{ASYMPTOTIC\_STATE\_MAP.tex}.
+
+For one tube with profile $\lambda=(2,2)$ and identical seed data $\vec\chi=(\chi,\chi)$, the identical-constituent group has size
+\[
+|G_{\lambda,\vec\chi}|=2!,
+\]
+so \eqref{eq:general-decorated-class-size} gives
+\[
+|[(2,2),(\chi,\chi)]|_N
+=
+\frac{N!}{2!\,2^2\,(N-4)!}.
+\]
+If instead the two constituents have distinct seed labels, $\vec\chi=(\chi_1,\chi_2)$ with $\chi_1\neq \chi_2$, then $|G_{\lambda,\vec\chi}|=1$ and
+\[
+|[(2,2),(\chi_1,\chi_2)]|_N
+=
+\frac{N!}{2^2\,(N-4)!}.
+\]
+The extra factor of $2!$ is therefore exactly the quotient by identical-particle symmetry and nothing else.
+
+Active winding-one strings are included explicitly in the same way. For example, the profile $\lambda=(1,1,2)$ has $|\lambda|=4$ and $\ell(\lambda)=3$. The two winding-one constituents contribute to \eqref{eq:general-degree-d0}, to the orbit count \eqref{eq:number-of-marked-orbits}, and to the class size \eqref{eq:general-decorated-class-size}. They are not part of the omitted passive spectators counted by $N-|\lambda|$.
+
+Finally, with fixed profiles and $N\to\infty$, equation \eqref{eq:general-derived-external-factor} expands as
+\begin{equation}\label{eq:general-large-n-expansion}
+\mc G_N^{\rm ext}
+=
+N^{\,1-\frac12(\ell_1+\ell_2+\ell_3)}
+\sqrt{
+|G_{\lambda_1,\vec\chi_1}|\,
+|G_{\lambda_2,\vec\chi_2}|\,
+|G_{\lambda_3,\vec\chi_3}|
+}
+\left[
+1+\frac{1}{N}
+\left(
+\frac14\sum_{i=1}^3 |\lambda_i|\bigl(|\lambda_i|-1\bigr)
+-\frac12 d_0(d_0-1)
+\right)
++O(N^{-2})
+\right].
+\end{equation}
+Since
+\[
+d_0-\frac12\sum_{i=1}^3 |\lambda_i|
+=
+1-\frac12\sum_{i=1}^3 \ell_i,
+\]
+the leading power of $N$ depends only on the number of constituent strings on the three tubes. For $\ell_1=\ell_2=\ell_3=1$, this reduces to the previously derived $N^{-1/2}$ scaling.
+
+\end{document}
