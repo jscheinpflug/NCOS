@@ -28,3 +28,8 @@
 - Use consistent notation across sections once a symbol is chosen.
 - If a notation change is made in one section, check downstream sections for consistency.
 - When the note claims a formula is "exact," ensure the exact domain of validity is stated.
+
+## TeX file organization
+- Keep one folder per TeX note at repo root, named after the note basename (for example, `NCOS/` for `NCOS.tex`).
+- Store the note source and all generated artifacts in that folder (`.tex`, `.pdf`, `.aux`, `.log`, `.fls`, `.fdb_latexmk`, `.out`, `.synctex.gz`, `.bbl`, `.blg`, `.run.xml`, `-blx.bib`).
+- When creating a new note, create its folder first and place the TeX source inside it instead of writing note files at repo root.

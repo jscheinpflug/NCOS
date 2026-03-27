@@ -24,6 +24,7 @@
 \newcommand{\wt}[1]{\widetilde{#1}}
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\Sym}{\mathrm{Sym}}
 \newcommand{\hmch}{\hat{\mc{H}}}
 \newcommand{\citeme}[1][]{{\color{red}[*#1]}}
 
@@ -319,6 +320,107 @@ For transverse coordinates $X^i$, the electric field induces no noncommutative p
 This is the key difference from the Seiberg-Witten field-theory limit. There one sends $\wt\ell_B^2\to0$ at fixed $G$ and $\theta$, so the boundary propagator collapses to its discontinuous phase and the zero-slope/topological description becomes appropriate \cite{seiberg1999stringtheorynoncommutativegeometry}. In NCOS one instead keeps $\A'_{\rm eff}$ fixed, and the mixed logarithms (\ref{ncosbulkcritprop}) remain at the open-string scale. The result is not a pure star-product algebra for boundary operators, but a holomorphic bulk-boundary algebra that still knows about the finite NCOS string tension.
 
 At the same time, this worldsheet limit does not resurrect a finite-energy non-compact closed-string spectrum. The scaling dimension of a genuine bulk closed-string vertex is still set by the direct $z-w$ contraction proportional to $\wt\ell_B^2\eta^{\alpha\beta}$, so keeping such a state on shell at fixed non-compact momentum requires energies of order $1/\wt\ell_B\to\infty$. Thus the algebra above only describes how longitudinal interior insertions collapse onto the boundary in the critical limit; the physical statement remains that unwound bulk closed strings decouple from finite-energy NCOS dynamics, in agreement with the threshold analysis below \cite{seiberg2000stringsbackgroundelectricfield,gopakumar2000sdualitynoncommutativegaugetheory}.
+\subsubsection{Old derivation of nonrelativistic strings}
+\noindent
+The first-order longitudinal system used below was not introduced originally from the D1 boundary algebra. Historically, Seiberg, Susskind, and Toumbas emphasized that when the electric direction is compact, the same near-critical scaling that defines NCOS leaves a finite sector of wound closed strings \cite{seiberg2000stringsbackgroundelectricfield}. Gomis and Ooguri then isolated that closed-string sector and rewrote it as a first-order worldsheet theory, now usually called the Gomis-Ooguri or NRCS string \cite{gomis2000nonrelativisticclosedstringtheory}. Danielsson, Guijosa, and Kruczenski further recast the same limit as Wound String Theory, which makes the positive-winding sector manifest \cite{danielsson2000iiabwoundwrapped}. Since our later first-order formulas reuse the same longitudinal variables, it is useful to recall this older derivation explicitly.
+
+It is important not to identify that flat Gomis-Ooguri parent background with the curved near-horizon F1 geometry (\ref{f1sdualbg}) used earlier in the holographic discussion. The relation is indirect. Before the near-horizon limit, the S-dual F1 solution is the asymptotically flat background
+\ie\label{f1fullbg}
+H_F(r)\equiv 1+\wt f_1(r)=1+{c_1N\over r^6},
+\fe
+\ie
+ds_{\rm str}^2
+=
+H_F(r)^{-1}(-dt^2+dx^2)+dr^2+r^2d\Omega_7^2,
+\qquad
+e^\Phi = H_F(r)^{-{1\over 2}},
+\fe
+\ie
+B_2=(1-H_F(r)^{-1})\,dt\wedge dx,
+\fe
+written in the same normalization conventions as (\ref{f1sdualbg}), with the asymptotic constant absorbed into the gauge choice for $B_2$. Dropping the asymptotic $1$ in $H_F$ gives the near-horizon metric (\ref{f1sdualbg}), while shifting $B_2$ by the constant two-form $dt\wedge dx$ puts the $B$-field in the gauge used there. Thus (\ref{f1sdualbg}) is the post-decoupling throat description, whereas the older NRCS derivation starts from the parent compact-background problem before that near-horizon step.
+
+The bridge to the Gomis-Ooguri variables is therefore only local. Fix a radius $r=r_\ast$ and consider a worldsheet patch small compared with the radial variation scale of $H_F$. On that patch $H_F(r)$ may be treated as the constant number $H_\ast\equiv H_F(r_\ast)$. Introduce local coordinates
+\ie\label{f1localcoords}
+t_{\rm loc}\equiv H_\ast^{-{1\over 2}}t,\qquad
+x_{\rm loc}\equiv H_\ast^{-{1\over 2}}x,\qquad
+y_{\rm loc}^i\equiv H_\ast^{ {1\over 2}}y^i,
+\qquad i=2,\dots,9,
+\fe
+where $y^i$ are local Cartesian transverse coordinates. In these coordinates the background becomes, up to derivative corrections suppressed by the local variation of $H_F$,
+\ie\label{f1localflat}
+ds_{\rm str}^2
+\simeq
+-(dt_{\rm loc})^2+(dx_{\rm loc})^2+H_\ast^{-1}\delta_{ij}\,dy^i_{\rm loc}dy^j_{\rm loc},
+\qquad
+B_2\simeq dt_{\rm loc}\wedge dx_{\rm loc}.
+\fe
+If one now defines the local effective slope
+\ie\label{localalphaeff}
+\A'_{\rm eff}(r_\ast)\equiv \A' H_\ast,
+\fe
+then in the asymptotically flat parent background this is
+\ie
+\A'_{\rm eff}(r_\ast)
+=
+\A' H_F(r_\ast)
+=
+\A'\left(1+{c_1N\over r_\ast^6}\right),
+\fe
+while in the strict near-horizon throat (\ref{f1sdualbg}), where $H_F(r)$ is replaced by $\wt f_1(r)=c_1N/r^6$, it reduces to
+\ie
+\A'_{\rm eff,\,throat}(r_\ast)
+=
+\A'\,\wt f_1(r_\ast)
+=
+\A'{c_1N\over r_\ast^6}.
+\fe
+then (\ref{f1localflat}) is precisely the critical $B_{01}=1$ endpoint of the Gomis-Ooguri scaling, with transverse metric $g_{ij}=\A'/\A'_{\rm eff}(r_\ast)\,\delta_{ij}$. In this sense the near-horizon F1 throat reproduces the same first-order longitudinal core only after passing to a local tangent-frame description. This is not yet the full one-parameter near-critical family of \cite{gomis2000nonrelativisticclosedstringtheory}, because the latter keeps the small departure from criticality explicit, $2\pi\A' B_{01}=1-\A'/(2\A'_{\rm eff})$. To recover that subcritical deformation one must step back to the parent asymptotically flat D1-F1 system, or equivalently to the D1 probe description where a constant piece may be traded between $B_{01}$ and the world volume electric field $F_{01}$. The T-duality chain leading to the wound-string description acts on that local constant-field parent background, not on the curved throat as a whole.
+
+In the original Gomis-Ooguri setup one studies a {\it closed} string with $x^1\sim x^1+2\pi R$ compact and no D-brane, keeps the longitudinal closed-string metric flat, and takes the near-critical limit
+\ie\label{gomisgooguriscaling}
+2\pi\A' B_{01}=1-{\A'\over 2\A'_{\rm eff}},
+\qquad
+g_{ij}={\A'\over \A'_{\rm eff}}\delta_{ij},
+\qquad
+\A'\to0
+\qquad
+{\rm with}\quad \A'_{\rm eff}\ {\rm fixed}.
+\fe
+This scaling law is imported from the original continuum derivation of \cite{gomis2000nonrelativisticclosedstringtheory}; here it serves only as a historical bridge. In the lightcone target coordinates
+\ie
+\gamma\equiv X^0+X^1,\qquad
+\bar\gamma\equiv -X^0+X^1,
+\fe
+one introduces Lagrange multipliers $\beta,\bar\beta$ and rewrites the longitudinal sector in exact first-order form. After taking the limit (\ref{gomisgooguriscaling}) the resulting worldsheet action is
+\ie\label{gomisgooguriaction}
+S_{\rm GO}
+=\int_\Sigma {d^2z\over 2\pi}\left[
+\beta\,\bar\partial\gamma
++\bar\beta\,\partial\bar\gamma
++{1\over 4\A'_{\rm eff}}\,\partial\gamma\,\bar\partial\bar\gamma
++{1\over \A'_{\rm eff}}\,\partial X^i\bar\partial X_i
+\right].
+\fe
+This formula is again imported from the Gomis-Ooguri continuum analysis rather than derived here. Its equations of motion make $\gamma$ holomorphic and $\bar\gamma$ antiholomorphic, so on a compact circle the holomorphic field $\gamma$ may carry winding,
+\ie
+\gamma(z)=iwR\log z+\sum_{n\in\bb Z}\gamma_n z^{-n}.
+\fe
+Using the standard Gomis-Ooguri Virasoro analysis, which we do not rederive here in detail, the constraint becomes linear in the zero mode of $\beta$, and the closed-string energy becomes
+\ie\label{gomisgoogurispectrum}
+p_0
+=
+{wR\over 2\A'_{\rm eff}}
++{\A'_{\rm eff}k_\perp^2\over 2wR}
++{N+\bar N\over wR},
+\qquad
+N-\bar N=wn.
+\fe
+Here $w\in\bb Z_{>0}$ is the winding number along the compact longitudinal circle, $n\in\bb Z$ is the corresponding Kaluza-Klein momentum quantum number, $k_\perp$ is the transverse momentum, and $N,\bar N$ are the left- and right-moving oscillator levels. After subtracting the rest-energy term $wR/(2\A'_{\rm eff})$, the remaining excitation energy is Galilean rather than relativistic. This is the standard Gomis-Ooguri nonrelativistic closed-string spectrum.
+
+The wound-string reformulation makes the same point from spacetime rather than worldsheet variables. One keeps only the sector with strictly positive winding, subtracts the universal divergent rest energy of that wound sector, and obtains a closed-string theory with an equivalent T-dual null-compactified description \cite{danielsson2000iiabwoundwrapped}. In that language, NCOS is the open-string sector living on D-branes inside the same wound background, rather than a completely separate limit.
+
+From the present NCOS viewpoint, the crucial difference is therefore global rather than local. The local first-order core (\ref{gomisgooguriaction}) is the same longitudinal structure that reappears below in (\ref{ncosrnsfirstordercrit}), but the physical interpretation changes because we keep $x^1$ non-compact and work with an open-string boundary problem on a D1-brane. Without a compact longitudinal circle there is no winding zero mode in $\gamma$, so the Gomis-Ooguri closed-string spectrum (\ref{gomisgoogurispectrum}) does not survive. What remains finite instead is the boundary algebra and the open-string sector reorganized by the same first-order variables. In this precise sense the NCOS worldsheet used here is the open-string cousin of the older Gomis-Ooguri construction.
 \subsubsection{RNS matter and the first-order/Poisson-sigma core}
 \noindent
 The regular bulk OPE found above suggests a more intrinsic worldsheet description. Before taking the critical limit, the longitudinal bosonic sigma model can be rewritten exactly in first-order form, following the same algebraic step used in the NCOS/NRCS literature \cite{gomis2000nonrelativisticclosedstringtheory}. In our lightcone conventions this is
@@ -1113,6 +1215,182 @@ G_o^2={\widetilde E\over N}
 \fe
 which is the single-flux NCOS/SYM dictionary (equivalent to the one in \cite{klebanov200011dimensionalncosun}, equations (1), (2), (3), after converting conventions). The condition $\wt{E} \to 1$ means a hierarchy of tensions $\frac{1}{\A'_{\rm eff}} \ll \frac{1}{\wt{\alpha}'_B}$.
 Crucially, this is not a truncation of the open-string tower: open-string oscillator states at $m^2\sim 1/\A'_{\rm eff} \sim \frac{g_{\rm YM}^2}{N^2}$ remain in the NCOS spectrum.
+
+\subsubsection{Holographic route from the compact D1 throat to NRCS}
+\noindent
+The question here is narrower than the full SYM/string duality: starting from the compactified background (\ref{f1sdualbg}), is one really looking at NRCS? The answer is no globally, but yes locally after T-duality and freezing the radial variation. The derivation is completely at the level of background fields.
+
+Compactify the spatial direction of the D1 system as
+\ie\label{mscompactx}
+x\sim x+2\pi R.
+\fe
+Setting the electric-flux label of (\ref{symfluxenergy}) to $k=0$ removes the NCOS probe/open-string sector, but it does {\it not} remove the rank-$N$ holographic system itself: the same D1 charge $N$ in (\ref{dsaiibdoness}) still labels the dual $U(N)$ gauge theory. Now apply standard Buscher T-duality along the compact $x$-circle directly to the S-dual F1 background (\ref{f1sdualbg}). Since
+\ie
+g_{tt}=-\wt f_1(r)^{-1},\qquad
+g_{xx}=\wt f_1(r)^{-1},\qquad
+B_{tx}=\wt f_1(r)^{-1},
+\fe
+the T-dual type-IIA background is
+\ie\label{iiappcompact}
+ds_{\rm str}^2
+=
+2\,dt\,d\wt x
++\wt f_1(r)\,d\wt x^2
++dr^2+r^2d\Omega_7^2,
+\qquad
+\wt x\sim \wt x+2\pi{\A'_A\over R},
+\fe
+\ie\label{iiappparams}
+e^{\Phi_A}=1,
+\qquad
+\A'_A\equiv \ell_A^2=\wt\ell_B^2,
+\qquad
+g_A=\wt g_B\,{\wt\ell_B\over R}
+=
+{1\over \sqrt{2\pi}\,g_{\rm YM}R}.
+\fe
+Here $\A'_A$ is the type-IIA string scale. No matrix-string input has entered yet: (\ref{iiappcompact}) is just the exact T-dual bulk geometry of the compact near-horizon F1 throat.
+
+This is also the right place to compare with section 3.2 of Danielsson, Guijosa, and Kruczenski \cite{danielsson2000iiabwoundwrapped}, titled ``$B$ is for Boost.'' Their point is that for a {\it flat} compact background with constant $B_{01}$, Buscher duality converts the $B$-field into an off-diagonal metric, and a further linear change of coordinates brings that metric to the frame of a boosted background with $B=0$. Writing
+\ie\label{boostvelocitydef}
+v\equiv 2\pi\A' B_{01},
+\qquad
+\gamma_{\rm boost}\equiv (1-v^2)^{-1/2},
+\fe
+the flat T-dual longitudinal metric takes the form
+\ie\label{boostmetricflat}
+ds^2_{01}
+=
+-(1-v^2)(dX^0)^2
++2v\,dX^0d\wt X^1
++(d\wt X^1)^2,
+\fe
+which is the version of equation (3.10) in \cite{danielsson2000iiabwoundwrapped} written in our dimensionful coordinates. Section 3.2 then shows that after passing to the coordinates of the boosted frame, the same background is just flat space with $B=0$ and a compact circle that is not aligned with the original time slice. In that precise sense a constant $B_{01}$ and a boost are equivalent descriptions of the same compact flat problem. The equivalence is not the statement that a Lorentz boost changes the local supergravity fields of a curved F1 throat. Rather, the boost interpretation appears only after T-duality and after choosing coordinates adapted to the compact identification.
+
+Equation (\ref{iiappcompact}) already shows why (\ref{f1sdualbg}) is not globally the Gomis-Ooguri background. The coefficient of $d\wt x^2$ is $\wt f_1(r)$, so it varies with the transverse position, and the transverse metric is the curved eight-dimensional cone $dr^2+r^2d\Omega_7^2$ rather than flat $\bR^8$ with a single fixed scale $\A'_{\rm eff}$. So there is no exact global identification of (\ref{f1sdualbg}) with the flat NRCS parent background.
+
+To compare with Gomis-Ooguri, recall their flat parent background after T-duality along the compact longitudinal circle. Starting from
+\ie
+ds^2=-(dX^0)^2+(dX^1)^2+g_{ij}\,dX^i dX^j,
+\qquad
+2\pi\A' B_{01}=1-{\A'\over 2\A'_{\rm eff}},
+\fe
+Buscher duality along $X^1$ gives the exact two-dimensional longitudinal metric \cite{gomis2000nonrelativisticclosedstringtheory}
+\ie\label{gotdualmetric}
+ds^2_{01}
+=
+\left[-1+\left(2\pi\A' B_{01}\right)^2\right](dX^0)^2
++2\left(2\pi\A' B_{01}\right)dX^0 d\wt X^1
++(d\wt X^1)^2.
+\fe
+Equivalently, after the definition (\ref{boostvelocitydef}),
+\ie
+ds^2_{01}
+=
+-(1-v^2)(dX^0)^2
++2v\,dX^0d\wt X^1
++(d\wt X^1)^2.
+\fe
+In the strict critical endpoint $2\pi\A' B_{01}=1$, this reduces to
+\ie\label{gocriticaltdual}
+ds^2_{01}=2\,dX^0 d\wt X^1+(d\wt X^1)^2.
+\fe
+This is the background-level form that underlies the Gomis-Ooguri first-order rewrite. It is also the flat-space version of the Danielsson-Guijosa-Kruczenski statement: after T-duality, the near-critical $B_{01}$ background is rewritten as the off-diagonal metric (\ref{boostmetricflat}), with boost parameter $v=2\pi\A' B_{01}$. The critical Gomis-Ooguri background (\ref{gocriticaltdual}) is the endpoint $v\to 1$, where the boosted compact direction becomes null.
+
+Now freeze the radial coordinate of (\ref{iiappcompact}) at $r=r_\ast$ and work in a worldsheet patch small compared with the radial variation scale of $\wt f_1(r)$. Write $\wt f_1(r_\ast)\equiv H_\ast$, introduce local Cartesian transverse coordinates $y^i$, and define
+\ie\label{tdual-local-coords}
+t_{\rm loc}\equiv H_\ast^{-{1\over 2}}t,\qquad
+\wt x_{\rm loc}\equiv H_\ast^{{1\over 2}}\wt x,\qquad
+y^i_{\rm loc}\equiv H_\ast^{{1\over 2}}y^i.
+\fe
+Then the T-dual background becomes
+\ie\label{f1localtdual}
+ds_{\rm str}^2
+\simeq
+2\,dt_{\rm loc}\,d\wt x_{\rm loc}
++(d\wt x_{\rm loc})^2
++H_\ast^{-1}\delta_{ij}\,dy^i_{\rm loc}dy^j_{\rm loc},
+\fe
+up to derivative corrections suppressed by the local variation of $\wt f_1$. Comparing (\ref{f1localtdual}) with (\ref{gocriticaltdual}), one sees that the compactified T-dual throat is locally {\it exactly} the critical T-dual Gomis-Ooguri background, with local effective slope
+\ie\label{localalphaefftdual}
+\A'_{\rm eff}(r_\ast)\equiv \A'_A H_\ast,
+\qquad
+g_{ij}={\A'_A\over \A'_{\rm eff}(r_\ast)}\delta_{ij}=H_\ast^{-1}\delta_{ij}.
+\fe
+In the present near-horizon throat $H_\ast=\wt f_1(r_\ast)=c_1N/r_\ast^6$, so the exact radial dependence is
+\ie\label{localalphaeffexact}
+\A'_{\rm eff}(r)
+=
+\A'_A\,\wt f_1(r)
+=
+\A'_A{c_1N\over r^6}.
+\fe
+Using $\A'_A=\wt\ell_B^2$ and $c_1=32\pi^2\wt g_B^2\wt\ell_B^6$, this may also be written as
+\ie
+\A'_{\rm eff}(r)
+=
+32\pi^2\wt g_B^2 N\,{\wt\ell_B^8\over r^6}.
+\fe
+This is the precise sense in which the throat knows about NRCS. The curved background is the $r$-dependent analogue of the flat off-diagonal metric discussed in section 3.2 of \cite{danielsson2000iiabwoundwrapped}: each sufficiently small patch at fixed $r$ is equivalent to a constant-$B$ flat background and hence to the critical Gomis-Ooguri form, but there is no single global boost that removes the full $r$-dependence of (\ref{iiappcompact}).
+
+The same background also gives the local string scale directly. Using (\ref{gymdict}) and (\ref{iiappparams}),
+\ie
+g_{\rm YM}^2={1\over 2\pi \wt g_B^2\wt\ell_B^2},
+\qquad
+c_1
+=
+32\pi^2\wt g_B^2\wt\ell_B^6
+=
+16\pi\,{\wt\ell_B^4\over g_{\rm YM}^2}.
+\fe
+Substituting this into (\ref{localalphaeffexact}) gives the exact bulk expression
+\ie\label{alphaefffrom14}
+\A'_{\rm eff}(r)
+=
+\A'_A\,\wt f_1(r)
+=
+16\pi\,{N\wt\ell_B^6\over g_{\rm YM}^2\,r^6}.
+\fe
+Now define the redshifted local type-IIA string scale by
+\ie\label{redshiftedlocale}
+E_{\rm string}(r)
+\equiv
+\sqrt{-g_{tt}(r)}\,{1\over \sqrt{\A'_A}}
+=
+\wt f_1(r)^{-{1\over 2}}\,{1\over \sqrt{\A'_A}}
+=
+{1\over \sqrt{\A'_{\rm eff}(r)}}.
+\fe
+Here $E_{\rm string}(r)$ means the energy, measured with respect to the asymptotic time $t$, of a local excitation at the type-IIA string scale. Using (\ref{alphaefffrom14}) this may be written as
+\ie\label{redshiftedlocalexact}
+E_{\rm string}(r)
+=
+{g_{\rm YM}\over 4\sqrt{\pi N}}
+\left({r\over \wt\ell_B}\right)^3.
+\fe
+Equations (\ref{alphaefffrom14})--(\ref{redshiftedlocalexact}) are the direct output of the background (\ref{f1sdualbg}) and the local T-dual GO identification: they show that the throat itself furnishes an $r$-dependent family of string scales, or equivalently
+\ie
+\A'_{\rm eff}(r)=E_{\rm string}(r)^{-2}.
+\fe
+To turn this into a statement about the dual SYM one must specify which boundary energy scale is being matched to the bulk radius. If one matches to the single-flux sector scale $E\sim g_{\rm YM}/N$, then (\ref{redshiftedlocale}) immediately gives
+\ie
+\A'_{\rm eff}\sim {N^2\over g_{\rm YM}^2}.
+\fe
+This reproduces the NCOS/SYM scaling. The exact coefficient $1/(2\pi)$ in (\ref{alphaeffderivea}) is not fixed by (\ref{f1sdualbg}) alone; it comes from the probe/open-string normalization derived earlier.
+
+To recover the usual Gomis-Ooguri first-order action, one now applies the inverse Buscher map back to the local constant-$B$ frame and then performs the standard first-order rewrite imported in (\ref{gomisgooguriaction}). Because all background fields are constant on the chosen patch, that local worldsheet action is exactly the Gomis-Ooguri action with $\A'_{\rm eff}$ replaced by the local value $\A'_{\rm eff}(r_\ast)$.
+
+The resulting chain is
+\ie\label{nrcssymchain}
+\text{compact D1 near-horizon holography}
+\;\Longrightarrow\;
+{\rm compactified\ F1\ throat}\ (\ref{f1sdualbg})
+\;\Longrightarrow\;
+{\rm exact\ T\text{-}dual\ background}\ (\ref{iiappcompact})
+\;\Longleftrightarrow\;
+{\rm local\ critical\ GO/NRCS\ background}\ (\ref{f1localtdual}).
+\fe
+So the statement at the level of (\ref{f1sdualbg}) is sharp: it is {\it not} globally dual to NRCS, because the geometry is curved and $r$-dependent, but after compactifying $x$ and T-dualizing it becomes a curved family of local patches whose tangent-frame form is exactly the critical T-dual Gomis-Ooguri background. That is how the NRCS sector is extracted from (\ref{f1sdualbg}).
 
 \subsection{Decoupling of closed strings}
 
